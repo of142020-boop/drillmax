@@ -1,0 +1,17 @@
+---
+import MainLayout from '../layouts/MainLayout.astro';
+---
+
+<MainLayout title="الصفحة غير موجودة | Drill Max" description="نعتذر، الصفحة التي تبحث عنها غير موجودة.">
+  <section class="not-found" style="padding: 100px 20px; text-align: center; min-height: 60vh; display: flex; flex-direction: column; justify-content: center; align-items: center;">
+    <h1 style="font-size: 6rem; color: var(--primary); margin-bottom: 20px; font-weight: 900;">404</h1>
+    <h2 style="font-size: 2rem; color: var(--dark); margin-bottom: 20px;">عذراً، الصفحة التي تبحث عنها غير موجودة!</h2>
+    <p style="color: var(--gray); font-size: 1.2rem; margin-bottom: 40px; max-width: 600px;">
+      يبدو أن الرابط الذي اتبعته قديم أو تم تغيير مسار الصفحة. لا تقلق، يمكنك العودة لاستكشاف خدماتنا.
+    </p>
+    <div style="display: flex; gap: 15px; justify-content: center; flex-wrap: wrap;">
+      <a href="/" class="btn btn-primary" style="background: var(--primary); color: #fff; padding: 12px 30px; border-radius: 5px; font-weight: bold;">العودة للرئيسية</a>
+      <a href="/services/" class="btn" style="background: #1e293b; color: #fff; padding: 12px 30px; border-radius: 5px; font-weight: bold;">تصفح الخدمات</a>
+    </div>
+  </section>
+</MainLayout>
