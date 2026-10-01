@@ -9,7 +9,8 @@
     "dev": "astro dev",
     "build": "astro build",
     "preview": "astro preview",
-    "astro": "astro"
+    "astro": "astro",
+    "analyze:seo": "node scripts/analyzer.mjs"
   },
   "dependencies": {
     "@astrojs/sitemap": "^3.7.4",
@@ -20,6 +21,9 @@
     "esbuild": true
   },
   "devDependencies": {
-    "puppeteer": "^25.12.0"
+    "dotenv": "^18.0.5",
+    "google-ads-api": "^25.1.0",
+    "puppeteer": "^25.12.0",
+    "xlsx": "^0.18.5"
   }
 }
