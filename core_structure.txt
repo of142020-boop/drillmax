@@ -1,0 +1,15 @@
+[IMG] src: /images/logodrillmax.png.webp | alt: شعار شركة دريل ماكس لقص وتخريم الخرسانة
+[IMG] src: /images/logodrillmax.png.webp | alt: شعار شركة دريل ماكس لقص وتخريم الخرسانة
+[IMG] src: /images/قص-جدار-خرساني-بمنشار-حائطي.webp | alt: فريق عمل Drill Max يقوم بأعمال قص وتخريم خرسانة في مشروع بالشيخ زايد
+[IMG] src: /images/فتحة-كور-أفقية-بقطر-كبير_.webp | alt: فتحة كور أفقية بقطر كبير​
+[IMG] src: /images/عمل-فواصل-تمدد-للأرضيات-قص-رطب.webp | alt: 
+[IMG] src: /images/تخريم-مائل-في-جدار-خرساني_.webp | alt: تخريم مائل في جدار خرساني​
+[IMG] src: /images/إنشاء-فتحة-مصعد-في-سقف-خرساني_.webp | alt: إنشاء فتحة مصعد وقطع خرسانة في سقف خرساني​
+[IMG] src: /images/استخراج-عينات-خرسانية-للاختبار_.webp | alt: استخراج عينات خرسانية للاختبار​
+[IMG] src: /images/قص-جدار-خرساني-بمنشار-حائطي.webp | alt: فريق عمل Drill Max يقوم بأعمال قص وتخريم خرسانة في مشروع بالشيخ زايد
+[IMG] src: /images/عمل-فواصل-تمدد-للأرضيات-قص-رطب.webp | alt: 
+[IMG] src: /images/إنشاء-فتحة-مصعد-في-سقف-خرساني_.webp | alt: إنشاء فتحة مصعد وقطع خرسانة في سقف خرساني​
+[IMG] src: /images/فتحة-كور-أفقية-بقطر-كبير_.webp | alt: فتحة كور أفقية بقطر كبير​
+[IMG] src: /images/تخريم-مائل-في-جدار-خرساني_.webp | alt: تخريم مائل في جدار خرساني​
+[IMG] src: /images/استخراج-عينات-خرسانية-للاختبار_.webp | alt: استخراج عينات خرسانية للاختبار​
+[IMG] src: /images/core-drill-augers-concrete-cutting-drilling-austria-drill-799344f1b8cd17dc43aacb2df36c2cea-scaled-e1756834714837.png.webp | alt: كور دريل

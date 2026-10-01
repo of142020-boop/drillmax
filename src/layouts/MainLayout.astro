@@ -1,0 +1,303 @@
+---
+interface Props {
+  title: string;
+  description?: string;
+}
+
+const { title, description = "محتاج صنايعي كور أو فني منشار؟ Drill Max هي شركة رائدة لخدمات \"قص وتخريم خرسانة\" بالكور والمنشار الماسي لعمل فتحات الغاز والتكييف والتعديلات المعمارية." } = Astro.props;
+---
+
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <meta name="generator" content={Astro.generator} />
+    <title>{title}</title>
+    <meta name="description" content={description} />
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@300;400;600;700;800;900&display=swap" rel="stylesheet">
+  </head>
+  <body>
+    <div class="top-bar">
+      <div class="container top-bar-container">
+        <div class="top-bar-contact">
+          <span>لديك أي استفسار؟</span>
+          <span>📞 <a href="tel:+201070046464" dir="ltr">+20 107 004 6464</a></span>
+          <span>📧 <a href="mailto:support@drilmax.com">support@drilmax.com</a></span>
+        </div>
+        <div class="top-bar-social">
+          <a href="#">F</a>
+          <a href="#">I</a>
+          <a href="#">T</a>
+          <a href="#">L</a>
+        </div>
+      </div>
+    </div>
+    <header class="main-header">
+      <div class="container header-container">
+        <a href="/" class="logo">
+          <img src="/images/logodrillmax.png" alt="Drill Max Logo" onerror="this.src='data:image/svg+xml;utf8,<svg xmlns=\\'http://www.w3.org/2000/svg\\' width=\\'120\\' height=\\'40\\'><text x=\\'0\\' y=\\'30\\' font-size=\\'30\\' fill=\\'%23ffffff\\' font-weight=\\'bold\\' font-family=\\'Arial\\'>Drill Max</text></svg>'"/>
+        </a>
+        <nav class="main-nav">
+          <ul>
+            <li><a href="/">الرئيسية</a></li>
+            <li><a href="/services/">خدماتنا</a></li>
+            <li><a href="/core-drilling-%d8%b5%d9%86%d8%a7%d9%8a%d8%b9%d9%8a-%d9%83%d9%88%d8%b1/">الكور</a></li>
+            <li><a href="/saw-cutting%d9%82%d8%b5-%d8%ae%d8%b1%d8%b3%d8%a7%d9%86%d8%a9/">المنشار</a></li>
+            <li><a href="/%d9%82%d8%b5-%d8%a7%d9%84%d8%ae%d8%b1%d8%b3%d8%a7%d9%86%d8%a9-%d8%a8%d8%a7%d9%84%d9%88%d8%a7%d9%8a%d8%b1/">الواير</a></li>
+            <li><a href="/%d8%aa%d8%b2%d8%b1%d9%8a%d8%b9-%d8%a7%d9%84%d8%a7%d8%b4%d8%a7%d9%8a%d8%b1/">تزريع</a></li>
+            <li><a href="/%d9%81%d9%86%d9%8a-%d8%b4%d9%81%d8%a7%d8%b7%d8%a7%d8%aa/">شفاطات</a></li>
+            <li><a href="/prices/">الاسعار</a></li>
+          </ul>
+        </nav>
+        <a href="/contact/" class="cta-header-btn">تواصل معنا</a>
+      </div>
+    </header>
+
+    <main>
+      <slot />
+    </main>
+
+    <footer class="main-footer">
+      <div class="container footer-content">
+        <div class="footer-brand">
+          <img src="/images/logodrillmax.png" alt="Drill Max Logo" style="height: 60px; margin-bottom: 20px;" onerror="this.style.display='none'" />
+          <p>شركة متخصصة في خدمات قص وتخريم الخرسانة المسلحة بأحدث التقنيات الهندسية لضمان الدقة والأمان.</p>
+          <div style="margin-top: 20px;">
+            <p style="margin-bottom:10px;">📞 <a href="tel:+201070046464" dir="ltr" style="color:var(--primary); font-weight:bold;">+20 107 004 6464</a></p>
+            <p>📧 <a href="mailto:support@drilmax.com" style="color:var(--primary);">support@drilmax.com</a></p>
+          </div>
+        </div>
+        <div class="footer-links">
+          <h4>الخدمات الرئيسية</h4>
+          <ul>
+            <li><a href="/core-drilling-%d8%b5%d9%86%d8%a7%d9%8a%d8%b9%d9%8a-%d9%83%d9%88%d8%b1/">تخريم الخرسانة (كور)</a></li>
+            <li><a href="/saw-cutting%d9%82%d8%b5-%d8%ae%d8%b1%d8%b3%d8%a7%d9%86%d8%a9/">قص الخرسانة بالمنشار</a></li>
+            <li><a href="/%d9%82%d8%b5-%d8%a7%d9%84%d8%ae%d8%b1%d8%b3%d8%a7%d9%86%d8%a9-%d8%a8%d8%a7%d9%84%d9%88%d8%a7%d9%8a%d8%b1/">قص الخرسانة بالواير</a></li>
+            <li><a href="/%d8%aa%d8%b2%d8%b1%d9%8a%d8%b9-%d8%a7%d9%84%d8%a7%d8%b4%d8%a7%d9%8a%d8%b1/">تزريع الأشاير</a></li>
+            <li><a href="/%d9%81%d9%86%d9%8a-%d8%b4%d9%81%d8%a7%d8%b7%d8%a7%d8%aa/">تركيب الشفاطات</a></li>
+          </ul>
+        </div>
+        <div class="footer-links">
+          <h4>روابط سريعة</h4>
+          <ul>
+            <li><a href="/">الرئيسية</a></li>
+            <li><a href="/projects/">كل المشاريع</a></li>
+            <li><a href="/prices/">الأسعار</a></li>
+            <li><a href="/contact/">تواصل معنا</a></li>
+            <li><a href="/privacy-policy/">سياسة الخصوصية</a></li>
+            <li><a href="/terms-condition/">الشروط والأحكام</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>&copy; {new Date().getFullYear()} Drill Max. جميع الحقوق محفوظة.</p>
+      </div>
+    </footer>
+  </body>
+</html>
+
+<style is:global>
+  :root {
+    --primary: #ff5722; /* Orange */
+    --primary-hover: #e64a19;
+    --secondary: #ffffff; /* White */
+    --dark: #1e293b; /* Dark text */
+    --header-bg: #1e2530; /* Dark Charcoal for header */
+    --topbar-bg: #161b22; /* Even darker for top bar */
+    --light: #f8fafc;
+    --gray: #64748b;
+    --bg-color: #ffffff;
+    --section-bg: #f9fafb; /* Light gray section background */
+    --card-bg: #ffffff;
+    --border-color: #e2e8f0;
+  }
+
+  * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+
+  html {
+    font-family: 'Cairo', sans-serif;
+    background-color: var(--bg-color);
+    color: var(--dark);
+    scroll-behavior: smooth;
+  }
+
+  body {
+    overflow-x: hidden;
+  }
+
+  a {
+    text-decoration: none;
+    color: inherit;
+    transition: all 0.3s ease;
+  }
+
+  ul {
+    list-style: none;
+  }
+
+  .container {
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+  }
+
+  /* Top Bar */
+  .top-bar {
+    background-color: var(--topbar-bg);
+    color: #cbd5e1;
+    font-size: 0.85rem;
+    padding: 8px 0;
+    border-bottom: 1px solid rgba(255,255,255,0.05);
+  }
+  .top-bar-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  .top-bar-contact {
+    display: flex;
+    gap: 20px;
+    align-items: center;
+  }
+  .top-bar-social {
+    display: flex;
+    gap: 15px;
+  }
+  .top-bar a {
+    color: #cbd5e1;
+  }
+  .top-bar a:hover {
+    color: var(--primary);
+  }
+
+  /* Header */
+  .main-header {
+    background: var(--header-bg);
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+  }
+
+  .header-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 90px;
+    max-width: 100%;
+    padding: 0 40px;
+  }
+
+  .logo img {
+    height: 45px;
+    display: block;
+  }
+
+  .main-nav ul {
+    display: flex;
+    gap: 25px;
+    align-items: center;
+  }
+
+  .main-nav a {
+    font-weight: 600;
+    font-size: 0.95rem;
+    color: #fff;
+    text-transform: uppercase;
+    transition: color 0.3s ease;
+  }
+
+  .main-nav a:hover {
+    color: var(--primary);
+  }
+
+  .cta-header-btn {
+    background: var(--primary);
+    color: #fff;
+    padding: 10px 24px;
+    font-weight: 700;
+    font-size: 1rem;
+    border-radius: 4px;
+    transition: background 0.3s;
+  }
+  .cta-header-btn:hover {
+    background: var(--primary-hover);
+  }
+
+  /* Footer */
+  .main-footer {
+    background: var(--header-bg);
+    padding: 80px 0 20px;
+    color: #cbd5e1;
+  }
+
+  .footer-content {
+    display: grid;
+    grid-template-columns: 2fr 1fr 1fr;
+    gap: 40px;
+    margin-bottom: 40px;
+  }
+
+
+
+  .footer-brand h3 {
+    font-size: 2rem;
+    color: #fff;
+    margin-bottom: 15px;
+  }
+
+  .footer-brand p {
+    color: #cbd5e1;
+    line-height: 1.8;
+    max-width: 400px;
+  }
+
+  .footer-links h4 {
+    font-size: 1.3rem;
+    margin-bottom: 20px;
+    color: #fff;
+  }
+
+  .footer-links ul {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+  }
+
+  .footer-links a {
+    color: #cbd5e1;
+  }
+
+  .footer-links a:hover {
+    color: var(--primary);
+    padding-right: 5px;
+  }
+
+  .footer-bottom {
+    text-align: center;
+    padding-top: 20px;
+    margin-top: 40px;
+    border-top: 1px solid rgba(255, 255, 255, 0.05);
+    color: #94a3b8;
+  }
+
+  @media (max-width: 768px) {
+    .main-nav {
+      display: none; /* Mobile menu needed, hiding for simplicity in V1 */
+    }
+    .footer-content {
+      grid-template-columns: 1fr;
+    }
+  }
+</style>

@@ -1,0 +1,125 @@
+---
+// Footer.astro
+---
+<footer class="site-footer">
+  <div class="container">
+    <div class="footer-grid">
+      
+      <!-- Brand & About -->
+      <div class="footer-col">
+        <img src="/images/Site-Logo.png" alt="Drill Max Logo" class="footer-logo" />
+        <p class="footer-desc">
+          شركة دريل ماكس رائدة في خدمات قص وتخريم الخرسانة المسلحة بالكور والمنشار الماسي. نستخدم أفضل المعدات لضمان الدقة والأمان.
+        </p>
+      </div>
+
+      <!-- Quick Links -->
+      <div class="footer-col">
+        <h3 class="footer-heading">روابط سريعة</h3>
+        <ul class="footer-links">
+          <li><a href="/about/">من نحن</a></li>
+          <li><a href="/services/">خدماتنا</a></li>
+          <li><a href="/projects/">معرض الأعمال</a></li>
+          <li><a href="/contact/">تواصل معنا</a></li>
+        </ul>
+      </div>
+
+      <!-- Services -->
+      <div class="footer-col">
+        <h3 class="footer-heading">أهم الخدمات</h3>
+        <ul class="footer-links">
+          <li><a href="/core-drilling-%d8%b5%d9%86%d8%a7%d9%8a%d8%b9%d9%8a-%d9%83%d9%88%d8%b1/">تخريم الخرسانة</a></li>
+          <li><a href="/saw-cutting%d9%82%d8%b5-%d8%ae%d8%b1%d8%b3%d8%a7%d9%86%d8%a9/">قص الجدران بالمنشار</a></li>
+          <li><a href="/%d9%81%d9%86%d9%8a-%d8%b4%d9%81%d8%a7%d8%b7%d8%a7%d8%aa/">فتحات الغاز والشفاطات</a></li>
+        </ul>
+      </div>
+
+      <!-- Contact -->
+      <div class="footer-col">
+        <h3 class="footer-heading">تواصل معنا</h3>
+        <div class="contact-info">
+          <p>📞 <a href="tel:01070046464" dir="ltr">010 700 464 64</a></p>
+          <p>📍 الحي العاشر، مدينة نصر، القاهرة</p>
+          <p>✉️ <a href="mailto:support@drilmax.com">support@drilmax.com</a></p>
+        </div>
+      </div>
+      
+    </div>
+    
+    <div class="footer-bottom">
+      <p>&copy; 2026 جميع الحقوق محفوظة لـ Drill Max.</p>
+    </div>
+  </div>
+</footer>
+
+<style>
+.site-footer {
+  background-color: var(--color-bg-dark);
+  color: #d1d5db;
+  padding: 5rem 0 0 0;
+  margin-top: 4rem;
+}
+.footer-grid {
+  display: grid;
+  grid-template-columns: 2fr 1fr 1fr 1.5fr;
+  gap: 3rem;
+  margin-bottom: 4rem;
+}
+.footer-logo {
+  height: 60px;
+  margin-bottom: 1.5rem;
+  filter: brightness(0) invert(1);
+}
+.footer-desc {
+  line-height: 1.8;
+  color: #9ca3af;
+}
+.footer-heading {
+  color: #fff;
+  font-size: 1.25rem;
+  margin-bottom: 1.5rem;
+  position: relative;
+  padding-bottom: 0.5rem;
+}
+.footer-heading::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  width: 40px;
+  height: 3px;
+  background-color: var(--color-accent);
+}
+.footer-links li {
+  margin-bottom: 0.75rem;
+}
+.footer-links a {
+  color: #9ca3af;
+}
+.footer-links a:hover {
+  color: var(--color-accent);
+  padding-right: 5px;
+}
+.contact-info p {
+  margin-bottom: 1rem;
+  display: flex;
+  gap: 0.5rem;
+}
+.contact-info a {
+  color: #9ca3af;
+}
+.contact-info a:hover {
+  color: var(--color-accent);
+}
+.footer-bottom {
+  border-top: 1px solid rgba(255,255,255,0.1);
+  padding: 1.5rem 0;
+  text-align: center;
+  color: #6b7280;
+}
+@media (max-width: 900px) {
+  .footer-grid {
+    grid-template-columns: 1fr;
+  }
+}
+</style>
