@@ -51,7 +51,7 @@ const canonicalURL = canonical || new URL(Astro.url.pathname, Astro.site || "htt
       <div class="container top-bar-container">
         <div class="top-bar-contact">
           <span>لديك أي استفسار؟</span>
-          <span>📞 <a href="tel:+201070046464" dir="ltr">{phoneNumber}<//a></span>
+          <span>📞 <a href={`tel:+20${phoneNumber}`} dir="ltr">{phoneNumber}</a></span>
           <span>📧 <a href="mailto:support@drilmax.com">support@drilmax.com</a></span>
         </div>
         <div class="top-bar-social">
