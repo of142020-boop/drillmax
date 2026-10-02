@@ -1,0 +1,298 @@
+﻿---
+import MainLayout from '../layouts/MainLayout.astro';
+
+const PHONE    = "01070046464";
+const WHATSAPP = `https://wa.me/20${PHONE}`;
+
+const MANSOURA_AREAS = [
+  "حي شرق وحي غرب المنصورة",
+  "طلخا وجامعة المنصورة",
+  "ميت غمر وأجا",
+  "السنبلاوين ودكرنس",
+  "بلقاس وشربين",
+  "منية النصر ومحلة دمنة",
+  "نبروه وجمصة",
+  "المنصورة الجديدة",
+];
+
+const FAQ = [
+  {
+    q: "هل تناسب ماكينات الكور العمل في أحياء المنصورة المزدحمة؟",
+    a: "بكل تأكيد. نستخدم ماكينات كور ومناشير ماسية تعمل بهدوء وبدون اهتزازات، مما يجعلها مثالية للعمل في الشقق السكنية المأهولة والمناطق ذات الكثافة السكانية العالية في المنصورة وطلخا."
+  },
+  {
+    q: "هل تعملون في مدن الدقهلية الأخرى أم في المنصورة فقط؟",
+    a: "فريقنا يغطي جميع مراكز ومدن محافظة الدقهلية بالكامل؛ من ميت غمر جنوباً وحتى جمصة والمنصورة الجديدة شمالاً."
+  },
+  {
+    q: "ما هي استخدامات تخريم الخرسانة المطلوبة في المنصورة؟",
+    a: "أكثر الطلبات تأتي لعمل فتحات الغاز الطبيعي المطابقة لمواصفات شركة طاقة، وفتحات التكييف الاسبليت، وتأسيس السباكة في العمارات السكنية والأبراج الحديثة."
+  },
+  {
+    q: "أريد قص جدار لعمل شباك في شقتي، هل سيؤثر على الجيران؟",
+    a: "لا، لأننا نعتمد على المنشار الماسي الذي يقوم بقص الخرسانة مثل الزبدة بدون 'دق' أو تكسير (Vibration-Free)، بالإضافة إلى نظام التبريد المائي الذي يمنع تطاير الغبار تماماً."
+  },
+  {
+    q: "كيف يمكنني طلب معاينة لموقعي في محافظة الدقهلية؟",
+    a: "تواصل معنا هاتفياً أو عبر الواتساب على 01070046464، أرسل لنا تفاصيل العمل، وسنقوم بالرد بعرض سعر وتحديد أقرب موعد للتنفيذ."
+  }
+];
+
+const SERVICES = [
+  { icon: "🔥", title: "فتحات الغاز الطبيعي", desc: "عمل فتحات دائرية دقيقة توافق شروط الغاز في المنصورة." },
+  { icon: "❄️", title: "فتحات التكييفات", desc: "تخريم الخرسانة لتمرير مواسير التكييف دون تشويه الواجهات." },
+  { icon: "✂️", title: "قص الخرسانة بالمنشار", desc: "توسعة النوافذ والأبواب في الجدران المسلحة بدقة." },
+  { icon: "🚰", title: "صواعد السباكة والصرف", desc: "فتحات دقيقة لمواسير الصرف وتغذية المياه في المناور." },
+  { icon: "🏗️", title: "فتحات المصاعد", desc: "تهيئة مسارات المصاعد في الأبراج السكنية الجديدة." },
+  { icon: "💨", title: "مداخن وشفاطات", desc: "عمل فتحات آمنة لشفاطات المطابخ والمطاعم." },
+];
+
+const WHY_US = [
+  { icon: "⚡", title: "سرعة تلبية الطلبات", desc: "فريق فني جاهز لتلبية طلباتكم في المنصورة والدقهلية بسرعة وكفاءة." },
+  { icon: "🔧", title: "بدون تكسير أو غبار", desc: "استخدام تقنية التبريد بالماء يضمن عدم انتشار الأتربة داخل الشقق المأهولة." },
+  { icon: "📐", title: "الحفاظ على البنية", desc: "القص الأملس بالكور والمنشار يحمي الحديد التسليح والمبنى من التشققات." },
+  { icon: "🤝", title: "أسعار تنافسية", desc: "نقدم أفضل قيمة مقابل السعر في الدقهلية، مع التزام تام بالشفافية." },
+];
+
+const schema = JSON.stringify([
+  {
+    "@context": "https://schema.org",
+    "@type": "LocalBusiness",
+    "name": "دريل ماكس لقص وتخريم الخرسانة بالمنصورة",
+    "description": "أفضل شركة لخدمات تخريم الخرسانة بالكور دريل وقص الجدران بالمنشار الماسي في المنصورة والدقهلية",
+    "url": "https://drilmax.com/mansoura-concrete-cutting-core/",
+    "telephone": "+2001070046464",
+    "priceRange": "$$",
+    "address": { "@type": "PostalAddress", "addressLocality": "المنصورة", "addressRegion": "EG-DK", "addressCountry": "EG" },
+    "geo": { "@type": "GeoCoordinates", "latitude": 31.0379, "longitude": 31.3815 },
+    "openingHours": "Mo-Su 00:00-23:59",
+    "areaServed": [{ "@type": "City", "name": "المنصورة" }, { "@type": "State", "name": "الدقهلية" }]
+  },
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": FAQ.map(x => ({ "@type": "Question", "name": x.q, "acceptedAnswer": { "@type": "Answer", "text": x.a } }))
+  }
+]);
+---
+
+<MainLayout
+  title="قص وتخريم خرسانة بالمنصورة | كور ومنشار ماسي | 01070046464"
+  description="خبراء تخريم الخرسانة بالكور وقص الجدران بالمنشار الماسي في المنصورة والدقهلية. فتحات تكييف وغاز بدون تكسير وبأعلى دقة. نصلك في أي مكان في الدقهلية."
+  canonical="/mansoura-concrete-cutting-core/"
+  ogImage="/images/Untitled-30.webp"
+  schema={schema}
+>
+
+  <section class="hero">
+    <div class="hero-bg"></div>
+    <div class="container hero-container text-center">
+      <div class="hero-content" style="max-width: 850px; margin: 0 auto;">
+        <nav aria-label="breadcrumb" style="margin-bottom: 16px; font-size: 0.9rem; color: rgba(255,255,255,0.7);">
+          <a href="/" style="color: rgba(255,255,255,0.7); text-decoration: none;">الرئيسية</a>
+          <span style="margin: 0 8px;">›</span>
+          <span style="color: #fff;">خدمات المنصورة والدقهلية</span>
+        </nav>
+        <span class="hero-subtitle" style="color: rgba(255,255,255,0.85);">دريل ماكس | عروس الدلتا</span>
+        <h1 style="text-align: center; font-size: clamp(1.8rem, 4vw, 3rem); line-height: 1.3;">
+          قص وتخريم خرسانة بالمنصورة<br>بالكور دريل والمنشار الماسي
+        </h1>
+        <p style="text-align: center; font-size: 1.15rem; margin-top: 18px; color: rgba(255,255,255,0.9); line-height: 1.8;">
+          لأن المنصورة تتميز بكثافتها السكنية وأبنيتها الراقية، نقدم أحدث المعدات لقص وتخريم الخرسانة بدون تكسير مزعج أو غبار، لنحافظ على هدوء وسلامة منزلك.
+        </p>
+        <div style="display: flex; gap: 12px; margin-top: 28px; justify-content: center; flex-wrap: wrap;">
+          <a href={WHATSAPP} target="_blank" rel="noopener noreferrer" class="btn btn-primary" style="font-size: 1.05rem; padding: 14px 30px;">واتساب مباشر</a>
+          <a href={`tel:${PHONE}`} class="btn btn-outline" style="background: rgba(255,255,255,0.15); color: #fff; border-color: rgba(255,255,255,0.5); font-size: 1.05rem; padding: 14px 30px;">اتصل: {PHONE}</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <div class="container city-page-wrapper">
+    <div class="city-page-grid">
+
+      <main class="city-main-content">
+        <section class="city-card">
+          <div class="inline-badge">✅ المتخصصون الأوائل في الدلتا</div>
+          <h2 style="margin-top:15px;">خدمات قص وتخريم الخرسانة الاحترافية في المنصورة</h2>
+          
+          <img src="/images/Untitled-30.webp" alt="تنفيذ فتحات تكييف وغاز في شقة سكنية بالمنصورة" style="width:100%; border-radius:16px; margin: 15px 0 25px; object-fit:cover; max-height:400px; box-shadow:0 8px 30px rgba(0,0,0,0.1);" />
+          
+          <p>تعتبر المنصورة، عروس الدلتا، من أهم وأكبر المدن التي تشهد تطوراً عمرانياً ونشاطاً تجارياً مستمراً. وفي ظل هذا الزحام والتكدس السكاني في بعض أحيائها، تصبح الطرق القديمة في تكسير الخرسانة (باستخدام الهمر أو الأجنة) طرقاً مزعجة وخطيرة على سلامة الأبراج والمنازل.</p>
+          <p style="margin-top: 14px;">وهنا يأتي دور <strong>دريل ماكس</strong>؛ حيث نوفر حلولاً عصرية باستخدام تقنيات الكور دريل والمنشار الماسي لقص وتخريم الجدران والأسقف الخرسانية بمنتهى الهدوء، وبدون أدنى تأثير على البنية التحتية، مع الحفاظ التام على نظافة المكان.</p>
+          
+          <div class="check-grid">
+            <div class="check-item"><span class="check-icon">✓</span> فتحات كور مطابقة لمقاسات الغاز</div>
+            <div class="check-item"><span class="check-icon">✓</span> قص دقيق بالمنشار للأبواب والشبابيك</div>
+            <div class="check-item"><span class="check-icon">✓</span> عمل هادئ بدون ضوضاء التكسير</div>
+            <div class="check-item"><span class="check-icon">✓</span> نغطي كافة أنحاء الدقهلية</div>
+          </div>
+        </section>
+
+        <section class="city-card">
+          <h2>باقة أعمالنا المتوفرة في المنصورة</h2>
+          <p style="color: var(--gray); margin-bottom: 20px;">من تجهيز الشقق لتركيب الغاز إلى قص الأسقف في الفيلات والمستشفيات:</p>
+          <div class="services-mini-grid">
+            {SERVICES.map(s => (
+              <div class="service-mini-card">
+                <div class="service-icon">{s.icon}</div>
+                <h3>{s.title}</h3>
+                <p>{s.desc}</p>
+              </div>
+            ))}
+          </div>
+        </section>
+
+        <section class="city-card">
+          <h2>لماذا دريل ماكس هي خيارك الأول في الدقهلية؟</h2>
+          <p style="margin-bottom: 20px;">لأننا ندرك قيمة العقار وأهمية إنجاز العمل دون أضرار جانبية، نقدم لك:</p>
+          <div class="why-list">
+            {WHY_US.map(w => (
+              <div class="why-item">
+                <span class="why-icon">{w.icon}</span>
+                <div>
+                  <strong>{w.title}</strong>
+                  <p>{w.desc}</p>
+                </div>
+              </div>
+            ))}
+          </div>
+        </section>
+
+        <section class="city-card">
+          <h2>أسئلة وإجابات تهم عملاءنا في المنصورة</h2>
+          <div class="faq-list">
+            {FAQ.map(item => (
+              <details class="faq-item">
+                <summary class="faq-q">
+                  <span>{item.q}</span>
+                  <svg class="faq-icon" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"></polyline></svg>
+                </summary>
+                <p class="faq-a">{item.a}</p>
+              </details>
+            ))}
+          </div>
+        </section>
+      </main>
+
+      <aside class="city-sidebar">
+        <div class="sidebar-cta">
+          <h3>اطلب الخدمة في المنصورة</h3>
+          <p>تواصل معنا وسنرد عليك فوراً لتحديد موعد لمعاينة موقعك.</p>
+          <a href={WHATSAPP} target="_blank" rel="noopener noreferrer" class="cta-whatsapp">💬 واتساب سريع</a>
+          <a href={`tel:${PHONE}`} class="cta-phone">📞 {PHONE}</a>
+        </div>
+
+        <div class="sidebar-dark">
+          <h3>مناطق التغطية في الدقهلية</h3>
+          {MANSOURA_AREAS.map(area => (
+            <div class="area-item"><span class="area-dot"></span>{area}</div>
+          ))}
+        </div>
+
+        <div class="sidebar-card">
+          <h3>خدمات متشابهة</h3>
+          {[
+            { href: "/core-drilling-صنايعي-كور/", label: "تخريم الخرسانة بالكور" },
+            { href: "/saw-cuttingقص-خرسانة/", label: "قص جدران بالمنشار" },
+            { href: "/alexandria-concrete-cutting-core/", label: "قص الخرسانة في الإسكندرية" },
+            { href: "/minya-concrete-cutting-core/", label: "تخريم الخرسانة في المنيا" },
+          ].map(s => (
+            <a href={s.href} class="related-link"><span class="related-arrow">›</span>{s.label}</a>
+          ))}
+        </div>
+      </aside>
+    </div>
+
+    <section class="bottom-cta">
+      <div class="bottom-cta-glow"></div>
+      <div class="bottom-cta-content">
+        <div class="bottom-cta-text">
+          <span class="cta-badge">خدمة معتمدة في عروس الدلتا</span>
+          <h2>أنهِ أعمال القص والتخريم بأمان ونظافة</h2>
+          <p>لا تخاطر بسلامة جدرانك. اتصل بفريق دريل ماكس في المنصورة للحصول على خدمة قص وتخريم هندسية، خالية من الاهتزاز والغبار.</p>
+          <div class="cta-phone-big">{PHONE}</div>
+        </div>
+        <div class="bottom-cta-buttons">
+          <a href={WHATSAPP} target="_blank" rel="noopener noreferrer" class="btn-wa">تواصل عبر الواتساب</a>
+          <a href={`tel:${PHONE}`} class="btn-call">اتصل هاتفياً الآن</a>
+        </div>
+      </div>
+    </section>
+  </div>
+</MainLayout>
+
+<style>
+.city-page-wrapper { max-width: 1200px; margin: 0 auto; padding: 50px 20px; }
+.city-page-grid { display: grid; grid-template-columns: 1fr 320px; gap: 30px; align-items: start; }
+.city-main-content { display: flex; flex-direction: column; gap: 26px; }
+.city-card { background: white; border-radius: 20px; border: 1px solid rgba(0,0,0,0.08); padding: 36px; box-shadow: 0 4px 20px rgba(0,0,0,0.03); }
+.inline-badge { display: inline-flex; align-items: center; gap: 6px; padding: 6px 16px; border-radius: 999px; background: #e0f2fe; color: #0369a1; font-weight: 700; font-size: 0.85rem; }
+.city-card h2 { color: var(--dark); font-size: 1.8rem; margin-bottom: 14px; font-weight: 900; }
+.city-card p { color: var(--gray); line-height: 1.9; font-size: 1.05rem; }
+.check-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; margin-top: 24px; }
+.check-item { display:flex; align-items:center; gap:8px; padding: 12px 16px; background: #f8fafc; border-radius: 12px; border: 1px solid #e2e8f0; color: var(--dark); font-weight: 700; font-size: 0.95rem; }
+.check-icon { color: var(--primary); font-weight:900; font-size:1.1rem; }
+.services-mini-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; margin-top:20px; }
+.service-mini-card { padding: 22px; border-radius: 16px; border: 1px solid #e5e7eb; background: #fafafa; transition: all 0.3s ease; }
+.service-mini-card:hover { box-shadow: 0 10px 30px rgba(0,0,0,0.08); border-color:#cbd5e1; transform:translateY(-2px); }
+.service-icon { font-size: 1.8rem; margin-bottom: 12px; }
+.service-mini-card h3 { color: var(--dark); font-size: 1.05rem; font-weight: 900; margin-bottom: 8px; }
+.service-mini-card p { color: var(--gray); font-size: 0.95rem; line-height: 1.7; margin: 0; }
+.why-list { display: flex; flex-direction: column; gap: 16px; }
+.why-item { display: flex; gap: 16px; align-items: flex-start; padding: 18px; border-radius: 14px; background: #f8fafc; border: 1px solid #e2e8f0; transition: border-color 0.2s;}
+.why-item:hover { border-color: var(--primary); }
+.why-icon { font-size: 1.8rem; flex-shrink: 0; }
+.why-item strong { color: var(--dark); display: block; margin-bottom: 6px; font-size:1.05rem;}
+.why-item p { color: var(--gray); margin: 0; line-height: 1.7; font-size: 0.95rem; }
+.faq-list { display: flex; flex-direction: column; gap: 12px; margin-top:20px; }
+.faq-item { border-radius: 16px; border: 1px solid #e5e7eb; padding: 20px 24px; cursor: pointer; background: white; transition:all 0.2s; }
+.faq-item:hover { border-color: var(--primary); }
+.faq-item[open] { border-color: var(--primary); box-shadow:0 4px 20px rgba(0,0,0,0.05); }
+.faq-q { font-weight: 800; color: var(--dark); font-size: 1.05rem; list-style: none; display: flex; justify-content: space-between; align-items: center; gap: 12px; }
+.faq-q::-webkit-details-marker { display:none; }
+.faq-icon { color: var(--primary); transition: transform 0.3s; flex-shrink:0; }
+.faq-item[open] .faq-icon { transform: rotate(180deg); }
+.faq-a { color: var(--gray); line-height: 1.9; margin: 16px 0 0; padding: 18px; background: #f8fafc; border-radius: 12px; border-right: 4px solid var(--primary); font-size: 0.95rem; }
+.city-sidebar { display: flex; flex-direction: column; gap: 20px; position: sticky; top: 24px; }
+.sidebar-cta { background: linear-gradient(135deg, var(--primary), var(--dark)); border-radius: 20px; padding: 28px; color: white; position:relative; overflow:hidden;}
+.sidebar-cta::after { content:''; position:absolute; top:-30px; right:-30px; width:100px; height:100px; background:rgba(255,255,255,0.1); border-radius:50%; }
+.sidebar-cta h3 { font-size: 1.3rem; font-weight: 900; margin-bottom: 10px; position:relative; z-index:2;}
+.sidebar-cta p { color: rgba(255,255,255,0.85); font-size: 0.95rem; line-height: 1.7; margin-bottom: 20px; position:relative; z-index:2;}
+.cta-whatsapp { display: block; text-align: center; padding: 14px; border-radius: 14px; background: white; color: var(--primary); font-weight: 900; font-size: 1.05rem; text-decoration: none; margin-bottom: 12px; position:relative; z-index:2; transition:transform 0.2s;}
+.cta-whatsapp:hover { transform:scale(1.02); }
+.cta-phone { display: block; text-align: center; padding: 14px; border-radius: 14px; border: 2px solid rgba(255,255,255,0.4); color: white; font-weight: 900; font-size: 1.05rem; text-decoration: none; position:relative; z-index:2; transition:background 0.2s;}
+.cta-phone:hover { background:rgba(255,255,255,0.1); }
+.sidebar-card { background: white; border-radius: 20px; border: 1px solid rgba(0,0,0,0.08); padding: 26px; box-shadow: 0 4px 20px rgba(0,0,0,0.03); }
+.sidebar-card h3 { color: var(--dark); font-size: 1.1rem; font-weight: 900; margin-bottom: 18px; }
+.sidebar-dark { background: var(--dark); border-radius: 20px; padding: 26px; box-shadow: 0 4px 20px rgba(0,0,0,0.1); }
+.sidebar-dark h3 { color: white; font-size: 1.1rem; font-weight: 900; margin-bottom: 18px; display:flex; align-items:center; gap:8px;}
+.area-item { display: flex; align-items: center; gap: 10px; color: rgba(255,255,255,0.85); font-size: 0.95rem; margin-bottom: 12px; }
+.area-dot { width: 8px; height: 8px; border-radius: 50%; background: var(--primary); flex-shrink: 0; }
+.related-link { display: flex; align-items: center; gap: 10px; color: var(--gray); text-decoration: none; padding: 10px 0; border-bottom: 1px solid #f1f5f9; font-size: 0.95rem; font-weight: 700; transition: color 0.2s; }
+.related-link:hover { color: var(--primary); }
+.related-link:last-child { border-bottom: none; padding-bottom: 0; }
+.related-arrow { color: var(--primary); font-size: 1.2rem; }
+.bottom-cta { margin-top: 50px; border-radius: 24px; background: var(--dark); color: white; overflow: hidden; position: relative; padding: 60px 50px; }
+.bottom-cta-glow { position: absolute; inset: 0; background: radial-gradient(circle at 70% 50%, rgba(14,165,233,0.25), transparent 60%); }
+.bottom-cta-content { position: relative; z-index: 1; display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 40px; }
+.bottom-cta-text { max-width: 600px; }
+.cta-badge { display: inline-flex; align-items:center; gap:6px; padding: 8px 20px; border-radius: 999px; background: rgba(14,165,233,0.15); color: #7dd3fc; font-weight: 800; font-size: 0.9rem; margin-bottom: 20px; border: 1px solid rgba(14,165,233,0.3); }
+.bottom-cta-text h2 { font-size: clamp(1.6rem, 3vw, 2.4rem); font-weight: 900; margin-bottom: 16px; line-height: 1.3; }
+.bottom-cta-text p { color: rgba(255,255,255,0.8); line-height: 1.8; font-size:1.1rem;}
+.cta-phone-big { margin-top: 16px; font-size: 1.8rem; font-weight: 900; color: var(--primary); }
+.bottom-cta-buttons { display: flex; flex-direction: column; gap: 14px; min-width: 240px; }
+.btn-wa { display: flex; align-items: center; justify-content: center; background: #16a34a; color: white; padding: 18px 30px; border-radius: 16px; font-weight: 900; font-size: 1.15rem; text-decoration: none; transition: background 0.2s; }
+.btn-wa:hover { background: #15803d; }
+.btn-call { display: flex; align-items: center; justify-content: center; background: white; color: var(--dark); padding: 18px 30px; border-radius: 16px; font-weight: 900; font-size: 1.15rem; text-decoration: none; transition: background 0.2s; }
+.btn-call:hover { background: #f8fafc; }
+@media (max-width: 1024px) {
+  .city-page-grid { grid-template-columns: 1fr; }
+  .city-sidebar { position: static; }
+  .bottom-cta { padding: 40px 30px; }
+}
+@media (max-width: 600px) {
+  .check-grid, .services-mini-grid { grid-template-columns: 1fr; }
+  .city-card { padding: 24px; }
+}
+</style>
