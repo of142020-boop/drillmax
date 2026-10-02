@@ -6,6 +6,7 @@ interface Props {
   ogImage?: string;
   schema?: string;
   phoneNumber?: string;
+  preloadImage?: string;
 }
 
 const { 
@@ -14,7 +15,8 @@ const {
   canonical,
   ogImage = "https://drilmax.com/wp-content/uploads/2025/09/logo-1.webp",
   schema,
-  phoneNumber = "01070046464"
+  phoneNumber = "01070046464",
+  preloadImage
 } = Astro.props;
 
 const canonicalURL = canonical || new URL(Astro.url.pathname, Astro.site || "https://drilmax.com").toString();
@@ -41,6 +43,9 @@ const canonicalURL = canonical || new URL(Astro.url.pathname, Astro.site || "htt
     <!-- JSON-LD Schema -->
     {schema && <script type="application/ld+json" set:html={schema} />}
     
+    <!-- Preload Hero Image for LCP -->
+    {preloadImage && <link rel="preload" href={preloadImage} as="image" />}
+
     <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -62,7 +67,7 @@ const canonicalURL = canonical || new URL(Astro.url.pathname, Astro.site || "htt
     <header class="main-header">
       <div class="container header-container">
         <a href="/" class="logo">
-          <img src="/images/logodrillmax.png" alt="Drill Max Logo" onerror="this.src='data:image/svg+xml;utf8,<svg xmlns=\\'http://www.w3.org/2000/svg\\' width=\\'120\\' height=\\'40\\'><text x=\\'0\\' y=\\'30\\' font-size=\\'30\\' fill=\\'%23ffffff\\' font-weight=\\'bold\\' font-family=\\'Arial\\'>Drill Max</text></svg>'"/>
+          <img src="/images/logodrillmax.png" alt="Drill Max Logo" width="120" height="45" loading="eager" fetchpriority="high" onerror="this.src='data:image/svg+xml;utf8,<svg xmlns=\'http://www.w3.org/2000/svg\' width=\'120\' height=\'40\'><text x=\'0\' y=\'30\' font-size=\'30\' fill=\'%23ffffff\' font-weight=\'bold\' font-family=\'Arial\'>Drill Max</text></svg>'"/>
         </a>
         <nav class="main-nav">
           <ul>
@@ -109,7 +114,7 @@ const canonicalURL = canonical || new URL(Astro.url.pathname, Astro.site || "htt
     <footer class="main-footer">
       <div class="container footer-content">
         <div class="footer-brand">
-          <img src="/images/logodrillmax.png" alt="Drill Max Logo" style="height: 60px; margin-bottom: 20px;" onerror="this.style.display='none'" />
+          <img src="/images/logodrillmax.png" alt="Drill Max Logo" width="160" height="60" loading="lazy" style="height: 60px; width: auto; margin-bottom: 20px;" onerror="this.style.display='none'" />
           <p>شركة متخصصة في خدمات قص وتخريم الخرسانة المسلحة بأحدث التقنيات الهندسية لضمان الدقة والأمان.</p>
           <div style="margin-top: 20px;">
             <p style="margin-bottom:10px;">📞 <a href={`tel:+20${phoneNumber}`} dir="ltr" style="color:var(--primary); font-weight:bold;">{phoneNumber}</a></p>
