@@ -112,7 +112,7 @@ const canonicalURL = canonical || new URL(Astro.url.pathname, Astro.site || "htt
           <img src="/images/logodrillmax.png" alt="Drill Max Logo" style="height: 60px; margin-bottom: 20px;" onerror="this.style.display='none'" />
           <p>شركة متخصصة في خدمات قص وتخريم الخرسانة المسلحة بأحدث التقنيات الهندسية لضمان الدقة والأمان.</p>
           <div style="margin-top: 20px;">
-            <p style="margin-bottom:10px;">📞 <a href="tel:+201070046464" dir="ltr" style="color:var(--primary); font-weight:bold;">{phoneNumber}<//a></p>
+            <p style="margin-bottom:10px;">📞 <a href={`tel:+20${phoneNumber}`} dir="ltr" style="color:var(--primary); font-weight:bold;">{phoneNumber}</a></p>
             <p>📧 <a href="mailto:support@drilmax.com" style="color:var(--primary);">support@drilmax.com</a></p>
           </div>
         </div>
