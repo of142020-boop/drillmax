@@ -1,0 +1,290 @@
+﻿---
+import MainLayout from '../layouts/MainLayout.astro';
+
+const PHONE    = "01070046464";
+const WHATSAPP = `https://wa.me/20${PHONE}`;
+
+const HURGHADA_AREAS = [
+  "الغردقة وكورنيش البحر",
+  "الحي السياحي والمارينا",
+  "سفاجا وأبو غصون",
+  "القصير والشلاتين",
+  "رأس غارب ومرسى علم",
+  "مدينة الغردقة الجديدة",
+  "المنطقة الصناعية الغردقة",
+  "الهضبة والمنتجعات",
+];
+
+const FAQ = [
+  {
+    q: "هل تعملون في الغردقة والمنتجعات السياحية على البحر الأحمر؟",
+    a: "نعم، نقدم خدماتنا في جميع أنحاء الغردقة والمحافظة بما في ذلك المنتجعات الفندقية والمجمعات السياحية والشاليهات. فريقنا معتاد على متطلبات المباني السياحية والفندقية."
+  },
+  {
+    q: "هل تؤثر البيئة الساحلية والملحية على عمل الماكينات في الغردقة؟",
+    a: "ماكيناتنا مجهزة للعمل في أي بيئة. نستخدم معدات مقاومة للرطوبة والملوحة، وتقنية التبريد المائي تجعل العمل فعالاً حتى في الأجواء الحارة على البحر الأحمر."
+  },
+  {
+    q: "ما هي الخدمات الأكثر طلباً في مشاريع الغردقة السياحية؟",
+    a: "في الفنادق والمنتجعات: فتحات التكييف المركزي والأسبليت، فتحات التهوية والصرف الصحي، وفتح أبواب بين الوحدات. وفي الشاليهات والشقق: فتحات الغاز والتكييف والسباكة."
+  },
+  {
+    q: "هل تستطيعون العمل بسرعة لأن مشروعي فندقي ولا يحتمل التأخير؟",
+    a: "نفهم أهمية السرعة في المشاريع الفندقية والسياحية. نأتي بفريق كافٍ ومعدات متعددة لإنهاء الأعمال في أقل وقت ممكن مع الحفاظ على الجودة والنظافة التامة داخل الفندق."
+  },
+  {
+    q: "كيف أتواصل معكم لتنفيذ مشروع في الغردقة؟",
+    a: "تواصل معنا عبر واتساب أو الهاتف على 01070046464. أرسل لنا مخطط الأعمال المطلوبة وسنقدم لك عرض سعر شاملاً مع موعد محدد للبدء."
+  }
+];
+
+const SERVICES = [
+  { icon: "🏨", title: "فتحات التكييف الفندقي", desc: "تخريم فتحات السبليت والتكييف المركزي في الفنادق والمنتجعات." },
+  { icon: "🔥", title: "مسارات الغاز والمطابخ", desc: "فتحات الغاز للمطابخ الكبيرة في المطاعم والفنادق." },
+  { icon: "✂️", title: "قص وفتح الأبواب", desc: "توسعة الممرات وفتح الأبواب بين وحدات الفندق بدقة." },
+  { icon: "🚰", title: "شبكات الصرف والسباكة", desc: "فتحات دقيقة لمسارات الصرف والمياه في المنشآت الكبيرة." },
+  { icon: "💨", title: "فتحات التهوية البحرية", desc: "تهوية خاصة تتحمل الرطوبة والملوحة الساحلية." },
+  { icon: "🏗️", title: "مشاريع المنشآت الكبرى", desc: "قص وتخريم لمشاريع البنية التحتية على البحر الأحمر." },
+];
+
+const WHY_US = [
+  { icon: "⚡", title: "خبرة في المشاريع السياحية", desc: "عملنا في مشاريع فندقية كبرى ونعرف متطلباتها من حيث السرعة والنظافة وعدم الإزعاج." },
+  { icon: "🔧", title: "معدات تتحمل البيئة الساحلية", desc: "أدواتنا مقاومة للرطوبة الملحية على البحر الأحمر، مما يضمن أداءً ثابتاً طوال المشروع." },
+  { icon: "📐", title: "دقة مطلوبة في الأماكن الفارهة", desc: "نُنهي الفتحات بحواف نظيفة تماماً تناسب التشطيبات الراقية في المنتجعات والفنادق." },
+  { icon: "🤝", title: "تعاملنا مع كل المحافظات", desc: "تغطيتنا تمتد من الغردقة إلى القصير ومرسى علم جنوباً ورأس غارب شمالاً." },
+];
+
+const schema = JSON.stringify([
+  {
+    "@context": "https://schema.org",
+    "@type": "LocalBusiness",
+    "name": "دريل ماكس لقص وتخريم الخرسانة بالغردقة",
+    "description": "متخصصون في تخريم الخرسانة بالكور دريل وقص الجدران بالمنشار الماسي في الغردقة ومحافظة البحر الأحمر",
+    "url": "https://drilmax.com/hurghada-concrete-cutting-core/",
+    "telephone": "+2001070046464",
+    "priceRange": "$$",
+    "address": { "@type": "PostalAddress", "addressLocality": "الغردقة", "addressRegion": "EG-BA", "addressCountry": "EG" },
+    "geo": { "@type": "GeoCoordinates", "latitude": 27.2578, "longitude": 33.8116 },
+    "openingHours": "Mo-Su 00:00-23:59",
+    "areaServed": [{ "@type": "City", "name": "الغردقة" }, { "@type": "State", "name": "البحر الأحمر" }]
+  },
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": FAQ.map(x => ({ "@type": "Question", "name": x.q, "acceptedAnswer": { "@type": "Answer", "text": x.a } }))
+  }
+]);
+---
+
+<MainLayout
+  title="قص وتخريم خرسانة بالغردقة | كور ومنشار ماسي | 01070046464"
+  description="خبراء تخريم الخرسانة وقص الجدران في الغردقة والبحر الأحمر. فتحات تكييف وغاز للفنادق والمنتجعات والشاليهات بدون تكسير. اتصل 01070046464."
+  canonical="/hurghada-concrete-cutting-core/"
+  ogImage="/images/core-1.webp"
+  schema={schema}
+>
+
+  <section class="hero">
+    <div class="hero-bg"></div>
+    <div class="container hero-container text-center">
+      <div class="hero-content" style="max-width: 850px; margin: 0 auto;">
+        <nav aria-label="breadcrumb" style="margin-bottom: 16px; font-size: 0.9rem; color: rgba(255,255,255,0.7);">
+          <a href="/" style="color: rgba(255,255,255,0.7); text-decoration: none;">الرئيسية</a>
+          <span style="margin: 0 8px;">›</span>
+          <span style="color: #fff;">خدمات الغردقة والبحر الأحمر</span>
+        </nav>
+        <span class="hero-subtitle" style="color: rgba(255,255,255,0.85);">دريل ماكس | لؤلؤة البحر الأحمر</span>
+        <h1 style="text-align: center; font-size: clamp(1.8rem, 4vw, 3rem); line-height: 1.3;">
+          قص وتخريم خرسانة بالغردقة<br>للفنادق والمنتجعات والمباني
+        </h1>
+        <p style="text-align: center; font-size: 1.15rem; margin-top: 18px; color: rgba(255,255,255,0.9); line-height: 1.8;">
+          المشاريع السياحية في الغردقة تتطلب دقة واحترافية لا مثيل لها. نقدم خدمات قص وتخريم الخرسانة بمعدات متطورة مناسبة للبيئة البحرية.
+        </p>
+        <div style="display: flex; gap: 12px; margin-top: 28px; justify-content: center; flex-wrap: wrap;">
+          <a href={WHATSAPP} target="_blank" rel="noopener noreferrer" class="btn btn-primary" style="font-size: 1.05rem; padding: 14px 30px;">واتساب مباشر</a>
+          <a href={`tel:${PHONE}`} class="btn btn-outline" style="background: rgba(255,255,255,0.15); color: #fff; border-color: rgba(255,255,255,0.5); font-size: 1.05rem; padding: 14px 30px;">اتصل: {PHONE}</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <div class="container city-page-wrapper">
+    <div class="city-page-grid">
+      <main class="city-main-content">
+        <section class="city-card">
+          <div class="inline-badge">✅ شريكك الموثوق في مشاريع البحر الأحمر</div>
+          <h2 style="margin-top:15px;">خدمات قص وتخريم الخرسانة الاحترافية في الغردقة</h2>
+          <img src="/images/core-1.webp" alt="تخريم خرسانة في منتجع سياحي على البحر الأحمر بالغردقة" style="width:100%; border-radius:16px; margin: 15px 0 25px; object-fit:cover; max-height:400px; box-shadow:0 8px 30px rgba(0,0,0,0.1);" />
+          <p>الغردقة، لؤلؤة البحر الأحمر، تُعدّ من أكثر محافظات مصر جذباً للاستثمار السياحي والعمراني. الفنادق والمنتجعات والمجمعات السكنية تحتاج بانتظام إلى أعمال قص وتخريم للخرسانة في إطار التجديد والتوسعة وتركيب الأجهزة والتكييفات.</p>
+          <p style="margin-top: 14px;">فريق <strong>دريل ماكس</strong> متخصص في خدمة هذا القطاع بالغردقة. نمتلك خبرة واسعة في العمل داخل الفنادق والمنشآت السياحية مع الحفاظ على بيئة العمل نظيفة وهادئة تماماً حتى لو كان الفندق مشغولاً بالضيوف.</p>
+          <div class="check-grid">
+            <div class="check-item"><span class="check-icon">✓</span> خبرة في المباني الفندقية</div>
+            <div class="check-item"><span class="check-icon">✓</span> عمل نظيف وصامت تماماً</div>
+            <div class="check-item"><span class="check-icon">✓</span> معدات تتحمل الرطوبة البحرية</div>
+            <div class="check-item"><span class="check-icon">✓</span> تغطية محافظة البحر الأحمر</div>
+          </div>
+        </section>
+
+        <section class="city-card">
+          <h2>خدماتنا المتاحة في الغردقة والبحر الأحمر</h2>
+          <p style="color: var(--gray); margin-bottom: 20px;">من الشاليه الصغير إلى الفندق ذي الخمس نجوم، نوفر كل ما تحتاجه:</p>
+          <div class="services-mini-grid">
+            {SERVICES.map(s => (
+              <div class="service-mini-card">
+                <div class="service-icon">{s.icon}</div>
+                <h3>{s.title}</h3>
+                <p>{s.desc}</p>
+              </div>
+            ))}
+          </div>
+        </section>
+
+        <section class="city-card">
+          <h2>لماذا تختار دريل ماكس لمشاريع الغردقة؟</h2>
+          <p style="margin-bottom: 20px;">لأن المشاريع السياحية لا تقبل التسوية، نقدم مستوى خدمة يليق بالمنشآت الراقية:</p>
+          <div class="why-list">
+            {WHY_US.map(w => (
+              <div class="why-item">
+                <span class="why-icon">{w.icon}</span>
+                <div><strong>{w.title}</strong><p>{w.desc}</p></div>
+              </div>
+            ))}
+          </div>
+        </section>
+
+        <section class="city-card">
+          <h2>أسئلة من عملائنا في الغردقة والبحر الأحمر</h2>
+          <div class="faq-list">
+            {FAQ.map(item => (
+              <details class="faq-item">
+                <summary class="faq-q">
+                  <span>{item.q}</span>
+                  <svg class="faq-icon" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"></polyline></svg>
+                </summary>
+                <p class="faq-a">{item.a}</p>
+              </details>
+            ))}
+          </div>
+        </section>
+      </main>
+
+      <aside class="city-sidebar">
+        <div class="sidebar-cta">
+          <h3>اطلب خدمتك في الغردقة</h3>
+          <p>نقدم استشارة مجانية لمشاريع الفنادق والمنتجعات.</p>
+          <a href={WHATSAPP} target="_blank" rel="noopener noreferrer" class="cta-whatsapp">💬 واتساب مباشر</a>
+          <a href={`tel:${PHONE}`} class="cta-phone">📞 {PHONE}</a>
+        </div>
+        <div class="sidebar-dark">
+          <h3>مناطق التغطية على البحر الأحمر</h3>
+          {HURGHADA_AREAS.map(area => (
+            <div class="area-item"><span class="area-dot"></span>{area}</div>
+          ))}
+        </div>
+        <div class="sidebar-card">
+          <h3>خدمات في مناطق أخرى</h3>
+          {[
+            { href: "/alexandria-concrete-cutting-core/", label: "الإسكندرية" },
+            { href: "/mansoura-concrete-cutting-core/", label: "المنصورة" },
+            { href: "/minya-concrete-cutting-core/", label: "المنيا" },
+            { href: "/assiut-concrete-cutting-core/", label: "أسيوط" },
+            { href: "/services/", label: "جميع الخدمات" },
+          ].map(s => (
+            <a href={s.href} class="related-link"><span class="related-arrow">›</span>{s.label}</a>
+          ))}
+        </div>
+      </aside>
+    </div>
+
+    <section class="bottom-cta">
+      <div class="bottom-cta-glow"></div>
+      <div class="bottom-cta-content">
+        <div class="bottom-cta-text">
+          <span class="cta-badge">خدمة احترافية لمنتجعات البحر الأحمر</span>
+          <h2>نجعل مشروعك في الغردقة يكتمل باحترافية</h2>
+          <p>سواء كان مشروعك فندقاً، مجمعاً سياحياً، أو شقة على البحر، دريل ماكس يوفر لك أدق وأنظف عمليات قص وتخريم خرسانة في الغردقة.</p>
+          <div class="cta-phone-big">{PHONE}</div>
+        </div>
+        <div class="bottom-cta-buttons">
+          <a href={WHATSAPP} target="_blank" rel="noopener noreferrer" class="btn-wa">تواصل عبر الواتساب</a>
+          <a href={`tel:${PHONE}`} class="btn-call">اتصل هاتفياً الآن</a>
+        </div>
+      </div>
+    </section>
+  </div>
+</MainLayout>
+
+<style>
+.city-page-wrapper { max-width: 1200px; margin: 0 auto; padding: 50px 20px; }
+.city-page-grid { display: grid; grid-template-columns: 1fr 320px; gap: 30px; align-items: start; }
+.city-main-content { display: flex; flex-direction: column; gap: 26px; }
+.city-card { background: white; border-radius: 20px; border: 1px solid rgba(0,0,0,0.08); padding: 36px; box-shadow: 0 4px 20px rgba(0,0,0,0.03); }
+.inline-badge { display: inline-flex; align-items: center; gap: 6px; padding: 6px 16px; border-radius: 999px; background: #e0f2fe; color: #0369a1; font-weight: 700; font-size: 0.85rem; }
+.city-card h2 { color: var(--dark); font-size: 1.8rem; margin-bottom: 14px; font-weight: 900; }
+.city-card p { color: var(--gray); line-height: 1.9; font-size: 1.05rem; }
+.check-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; margin-top: 24px; }
+.check-item { display:flex; align-items:center; gap:8px; padding: 12px 16px; background: #f8fafc; border-radius: 12px; border: 1px solid #e2e8f0; color: var(--dark); font-weight: 700; font-size: 0.95rem; }
+.check-icon { color: var(--primary); font-weight:900; font-size:1.1rem; }
+.services-mini-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; margin-top:20px; }
+.service-mini-card { padding: 22px; border-radius: 16px; border: 1px solid #e5e7eb; background: #fafafa; transition: all 0.3s ease; }
+.service-mini-card:hover { box-shadow: 0 10px 30px rgba(0,0,0,0.08); border-color:#cbd5e1; transform:translateY(-2px); }
+.service-icon { font-size: 1.8rem; margin-bottom: 12px; }
+.service-mini-card h3 { color: var(--dark); font-size: 1.05rem; font-weight: 900; margin-bottom: 8px; }
+.service-mini-card p { color: var(--gray); font-size: 0.95rem; line-height: 1.7; margin: 0; }
+.why-list { display: flex; flex-direction: column; gap: 16px; }
+.why-item { display: flex; gap: 16px; align-items: flex-start; padding: 18px; border-radius: 14px; background: #f8fafc; border: 1px solid #e2e8f0; transition: border-color 0.2s;}
+.why-item:hover { border-color: var(--primary); }
+.why-icon { font-size: 1.8rem; flex-shrink: 0; }
+.why-item strong { color: var(--dark); display: block; margin-bottom: 6px; font-size:1.05rem;}
+.why-item p { color: var(--gray); margin: 0; line-height: 1.7; font-size: 0.95rem; }
+.faq-list { display: flex; flex-direction: column; gap: 12px; margin-top:20px; }
+.faq-item { border-radius: 16px; border: 1px solid #e5e7eb; padding: 20px 24px; cursor: pointer; background: white; transition:all 0.2s; }
+.faq-item:hover { border-color: var(--primary); }
+.faq-item[open] { border-color: var(--primary); box-shadow:0 4px 20px rgba(0,0,0,0.05); }
+.faq-q { font-weight: 800; color: var(--dark); font-size: 1.05rem; list-style: none; display: flex; justify-content: space-between; align-items: center; gap: 12px; }
+.faq-q::-webkit-details-marker { display:none; }
+.faq-icon { color: var(--primary); transition: transform 0.3s; flex-shrink:0; }
+.faq-item[open] .faq-icon { transform: rotate(180deg); }
+.faq-a { color: var(--gray); line-height: 1.9; margin: 16px 0 0; padding: 18px; background: #f8fafc; border-radius: 12px; border-right: 4px solid var(--primary); font-size: 0.95rem; }
+.city-sidebar { display: flex; flex-direction: column; gap: 20px; position: sticky; top: 24px; }
+.sidebar-cta { background: linear-gradient(135deg, var(--primary), var(--dark)); border-radius: 20px; padding: 28px; color: white; position:relative; overflow:hidden;}
+.sidebar-cta::after { content:''; position:absolute; top:-30px; right:-30px; width:100px; height:100px; background:rgba(255,255,255,0.1); border-radius:50%; }
+.sidebar-cta h3 { font-size: 1.3rem; font-weight: 900; margin-bottom: 10px; position:relative; z-index:2;}
+.sidebar-cta p { color: rgba(255,255,255,0.85); font-size: 0.95rem; line-height: 1.7; margin-bottom: 20px; position:relative; z-index:2;}
+.cta-whatsapp { display: block; text-align: center; padding: 14px; border-radius: 14px; background: white; color: var(--primary); font-weight: 900; font-size: 1.05rem; text-decoration: none; margin-bottom: 12px; position:relative; z-index:2; transition:transform 0.2s;}
+.cta-whatsapp:hover { transform:scale(1.02); }
+.cta-phone { display: block; text-align: center; padding: 14px; border-radius: 14px; border: 2px solid rgba(255,255,255,0.4); color: white; font-weight: 900; font-size: 1.05rem; text-decoration: none; position:relative; z-index:2; transition:background 0.2s;}
+.cta-phone:hover { background:rgba(255,255,255,0.1); }
+.sidebar-card { background: white; border-radius: 20px; border: 1px solid rgba(0,0,0,0.08); padding: 26px; box-shadow: 0 4px 20px rgba(0,0,0,0.03); }
+.sidebar-card h3 { color: var(--dark); font-size: 1.1rem; font-weight: 900; margin-bottom: 18px; }
+.sidebar-dark { background: var(--dark); border-radius: 20px; padding: 26px; box-shadow: 0 4px 20px rgba(0,0,0,0.1); }
+.sidebar-dark h3 { color: white; font-size: 1.1rem; font-weight: 900; margin-bottom: 18px;}
+.area-item { display: flex; align-items: center; gap: 10px; color: rgba(255,255,255,0.85); font-size: 0.95rem; margin-bottom: 12px; }
+.area-dot { width: 8px; height: 8px; border-radius: 50%; background: var(--primary); flex-shrink: 0; }
+.related-link { display: flex; align-items: center; gap: 10px; color: var(--gray); text-decoration: none; padding: 10px 0; border-bottom: 1px solid #f1f5f9; font-size: 0.95rem; font-weight: 700; transition: color 0.2s; }
+.related-link:hover { color: var(--primary); }
+.related-link:last-child { border-bottom: none; padding-bottom: 0; }
+.related-arrow { color: var(--primary); font-size: 1.2rem; }
+.bottom-cta { margin-top: 50px; border-radius: 24px; background: var(--dark); color: white; overflow: hidden; position: relative; padding: 60px 50px; }
+.bottom-cta-glow { position: absolute; inset: 0; background: radial-gradient(circle at 70% 50%, rgba(14,165,233,0.25), transparent 60%); }
+.bottom-cta-content { position: relative; z-index: 1; display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 40px; }
+.bottom-cta-text { max-width: 600px; }
+.cta-badge { display: inline-flex; align-items:center; gap:6px; padding: 8px 20px; border-radius: 999px; background: rgba(14,165,233,0.15); color: #7dd3fc; font-weight: 800; font-size: 0.9rem; margin-bottom: 20px; border: 1px solid rgba(14,165,233,0.3); }
+.bottom-cta-text h2 { font-size: clamp(1.6rem, 3vw, 2.4rem); font-weight: 900; margin-bottom: 16px; line-height: 1.3; }
+.bottom-cta-text p { color: rgba(255,255,255,0.8); line-height: 1.8; font-size:1.1rem;}
+.cta-phone-big { margin-top: 16px; font-size: 1.8rem; font-weight: 900; color: var(--primary); }
+.bottom-cta-buttons { display: flex; flex-direction: column; gap: 14px; min-width: 240px; }
+.btn-wa { display: flex; align-items: center; justify-content: center; background: #16a34a; color: white; padding: 18px 30px; border-radius: 16px; font-weight: 900; font-size: 1.15rem; text-decoration: none; transition: background 0.2s; }
+.btn-wa:hover { background: #15803d; }
+.btn-call { display: flex; align-items: center; justify-content: center; background: white; color: var(--dark); padding: 18px 30px; border-radius: 16px; font-weight: 900; font-size: 1.15rem; text-decoration: none; transition: background 0.2s; }
+.btn-call:hover { background: #f8fafc; }
+@media (max-width: 1024px) {
+  .city-page-grid { grid-template-columns: 1fr; }
+  .city-sidebar { position: static; }
+  .bottom-cta { padding: 40px 30px; }
+}
+@media (max-width: 600px) {
+  .check-grid, .services-mini-grid { grid-template-columns: 1fr; }
+  .city-card { padding: 24px; }
+}
+</style>
