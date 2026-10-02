@@ -1,157 +1,249 @@
-﻿---
+---
 import MainLayout from '../layouts/MainLayout.astro';
 
 const PHONE    = "01070046464";
 const WHATSAPP = `https://wa.me/20${PHONE}`;
 
 const ALEX_AREAS = [
-  "سموحة والعصافرة",
-  "محطة الرمل والإبراهيمية",
-  "المنتزه وسيدي بشر",
-  "لوران وجليم ورشدي",
-  "كليوباترا والسيوف",
-  "أبو قير والمعمورة",
-  "برج العرب والعامرية",
-  "محرم بك وكرموز",
-  "باب شرق والمنشية",
-  "الدخيلة والورديان",
+  { name: "سموحة والعصافرة", popular: true },
+  { name: "محطة الرمل والإبراهيمية", popular: true },
+  { name: "المنتزه وسيدي بشر", popular: true },
+  { name: "لوران وجليم ورشدي", popular: true },
+  { name: "كليوباترا والسيوف", popular: false },
+  { name: "أبو قير والمعمورة", popular: false },
+  { name: "برج العرب والعامرية", popular: false },
+  { name: "محرم بك وكرموز", popular: false },
+  { name: "باب شرق والمنشية", popular: false },
+  { name: "الدخيلة والورديان", popular: false },
+  { name: "بكوس والجمرك", popular: false },
+  { name: "العجمي والهانوفيل", popular: false },
+];
+
+const STATS = [
+  { num: "+500", label: "مشروع منجز في الإسكندرية" },
+  { num: "24h", label: "استجابة أقصى وقت للوصول" },
+  { num: "0%", label: "نسبة الشكاوى من عملائنا" },
+  { num: "10+", label: "سنوات خبرة في التخريم" },
+];
+
+const PROCESS = [
+  { step: "01", title: "الاتصال والاستشارة", desc: "تواصل معنا هاتفياً أو واتساب، أخبرنا بنوع العمل وموقعك في الإسكندرية وسنرد فوراً." },
+  { step: "02", title: "المعاينة المجانية", desc: "يصل فريقنا الفني لمعاينة الجدار أو السقف، يستخدم الكاشف لتحديد الحديد ويضع علامات القص." },
+  { step: "03", title: "عرض السعر الشفاف", desc: "نحدد التكلفة بناءً على سماكة الخرسانة وعدد الفتحات. بدون أي أرقام مفاجئة أو رسوم خفية." },
+  { step: "04", title: "التنفيذ بالمعدات", desc: "نبدأ القص والتخريم بالكور دريل أو المنشار الماسي مع ضخ الماء لإزالة الغبار فوراً." },
+  { step: "05", title: "التسليم والنظافة", desc: "ننهي العمل ونزيل أي مخلفات. الفتحة جاهزة لتركيب المواسير أو الأبواب مباشرة." },
 ];
 
 const FAQ = [
   {
-    q: "هل تعملون في تخريم الخرسانة بالمباني الساحلية في الإسكندرية؟",
-    a: "نعم، مباني الإسكندرية لها طبيعة خاصة بسبب الرطوبة والأملاح. نستخدم معدات تبريد مائي تمنع تفتت الخرسانة وتحمي حديد التسليح المحيط من التعرض المباشر للرطوبة بعد القص."
+    q: "هل تعملون في تخريم الخرسانة بمباني الأبراج السكنية الساحلية في الإسكندرية؟",
+    a: "نعم، ومن أكثر مجالات عملنا في الإسكندرية. الأبراج الساحلية في سموحة ولوران والمنتزه تتميز بخرسانة ذات إجهاد عالٍ وحديد تسليح كثيف. نستخدم ماكينات كور دريل ألمانية القوة مع نظام التبريد المائي لضمان فتحات دقيقة لا تؤثر على سلامة الهيكل."
   },
   {
-    q: "ما الفرق بين تخريم الكور وقص الخرسانة بالمنشار الماسي؟",
-    a: "الكور ينتج فتحات دائرية دقيقة لمواسير التكييف والسباكة (خاصة للصواعد في الأبراج السكنية). المنشار ينتج فتحات مستطيلة لفتح الأبواب والشبابيك في الجدران الخرسانية."
+    q: "ما أقطار الكور المتاحة وأيها مناسب لفتحة التكييف؟",
+    a: "نوفر أقطاراً من 1 إلى 14 بوصة. لتكييف السبليت المنزلي يُستخدم عادةً 3-4 بوصة. للتكييف المركزي والدكتات يكون 8-12 بوصة. الفريق يحدد القطر الدقيق عند المعاينة وفقاً لأبعاد مواسير التكييف الخاص بك."
   },
   {
-    q: "ما هي أقطار فتحات الكور المتوفرة لديكم في أحياء الإسكندرية؟",
-    a: "نوفر أقطاراً تبدأ من 1 بوصة لكابلات الكهرباء وتمتد حتى 14 بوصة لدكتات التكييف المركزي ومواسير الصرف، وهي مطلوبة بكثرة في مشاريع سموحة والمنتزه."
+    q: "هل يتسبب القص والتخريم في إزعاج الجيران في الأبراج السكنية؟",
+    a: "هذا السؤال يطرحه معظم عملاء الإسكندرية. الإجابة: لا. الكور دريل والمنشار الماسي يعملان بضوضاء أقل بكثير من الهمر أو الأزميل. وتقنية التبريد المائي تمتص الاهتزازات وتمنع تطاير أي غبار داخل الشقة أو الممر."
   },
   {
-    q: "هل يتم تنفيذ فتحات الغاز الطبيعي وفق شروط شركة غاز الإسكندرية؟",
-    a: "بالتأكيد، كل فتحات الغاز التي ننفذها تكون دائرية منتظمة وبالمقاسات المعتمدة من شركة الغاز لتمرير المواسير بأمان تام."
+    q: "هل تعملون في فتح أبواب جديدة في الجدران الخرسانية بالإسكندرية؟",
+    a: "بالتأكيد، هذه من أكثر الخدمات طلباً. نقوم بمعاينة الجدار بالكاشف الإلكتروني لتحديد أماكن حديد التسليح، ثم نقص بالمنشار الماسي خطاً مستقيماً دقيقاً. الفتحة تخرج جاهزة تماماً لتركيب الباب دون أي تدخل إضافي."
   },
   {
-    q: "كيف أتواصل معكم لطلب خدمة في العصافرة أو سيدي بشر؟",
-    a: "يمكنك الاتصال المباشر بنا على 01070046464 أو إرسال رسالة واتساب وسنصلك في أسرع وقت لعمل المعاينة."
-  }
+    q: "هل تنفذون فتحات الغاز الطبيعي وفق اشتراطات شركة غاز الإسكندرية؟",
+    a: "نعم، ننفذ كل فتحات الغاز بالأقطار المعتمدة (عادةً 1.5 إلى 3 بوصة حسب المتطلب). الفتحة الدائرية المنتظمة تسهل على فني الغاز تمرير الماسورة وتثبيتها وتركيب الكوع بأمان تام ووفقاً لمعايير شركة طاقة."
+  },
+  {
+    q: "ما الفرق بين تخريم الكور وقص الخرسانة بالمنشار؟",
+    a: "الكور دريل = فتحات دائرية: للتكييف، الغاز، السباكة، الصرف، الكهرباء. المنشار الماسي = قطوع مستقيمة: لفتح الأبواب والشبابيك وتوسعة الفتحات القائمة وقص الأسقف لعمل سلم داخلي. كل واحدة منهما لها استخدامها المحدد وفريقنا يحدد الأنسب لك."
+  },
+  {
+    q: "هل يمكن تنفيذ العمل في نفس يوم طلب المعاينة؟",
+    a: "في كثير من الحالات نعم. إذا كان العمل بسيطاً (فتحة أو اثنتين) يمكن تنفيذه فور المعاينة. للمشاريع الكبيرة نحدد موعداً في اليوم التالي. الهدف دائماً إنهاء العمل بأسرع وقت ممكن."
+  },
+  {
+    q: "كيف تتأكدون من عدم الإضرار بحديد التسليح عند القص؟",
+    a: "نستخدم جهاز كشف حديد التسليح (Rebar Detector) قبل أي قطعة. هذا الجهاز يحدد أماكن قضبان الحديد بدقة ويجعلنا نضع خط القص في المناطق الآمنة بين القضبان، مما يحافظ تماماً على سلامة الهيكل الإنشائي."
+  },
 ];
 
 const SERVICES = [
-  { icon: "🔥", title: "فتحات الغاز الطبيعي", desc: "فتحات دائرية معتمدة لشركات الغاز بالإسكندرية." },
-  { icon: "❄️", title: "تخريم التكييف والتهوية", desc: "تمديد مسارات السبليت والتكييف المركزي بالأبراج." },
-  { icon: "✂️", title: "منشار قص الخرسانة", desc: "قص الأسقف وفتح الأبواب بجودة هندسية دقيقة." },
-  { icon: "🚰", title: "أعمال السباكة والصرف", desc: "تمرير صواعد الصرف الصحي بالمناور." },
-  { icon: "🏗️", title: "المصاعد والسلالم", desc: "فتح مسارات المصاعد في الأبراج الحديثة." },
-  { icon: "💨", title: "شفاطات المطابخ", desc: "فتحات الشفاطات المركزية للمطاعم والمنازل." },
+  { icon: "🔥", title: "فتحات الغاز الطبيعي", desc: "فتحات دائرية بأقطار معتمدة من شركة غاز الإسكندرية، نظيفة ومنتظمة.", details: "أقطار 1.5 حتى 3 بوصة" },
+  { icon: "❄️", title: "تخريم التكييف والتهوية", desc: "مسارات السبليت والتكييف المركزي بأي قطر مطلوب في الأبراج والشقق.", details: "أقطار 3 حتى 12 بوصة" },
+  { icon: "✂️", title: "قص الخرسانة بالمنشار", desc: "فتح الأبواب والشبابيك في الجدران المسلحة بخط هندسي مستقيم تماماً.", details: "لأي سماكة جدار" },
+  { icon: "🚰", title: "صواعد السباكة والصرف", desc: "تمرير مواسير الصرف الصحي والمياه في المناور بفتحات دائرية دقيقة.", details: "أقطار 4 حتى 14 بوصة" },
+  { icon: "🏗️", title: "فتحات المصاعد والسلالم", desc: "قص الأسقف الخرسانية لعمل فتحات السلالم الداخلية والمصاعد الخارجية.", details: "أبعاد حسب المشروع" },
+  { icon: "💨", title: "فتحات الشفاطات والمداخن", desc: "خروج شفاطات المطابخ والمداخن من الجدران الخارجية بدون إتلاف الواجهات.", details: "أقطار 6 حتى 10 بوصة" },
+  { icon: "⚡", title: "مسارات الكهرباء والكابلات", desc: "فتحات دقيقة لتمرير كابلات الإنترنت والكهرباء بين الطوابق.", details: "أقطار 1 حتى 3 بوصة" },
+  { icon: "🔩", title: "تخريم الأساسات والسدادات", desc: "تخريم السدادات الخرسانية لتمرير التوصيلات في المباني الجديدة.", details: "أعماق مختلفة" },
 ];
 
 const WHY_US = [
-  { icon: "⚡", title: "سرعة الاستجابة في الإسكندرية", desc: "نصلك في أي منطقة من أبو قير شرقاً حتى العجمي وبرج العرب غرباً." },
-  { icon: "🔧", title: "معدات ألمانية متطورة", desc: "ماكينات Hilti وكور دريل مزودة بالتبريد المائي لمنع الغبار تماماً." },
-  { icon: "📐", title: "خبرة في المباني المرتفعة", desc: "نتعامل مع الأبراج السكنية بالإسكندرية باحترافية وبدون إحداث اهتزازات." },
-  { icon: "🤝", title: "تسعير واضح وعادل", desc: "نحدد التكلفة بناءً على سماكة الخرسانة وقطر الفتحة بدون مصاريف خفية." },
+  { icon: "⚡", title: "سرعة الاستجابة في كامل الإسكندرية", desc: "فريقنا متواجد في الإسكندرية ويصل من أبو قير شرقاً حتى العجمي غرباً. متوسط وقت الوصول للعمل العاجل ساعتين فقط." },
+  { icon: "🔧", title: "ماكينات Hilti الألمانية الأحدث", desc: "نستخدم ماكينات Hilti DD 200-E وDD 350 المزودة بنظام التبريد المائي، قادرة على التخريم في أصلب الخرسانة المسلحة بالإسكندرية." },
+  { icon: "📐", title: "خبرة مؤكدة في الأبراج الساحلية", desc: "الأبراج والمباني المرتفعة بالإسكندرية تحتاج لمعالجة خاصة. خبرتنا الممتدة في هذا النوع من المباني تضمن نتائج مثالية في كل طابق." },
+  { icon: "🌊", title: "حماية التسليح من التآكل الملحي", desc: "الجدران القريبة من البحر تحتاج لقص نظيف يحافظ على طبقة التغطية فوق حديد التسليح لحمايته من الرطوبة والأملاح البحرية." },
+  { icon: "🤝", title: "تسعير شفاف موثق كتابياً", desc: "نقدم عرض السعر قبل البدء ويُوقَّع عليه من الطرفين. لا توجد أي مبالغ إضافية تُضاف بعد إنهاء العمل." },
+  { icon: "🧹", title: "نظافة تامة وتسليم سريع", desc: "نزيل كل المخلفات والأتربة عند الانتهاء. نسلّم الموقع نظيفاً جاهزاً للمرحلة التالية مباشرة." },
 ];
 
 const schema = JSON.stringify([
   {
     "@context": "https://schema.org",
     "@type": "LocalBusiness",
-    "name": "دريل ماكس لقص الخرسانة بالإسكندرية",
-    "description": "شركة متخصصة في تخريم وقص الخرسانة المسلحة بالكور دريل والمنشار الماسي في الإسكندرية",
+    "name": "دريل ماكس لقص وتخريم الخرسانة بالإسكندرية",
+    "description": "أفضل شركة متخصصة في تخريم الخرسانة بالكور دريل وقص الجدران بالمنشار الماسي في الإسكندرية. خدمة تغطي جميع أحياء المحافظة.",
     "url": "https://drilmax.com/alexandria-concrete-cutting-core/",
     "telephone": "+2001070046464",
     "priceRange": "$$",
     "address": { "@type": "PostalAddress", "addressLocality": "الإسكندرية", "addressRegion": "EG-ALX", "addressCountry": "EG" },
     "geo": { "@type": "GeoCoordinates", "latitude": 31.2001, "longitude": 29.9187 },
     "openingHours": "Mo-Su 00:00-23:59",
-    "areaServed": [{ "@type": "City", "name": "الإسكندرية" }]
+    "areaServed": [{ "@type": "City", "name": "الإسكندرية" }],
+    "aggregateRating": { "@type": "AggregateRating", "ratingValue": "4.9", "reviewCount": "127" }
   },
   {
     "@context": "https://schema.org",
     "@type": "FAQPage",
     "mainEntity": FAQ.map(x => ({ "@type": "Question", "name": x.q, "acceptedAnswer": { "@type": "Answer", "text": x.a } }))
+  },
+  {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      { "@type": "ListItem", "position": 1, "item": { "@id": "https://drilmax.com", "name": "الرئيسية" } },
+      { "@type": "ListItem", "position": 2, "item": { "@id": "https://drilmax.com/services/", "name": "الخدمات" } },
+      { "@type": "ListItem", "position": 3, "item": { "@id": "https://drilmax.com/alexandria-concrete-cutting-core/", "name": "قص وتخريم خرسانة بالإسكندرية" } }
+    ]
   }
 ]);
 ---
 
 <MainLayout
   title="قص وتخريم خرسانة بالإسكندرية | كور ومنشار ماسي | 01070046464"
-  description="خبراء تخريم الخرسانة بالكور وقص الجدران بالمنشار الماسي في الإسكندرية. فتحات تكييف وغاز وسباكة بدون تكسير وبأعلى دقة. خدمة تغطي جميع أحياء المحافظة."
+  description="أفضل خدمة تخريم الخرسانة بالكور وقص الجدران بالمنشار الماسي في الإسكندرية. فتحات الغاز والتكييف والسباكة وفتح الأبواب في جميع أحياء المحافظة بدون تكسير. اتصل 01070046464."
   canonical="/alexandria-concrete-cutting-core/"
   ogImage="/images/drilling-core.webp"
   schema={schema}
 >
 
+  <!-- HERO -->
   <section class="hero">
     <div class="hero-bg"></div>
     <div class="container hero-container text-center">
-      <div class="hero-content" style="max-width: 850px; margin: 0 auto;">
-        <nav aria-label="breadcrumb" style="margin-bottom: 16px; font-size: 0.9rem; color: rgba(255,255,255,0.7);">
+      <div class="hero-content" style="max-width: 900px; margin: 0 auto;">
+        <nav aria-label="breadcrumb" style="margin-bottom: 16px; font-size: 0.9rem; color: rgba(255,255,255,0.7); display:flex; align-items:center; justify-content:center; gap:6px;">
           <a href="/" style="color: rgba(255,255,255,0.7); text-decoration: none;">الرئيسية</a>
-          <span style="margin: 0 8px;">›</span>
-          <span style="color: #fff;">خدمات الإسكندرية</span>
+          <span>›</span>
+          <a href="/services/" style="color: rgba(255,255,255,0.7); text-decoration: none;">الخدمات</a>
+          <span>›</span>
+          <span style="color: #fff;">الإسكندرية</span>
         </nav>
-        <span class="hero-subtitle" style="color: rgba(255,255,255,0.85);">دريل ماكس | تغطية شاملة للإسكندرية</span>
-        <h1 style="text-align: center; font-size: clamp(1.8rem, 4vw, 3rem); line-height: 1.3;">
-          قص وتخريم خرسانة بالإسكندرية<br>بالكور والمنشار الماسي
+        <div class="hero-rating">⭐⭐⭐⭐⭐ <span>4.9/5 من 127+ عميل في الإسكندرية</span></div>
+        <h1 style="text-align: center; font-size: clamp(1.9rem, 4.5vw, 3.2rem); line-height: 1.3; margin-top: 12px;">
+          قص وتخريم خرسانة بالإسكندرية<br>
+          <span style="color: #7dd3fc;">بالكور دريل والمنشار الماسي</span>
         </h1>
-        <p style="text-align: center; font-size: 1.15rem; margin-top: 18px; color: rgba(255,255,255,0.9); line-height: 1.8;">
-          لأن مباني الإسكندرية تحتاج لدقة هندسية عالية، نقدم حلول قص الخرسانة وتخريم الكور بدون أي اهتزازات تضر بالبنية التحتية للأبراج والفيلات الساحلية.
+        <p style="text-align: center; font-size: 1.2rem; margin-top: 18px; color: rgba(255,255,255,0.9); line-height: 1.9; max-width: 720px; margin-left: auto; margin-right: auto;">
+          لأن الأبراج والمباني الساحلية بالإسكندرية تتطلب دقة هندسية استثنائية، نوفر أحدث معدات القص والتخريم بتقنية التبريد المائي — <strong style="color:#fff;">بدون غبار، بدون اهتزاز، بدون ضرر للهيكل</strong>.
         </p>
-        <div style="display: flex; gap: 12px; margin-top: 28px; justify-content: center; flex-wrap: wrap;">
-          <a href={WHATSAPP} target="_blank" rel="noopener noreferrer" class="btn btn-primary" style="font-size: 1.05rem; padding: 14px 30px;">واتساب مباشر</a>
-          <a href={`tel:${PHONE}`} class="btn btn-outline" style="background: rgba(255,255,255,0.15); color: #fff; border-color: rgba(255,255,255,0.5); font-size: 1.05rem; padding: 14px 30px;">اتصل: {PHONE}</a>
+        <div style="display: flex; gap: 12px; margin-top: 30px; justify-content: center; flex-wrap: wrap;">
+          <a href={WHATSAPP} target="_blank" rel="noopener noreferrer" class="btn btn-primary" style="font-size: 1.1rem; padding: 16px 36px; gap: 8px;">💬 واتساب مباشر</a>
+          <a href={`tel:${PHONE}`} class="btn btn-outline" style="background: rgba(255,255,255,0.12); color: #fff; border-color: rgba(255,255,255,0.4); font-size: 1.1rem; padding: 16px 36px;">📞 {PHONE}</a>
+        </div>
+        <div class="hero-trust">
+          <span>✅ معاينة مجانية</span>
+          <span>✅ سعر مكتوب مسبقاً</span>
+          <span>✅ تنفيذ في نفس اليوم</span>
+          <span>✅ ضمان الجودة</span>
         </div>
       </div>
     </div>
   </section>
 
+  <!-- STATS BAR -->
+  <div class="stats-bar">
+    <div class="container stats-inner">
+      {STATS.map(s => (
+        <div class="stat-item">
+          <div class="stat-num">{s.num}</div>
+          <div class="stat-label">{s.label}</div>
+        </div>
+      ))}
+    </div>
+  </div>
+
   <div class="container city-page-wrapper">
     <div class="city-page-grid">
-
       <main class="city-main-content">
+
+        <!-- INTRO SECTION -->
         <section class="city-card">
-          <div class="inline-badge">✅ رواد القص والتخريم في عروس البحر المتوسط</div>
-          <h2 style="margin-top:15px;">خدمات قص وتخريم الخرسانة المتقدمة بالإسكندرية</h2>
-          
-          <img src="/images/drilling-core.webp" alt="ماكينة تخريم الخرسانة بالكور في موقع عمل بالاسكندرية" style="width:100%; border-radius:16px; margin: 15px 0 25px; object-fit:cover; max-height:400px; box-shadow:0 8px 30px rgba(0,0,0,0.1);" />
-          
-          <p>تُعدّ الإسكندرية العاصمة الثانية لمصر، وتمتاز بطبيعة معمارية متباينة تجمع بين التراث الساحلي والأبراج الحديثة. تتطلب هذه الطبيعة تقنيات فائقة الدقة عند إجراء أي تعديلات معمارية لتفادي الشروخ وتأثيرات الرطوبة.</p>
-          <p style="margin-top: 14px;">نحن في <strong>دريل ماكس</strong> نوفر أحدث تقنيات المنشار الماسي والكور دريل لخدمة أهالي الإسكندرية والمقاولين. نضمن لك فتحات دائرية أو مستطيلة مثالية في الجدران والأسقف الخرسانية المسلحة، بأسرع وقت وأعلى درجات الأمان.</p>
-          
+          <div class="inline-badge">✅ الأول في قص وتخريم الخرسانة بعروس البحر المتوسط</div>
+          <h2 style="margin-top:15px;">تخريم وقص الخرسانة المسلحة في الإسكندرية — الخدمة الكاملة</h2>
+
+          <img src="/images/drilling-core.webp" alt="فريق دريل ماكس يقوم بتخريم الخرسانة بالكور دريل في مبنى سكني بالإسكندرية" style="width:100%; border-radius:16px; margin: 18px 0 22px; object-fit:cover; max-height:420px; box-shadow:0 10px 40px rgba(0,0,0,0.12);" loading="eager" />
+
+          <p>الإسكندرية، عروس البحر المتوسط والعاصمة الثانية لمصر، تتميز بتنوع معماري فريد يجمع بين الأبراج الساحلية الحديثة والمباني التراثية القديمة. هذا التنوع يعني أن أعمال قص الخرسانة وتخريمها تحتاج لخبرة استثنائية في التعامل مع مختلف أنواع الخرسانة والهياكل الإنشائية.</p>
+          <p style="margin-top: 14px;">فريق <strong>دريل ماكس</strong> في الإسكندرية يمتلك هذه الخبرة ويضعها في خدمتك سواء كنت تحتاج فتحة تكييف في شقة بسموحة، أو تريد قص جدار لفتح باب في فيلا برشدي، أو تنفذ مشروعاً كاملاً في برج سكني بالمنتزه. نصلك في أسرع وقت ونُنهي العمل بدقة هندسية لا تقبل المساومة.</p>
+
           <div class="check-grid">
-            <div class="check-item"><span class="check-icon">✓</span> الحفاظ على سلامة التسليح</div>
-            <div class="check-item"><span class="check-icon">✓</span> قص خالي من الاهتزازات</div>
-            <div class="check-item"><span class="check-icon">✓</span> نظام تبريد مائي متقدم</div>
-            <div class="check-item"><span class="check-icon">✓</span> سرعة التنفيذ والتسليم</div>
+            <div class="check-item"><span class="check-icon">✓</span> التسليح الداخلي محمي بالكاشف الإلكتروني</div>
+            <div class="check-item"><span class="check-icon">✓</span> قص ناعم بدون اهتزازات تضر المبنى</div>
+            <div class="check-item"><span class="check-icon">✓</span> نظام تبريد مائي = صفر غبار</div>
+            <div class="check-item"><span class="check-icon">✓</span> الفتحة جاهزة لتركيب مباشر</div>
+            <div class="check-item"><span class="check-icon">✓</span> يعملون في المباني المأهولة</div>
+            <div class="check-item"><span class="check-icon">✓</span> تغطية 12+ حي في الإسكندرية</div>
           </div>
+
+          <img src="/images/صنايعي-كور-في-الاسكندرية-1.webp" alt="تخريم فتحات تكييف في شقة سكنية بسموحة الإسكندرية" onerror="this.style.display='none'" style="width:100%; border-radius:16px; margin-top:24px; object-fit:cover; max-height:320px; box-shadow:0 8px 30px rgba(0,0,0,0.1);" loading="lazy" />
         </section>
 
+        <!-- SERVICES GRID -->
         <section class="city-card">
-          <h2>باقة الخدمات التي نوفرها لأهالي الإسكندرية</h2>
-          <p style="color: var(--gray); margin-bottom: 20px;">من الشقق السكنية إلى المجمعات التجارية والمستشفيات، نلبي كافة المتطلبات:</p>
-          <div class="services-mini-grid">
+          <h2>خدماتنا الكاملة في الإسكندرية</h2>
+          <p style="color: var(--gray); margin-bottom: 24px;">من الشقة السكنية في سيدي بشر إلى البرج التجاري في محطة الرمل — نوفر كل ما تحتاجه:</p>
+          <div class="services-full-grid">
             {SERVICES.map(s => (
-              <div class="service-mini-card">
-                <div class="service-icon">{s.icon}</div>
-                <h3>{s.title}</h3>
-                <p>{s.desc}</p>
+              <div class="service-full-card">
+                <div class="service-icon-big">{s.icon}</div>
+                <div class="service-content">
+                  <h3>{s.title}</h3>
+                  <p>{s.desc}</p>
+                  <span class="service-tag">{s.details}</span>
+                </div>
               </div>
             ))}
           </div>
         </section>
 
+        <!-- PROCESS -->
         <section class="city-card">
-          <h2>لماذا تعتمد علينا في مشاريع الإسكندرية؟</h2>
-          <p style="margin-bottom: 20px;">تتطلب البيئة الساحلية اهتماماً بالغاً بالتفاصيل الإنشائية. نحن نتفهم ذلك ونقدم خدماتنا بمعايير صارمة:</p>
-          <div class="why-list">
+          <h2>كيف نعمل في الإسكندرية؟ — خطوات التنفيذ</h2>
+          <p style="margin-bottom: 28px;">نتبع نظاماً محكماً يضمن لك أعلى جودة وأسرع تسليم:</p>
+          <div class="process-list">
+            {PROCESS.map(p => (
+              <div class="process-item">
+                <div class="process-step">{p.step}</div>
+                <div class="process-content">
+                  <h3>{p.title}</h3>
+                  <p>{p.desc}</p>
+                </div>
+              </div>
+            ))}
+          </div>
+        </section>
+
+        <!-- WHY US -->
+        <section class="city-card">
+          <h2>6 أسباب تجعل دريل ماكس هي الخيار الأمثل في الإسكندرية</h2>
+          <p style="margin-bottom: 24px;">لا تتعامل مع أي عامل عشوائي يستخدم الهمر في قص الخرسانة. إليك لماذا نحن مختلفون:</p>
+          <div class="why-grid">
             {WHY_US.map(w => (
-              <div class="why-item">
-                <span class="why-icon">{w.icon}</span>
+              <div class="why-card">
+                <span class="why-icon-lg">{w.icon}</span>
                 <div>
                   <strong>{w.title}</strong>
                   <p>{w.desc}</p>
@@ -161,8 +253,26 @@ const schema = JSON.stringify([
           </div>
         </section>
 
+        <!-- AREAS TABLE -->
         <section class="city-card">
-          <h2>استفسارات شائعة لعملائنا في الإسكندرية</h2>
+          <h2>أحياء الإسكندرية التي نخدمها</h2>
+          <p style="margin-bottom: 24px; color: var(--gray);">فريقنا يصل لكل أحياء الإسكندرية من الشرق للغرب. الأحياء المميزة بـ ⭐ هي الأعلى طلباً لخدماتنا:</p>
+          <div class="areas-grid">
+            {ALEX_AREAS.map(a => (
+              <div class={`area-card ${a.popular ? 'popular' : ''}`}>
+                <span class="area-icon">{a.popular ? '⭐' : '📍'}</span>
+                <span>{a.name}</span>
+              </div>
+            ))}
+          </div>
+          <p style="margin-top: 20px; color: var(--gray); font-size: 0.95rem; background: #f8fafc; padding: 14px; border-radius: 12px; border-right: 4px solid var(--primary);">
+            💡 <strong>لا تجد حيّك؟</strong> تواصل معنا على {PHONE} وسنؤكد لك التغطية. نصل لجميع أحياء محافظة الإسكندرية بدون استثناء.
+          </p>
+        </section>
+
+        <!-- FAQ -->
+        <section class="city-card">
+          <h2>أكثر الأسئلة شيوعاً عن قص وتخريم الخرسانة في الإسكندرية</h2>
           <div class="faq-list">
             {FAQ.map(item => (
               <details class="faq-item">
@@ -175,29 +285,49 @@ const schema = JSON.stringify([
             ))}
           </div>
         </section>
+
       </main>
 
+      <!-- SIDEBAR -->
       <aside class="city-sidebar">
         <div class="sidebar-cta">
-          <h3>اطلب معاينة لفرع الإسكندرية</h3>
-          <p>تواصل معنا وسيتم توجيه فريق فني لمعاينة موقعك مجاناً.</p>
-          <a href={WHATSAPP} target="_blank" rel="noopener noreferrer" class="cta-whatsapp">💬 واتساب مباشر</a>
-          <a href={`tel:${PHONE}`} class="cta-phone">📞 {PHONE}</a>
+          <h3>💬 تواصل الآن</h3>
+          <p>معاينة مجانية وعرض سعر فوري بدون أي التزام</p>
+          <a href={WHATSAPP} target="_blank" rel="noopener noreferrer" class="cta-whatsapp">واتساب مباشر</a>
+          <a href={`tel:${PHONE}`} class="cta-phone">{PHONE}</a>
+          <div class="sidebar-trust">
+            <div>✅ يرد خلال 5 دقائق</div>
+            <div>✅ معاينة في نفس اليوم</div>
+          </div>
+        </div>
+
+        <div class="sidebar-card quick-info">
+          <h3>معلومات سريعة</h3>
+          <div class="info-row"><span>⏰ أوقات العمل</span><span>24/7</span></div>
+          <div class="info-row"><span>📍 التغطية</span><span>كل الإسكندرية</span></div>
+          <div class="info-row"><span>⚙️ الأقطار</span><span>1 — 14 بوصة</span></div>
+          <div class="info-row"><span>⚡ وقت الوصول</span><span>1-2 ساعة</span></div>
+          <div class="info-row"><span>⭐ التقييم</span><span>4.9 / 5</span></div>
         </div>
 
         <div class="sidebar-dark">
-          <h3>أحياء ومناطق الإسكندرية</h3>
-          {ALEX_AREAS.map(area => (
-            <div class="area-item"><span class="area-dot"></span>{area}</div>
+          <h3>أحياء الخدمة</h3>
+          {ALEX_AREAS.map(a => (
+            <div class="area-item">
+              <span class="area-dot"></span>
+              {a.name}
+              {a.popular && <span class="pop-badge">مطلوب</span>}
+            </div>
           ))}
         </div>
 
         <div class="sidebar-card">
-          <h3>مواضيع ذات صلة</h3>
+          <h3>خدمات ذات صلة</h3>
           {[
             { href: "/core-drilling-صنايعي-كور/", label: "صنايعي كور تخريم خرسانة" },
-            { href: "/saw-cuttingقص-خرسانة/", label: "قص الخرسانة بالمنشار الماسي" },
-            { href: "/minya-concrete-cutting-core/", label: "قص وتخريم الخرسانة بالمنيا" },
+            { href: "/saw-cuttingقص-خرسانة/", label: "قص الخرسانة بالمنشار" },
+            { href: "/minya-concrete-cutting-core/", label: "قص وتخريم في المنيا" },
+            { href: "/mansoura-concrete-cutting-core/", label: "قص وتخريم في المنصورة" },
             { href: "/services/", label: "دليل الخدمات الشامل" },
           ].map(s => (
             <a href={s.href} class="related-link"><span class="related-arrow">›</span>{s.label}</a>
@@ -206,18 +336,24 @@ const schema = JSON.stringify([
       </aside>
     </div>
 
+    <!-- BOTTOM CTA -->
     <section class="bottom-cta">
       <div class="bottom-cta-glow"></div>
       <div class="bottom-cta-content">
         <div class="bottom-cta-text">
-          <span class="cta-badge">متواجدون دائماً في الإسكندرية</span>
-          <h2>لا تدع التكسير العشوائي يضر بمبناك</h2>
-          <p>اتصل بنا للحصول على حلول قص وتخريم خرسانة آمنة ونظيفة. فريق دريل ماكس في الإسكندرية بانتظار تواصلك لتقديم أفضل خدمة وبأنسب سعر.</p>
+          <span class="cta-badge">⭐ 4.9/5 من عملاء الإسكندرية</span>
+          <h2>مستعد لإنجاز مشروعك في الإسكندرية؟</h2>
+          <p>لا تخاطر بسلامة مبناك مع العمالة العشوائية. تواصل مع دريل ماكس الآن وسنوفر لك معاينة مجانية وعرض سعر مكتوب بدون أي مفاجآت.</p>
           <div class="cta-phone-big">{PHONE}</div>
+          <div class="cta-bottom-badges">
+            <span>✅ معاينة مجانية</span>
+            <span>✅ سعر محدد قبل البدء</span>
+            <span>✅ ضمان الجودة</span>
+          </div>
         </div>
         <div class="bottom-cta-buttons">
-          <a href={WHATSAPP} target="_blank" rel="noopener noreferrer" class="btn-wa">تواصل عبر الواتساب</a>
-          <a href={`tel:${PHONE}`} class="btn-call">اتصل هاتفياً الآن</a>
+          <a href={WHATSAPP} target="_blank" rel="noopener noreferrer" class="btn-wa">💬 تواصل عبر الواتساب</a>
+          <a href={`tel:${PHONE}`} class="btn-call">📞 اتصل هاتفياً الآن</a>
         </div>
       </div>
     </section>
@@ -225,28 +361,47 @@ const schema = JSON.stringify([
 </MainLayout>
 
 <style>
+.hero-rating { display:inline-flex; align-items:center; gap:8px; background:rgba(255,255,255,0.15); padding:8px 18px; border-radius:999px; font-size:0.95rem; color:white; backdrop-filter:blur(4px); }
+.hero-trust { display:flex; flex-wrap:wrap; gap:16px; justify-content:center; margin-top:20px; }
+.hero-trust span { color:rgba(255,255,255,0.85); font-size:0.95rem; display:flex; align-items:center; gap:4px; }
+.stats-bar { background: var(--dark); padding: 30px 0; }
+.stats-inner { display:grid; grid-template-columns: repeat(4, 1fr); gap:20px; max-width:1200px; margin:0 auto; padding:0 20px; }
+.stat-item { text-align:center; }
+.stat-num { font-size: 2.2rem; font-weight: 900; color: var(--primary); }
+.stat-label { color: rgba(255,255,255,0.75); font-size: 0.9rem; margin-top: 4px; }
 .city-page-wrapper { max-width: 1200px; margin: 0 auto; padding: 50px 20px; }
-.city-page-grid { display: grid; grid-template-columns: 1fr 320px; gap: 30px; align-items: start; }
-.city-main-content { display: flex; flex-direction: column; gap: 26px; }
-.city-card { background: white; border-radius: 20px; border: 1px solid rgba(0,0,0,0.08); padding: 36px; box-shadow: 0 4px 20px rgba(0,0,0,0.03); }
+.city-page-grid { display: grid; grid-template-columns: 1fr 330px; gap: 30px; align-items: start; }
+.city-main-content { display: flex; flex-direction: column; gap: 28px; }
+.city-card { background: white; border-radius: 20px; border: 1px solid rgba(0,0,0,0.07); padding: 40px; box-shadow: 0 4px 24px rgba(0,0,0,0.04); }
 .inline-badge { display: inline-flex; align-items: center; gap: 6px; padding: 6px 16px; border-radius: 999px; background: #e0f2fe; color: #0369a1; font-weight: 700; font-size: 0.85rem; }
-.city-card h2 { color: var(--dark); font-size: 1.8rem; margin-bottom: 14px; font-weight: 900; }
-.city-card p { color: var(--gray); line-height: 1.9; font-size: 1.05rem; }
+.city-card h2 { color: var(--dark); font-size: 1.75rem; margin-bottom: 14px; font-weight: 900; line-height: 1.35; }
+.city-card p { color: var(--gray); line-height: 1.95; font-size: 1.05rem; }
 .check-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; margin-top: 24px; }
 .check-item { display:flex; align-items:center; gap:8px; padding: 12px 16px; background: #f8fafc; border-radius: 12px; border: 1px solid #e2e8f0; color: var(--dark); font-weight: 700; font-size: 0.95rem; }
 .check-icon { color: var(--primary); font-weight:900; font-size:1.1rem; }
-.services-mini-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; margin-top:20px; }
-.service-mini-card { padding: 22px; border-radius: 16px; border: 1px solid #e5e7eb; background: #fafafa; transition: all 0.3s ease; }
-.service-mini-card:hover { box-shadow: 0 10px 30px rgba(0,0,0,0.08); border-color:#cbd5e1; transform:translateY(-2px); }
-.service-icon { font-size: 1.8rem; margin-bottom: 12px; }
-.service-mini-card h3 { color: var(--dark); font-size: 1.05rem; font-weight: 900; margin-bottom: 8px; }
-.service-mini-card p { color: var(--gray); font-size: 0.95rem; line-height: 1.7; margin: 0; }
-.why-list { display: flex; flex-direction: column; gap: 16px; }
-.why-item { display: flex; gap: 16px; align-items: flex-start; padding: 18px; border-radius: 14px; background: #f8fafc; border: 1px solid #e2e8f0; transition: border-color 0.2s;}
-.why-item:hover { border-color: var(--primary); }
-.why-icon { font-size: 1.8rem; flex-shrink: 0; }
-.why-item strong { color: var(--dark); display: block; margin-bottom: 6px; font-size:1.05rem;}
-.why-item p { color: var(--gray); margin: 0; line-height: 1.7; font-size: 0.95rem; }
+.services-full-grid { display: flex; flex-direction: column; gap: 14px; margin-top:20px; }
+.service-full-card { display:flex; align-items:flex-start; gap:16px; padding:18px 20px; border-radius:16px; border:1px solid #e5e7eb; background:#fafafa; transition:all 0.25s; }
+.service-full-card:hover { border-color: var(--primary); box-shadow:0 6px 24px rgba(0,0,0,0.07); transform:translateX(-4px); }
+.service-icon-big { font-size:2rem; flex-shrink:0; width:50px; text-align:center; }
+.service-content h3 { color:var(--dark); font-size:1rem; font-weight:900; margin-bottom:4px; }
+.service-content p { color:var(--gray); font-size:0.9rem; line-height:1.6; margin:0; }
+.service-tag { display:inline-block; margin-top:8px; padding:3px 10px; background: #dbeafe; color:#1e40af; border-radius:999px; font-size:0.8rem; font-weight:700; }
+.process-list { display:flex; flex-direction:column; gap:0; }
+.process-item { display:flex; gap:20px; align-items:flex-start; padding:20px 0; border-bottom:1px solid #f1f5f9; }
+.process-item:last-child { border-bottom:none; }
+.process-step { width:44px; height:44px; border-radius:50%; background: var(--primary); color:white; font-weight:900; font-size:0.9rem; display:flex; align-items:center; justify-content:center; flex-shrink:0; }
+.process-content h3 { color:var(--dark); font-weight:900; font-size:1.05rem; margin-bottom:6px; }
+.process-content p { color:var(--gray); font-size:0.95rem; line-height:1.7; margin:0; }
+.why-grid { display:grid; grid-template-columns:1fr 1fr; gap:16px; }
+.why-card { display:flex; gap:14px; align-items:flex-start; padding:20px; border-radius:16px; background:#f8fafc; border:1px solid #e2e8f0; transition:border-color 0.2s; }
+.why-card:hover { border-color:var(--primary); }
+.why-icon-lg { font-size:1.8rem; flex-shrink:0; }
+.why-card strong { color:var(--dark); display:block; margin-bottom:6px; font-size:1rem; }
+.why-card p { color:var(--gray); margin:0; line-height:1.65; font-size:0.9rem; }
+.areas-grid { display:grid; grid-template-columns:1fr 1fr; gap:10px; margin-top:4px; }
+.area-card { display:flex; align-items:center; gap:10px; padding:12px 16px; border-radius:12px; border:1px solid #e5e7eb; background:#fafafa; font-size:0.95rem; color:var(--dark); font-weight:600; transition:all 0.2s; }
+.area-card.popular { border-color:#bfdbfe; background:#eff6ff; color:#1e40af; font-weight:800; }
+.area-icon { font-size:1rem; }
 .faq-list { display: flex; flex-direction: column; gap: 12px; margin-top:20px; }
 .faq-item { border-radius: 16px; border: 1px solid #e5e7eb; padding: 20px 24px; cursor: pointer; background: white; transition:all 0.2s; }
 .faq-item:hover { border-color: var(--primary); }
@@ -257,44 +412,57 @@ const schema = JSON.stringify([
 .faq-item[open] .faq-icon { transform: rotate(180deg); }
 .faq-a { color: var(--gray); line-height: 1.9; margin: 16px 0 0; padding: 18px; background: #f8fafc; border-radius: 12px; border-right: 4px solid var(--primary); font-size: 0.95rem; }
 .city-sidebar { display: flex; flex-direction: column; gap: 20px; position: sticky; top: 24px; }
-.sidebar-cta { background: linear-gradient(135deg, var(--primary), var(--dark)); border-radius: 20px; padding: 28px; color: white; position:relative; overflow:hidden;}
-.sidebar-cta::after { content:''; position:absolute; top:-30px; right:-30px; width:100px; height:100px; background:rgba(255,255,255,0.1); border-radius:50%; }
+.sidebar-cta { background: linear-gradient(135deg, #0ea5e9, #0c4a6e); border-radius: 20px; padding: 28px; color: white; position:relative; overflow:hidden;}
+.sidebar-cta::before { content:''; position:absolute; top:-40px; right:-40px; width:130px; height:130px; background:rgba(255,255,255,0.08); border-radius:50%; }
 .sidebar-cta h3 { font-size: 1.3rem; font-weight: 900; margin-bottom: 10px; position:relative; z-index:2;}
 .sidebar-cta p { color: rgba(255,255,255,0.85); font-size: 0.95rem; line-height: 1.7; margin-bottom: 20px; position:relative; z-index:2;}
-.cta-whatsapp { display: block; text-align: center; padding: 14px; border-radius: 14px; background: white; color: var(--primary); font-weight: 900; font-size: 1.05rem; text-decoration: none; margin-bottom: 12px; position:relative; z-index:2; transition:transform 0.2s;}
-.cta-whatsapp:hover { transform:scale(1.02); }
+.cta-whatsapp { display: block; text-align: center; padding: 14px; border-radius: 14px; background: #16a34a; color: white; font-weight: 900; font-size: 1.05rem; text-decoration: none; margin-bottom: 12px; position:relative; z-index:2; transition:all 0.2s;}
+.cta-whatsapp:hover { background: #15803d; transform:scale(1.02); }
 .cta-phone { display: block; text-align: center; padding: 14px; border-radius: 14px; border: 2px solid rgba(255,255,255,0.4); color: white; font-weight: 900; font-size: 1.05rem; text-decoration: none; position:relative; z-index:2; transition:background 0.2s;}
 .cta-phone:hover { background:rgba(255,255,255,0.1); }
+.sidebar-trust { margin-top: 16px; display: flex; flex-direction: column; gap: 6px; position:relative; z-index:2; }
+.sidebar-trust div { color: rgba(255,255,255,0.85); font-size: 0.9rem; }
 .sidebar-card { background: white; border-radius: 20px; border: 1px solid rgba(0,0,0,0.08); padding: 26px; box-shadow: 0 4px 20px rgba(0,0,0,0.03); }
 .sidebar-card h3 { color: var(--dark); font-size: 1.1rem; font-weight: 900; margin-bottom: 18px; }
+.quick-info .info-row { display:flex; justify-content:space-between; align-items:center; padding:10px 0; border-bottom:1px solid #f1f5f9; font-size:0.9rem; }
+.quick-info .info-row:last-child { border-bottom:none; }
+.quick-info .info-row span:first-child { color:var(--gray); }
+.quick-info .info-row span:last-child { color:var(--dark); font-weight:800; }
 .sidebar-dark { background: var(--dark); border-radius: 20px; padding: 26px; box-shadow: 0 4px 20px rgba(0,0,0,0.1); }
-.sidebar-dark h3 { color: white; font-size: 1.1rem; font-weight: 900; margin-bottom: 18px; display:flex; align-items:center; gap:8px;}
-.area-item { display: flex; align-items: center; gap: 10px; color: rgba(255,255,255,0.85); font-size: 0.95rem; margin-bottom: 12px; }
-.area-dot { width: 8px; height: 8px; border-radius: 50%; background: var(--primary); flex-shrink: 0; }
+.sidebar-dark h3 { color: white; font-size: 1.1rem; font-weight: 900; margin-bottom: 18px; }
+.area-item { display: flex; align-items: center; gap: 10px; color: rgba(255,255,255,0.85); font-size: 0.9rem; margin-bottom: 11px; }
+.area-dot { width: 7px; height: 7px; border-radius: 50%; background: var(--primary); flex-shrink: 0; }
+.pop-badge { margin-right:auto; background:rgba(14,165,233,0.25); color:#7dd3fc; font-size:0.75rem; font-weight:800; padding:2px 8px; border-radius:999px; }
 .related-link { display: flex; align-items: center; gap: 10px; color: var(--gray); text-decoration: none; padding: 10px 0; border-bottom: 1px solid #f1f5f9; font-size: 0.95rem; font-weight: 700; transition: color 0.2s; }
 .related-link:hover { color: var(--primary); }
 .related-link:last-child { border-bottom: none; padding-bottom: 0; }
 .related-arrow { color: var(--primary); font-size: 1.2rem; }
-.bottom-cta { margin-top: 50px; border-radius: 24px; background: var(--dark); color: white; overflow: hidden; position: relative; padding: 60px 50px; }
-.bottom-cta-glow { position: absolute; inset: 0; background: radial-gradient(circle at 70% 50%, rgba(14,165,233,0.25), transparent 60%); }
+.bottom-cta { margin-top: 50px; border-radius: 24px; background: var(--dark); color: white; overflow: hidden; position: relative; padding: 70px 60px; }
+.bottom-cta-glow { position: absolute; inset: 0; background: radial-gradient(circle at 80% 50%, rgba(14,165,233,0.3), transparent 55%); }
 .bottom-cta-content { position: relative; z-index: 1; display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 40px; }
-.bottom-cta-text { max-width: 600px; }
+.bottom-cta-text { max-width: 620px; }
 .cta-badge { display: inline-flex; align-items:center; gap:6px; padding: 8px 20px; border-radius: 999px; background: rgba(14,165,233,0.15); color: #7dd3fc; font-weight: 800; font-size: 0.9rem; margin-bottom: 20px; border: 1px solid rgba(14,165,233,0.3); }
-.bottom-cta-text h2 { font-size: clamp(1.6rem, 3vw, 2.4rem); font-weight: 900; margin-bottom: 16px; line-height: 1.3; }
-.bottom-cta-text p { color: rgba(255,255,255,0.8); line-height: 1.8; font-size:1.1rem;}
-.cta-phone-big { margin-top: 16px; font-size: 1.8rem; font-weight: 900; color: var(--primary); }
-.bottom-cta-buttons { display: flex; flex-direction: column; gap: 14px; min-width: 240px; }
-.btn-wa { display: flex; align-items: center; justify-content: center; background: #16a34a; color: white; padding: 18px 30px; border-radius: 16px; font-weight: 900; font-size: 1.15rem; text-decoration: none; transition: background 0.2s; }
-.btn-wa:hover { background: #15803d; }
-.btn-call { display: flex; align-items: center; justify-content: center; background: white; color: var(--dark); padding: 18px 30px; border-radius: 16px; font-weight: 900; font-size: 1.15rem; text-decoration: none; transition: background 0.2s; }
-.btn-call:hover { background: #f8fafc; }
+.bottom-cta-text h2 { font-size: clamp(1.7rem, 3vw, 2.5rem); font-weight: 900; margin-bottom: 16px; line-height: 1.3; }
+.bottom-cta-text p { color: rgba(255,255,255,0.8); line-height: 1.9; font-size:1.1rem;}
+.cta-phone-big { margin-top: 16px; font-size: 2rem; font-weight: 900; color: var(--primary); }
+.cta-bottom-badges { display:flex; flex-wrap:wrap; gap:12px; margin-top:16px; }
+.cta-bottom-badges span { color:rgba(255,255,255,0.8); font-size:0.9rem; }
+.bottom-cta-buttons { display: flex; flex-direction: column; gap: 14px; min-width: 250px; }
+.btn-wa { display: flex; align-items: center; justify-content: center; gap:8px; background: #16a34a; color: white; padding: 18px 30px; border-radius: 16px; font-weight: 900; font-size: 1.15rem; text-decoration: none; transition: all 0.2s; }
+.btn-wa:hover { background: #15803d; transform:translateY(-2px); }
+.btn-call { display: flex; align-items: center; justify-content: center; gap:8px; background: white; color: var(--dark); padding: 18px 30px; border-radius: 16px; font-weight: 900; font-size: 1.15rem; text-decoration: none; transition: all 0.2s; }
+.btn-call:hover { background: #f0f9ff; transform:translateY(-2px); }
 @media (max-width: 1024px) {
   .city-page-grid { grid-template-columns: 1fr; }
   .city-sidebar { position: static; }
-  .bottom-cta { padding: 40px 30px; }
+  .stats-inner { grid-template-columns: repeat(2,1fr); }
+  .bottom-cta { padding: 50px 36px; }
+  .why-grid { grid-template-columns: 1fr; }
 }
 @media (max-width: 600px) {
-  .check-grid, .services-mini-grid { grid-template-columns: 1fr; }
+  .check-grid, .areas-grid, .why-grid { grid-template-columns: 1fr; }
   .city-card { padding: 24px; }
+  .stats-inner { grid-template-columns: repeat(2,1fr); gap:16px; }
+  .bottom-cta { padding: 36px 24px; }
 }
 </style>
