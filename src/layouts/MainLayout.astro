@@ -475,6 +475,7 @@ const canonicalURL = canonical || new URL(Astro.url.pathname, Astro.site || "htt
   .hide-on-mobile { display: block; }
 
   @media (max-width: 992px) {
+    .top-bar { display: none; }
     .top-bar-contact {
       flex-direction: column;
       gap: 10px;
