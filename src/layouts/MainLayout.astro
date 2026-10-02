@@ -44,7 +44,7 @@ const canonicalURL = canonical || new URL(Astro.url.pathname, Astro.site || "htt
     {schema && <script type="application/ld+json" set:html={schema} />}
     
     <!-- Preload Hero Image for LCP -->
-    {preloadImage && <link rel="preload" href={preloadImage} as="image" />}
+    {preloadImage && <link rel="preload" href={preloadImage} as="image" fetchpriority="high" />}
 
     <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -190,8 +190,8 @@ const canonicalURL = canonical || new URL(Astro.url.pathname, Astro.site || "htt
 
 <style is:global>
   :root {
-    --primary: #ff5722; /* Orange */
-    --primary-hover: #e64a19;
+    --primary: #d84315; /* Accessible Dark Orange */
+    --primary-hover: #bf360c;
     --secondary: #ffffff; /* White */
     --dark: #1e293b; /* Dark text */
     --header-bg: #1e2530; /* Dark Charcoal for header */
