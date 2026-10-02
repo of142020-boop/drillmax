@@ -1,0 +1,463 @@
+---
+import MainLayout from '../layouts/MainLayout.astro';
+
+const PHONE    = "01070046464";
+const WHATSAPP = `https://wa.me/20${PHONE}`;
+
+const OCTOBER_ZAYED_AREAS = [
+  { name: "مدينة الشيخ زايد", popular: true },
+  { name: "مدينة 6 أكتوبر", popular: true },
+  { name: "حدائق أكتوبر", popular: true },
+  { name: "أكتوبر الجديدة", popular: true },
+  { name: "بيفرلي هيلز والربوة", popular: false },
+  { name: "كومبوندات زايد وأكتوبر", popular: false },
+  { name: "الحزام الأخضر", popular: false },
+  { name: "دريم لاند وحي الأشجار", popular: false },
+  { name: "المنطقة الصناعية بأكتوبر", popular: false },
+  { name: "دهشور وطريق الواحات", popular: false },
+];
+
+const STATS = [
+  { num: "+600", label: "فيلا وكومبوند تم العمل بها" },
+  { num: "24h", label: "استجابة سريعة" },
+  { num: "0%", label: "أضرار إنشائية" },
+  { num: "10+", label: "سنوات خبرة في التخريم" },
+];
+
+const PROCESS = [
+  { step: "01", title: "الاتصال والاستشارة", desc: "تواصل معنا هاتفياً أو عبر الواتساب، صِف لنا متطلبات العمل في فيلتك أو مشروعك وسنرد فوراً." },
+  { step: "02", title: "المعاينة الهندسية", desc: "نصل لموقعك في أكتوبر أو زايد لمعاينة الجدران واستخدام أجهزة الكشف عن الحديد لتحديد أفضل مسار للقص." },
+  { step: "03", title: "عرض السعر النهائي", desc: "نقدم لك تكلفة دقيقة بناءً على حجم العمل، دون أي رسوم خفية أو مفاجآت." },
+  { step: "04", title: "التنفيذ السريع والنظيف", desc: "نستخدم ماكيناتنا الألمانية المزودة بنظام التبريد المائي لضمان عمل هادئ وبدون غبار." },
+  { step: "05", title: "تسليم الموقع", desc: "نترك المكان نظيفاً تماماً والفتحات جاهزة للتشطيب أو التركيب مباشرة." },
+];
+
+const FAQ = [
+  {
+    q: "هل تعملون داخل الكومبوندات في الشيخ زايد وأكتوبر؟",
+    a: "نعم بالتأكيد. نمتلك تصاريح وخبرة واسعة في العمل داخل أرقى الكومبوندات مثل بيفرلي هيلز، الربوة، سوديك، وبالم هيلز. نلتزم باشتراطات النظافة والهدوء المفروضة من إدارة الكومبوند."
+  },
+  {
+    q: "هل يؤثر قص الخرسانة على ديكورات وتشطيبات الفيلا؟",
+    a: "إطلاقاً. نستخدم نظام التبريد المائي الذي يمنع تطاير الغبار تماماً، ونقوم بتغطية وحماية المناطق المحيطة. أجهزتنا تعمل بدون اهتزازات (Vibration-Free) مما يمنع حدوث أي شروخ في الديكورات أو التشطيبات المجاورة."
+  },
+  {
+    q: "ما هي استخدامات فتحات الكور الشائعة في الفيلات؟",
+    a: "في الفيلات الحديثة بأكتوبر وزايد، يُطلب منا غالباً: فتحات التكييف المركزي (الكونسيلد)، مسارات أنظمة المنزل الذكي (Smart Home)، تمرير كابلات الطاقة الشمسية، وفتحات المصاعد الداخلية."
+  },
+  {
+    q: "أرغب في توسعة شباك أو فتح باب جديد في الجدار، هل هذا ممكن؟",
+    a: "نعم، باستخدام المنشار الماسي نقوم بقص الجدران الخرسانية بدقة متناهية لعمل أبواب، شبابيك، أو ربط مساحتين ببعضهما (Open Space) بخطوط مستقيمة لا تتطلب تكسيراً إضافياً."
+  },
+  {
+    q: "هل تعملون في المشاريع والمصانع في المنطقة الصناعية بأكتوبر؟",
+    a: "نعم، نقدم خدمات تخريم وقص الخرسانة للمصانع، المخازن، والمنشآت التجارية في المنطقة الصناعية لدعم تركيب الآلات الثقيلة أو تحديث البنية التحتية والمرافق."
+  },
+  {
+    q: "كم يستغرق من الوقت لعمل فتحة تكييف؟",
+    a: "عملية التخريم بالكور دريل سريعة جداً. الفتحة الواحدة قد تستغرق من 30 إلى 45 دقيقة فقط، وتخرج جاهزة ونظيفة تماماً للتمديدات."
+  },
+  {
+    q: "ما الفرق بين التكسير اليدوي والتخريم بالكور؟",
+    a: "التكسير اليدوي (بواسطة الهمر أو الأجنة) يسبب شروخاً دقيقة في المبنى، ضوضاء مزعجة، غباراً كثيفاً، وفتحة غير منتظمة. الكور دريل يقطع أسطوانة نظيفة تماماً بدون ضوضاء عالية أو غبار، ويحافظ على سلامة الحديد والهيكل."
+  },
+  {
+    q: "كيف يمكنني طلب معاينة في حدائق أكتوبر؟",
+    a: "فقط اتصل بنا على 01070046464 أو أرسل لنا رسالة على الواتساب. نغطي حدائق أكتوبر وأكتوبر الجديدة يومياً، وسنرسل فريقنا للمعاينة في أسرع وقت."
+  },
+];
+
+const SERVICES = [
+  { icon: "🏡", title: "أنظمة التكييف والتهوية", desc: "فتحات دقيقة للتكييف الكونسيلد والسبليت في الفيلات والقصور.", details: "أقطار تناسب كافة الأجهزة" },
+  { icon: "⚡", title: "أنظمة السمارت هوم", desc: "تمرير شبكات المنازل الذكية وكابلات الإنترنت والكهرباء.", details: "فتحات نظيفة بدون تشققات" },
+  { icon: "✂️", title: "قص لتوسعة المساحات", desc: "توسعة النوافذ والأبواب وإزالة الجدران لتصميمات Open Space.", details: "قص بالمنشار الماسي مستقيم" },
+  { icon: "🚰", title: "تأسيس السباكة والصرف", desc: "فتحات صواعد المياه والصرف الصحي وتمديدات حمامات السباحة.", details: "دقة هندسية عالية" },
+  { icon: "🏗️", title: "فتحات المصاعد الداخلية", desc: "قص الأسقف لتركيب المصاعد داخل الفيلات والمباني الدوبلكس.", details: "أبعاد دقيقة ومطابقة" },
+  { icon: "🔥", title: "توصيلات الغاز الطبيعي", desc: "عمل فتحات آمنة ونظامية لتمديدات الغاز للمطابخ المركزية.", details: "مطابقة لاشتراطات الغاز" },
+  { icon: "🏭", title: "خدمات المصانع (المنطقة الصناعية)", desc: "تخريم الخرسانة لتثبيت المعدات وتأسيس بنية المصانع.", details: "معدات هيفي ديوتي" },
+  { icon: "☀️", title: "كابلات الطاقة الشمسية", desc: "تمرير وصلات أنظمة الطاقة الشمسية من الأسطح بفتحات معزولة.", details: "فتحات آمنة" },
+];
+
+const WHY_US = [
+  { icon: "⚡", title: "تغطية شاملة وفورية", desc: "فريقنا متواجد بالقرب منك لتلبية طلبات الشيخ زايد وكل مناطق 6 أكتوبر (الجديدة والحدائق) بسرعة فائقة." },
+  { icon: "🤫", title: "عمل هادئ ونظيف للكومبوندات", desc: "ندرك تماماً أهمية الهدوء والنظافة في المجمعات السكنية الراقية. معداتنا تعمل بنظام التبريد المائي الكاتم للغبار." },
+  { icon: "👷", title: "كادر فني مهندس ومدرب", desc: "لا نعتمد على العمالة العشوائية. فريقنا مدرب على استخدام الأجهزة الألمانية المتطورة وقراءة المخططات الهندسية." },
+  { icon: "🛡️", title: "حماية تامة للتشطيبات والديكورات", desc: "نتخذ كافة التدابير لتغطية وحماية أثاث وأرضيات موقع العمل إذا كان مأهولاً ومُشطباً بالفعل." },
+  { icon: "🤝", title: "التزام قاطع بالمواعيد", desc: "نقدر قيمة وقت عملائنا في زايد وأكتوبر، ونتواجد في موقع العمل بالدقيقة المتفق عليها." },
+  { icon: "🔩", title: "كشف مسار الحديد مسبقاً", desc: "نستخدم أجهزة سكانر حديثة لتحديد أماكن حديد التسليح وتجنب قصه في الأماكن الحرجة، حفاظاً على المنشأة." },
+];
+
+const schema = JSON.stringify([
+  {
+    "@context": "https://schema.org",
+    "@type": "LocalBusiness",
+    "name": "دريل ماكس لقص الخرسانة - أكتوبر وزايد",
+    "description": "شركة متخصصة في تخريم وقص الخرسانة بالكور دريل للكومبوندات والفيلات والمصانع في 6 أكتوبر والشيخ زايد.",
+    "url": "https://drilmax.com/october-zayed-concrete-cutting-core/",
+    "telephone": "+2001070046464",
+    "priceRange": "$$",
+    "address": { "@type": "PostalAddress", "addressLocality": "6 أكتوبر والشيخ زايد", "addressRegion": "EG-GZ", "addressCountry": "EG" },
+    "geo": { "@type": "GeoCoordinates", "latitude": 29.9705, "longitude": 30.9427 },
+    "openingHours": "Mo-Su 00:00-23:59",
+    "areaServed": [{ "@type": "City", "name": "6 أكتوبر" }, { "@type": "City", "name": "الشيخ زايد" }],
+    "aggregateRating": { "@type": "AggregateRating", "ratingValue": "4.9", "reviewCount": "154" }
+  },
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": FAQ.map(x => ({ "@type": "Question", "name": x.q, "acceptedAnswer": { "@type": "Answer", "text": x.a } }))
+  },
+  {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      { "@type": "ListItem", "position": 1, "item": { "@id": "https://drilmax.com", "name": "الرئيسية" } },
+      { "@type": "ListItem", "position": 2, "item": { "@id": "https://drilmax.com/services/", "name": "الخدمات" } },
+      { "@type": "ListItem", "position": 3, "item": { "@id": "https://drilmax.com/october-zayed-concrete-cutting-core/", "name": "قص وتخريم خرسانة في 6 أكتوبر والشيخ زايد" } }
+    ]
+  }
+]);
+---
+
+<MainLayout
+  title="قص وتخريم خرسانة في 6 أكتوبر والشيخ زايد | 01070046464"
+  description="خبراء تخريم وقص الخرسانة للكومبوندات والفيلات في أكتوبر وزايد. خدمات كور دريل بدون غبار واهتزاز. أحدث المعدات الألمانية. اتصل الآن 01070046464."
+  canonical="/october-zayed-concrete-cutting-core/"
+  ogImage="/images/rebar-planting-1.webp"
+  schema={schema}
+>
+
+  <!-- HERO -->
+  <section class="hero">
+    <div class="hero-bg"></div>
+    <div class="container hero-container text-center">
+      <div class="hero-content" style="max-width: 900px; margin: 0 auto;">
+        <nav aria-label="breadcrumb" style="margin-bottom: 16px; font-size: 0.9rem; color: rgba(255,255,255,0.7); display:flex; align-items:center; justify-content:center; gap:6px;">
+          <a href="/" style="color: rgba(255,255,255,0.7); text-decoration: none;">الرئيسية</a>
+          <span>›</span>
+          <a href="/services/" style="color: rgba(255,255,255,0.7); text-decoration: none;">الخدمات</a>
+          <span>›</span>
+          <span style="color: #fff;">6 أكتوبر والشيخ زايد</span>
+        </nav>
+        <div class="hero-rating">⭐⭐⭐⭐⭐ <span>4.9/5 من 154+ عميل في أكتوبر وزايد</span></div>
+        <h1 style="text-align: center; font-size: clamp(1.9rem, 4.5vw, 3.2rem); line-height: 1.3; margin-top: 12px;">
+          قص وتخريم خرسانة بـ أكتوبر وزايد<br>
+          <span style="color: #7dd3fc;">للكومبوندات والفيلات الراقية</span>
+        </h1>
+        <p style="text-align: center; font-size: 1.2rem; margin-top: 18px; color: rgba(255,255,255,0.9); line-height: 1.9; max-width: 720px; margin-left: auto; margin-right: auto;">
+          حلول متطورة لقص الخرسانة وعمل الفتحات بالكور دريل لتأسيس التكييف وأنظمة السمارت هوم. خدمة فائقة الهدوء والنظافة تناسب مستوى مشاريعك في الشيخ زايد و 6 أكتوبر.
+        </p>
+        <div style="display: flex; gap: 12px; margin-top: 30px; justify-content: center; flex-wrap: wrap;">
+          <a href={WHATSAPP} target="_blank" rel="noopener noreferrer" class="btn btn-primary" style="font-size: 1.1rem; padding: 16px 36px; gap: 8px;">💬 واتساب مباشر</a>
+          <a href={`tel:${PHONE}`} class="btn btn-outline" style="background: rgba(255,255,255,0.12); color: #fff; border-color: rgba(255,255,255,0.4); font-size: 1.1rem; padding: 16px 36px;">📞 {PHONE}</a>
+        </div>
+        <div class="hero-trust">
+          <span>✅ بدون غبار أو إزعاج</span>
+          <span>✅ ماكينات ألمانية</span>
+          <span>✅ معاينة مجانية</span>
+          <span>✅ التزام بالمواعيد</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- STATS BAR -->
+  <div class="stats-bar">
+    <div class="container stats-inner">
+      {STATS.map(s => (
+        <div class="stat-item">
+          <div class="stat-num">{s.num}</div>
+          <div class="stat-label">{s.label}</div>
+        </div>
+      ))}
+    </div>
+  </div>
+
+  <div class="container city-page-wrapper">
+    <div class="city-page-grid">
+      <main class="city-main-content">
+
+        <!-- INTRO SECTION -->
+        <section class="city-card">
+          <div class="inline-badge">✅ الخيار الهندسي الأول في غرب القاهرة</div>
+          <h2 style="margin-top:15px;">قص وتخريم الخرسانة المسلحة بأحدث التقنيات — أكتوبر وزايد</h2>
+
+          <img src="/images/rebar-planting-1.webp" alt="تنفيذ أعمال قص خرسانة بالكور دريل داخل كومبوند في الشيخ زايد" style="width:100%; border-radius:16px; margin: 18px 0 22px; object-fit:cover; max-height:420px; box-shadow:0 10px 40px rgba(0,0,0,0.12);" loading="eager" />
+
+          <p>تعتبر مدينتي الشيخ زايد و 6 أكتوبر (بجميع امتداداتها) من أرقى وأكبر المناطق السكنية والتجارية الحديثة. تصميمات الفيلات الحديثة والكومبوندات الفاخرة تتطلب دقة متناهية عند إجراء أي تعديلات إنشائية لتأسيس أنظمة التكييف الحديث، الشبكات الذكية، والمصاعد.</p>
+          <p style="margin-top: 14px;"><strong>دريل ماكس</strong> توفر لك الحلول الأكثر أماناً وتطوراً. معداتنا (الكور دريل والمنشار الماسي) مصممة لإجراء الفتحات والقص بخطوط هندسية نظيفة تماماً، بدون استخدام التكسير العشوائي الذي يسبب اهتزازات خطيرة، وبدون إصدار أتربة تزعج الجيران بفضل تقنية التبريد المائي.</p>
+
+          <div class="check-grid">
+            <div class="check-item"><span class="check-icon">✓</span> أمان تام للتشطيبات والديكور</div>
+            <div class="check-item"><span class="check-icon">✓</span> خبرة في العمل بالكومبوندات</div>
+            <div class="check-item"><span class="check-icon">✓</span> تخريم لتأسيس الـ Smart Home</div>
+            <div class="check-item"><span class="check-icon">✓</span> دقة هندسية 100% للمقاسات</div>
+            <div class="check-item"><span class="check-icon">✓</span> فريق محترف ومدرب</div>
+            <div class="check-item"><span class="check-icon">✓</span> استجابة سريعة جداً</div>
+          </div>
+        </section>
+
+        <!-- SERVICES GRID -->
+        <section class="city-card">
+          <h2>باقة خدماتنا المخصصة لأكتوبر وزايد</h2>
+          <p style="color: var(--gray); margin-bottom: 24px;">نلبي كافة احتياجات الفيلات، الشقق الفندقية، والمصانع:</p>
+          <div class="services-full-grid">
+            {SERVICES.map(s => (
+              <div class="service-full-card">
+                <div class="service-icon-big">{s.icon}</div>
+                <div class="service-content">
+                  <h3>{s.title}</h3>
+                  <p>{s.desc}</p>
+                  <span class="service-tag">{s.details}</span>
+                </div>
+              </div>
+            ))}
+          </div>
+        </section>
+
+        <!-- PROCESS -->
+        <section class="city-card">
+          <h2>خطوات العمل معنا</h2>
+          <p style="margin-bottom: 28px;">عملية سلسة ومنظمة لضمان راحتك من أول اتصال وحتى تسليم الموقع:</p>
+          <div class="process-list">
+            {PROCESS.map(p => (
+              <div class="process-item">
+                <div class="process-step">{p.step}</div>
+                <div class="process-content">
+                  <h3>{p.title}</h3>
+                  <p>{p.desc}</p>
+                </div>
+              </div>
+            ))}
+          </div>
+        </section>
+
+        <!-- WHY US -->
+        <section class="city-card">
+          <h2>لماذا دريل ماكس هي خيار الكومبوندات ومهندسي الديكور؟</h2>
+          <p style="margin-bottom: 24px;">المشاريع الراقية تتطلب مقاولاً يفهم معايير الجودة العالية:</p>
+          <div class="why-grid">
+            {WHY_US.map(w => (
+              <div class="why-card">
+                <span class="why-icon-lg">{w.icon}</span>
+                <div>
+                  <strong>{w.title}</strong>
+                  <p>{w.desc}</p>
+                </div>
+              </div>
+            ))}
+          </div>
+        </section>
+
+        <!-- AREAS TABLE -->
+        <section class="city-card">
+          <h2>مناطق تغطيتنا في 6 أكتوبر والشيخ زايد</h2>
+          <p style="margin-bottom: 24px; color: var(--gray);">نتواجد يومياً في غرب القاهرة ونغطي كافة التوسعات والأحياء:</p>
+          <div class="areas-grid">
+            {OCTOBER_ZAYED_AREAS.map(a => (
+              <div class={`area-card ${a.popular ? 'popular' : ''}`}>
+                <span class="area-icon">{a.popular ? '⭐' : '📍'}</span>
+                <span>{a.name}</span>
+              </div>
+            ))}
+          </div>
+          <p style="margin-top: 20px; color: var(--gray); font-size: 0.95rem; background: #f8fafc; padding: 14px; border-radius: 12px; border-right: 4px solid var(--primary);">
+            💡 <strong>مشروعك خارج هذه القائمة؟</strong> لا تقلق، نغطي أيضاً سفنكس الجديدة، طريق الإسكندرية الصحراوي، وأي موقع في نطاق الجيزة وغرب القاهرة.
+          </p>
+        </section>
+
+        <!-- FAQ -->
+        <section class="city-card">
+          <h2>أكثر الأسئلة شيوعاً من عملائنا في أكتوبر وزايد</h2>
+          <div class="faq-list">
+            {FAQ.map(item => (
+              <details class="faq-item">
+                <summary class="faq-q">
+                  <span>{item.q}</span>
+                  <svg class="faq-icon" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"></polyline></svg>
+                </summary>
+                <p class="faq-a">{item.a}</p>
+              </details>
+            ))}
+          </div>
+        </section>
+
+      </main>
+
+      <!-- SIDEBAR -->
+      <aside class="city-sidebar">
+        <div class="sidebar-cta">
+          <h3>💬 تواصل مع خبرائنا</h3>
+          <p>جاهزون لمعاينة موقعك في زايد وأكتوبر اليوم.</p>
+          <a href={WHATSAPP} target="_blank" rel="noopener noreferrer" class="cta-whatsapp">واتساب سريع</a>
+          <a href={`tel:${PHONE}`} class="cta-phone">{PHONE}</a>
+          <div class="sidebar-trust">
+            <div>✅ استشارة فنية مجانية</div>
+            <div>✅ تسعير دقيق وشفاف</div>
+          </div>
+        </div>
+
+        <div class="sidebar-card quick-info">
+          <h3>معلومات سريعة</h3>
+          <div class="info-row"><span>⏰ أوقات العمل</span><span>24/7</span></div>
+          <div class="info-row"><span>📍 التغطية</span><span>أكتوبر وزايد</span></div>
+          <div class="info-row"><span>⚙️ التجهيز</span><span>معدات ألمانية</span></div>
+          <div class="info-row"><span>⚡ وقت الوصول</span><span>سريع جداً</span></div>
+          <div class="info-row"><span>⭐ التقييم</span><span>4.9 / 5</span></div>
+        </div>
+
+        <div class="sidebar-dark">
+          <h3>أهم المناطق</h3>
+          {OCTOBER_ZAYED_AREAS.map(a => (
+            <div class="area-item">
+              <span class="area-dot"></span>
+              {a.name}
+              {a.popular && <span class="pop-badge">طلب عالي</span>}
+            </div>
+          ))}
+        </div>
+
+        <div class="sidebar-card">
+          <h3>خدمات متعلقة</h3>
+          {[
+            { href: "/core-drilling-صنايعي-كور/", label: "صنايعي كور تخريم" },
+            { href: "/saw-cuttingقص-خرسانة/", label: "قص الخرسانة بالمنشار" },
+            { href: "/alexandria-concrete-cutting-core/", label: "خدمات الإسكندرية" },
+            { href: "/services/", label: "استكشف كل الخدمات" },
+          ].map(s => (
+            <a href={s.href} class="related-link"><span class="related-arrow">›</span>{s.label}</a>
+          ))}
+        </div>
+      </aside>
+    </div>
+
+    <!-- BOTTOM CTA -->
+    <section class="bottom-cta">
+      <div class="bottom-cta-glow"></div>
+      <div class="bottom-cta-content">
+        <div class="bottom-cta-text">
+          <span class="cta-badge">⭐ الخدمة الأكثر ثقة في الكومبوندات</span>
+          <h2>لا تترك مشروعك للصدفة والعشوائية</h2>
+          <p>تواصل مع فريق دريل ماكس المتخصص الآن لضمان تنفيذ أعمال التخريم والقص بأعلى درجات الأمان والنظافة في أكتوبر والشيخ زايد.</p>
+          <div class="cta-phone-big">{PHONE}</div>
+          <div class="cta-bottom-badges">
+            <span>✅ معدات متطورة</span>
+            <span>✅ لا شروخ</span>
+            <span>✅ بدون غبار</span>
+          </div>
+        </div>
+        <div class="bottom-cta-buttons">
+          <a href={WHATSAPP} target="_blank" rel="noopener noreferrer" class="btn-wa">💬 تواصل عبر الواتساب</a>
+          <a href={`tel:${PHONE}`} class="btn-call">📞 اتصل هاتفياً الآن</a>
+        </div>
+      </div>
+    </section>
+  </div>
+</MainLayout>
+
+<style>
+.hero-rating { display:inline-flex; align-items:center; gap:8px; background:rgba(255,255,255,0.15); padding:8px 18px; border-radius:999px; font-size:0.95rem; color:white; backdrop-filter:blur(4px); }
+.hero-trust { display:flex; flex-wrap:wrap; gap:16px; justify-content:center; margin-top:20px; }
+.hero-trust span { color:rgba(255,255,255,0.85); font-size:0.95rem; display:flex; align-items:center; gap:4px; }
+.stats-bar { background: var(--dark); padding: 30px 0; }
+.stats-inner { display:grid; grid-template-columns: repeat(4, 1fr); gap:20px; max-width:1200px; margin:0 auto; padding:0 20px; }
+.stat-item { text-align:center; }
+.stat-num { font-size: 2.2rem; font-weight: 900; color: var(--primary); }
+.stat-label { color: rgba(255,255,255,0.75); font-size: 0.9rem; margin-top: 4px; }
+.city-page-wrapper { max-width: 1200px; margin: 0 auto; padding: 50px 20px; }
+.city-page-grid { display: grid; grid-template-columns: 1fr 330px; gap: 30px; align-items: start; }
+.city-main-content { display: flex; flex-direction: column; gap: 28px; }
+.city-card { background: white; border-radius: 20px; border: 1px solid rgba(0,0,0,0.07); padding: 40px; box-shadow: 0 4px 24px rgba(0,0,0,0.04); }
+.inline-badge { display: inline-flex; align-items: center; gap: 6px; padding: 6px 16px; border-radius: 999px; background: #e0f2fe; color: #0369a1; font-weight: 700; font-size: 0.85rem; }
+.city-card h2 { color: var(--dark); font-size: 1.75rem; margin-bottom: 14px; font-weight: 900; line-height: 1.35; }
+.city-card p { color: var(--gray); line-height: 1.95; font-size: 1.05rem; }
+.check-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; margin-top: 24px; }
+.check-item { display:flex; align-items:center; gap:8px; padding: 12px 16px; background: #f8fafc; border-radius: 12px; border: 1px solid #e2e8f0; color: var(--dark); font-weight: 700; font-size: 0.95rem; }
+.check-icon { color: var(--primary); font-weight:900; font-size:1.1rem; }
+.services-full-grid { display: flex; flex-direction: column; gap: 14px; margin-top:20px; }
+.service-full-card { display:flex; align-items:flex-start; gap:16px; padding:18px 20px; border-radius:16px; border:1px solid #e5e7eb; background:#fafafa; transition:all 0.25s; }
+.service-full-card:hover { border-color: var(--primary); box-shadow:0 6px 24px rgba(0,0,0,0.07); transform:translateX(-4px); }
+.service-icon-big { font-size:2rem; flex-shrink:0; width:50px; text-align:center; }
+.service-content h3 { color:var(--dark); font-size:1rem; font-weight:900; margin-bottom:4px; }
+.service-content p { color:var(--gray); font-size:0.9rem; line-height:1.6; margin:0; }
+.service-tag { display:inline-block; margin-top:8px; padding:3px 10px; background: #dbeafe; color:#1e40af; border-radius:999px; font-size:0.8rem; font-weight:700; }
+.process-list { display:flex; flex-direction:column; gap:0; }
+.process-item { display:flex; gap:20px; align-items:flex-start; padding:20px 0; border-bottom:1px solid #f1f5f9; }
+.process-item:last-child { border-bottom:none; }
+.process-step { width:44px; height:44px; border-radius:50%; background: var(--primary); color:white; font-weight:900; font-size:0.9rem; display:flex; align-items:center; justify-content:center; flex-shrink:0; }
+.process-content h3 { color:var(--dark); font-weight:900; font-size:1.05rem; margin-bottom:6px; }
+.process-content p { color:var(--gray); font-size:0.95rem; line-height:1.7; margin:0; }
+.why-grid { display:grid; grid-template-columns:1fr 1fr; gap:16px; }
+.why-card { display:flex; gap:14px; align-items:flex-start; padding:20px; border-radius:16px; background:#f8fafc; border:1px solid #e2e8f0; transition:border-color 0.2s; }
+.why-card:hover { border-color:var(--primary); }
+.why-icon-lg { font-size:1.8rem; flex-shrink:0; }
+.why-card strong { color:var(--dark); display:block; margin-bottom:6px; font-size:1rem; }
+.why-card p { color:var(--gray); margin:0; line-height:1.65; font-size:0.9rem; }
+.areas-grid { display:grid; grid-template-columns:1fr 1fr; gap:10px; margin-top:4px; }
+.area-card { display:flex; align-items:center; gap:10px; padding:12px 16px; border-radius:12px; border:1px solid #e5e7eb; background:#fafafa; font-size:0.95rem; color:var(--dark); font-weight:600; transition:all 0.2s; }
+.area-card.popular { border-color:#bfdbfe; background:#eff6ff; color:#1e40af; font-weight:800; }
+.area-icon { font-size:1rem; }
+.faq-list { display: flex; flex-direction: column; gap: 12px; margin-top:20px; }
+.faq-item { border-radius: 16px; border: 1px solid #e5e7eb; padding: 20px 24px; cursor: pointer; background: white; transition:all 0.2s; }
+.faq-item:hover { border-color: var(--primary); }
+.faq-item[open] { border-color: var(--primary); box-shadow:0 4px 20px rgba(0,0,0,0.05); }
+.faq-q { font-weight: 800; color: var(--dark); font-size: 1.05rem; list-style: none; display: flex; justify-content: space-between; align-items: center; gap: 12px; }
+.faq-q::-webkit-details-marker { display:none; }
+.faq-icon { color: var(--primary); transition: transform 0.3s; flex-shrink:0; }
+.faq-item[open] .faq-icon { transform: rotate(180deg); }
+.faq-a { color: var(--gray); line-height: 1.9; margin: 16px 0 0; padding: 18px; background: #f8fafc; border-radius: 12px; border-right: 4px solid var(--primary); font-size: 0.95rem; }
+.city-sidebar { display: flex; flex-direction: column; gap: 20px; position: sticky; top: 24px; }
+.sidebar-cta { background: linear-gradient(135deg, #0ea5e9, #0c4a6e); border-radius: 20px; padding: 28px; color: white; position:relative; overflow:hidden;}
+.sidebar-cta::before { content:''; position:absolute; top:-40px; right:-40px; width:130px; height:130px; background:rgba(255,255,255,0.08); border-radius:50%; }
+.sidebar-cta h3 { font-size: 1.3rem; font-weight: 900; margin-bottom: 10px; position:relative; z-index:2;}
+.sidebar-cta p { color: rgba(255,255,255,0.85); font-size: 0.95rem; line-height: 1.7; margin-bottom: 20px; position:relative; z-index:2;}
+.cta-whatsapp { display: block; text-align: center; padding: 14px; border-radius: 14px; background: #16a34a; color: white; font-weight: 900; font-size: 1.05rem; text-decoration: none; margin-bottom: 12px; position:relative; z-index:2; transition:all 0.2s;}
+.cta-whatsapp:hover { background: #15803d; transform:scale(1.02); }
+.cta-phone { display: block; text-align: center; padding: 14px; border-radius: 14px; border: 2px solid rgba(255,255,255,0.4); color: white; font-weight: 900; font-size: 1.05rem; text-decoration: none; position:relative; z-index:2; transition:background 0.2s;}
+.cta-phone:hover { background:rgba(255,255,255,0.1); }
+.sidebar-trust { margin-top: 16px; display: flex; flex-direction: column; gap: 6px; position:relative; z-index:2; }
+.sidebar-trust div { color: rgba(255,255,255,0.85); font-size: 0.9rem; }
+.sidebar-card { background: white; border-radius: 20px; border: 1px solid rgba(0,0,0,0.08); padding: 26px; box-shadow: 0 4px 20px rgba(0,0,0,0.03); }
+.sidebar-card h3 { color: var(--dark); font-size: 1.1rem; font-weight: 900; margin-bottom: 18px; }
+.quick-info .info-row { display:flex; justify-content:space-between; align-items:center; padding:10px 0; border-bottom:1px solid #f1f5f9; font-size:0.9rem; }
+.quick-info .info-row:last-child { border-bottom:none; }
+.quick-info .info-row span:first-child { color:var(--gray); }
+.quick-info .info-row span:last-child { color:var(--dark); font-weight:800; }
+.sidebar-dark { background: var(--dark); border-radius: 20px; padding: 26px; box-shadow: 0 4px 20px rgba(0,0,0,0.1); }
+.sidebar-dark h3 { color: white; font-size: 1.1rem; font-weight: 900; margin-bottom: 18px; }
+.area-item { display: flex; align-items: center; gap: 10px; color: rgba(255,255,255,0.85); font-size: 0.9rem; margin-bottom: 11px; }
+.area-dot { width: 7px; height: 7px; border-radius: 50%; background: var(--primary); flex-shrink: 0; }
+.pop-badge { margin-right:auto; background:rgba(14,165,233,0.25); color:#7dd3fc; font-size:0.75rem; font-weight:800; padding:2px 8px; border-radius:999px; }
+.related-link { display: flex; align-items: center; gap: 10px; color: var(--gray); text-decoration: none; padding: 10px 0; border-bottom: 1px solid #f1f5f9; font-size: 0.95rem; font-weight: 700; transition: color 0.2s; }
+.related-link:hover { color: var(--primary); }
+.related-link:last-child { border-bottom: none; padding-bottom: 0; }
+.related-arrow { color: var(--primary); font-size: 1.2rem; }
+.bottom-cta { margin-top: 50px; border-radius: 24px; background: var(--dark); color: white; overflow: hidden; position: relative; padding: 70px 60px; }
+.bottom-cta-glow { position: absolute; inset: 0; background: radial-gradient(circle at 80% 50%, rgba(14,165,233,0.3), transparent 55%); }
+.bottom-cta-content { position: relative; z-index: 1; display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 40px; }
+.bottom-cta-text { max-width: 620px; }
+.cta-badge { display: inline-flex; align-items:center; gap:6px; padding: 8px 20px; border-radius: 999px; background: rgba(14,165,233,0.15); color: #7dd3fc; font-weight: 800; font-size: 0.9rem; margin-bottom: 20px; border: 1px solid rgba(14,165,233,0.3); }
+.bottom-cta-text h2 { font-size: clamp(1.7rem, 3vw, 2.5rem); font-weight: 900; margin-bottom: 16px; line-height: 1.3; }
+.bottom-cta-text p { color: rgba(255,255,255,0.8); line-height: 1.9; font-size:1.1rem;}
+.cta-phone-big { margin-top: 16px; font-size: 2rem; font-weight: 900; color: var(--primary); }
+.cta-bottom-badges { display:flex; flex-wrap:wrap; gap:12px; margin-top:16px; }
+.cta-bottom-badges span { color:rgba(255,255,255,0.8); font-size:0.9rem; }
+.bottom-cta-buttons { display: flex; flex-direction: column; gap: 14px; min-width: 250px; }
+.btn-wa { display: flex; align-items: center; justify-content: center; gap:8px; background: #16a34a; color: white; padding: 18px 30px; border-radius: 16px; font-weight: 900; font-size: 1.15rem; text-decoration: none; transition: all 0.2s; }
+.btn-wa:hover { background: #15803d; transform:translateY(-2px); }
+.btn-call { display: flex; align-items: center; justify-content: center; gap:8px; background: white; color: var(--dark); padding: 18px 30px; border-radius: 16px; font-weight: 900; font-size: 1.15rem; text-decoration: none; transition: all 0.2s; }
+.btn-call:hover { background: #f0f9ff; transform:translateY(-2px); }
+@media (max-width: 1024px) {
+  .city-page-grid { grid-template-columns: 1fr; }
+  .city-sidebar { position: static; }
+  .stats-inner { grid-template-columns: repeat(2,1fr); }
+  .bottom-cta { padding: 50px 36px; }
+  .why-grid { grid-template-columns: 1fr; }
+}
+@media (max-width: 600px) {
+  .check-grid, .areas-grid, .why-grid { grid-template-columns: 1fr; }
+  .city-card { padding: 24px; }
+  .stats-inner { grid-template-columns: repeat(2,1fr); gap:16px; }
+  .bottom-cta { padding: 36px 24px; }
+}
+</style>
