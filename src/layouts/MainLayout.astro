@@ -46,10 +46,12 @@ const canonicalURL = canonical || new URL(Astro.url.pathname, Astro.site || "htt
     <!-- Preload Hero Image for LCP -->
     {preloadImage && <link rel="preload" href={preloadImage} as="image" fetchpriority="high" />}
 
-    <!-- Google Fonts -->
+    <!-- Google Fonts - Non-blocking async load -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@300;400;600;700;800;900&display=swap" rel="stylesheet">
+    <!-- Load fonts async to eliminate render-blocking -->
+    <link rel="preload" href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700;800&display=swap" as="style" onload="this.onload=null;this.rel='stylesheet'">
+    <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700;800&display=swap"></noscript>
   </head>
   <body>
     <div class="top-bar">
@@ -67,7 +69,7 @@ const canonicalURL = canonical || new URL(Astro.url.pathname, Astro.site || "htt
     <header class="main-header">
       <div class="container header-container">
         <a href="/" class="logo">
-          <img src="/images/logodrillmax.png" alt="Drill Max Logo" width="120" height="45" loading="eager" fetchpriority="high" onerror="this.src='data:image/svg+xml;utf8,<svg xmlns=\'http://www.w3.org/2000/svg\' width=\'120\' height=\'40\'><text x=\'0\' y=\'30\' font-size=\'30\' fill=\'%23ffffff\' font-weight=\'bold\' font-family=\'Arial\'>Drill Max</text></svg>'"/>
+          <img src="/images/logodrillmax-small.webp" alt="Drill Max Logo" width="120" height="45" loading="eager" fetchpriority="high" onerror="this.src='data:image/svg+xml;utf8,<svg xmlns=\'http://www.w3.org/2000/svg\' width=\'120\' height=\'40\'><text x=\'0\' y=\'30\' font-size=\'30\' fill=\'%23ffffff\' font-weight=\'bold\' font-family=\'Arial\'>Drill Max</text></svg>'"/>
         </a>
         <nav class="main-nav">
           <ul>
@@ -114,7 +116,7 @@ const canonicalURL = canonical || new URL(Astro.url.pathname, Astro.site || "htt
     <footer class="main-footer">
       <div class="container footer-content">
         <div class="footer-brand">
-          <img src="/images/logodrillmax.png" alt="Drill Max Logo" width="160" height="60" loading="lazy" style="height: 60px; width: auto; margin-bottom: 20px;" onerror="this.style.display='none'" />
+          <img src="/images/logodrillmax-small.webp" alt="Drill Max Logo" width="160" height="60" loading="lazy" style="height: 60px; width: auto; margin-bottom: 20px;" onerror="this.style.display='none'" />
           <p>شركة متخصصة في خدمات قص وتخريم الخرسانة المسلحة بأحدث التقنيات الهندسية لضمان الدقة والأمان.</p>
           <div style="margin-top: 20px;">
             <p style="margin-bottom:10px;">📞 <a href={`tel:+20${phoneNumber}`} dir="ltr" style="color:#ffb74d; font-weight:bold;">{phoneNumber}</a></p>
