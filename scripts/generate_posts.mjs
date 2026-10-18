@@ -175,7 +175,7 @@ for (const p of posts) {
 import MainLayout from '../layouts/MainLayout.astro';
 
 const seo = {
-  title: "${title.replace(/"/g, '\\"')} | دريل ماكس 2026",
+  title: "${title.replace(/"/g, '\\"')} | دريل ماكس",
   description: "${description.replace(/"/g, '\\"')}",
   canonical: "/${slug}/",
   ogImage: "${ogImage}",
