@@ -1,11 +1,98 @@
 ---
 import MainLayout from '../layouts/MainLayout.astro';
+
+const seo = {
+  title: "تواصل معنا | دريل ماكس | 01070046464",
+  description: "اطلب عرض سعر أو استشارة فنية لمشروعك. تواصل مع فريق دريل ماكس لخدمات قص وتخريم الخرسانة عبر الهاتف أو الواتساب للحصول على استجابة فورية.",
+  canonical: "/contact/",
+  ogImage: "/images/core-drill-hero.webp",
+  schema: JSON.stringify({
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "Organization",
+        "@id": "https://drilmax.com/#organization",
+        "name": "Drill Max دريل ماكس",
+        "url": "https://drilmax.com",
+        "sameAs": ["https://www.facebook.com/drillmaxeg"],
+        "logo": {
+          "@type": "ImageObject",
+          "@id": "https://drilmax.com/#logo",
+          "url": "https://drilmax.com/images/logo-1.webp",
+          "contentUrl": "https://drilmax.com/images/logo-1.webp",
+          "caption": "Drill Max | دريل ماكس لخدمات قص وتخريم الخرسانة",
+          "inLanguage": "ar",
+          "width": "400",
+          "height": "400"
+        }
+      },
+      {
+        "@type": "WebSite",
+        "@id": "https://drilmax.com/#website",
+        "url": "https://drilmax.com",
+        "name": "Drill Max | دريل ماكس لخدمات قص وتخريم الخرسانة",
+        "alternateName": "دريل ماكس",
+        "publisher": { "@id": "https://drilmax.com/#organization" },
+        "inLanguage": "ar"
+      },
+      {
+        "@type": "ContactPage",
+        "@id": "https://drilmax.com/contact/#webpage",
+        "url": "https://drilmax.com/contact/",
+        "name": "تواصل معنا | دريل ماكس | 01070046464",
+        "description": "اطلب عرض سعر أو استشارة فنية لمشروعك. تواصل مع فريق دريل ماكس عبر الهاتف أو الواتساب.",
+        "inLanguage": "ar",
+        "isPartOf": { "@id": "https://drilmax.com/#website" },
+        "about": { "@id": "https://drilmax.com/#organization" }
+      },
+      {
+        "@type": "BreadcrumbList",
+        "@id": "https://drilmax.com/contact/#breadcrumb",
+        "itemListElement": [
+          {
+            "@type": "ListItem",
+            "position": "1",
+            "item": { "@id": "https://drilmax.com", "name": "الرئيسية" }
+          },
+          {
+            "@type": "ListItem",
+            "position": "2",
+            "item": { "@id": "https://drilmax.com/contact/", "name": "تواصل معنا" }
+          }
+        ]
+      },
+      {
+        "@type": "LocalBusiness",
+        "@id": "https://drilmax.com/#localbusiness",
+        "name": "Drill Max دريل ماكس",
+        "image": "https://drilmax.com/images/logo-1.webp",
+        "telephone": "+201070046464",
+        "email": "support@drilmax.com",
+        "url": "https://drilmax.com",
+        "address": {
+          "@type": "PostalAddress",
+          "streetAddress": "شارع احمد السلاب، الحي العاشر، مدينة نصر",
+          "addressLocality": "القاهرة",
+          "addressCountry": "EG"
+        },
+        "sameAs": ["https://www.facebook.com/drillmaxeg"],
+        "areaServed": {
+          "@type": "Country",
+          "name": "مصر"
+        },
+        "contactPoint": {
+          "@type": "ContactPoint",
+          "telephone": "+201070046464",
+          "contactType": "customer service",
+          "availableLanguage": "Arabic"
+        }
+      }
+    ]
+  })
+};
 ---
 
-<MainLayout 
-  title="تواصل معنا | دريل ماكس | 01070046464" 
-  description="اطلب عرض سعر أو استشارة فنية لمشروعك. تواصل مع فريق دريل ماكس لخدمات قص وتخريم الخرسانة عبر الهاتف أو الواتساب للحصول على استجابة فورية."
->
+<MainLayout {...seo}>
 
   <!-- HERO SECTION -->
   <section class="hero">

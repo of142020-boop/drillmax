@@ -1,10 +1,51 @@
 ---
 import MainLayout from '../layouts/MainLayout.astro';
+
+const organizationSchema = JSON.stringify({
+  "@context": "https://schema.org",
+  "@type": "Organization",
+  "name": "Drill Max | دريل ماكس",
+  "alternateName": "دريل ماكس",
+  "url": "https://drilmax.com",
+  "logo": "https://drilmax.com/images/logodrillmax.png",
+  "image": "https://drilmax.com/images/core-drill-hero.webp",
+  "description": "شركة دريل ماكس رائدة في خدمات قص وتخريم الخرسانة المسلحة بالكور والمنشار الماسي في مصر. أكثر من 10 سنوات خبرة وأكثر من 753 مشروع منجز.",
+  "foundingDate": "2014",
+  "numberOfEmployees": {
+    "@type": "QuantitativeValue",
+    "value": 20
+  },
+  "telephone": "+201070046464",
+  "email": "support@drilmax.com",
+  "address": {
+    "@type": "PostalAddress",
+    "streetAddress": "شارع احمد السلاب، الحي العاشر، مدينة نصر",
+    "addressLocality": "القاهرة",
+    "addressCountry": "EG"
+  },
+  "sameAs": [
+    "https://www.facebook.com/drillmaxeg"
+  ],
+  "knowsAbout": [
+    "تخريم الخرسانة",
+    "قص الخرسانة بالمنشار",
+    "كور دريل",
+    "قص الخرسانة بالواير",
+    "تزريع الاشاير",
+    "فني شفاطات"
+  ],
+  "areaServed": {
+    "@type": "Country",
+    "name": "Egypt"
+  }
+});
 ---
 
 <MainLayout 
-  title="من نحن - Drill Max - Drill Max | دريل ماكس لخدمات قص وتخريم الخرسانة - 01070046464" 
-  description="نحن - Drill Max تأسست على يد فريق من المهندسين وأمهر الفنيين (صنايعي كور وصنايعي منشار) الذين يمتلكون خبرة طويلة في قطاع المقاولات والإنشاءات."
+  title="من نحن | دريل ماكس | Drill Max لخدمات قص وتخريم الخرسانة" 
+  description="نحن دريل ماكس، تأسست على يد فريق من المهندسين وأمهر الفنيين الذين يمتلكون خبرة طويلة في قطاع المقاولات والإنشاءات. أكثر من 10 سنوات خبرة و753+ مشروع منجز."
+  ogImage="/images/core-drill-hero.webp"
+  schema={organizationSchema}
 >
 
   <!-- HERO SECTION -->
@@ -26,7 +67,7 @@ import MainLayout from '../layouts/MainLayout.astro';
         <div class="half-box content-box">
           <h2 style="color: var(--dark); font-size: 2.2rem; margin-bottom: 20px;">نحن - Drill Max</h2>
           <p style="color: var(--gray); font-size: 1.15rem; line-height: 1.9; margin-bottom: 20px;">
-            تأسست على يد فريق من المهندسين وأمهر الفنيين (<a href="/core-drilling-صنايعي-كور/">صنايعي كور</a> و<a href="/saw-cuttingقص-خرسانة/">صنايعي منشار</a>) الذين يمتلكون خبرة طويلة في قطاع المقاولات والإنشاءات. رؤيتنا هي أن نكون الشريك الأول والموثوق لكل مشروع في مصر يتطلب دقة متناهية.
+            تأسست على يد فريق من المهندسين وأمهر الفنيين (<a href="/core-drilling-%D8%B5%D9%86%D8%A7%D9%8A%D8%B9%D9%8A-%D9%83%D9%88%D8%B1/">صنايعي كور</a> و<a href="/saw-cutting%D9%82%D8%B5-%D8%AE%D8%B1%D8%B3%D8%A7%D9%86%D8%A9/">صنايعي منشار</a>) الذين يمتلكون خبرة طويلة في قطاع المقاولات والإنشاءات. رؤيتنا هي أن نكون الشريك الأول والموثوق لكل مشروع في مصر يتطلب دقة متناهية.
           </p>
           <h3 style="color: var(--primary); font-size: 1.5rem; margin-bottom: 15px;">خبرتنا تمتد في جميع أنحاء الجمهورية</h3>
           <p style="color: var(--gray); font-size: 1.1rem; line-height: 1.9; margin-bottom: 30px;">
@@ -122,7 +163,7 @@ import MainLayout from '../layouts/MainLayout.astro';
     <div class="container" style="max-width: 800px;">
       <h2 style="font-size: 2.2rem; margin-bottom: 20px;">خبرتنا في خدمتكم</h2>
       <p style="font-size: 1.15rem; line-height: 1.9; margin-bottom: 30px; color: #cbd5e1;">
-        هل يتطلب مشروعك تعديلاً إنشائياً وتحتاج إلى خبراء في معالجة الخرسانة؟ نحن – Drill Max فريقك المتخصص لتنفيذ كافة أعمال قص وتخريم الخرسانة المسلحة بدقة متناهية. نوفر <a href="/core-drilling-صنايعي-كور/" style="color: #fff; text-decoration: underline;">فني كور</a> محترف لعمل فتحات السباكة والكهرباء النظيفة، و<a href="/saw-cuttingقص-خرسانة/" style="color: #fff; text-decoration: underline;">فني منشار</a> لتنفيذ قص الأسقف والجدران باستخدام معدات حديثة تضمن عدم التأثير على سلامة المبنى. سواء كنت تبحث عن أفضل أسعار الكور دريل أو تحتاج إلى مقاول معتمد لإنجاز تعديلات معمارية معقدة، فإننا نضمن لك تنفيذًا احترافيًا والتزامًا كاملاً بالمواعيد.
+        هل يتطلب مشروعك تعديلاً إنشائياً وتحتاج إلى خبراء في معالجة الخرسانة؟ نحن – Drill Max فريقك المتخصص لتنفيذ كافة أعمال قص وتخريم الخرسانة المسلحة بدقة متناهية. نوفر <a href="/core-drilling-%D8%B5%D9%86%D8%A7%D9%8A%D8%B9%D9%8A-%D9%83%D9%88%D8%B1/" style="color: #fff; text-decoration: underline;">فني كور</a> محترف لعمل فتحات السباكة والكهرباء النظيفة، و<a href="/saw-cutting%D9%82%D8%B5-%D8%AE%D8%B1%D8%B3%D8%A7%D9%86%D8%A9/" style="color: #fff; text-decoration: underline;">فني منشار</a> لتنفيذ قص الأسقف والجدران باستخدام معدات حديثة تضمن عدم التأثير على سلامة المبنى. سواء كنت تبحث عن أفضل أسعار الكور دريل أو تحتاج إلى مقاول معتمد لإنجاز تعديلات معمارية معقدة، فإننا نضمن لك تنفيذًا احترافيًا والتزامًا كاملاً بالمواعيد.
       </p>
       <div style="display: flex; gap: 15px; justify-content: center; flex-wrap: wrap;">
         <a href="https://wa.me/201070046464" class="btn btn-primary" target="_blank" rel="noopener noreferrer">تواصل عبر واتساب</a>

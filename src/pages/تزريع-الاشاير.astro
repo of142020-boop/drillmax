@@ -1,10 +1,47 @@
 ---
 import MainLayout from '../layouts/MainLayout.astro';
+
+const serviceSchema = JSON.stringify({
+  "@context": "https://schema.org",
+  "@type": "Service",
+  "name": "خدمة تزريع الاشاير وتدعيم الخرسانة",
+  "alternateName": "تزريع اشاير | تدعيم أعمدة | ربط خرسانة",
+  "url": "https://drilmax.com/%D8%AA%D8%B2%D8%B1%D9%8A%D8%B9-%D8%A7%D9%84%D8%A7%D8%B4%D8%A7%D9%8A%D8%B1/",
+  "description": "خدمات تزريع الاشاير وتدعيم الأعمدة والجدران الخرسانية بأفضل المواد (هيلتي وكيما بوكسي) طبقاً للكود المصري. حلول آمنة لربط الخرسانة الجديدة بالقديمة.",
+  "serviceType": "تدعيم وتزريع الخرسانة",
+  "provider": {
+    "@type": "LocalBusiness",
+    "name": "Drill Max | دريل ماكس",
+    "url": "https://drilmax.com",
+    "telephone": "+201070046464"
+  },
+  "areaServed": {
+    "@type": "Country",
+    "name": "Egypt"
+  },
+  "offers": {
+    "@type": "Offer",
+    "priceCurrency": "EGP",
+    "availability": "https://schema.org/InStock"
+  },
+  "hasOfferCatalog": {
+    "@type": "OfferCatalog",
+    "name": "خدمات تزريع الاشاير والتدعيم",
+    "itemListElement": [
+      {"@type": "Offer", "itemOffered": {"@type": "Service", "name": "تزريع اشاير الأعمدة الخرسانية"}},
+      {"@type": "Offer", "itemOffered": {"@type": "Service", "name": "تدعيم الجدران الخرسانية بالاشاير"}},
+      {"@type": "Offer", "itemOffered": {"@type": "Service", "name": "ربط الخرسانة الجديدة بالقديمة"}},
+      {"@type": "Offer", "itemOffered": {"@type": "Service", "name": "تدعيم الأسقف والبلاطات"}}
+    ]
+  }
+});
 ---
 
 <MainLayout 
   title="تزريع الاشاير وتدعيم خرسانة في مصر | 01070046464 | دريل ماكس" 
-  description="&quot;نقدم خدمات تزريع الاشاير وتدعيم الأعمدة بأفضل المواد (هيلتي وكيما بوكسي) طبقاً للكود المصري. حلول آمنة لربط الخرسانة. لمعاينة مجانية اتصل بنا: 01070046464&quot;"
+  description="نقدم خدمات تزريع الاشاير وتدعيم الأعمدة بأفضل المواد (هيلتي وكيما بوكسي) طبقاً للكود المصري. حلول آمنة لربط الخرسانة. لمعاينة مجانية اتصل بنا: 01070046464"
+  ogImage="/images/core-drill-hero.webp"
+  schema={serviceSchema}
 >
   <!-- HERO SECTION -->
   <section class="hero">

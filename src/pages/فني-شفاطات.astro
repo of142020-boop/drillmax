@@ -1,11 +1,48 @@
 ---
 import MainLayout from '../layouts/MainLayout.astro';
+
+const serviceSchema = JSON.stringify({
+  "@context": "https://schema.org",
+  "@type": "Service",
+  "name": "خدمة تركيب شفاط المطبخ وتأسيس المداخن",
+  "alternateName": "فني شفاطات | تركيب شفاط | عمل مداخن",
+  "url": "https://drilmax.com/%D9%81%D9%86%D9%8A-%D8%B4%D9%81%D8%A7%D8%B7%D8%A7%D8%AA/",
+  "description": "خدمة تركيب شفاط المطبخ والحمام وعمل المداخن وفتحات الكور في الخرسانة المسلحة. خدمة 24 ساعة في القاهرة والمحافظات.",
+  "serviceType": "تركيب شفاطات ومداخن",
+  "provider": {
+    "@type": "LocalBusiness",
+    "name": "Drill Max | دريل ماكس",
+    "url": "https://drilmax.com",
+    "telephone": "+201024596959"
+  },
+  "areaServed": {
+    "@type": "Country",
+    "name": "Egypt"
+  },
+  "offers": {
+    "@type": "Offer",
+    "priceCurrency": "EGP",
+    "availability": "https://schema.org/InStock"
+  },
+  "hasOfferCatalog": {
+    "@type": "OfferCatalog",
+    "name": "خدمات الشفاطات والمداخن",
+    "itemListElement": [
+      {"@type": "Offer", "itemOffered": {"@type": "Service", "name": "تركيب شفاط المطبخ"}},
+      {"@type": "Offer", "itemOffered": {"@type": "Service", "name": "عمل فتحات المداخن في الخرسانة"}},
+      {"@type": "Offer", "itemOffered": {"@type": "Service", "name": "تركيب شفاط الحمام والتهوية"}},
+      {"@type": "Offer", "itemOffered": {"@type": "Service", "name": "عمل فتحات الكور لمواسير الشفاطات"}}
+    ]
+  }
+});
 ---
 
 <MainLayout 
   title="تأسيس و تركيب شفاط المطبخ والمداخن| 01024596959 | فني شفاطات" 
-  description="هل تبحث عن فني شفاطات لتركيب شفاط ؟ نقدم عمل شفاط المطبخ والحمام، و المداخن، وعمل فتحات الكور في الخرسانة بدقة . خدمة 24 ساعة في القاهرة والمحافظات. 01024596959."
+  description="هل تبحث عن فني شفاطات لتركيب شفاط؟ نقدم عمل شفاط المطبخ والحمام، والمداخن، وعمل فتحات الكور في الخرسانة بدقة. خدمة 24 ساعة في القاهرة والمحافظات. 01024596959."
   phoneNumber="01024596959"
+  ogImage="/images/core-drill-hero.webp"
+  schema={serviceSchema}
 >
   <!-- HERO SECTION -->
   <section class="hero">

@@ -1,10 +1,47 @@
 ---
 import MainLayout from '../layouts/MainLayout.astro';
+
+const serviceSchema = JSON.stringify({
+  "@context": "https://schema.org",
+  "@type": "Service",
+  "name": "خدمة قص الخرسانة بالواير الماسي",
+  "alternateName": "قطع الخرسانة بالواير | Wire Saw Cutting",
+  "url": "https://drilmax.com/%D9%82%D8%B5-%D8%A7%D9%84%D8%AE%D8%B1%D8%B3%D8%A7%D9%86%D8%A9-%D8%A8%D8%A7%D9%84%D9%88%D8%A7%D9%8A%D8%B1/",
+  "description": "أفضل خدمة قص الخرسانة بالواير الماسي في مصر. حلول لقص الكباري والأساسات والخرسانة السميكة جداً بدون اهتزاز. خدمة 24 ساعة في القاهرة والمحافظات.",
+  "serviceType": "قص الخرسانة بالواير",
+  "provider": {
+    "@type": "LocalBusiness",
+    "name": "Drill Max | دريل ماكس",
+    "url": "https://drilmax.com",
+    "telephone": "+201070046464"
+  },
+  "areaServed": {
+    "@type": "Country",
+    "name": "Egypt"
+  },
+  "offers": {
+    "@type": "Offer",
+    "priceCurrency": "EGP",
+    "availability": "https://schema.org/InStock"
+  },
+  "hasOfferCatalog": {
+    "@type": "OfferCatalog",
+    "name": "تطبيقات قص الخرسانة بالواير",
+    "itemListElement": [
+      {"@type": "Offer", "itemOffered": {"@type": "Service", "name": "قص الكباري والأساسات الخرسانية"}},
+      {"@type": "Offer", "itemOffered": {"@type": "Service", "name": "قطع الخرسانة السميكة جداً"}},
+      {"@type": "Offer", "itemOffered": {"@type": "Service", "name": "هدم المنشآت الخرسانية الكبيرة"}},
+      {"@type": "Offer", "itemOffered": {"@type": "Service", "name": "قص الأعمدة والجسور الخرسانية"}}
+    ]
+  }
+});
 ---
 
 <MainLayout 
   title="قص الخرسانة بالواير وقطع الخرسانة بالواير - 01070046464" 
-  description="أفضل شركة قص الخرسانة بالواير في مصر. حلول لقص الكباري، الأساسات، والخرسانة السميكة جداً بدون اهتزاز. خدمة 24 ساعة في القاهرة والمحافظات. اتصل 01070046464&quot;"
+  description="أفضل شركة قص الخرسانة بالواير في مصر. حلول لقص الكباري والأساسات والخرسانة السميكة جداً بدون اهتزاز. خدمة 24 ساعة في القاهرة والمحافظات. اتصل 01070046464"
+  ogImage="/images/wire-saw.webp"
+  schema={serviceSchema}
 >
   <!-- HERO SECTION -->
   <section class="hero">

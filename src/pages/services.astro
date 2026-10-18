@@ -1,11 +1,148 @@
 ---
 import MainLayout from '../layouts/MainLayout.astro';
+
+const seo = {
+  title: "خدمات قص الخرسانة وتخريم الخرسانة - قص بالواير 01070046464",
+  description: "نقدم في دريل ماكس خدمات قص الخرسانة بالواير وتخريم الخرسانة المسلحة وعمل فتحات كور بأحدث الأجهزة. دقة بدون تكسير أو اهتزازات. اتصل بنا الآن للحصول على أفضل سعر.",
+  canonical: "/services/",
+  ogImage: "/images/gas-hole.webp",
+  schema: JSON.stringify({
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "Organization",
+        "@id": "https://drilmax.com/#organization",
+        "name": "Drill Max دريل ماكس",
+        "url": "https://drilmax.com",
+        "sameAs": ["https://www.facebook.com/drillmaxeg"],
+        "logo": {
+          "@type": "ImageObject",
+          "@id": "https://drilmax.com/#logo",
+          "url": "https://drilmax.com/images/logo-1.webp",
+          "contentUrl": "https://drilmax.com/images/logo-1.webp",
+          "caption": "Drill Max | دريل ماكس لخدمات قص وتخريم الخرسانة",
+          "inLanguage": "ar",
+          "width": "400",
+          "height": "400"
+        }
+      },
+      {
+        "@type": "WebSite",
+        "@id": "https://drilmax.com/#website",
+        "url": "https://drilmax.com",
+        "name": "Drill Max | دريل ماكس لخدمات قص وتخريم الخرسانة",
+        "alternateName": "دريل ماكس",
+        "publisher": { "@id": "https://drilmax.com/#organization" },
+        "inLanguage": "ar"
+      },
+      {
+        "@type": "WebPage",
+        "@id": "https://drilmax.com/services/#webpage",
+        "url": "https://drilmax.com/services/",
+        "name": "خدمات قص الخرسانة وتخريم الخرسانة - قص بالواير 01070046464",
+        "description": "نقدم في دريل ماكس خدمات قص الخرسانة بالواير وتخريم الخرسانة المسلحة وعمل فتحات كور بأحدث الأجهزة.",
+        "inLanguage": "ar",
+        "isPartOf": { "@id": "https://drilmax.com/#website" },
+        "about": { "@id": "https://drilmax.com/#organization" }
+      },
+      {
+        "@type": "BreadcrumbList",
+        "@id": "https://drilmax.com/services/#breadcrumb",
+        "itemListElement": [
+          {
+            "@type": "ListItem",
+            "position": "1",
+            "item": { "@id": "https://drilmax.com", "name": "الرئيسية" }
+          },
+          {
+            "@type": "ListItem",
+            "position": "2",
+            "item": { "@id": "https://drilmax.com/services/", "name": "الخدمات" }
+          }
+        ]
+      },
+      {
+        "@type": "ItemList",
+        "@id": "https://drilmax.com/services/#itemlist",
+        "name": "خدمات دريل ماكس لقص وتخريم الخرسانة",
+        "description": "قائمة بجميع خدمات قص وتخريم الخرسانة التي تقدمها شركة دريل ماكس في مصر",
+        "url": "https://drilmax.com/services/",
+        "numberOfItems": "6",
+        "itemListElement": [
+          {
+            "@type": "ListItem",
+            "position": "1",
+            "item": {
+              "@type": "Service",
+              "name": "تخريم الخرسانة بالكور (Core Drilling)",
+              "description": "خدمات تخريم الخرسانة بالكور الماسي لعمل فتحات دائرية منتظمة بأي قطر مطلوب لمواسير الغاز والتكييف والسباكة",
+              "url": "https://drilmax.com/core-drilling-%d8%b5%d9%86%d8%a7%d9%8a%d8%b9%d9%8a-%d9%83%d9%88%d8%b1/",
+              "provider": { "@id": "https://drilmax.com/#organization" }
+            }
+          },
+          {
+            "@type": "ListItem",
+            "position": "2",
+            "item": {
+              "@type": "Service",
+              "name": "قص الخرسانة بالمنشار الماسي",
+              "description": "قص الجدران والأسقف الخرسانية بدقة لعمل فتحات الأبواب والشبابيك والتعديلات المعمارية",
+              "url": "https://drilmax.com/saw-cutting%d9%82%d8%b5-%d8%ae%d8%b1%d8%b3%d8%a7%d9%86%d8%a9/",
+              "provider": { "@id": "https://drilmax.com/#organization" }
+            }
+          },
+          {
+            "@type": "ListItem",
+            "position": "3",
+            "item": {
+              "@type": "Service",
+              "name": "قص الخرسانة بالواير",
+              "description": "تقنية قص الخرسانة بالسلك الماسي للمقاطع الضخمة والأعمدة والجسور الخرسانية",
+              "url": "https://drilmax.com/%d9%82%d8%b5-%d8%a7%d9%84%d8%ae%d8%b1%d8%b3%d8%a7%d9%86%d8%a9-%d8%a8%d8%a7%d9%84%d9%88%d8%a7%d9%8a%d8%b1/",
+              "provider": { "@id": "https://drilmax.com/#organization" }
+            }
+          },
+          {
+            "@type": "ListItem",
+            "position": "4",
+            "item": {
+              "@type": "Service",
+              "name": "تركيب فني شفاطات",
+              "description": "تركيب شفاطات المطبخ المركزية مع تخريم فتحات التهوية في الجدران والأسقف",
+              "url": "https://drilmax.com/%d9%81%d9%86%d9%8a-%d8%b4%d9%81%d8%a7%d8%b7%d8%a7%d8%aa/",
+              "provider": { "@id": "https://drilmax.com/#organization" }
+            }
+          },
+          {
+            "@type": "ListItem",
+            "position": "5",
+            "item": {
+              "@type": "Service",
+              "name": "تزريع الأشاير",
+              "description": "تزريع وتركيب أشاير التسليح الخرساني للإضافات الإنشائية",
+              "url": "https://drilmax.com/%d8%aa%d8%b2%d8%b1%d9%8a%d8%b9-%d8%a7%d9%84%d8%a7%d8%b4%d8%a7%d9%8a%d8%b1/",
+              "provider": { "@id": "https://drilmax.com/#organization" }
+            }
+          },
+          {
+            "@type": "ListItem",
+            "position": "6",
+            "item": {
+              "@type": "Service",
+              "name": "مقاول هدم وتكسير",
+              "description": "خدمات هدم وتكسير الحوائط والخرسانات مع تشوين كامل للمخلفات",
+              "url": "https://drilmax.com/%d9%85%d9%82%d8%a7%d9%88%d9%84-%d9%87%d8%af%d9%85/",
+              "provider": { "@id": "https://drilmax.com/#organization" }
+            }
+          }
+        ]
+      }
+    ]
+  })
+};
 ---
 
-<MainLayout 
-  title="خدمات قص الخرسانة وتخريم الخرسانة - قص بالواير 01070046464" 
-  description="نقدم في دريل ماكس خدمات قص الخرسانة بالواير وتخريم الخرسانة المسلحة وعمل فتحات كور بأحدث الأجهزة. دقة بدون تكسير أو اهتزازات. اتصل بنا الآن للحصول على أفضل سعر."
->
+<MainLayout {...seo}>
 
   <!-- HERO SECTION -->
   <section class="hero">
@@ -41,7 +178,10 @@ import MainLayout from '../layouts/MainLayout.astro';
               <li>فتحات التكييف المركزي ووفتحات الاسبليت وفتحات مسارات الصرف.</li>
               <li>تجهيز مسارات مواسير السباكة والصرف الصحي (فتحات الصواعد).</li>
             </ul>
-            <a href="/contact/" class="btn btn-outline-primary w-100 mt-3">استفسر عن هذه الخدمة</a>
+            <div style="display:flex;gap:10px;flex-wrap:wrap;">
+              <a href="/core-drilling-%d8%b5%d9%86%d8%a7%d9%8a%d8%b9%d9%8a-%d9%83%d9%88%d8%b1/" class="btn btn-primary" style="flex:1;min-width:140px;">اعرف أكثر</a>
+              <a href="/contact/" class="btn btn-outline-primary" style="flex:1;min-width:140px;">استفسر الآن</a>
+            </div>
           </div>
         </div>
 
@@ -59,7 +199,10 @@ import MainLayout from '../layouts/MainLayout.astro';
               <li>إزالة الجدران والأعمدة الخرسانية بإشراف هندسي.</li>
               <li>عمل فواصل تمدد في الأرضيات والأسفلت.</li>
             </ul>
-            <a href="/contact/" class="btn btn-outline-primary w-100 mt-3">استفسر عن هذه الخدمة</a>
+            <div style="display:flex;gap:10px;flex-wrap:wrap;">
+              <a href="/saw-cutting%d9%82%d8%b5-%d8%ae%d8%b1%d8%b3%d8%a7%d9%86%d8%a9/" class="btn btn-primary" style="flex:1;min-width:140px;">اعرف أكثر</a>
+              <a href="/contact/" class="btn btn-outline-primary" style="flex:1;min-width:140px;">استفسر الآن</a>
+            </div>
           </div>
         </div>
 
@@ -77,7 +220,10 @@ import MainLayout from '../layouts/MainLayout.astro';
               <li>العمل في الأماكن الضيقة والمياه العميقة.</li>
               <li>تنفيذ قص دقيق بدون ضوضاء أو اهتزازات.</li>
             </ul>
-            <a href="/contact/" class="btn btn-outline-primary w-100 mt-3">استفسر عن هذه الخدمة</a>
+            <div style="display:flex;gap:10px;flex-wrap:wrap;">
+              <a href="/%d9%82%d8%b5-%d8%a7%d9%84%d8%ae%d8%b1%d8%b3%d8%a7%d9%86%d8%a9-%d8%a8%d8%a7%d9%84%d9%88%d8%a7%d9%8a%d8%b1/" class="btn btn-primary" style="flex:1;min-width:140px;">اعرف أكثر</a>
+              <a href="/contact/" class="btn btn-outline-primary" style="flex:1;min-width:140px;">استفسر الآن</a>
+            </div>
           </div>
         </div>
 

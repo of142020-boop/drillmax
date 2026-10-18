@@ -1,10 +1,47 @@
 ---
 import MainLayout from '../layouts/MainLayout.astro';
+
+const serviceSchema = JSON.stringify({
+  "@context": "https://schema.org",
+  "@type": "Service",
+  "name": "خدمة قص الخرسانة بالمنشار الماسي",
+  "alternateName": "قص خرسانة | قطع خرسانة بالليزر",
+  "url": "https://drilmax.com/saw-cutting%D9%82%D8%B5-%D8%AE%D8%B1%D8%B3%D8%A7%D9%86%D8%A9/",
+  "description": "خدمة قص الخرسانة المسلحة بالمنشار الماسي لعمل فتحات الأبواب والشبابيك وقص الجدران والأسقف والأرضيات بدقة متناهية وبدون اهتزازات أو تكسير.",
+  "serviceType": "قص الخرسانة",
+  "provider": {
+    "@type": "LocalBusiness",
+    "name": "Drill Max | دريل ماكس",
+    "url": "https://drilmax.com",
+    "telephone": "+201070046464"
+  },
+  "areaServed": {
+    "@type": "Country",
+    "name": "Egypt"
+  },
+  "offers": {
+    "@type": "Offer",
+    "priceCurrency": "EGP",
+    "availability": "https://schema.org/InStock"
+  },
+  "hasOfferCatalog": {
+    "@type": "OfferCatalog",
+    "name": "أنواع خدمات قص الخرسانة بالمنشار",
+    "itemListElement": [
+      {"@type": "Offer", "itemOffered": {"@type": "Service", "name": "قص أبواب وشبابيك جديدة في الجدران الخرسانية"}},
+      {"@type": "Offer", "itemOffered": {"@type": "Service", "name": "قص الأسقف لعمل فتحات السلالم والمصاعد"}},
+      {"@type": "Offer", "itemOffered": {"@type": "Service", "name": "إزالة الجدران والأعمدة الخرسانية بإشراف هندسي"}},
+      {"@type": "Offer", "itemOffered": {"@type": "Service", "name": "عمل فواصل تمدد في الأرضيات والأسفلت"}}
+    ]
+  }
+});
 ---
 
 <MainLayout 
   title="قص الخرسانة بالمنشار | قص خرسانة بالليزر| 01070046464" 
   description="دريل ماكس لخدمات قص خرسانات و قطع خرسانة في مصر.01070046464 نستخدم أحدث منشار قطع خرسانة لضمان دقة قص خرسانة ليزر بدون اهتزازات"
+  ogImage="/images/saw.webp"
+  schema={serviceSchema}
 >
   <!-- HERO SECTION -->
   <section class="hero">

@@ -1,9 +1,142 @@
 ---
 import MainLayout from '../layouts/MainLayout.astro';
+
+const combinedSchema = JSON.stringify({
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "LocalBusiness",
+      "name": "Drill Max | دريل ماكس",
+      "alternateName": "دريل ماكس",
+      "url": "https://drilmax.com",
+      "logo": "https://drilmax.com/images/logodrillmax.png",
+      "image": "https://drilmax.com/images/core-drill-hero.webp",
+      "description": "شركة دريل ماكس رائدة في خدمات قص وتخريم الخرسانة المسلحة بالكور والمنشار الماسي في مصر. أكثر من 10 سنوات خبرة وأكثر من 753 مشروع منجز.",
+      "telephone": "+201070046464",
+      "email": "support@drilmax.com",
+      "address": {
+        "@type": "PostalAddress",
+        "streetAddress": "شارع احمد السلاب، الحي العاشر، مدينة نصر",
+        "addressLocality": "القاهرة",
+        "addressCountry": "EG"
+      },
+      "geo": {
+        "@type": "GeoCoordinates",
+        "latitude": "30.0693",
+        "longitude": "31.3417"
+      },
+      "openingHoursSpecification": {
+        "@type": "OpeningHoursSpecification",
+        "dayOfWeek": ["Monday","Tuesday","Wednesday","Thursday","Friday","Saturday","Sunday"],
+        "opens": "08:00",
+        "closes": "22:00"
+      },
+      "priceRange": "$$",
+      "currenciesAccepted": "EGP",
+      "paymentAccepted": "Cash",
+      "areaServed": {
+        "@type": "Country",
+        "name": "Egypt"
+      },
+      "sameAs": [
+        "https://www.facebook.com/drillmaxeg"
+      ],
+      "hasOfferCatalog": {
+        "@type": "OfferCatalog",
+        "name": "خدمات قص وتخريم الخرسانة",
+        "itemListElement": [
+          {
+            "@type": "Offer",
+            "itemOffered": {
+              "@type": "Service",
+              "name": "تخريم الخرسانة بالكور دريل",
+              "url": "https://drilmax.com/core-drilling-%d8%b5%d9%86%d8%a7%d9%8a%d8%b9%d9%8a-%d9%83%d9%88%d8%b1/"
+            }
+          },
+          {
+            "@type": "Offer",
+            "itemOffered": {
+              "@type": "Service",
+              "name": "قص الخرسانة بالمنشار الماسي",
+              "url": "https://drilmax.com/saw-cutting%d9%82%d8%b5-%d8%ae%d8%b1%d8%b3%d8%a7%d9%86%d8%a9/"
+            }
+          },
+          {
+            "@type": "Offer",
+            "itemOffered": {
+              "@type": "Service",
+              "name": "تركيب شفاط المطبخ وتأسيس المداخن",
+              "url": "https://drilmax.com/%d9%81%d9%86%d9%8a-%d8%b4%d9%81%d8%a7%d8%b7%d8%a7%d8%aa/"
+            }
+          }
+        ]
+      }
+    },
+    {
+      "@type": "FAQPage",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "ما هو الكور دريل وما هي استخداماته؟",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "الكور دريل هو جهاز متخصص يُستخدم لعمل فتحات دائرية في الخرسانة المسلحة بدقة عالية. يُستخدم لعمل فتحات التكييف، فتحات الغاز الطبيعي، فتحات الشفاطات، تمديدات السباكة والكهرباء، وأخذ عينات من الخرسانة. الميزة الأساسية أنه يعمل بدون اهتزازات أو تكسير."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "ما الفرق بين الكور دريل ومنشار قص الخرسانة؟",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "الكور دريل يُستخدم لعمل فتحات دائرية بأي قطر مطلوب، بينما يُستخدم منشار قص الخرسانة لعمل فتحات مستطيلة أو مربعة كالأبواب والشبابيك. كلاهما يعمل بالألماس الصناعي ويضمن قصًا نظيفًا بدون اهتزازات ضارة."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "كم سعر عمل فتحة كور في الخرسانة؟",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "يبدأ سعر فتحة الكور من 200 جنيه للخرسانة المسلحة و100 جنيه لحوائط الطوب بقطر 1 بوصة، ويزيد السعر تدريجياً مع زيادة القطر. للحصول على عرض سعر دقيق يرجى التواصل على 01070046464."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "هل يمكنكم العمل في جميع محافظات مصر؟",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "نعم، تقدم Drill Max خدماتها في جميع أنحاء مصر. نخدم القاهرة والجيزة والتجمع الخامس ومدينة نصر و6 أكتوبر والشيخ زايد والإسكندرية والغردقة والمنصورة والمنيا وأسيوط وغيرها."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "هل الكور دريل يسبب أضراراً للجدران؟",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "لا، الكور دريل مصمم خصيصاً لعمل فتحات بدون إحداث أي اهتزازات أو شروخ في المبنى. على عكس الطرق التقليدية (الهيلتي والتكسير)، يحافظ الكور دريل على السلامة الإنشائية الكاملة للجدار أو السقف."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "كيف أطلب خدمة قص أو تخريم الخرسانة؟",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "يمكنك التواصل معنا عبر الاتصال على 01070046464 أو 01055550195، أو عبر الواتساب، أو من خلال نموذج التواصل على موقعنا. يقوم فريقنا بالرد فوراً ويجدول معاينة مجانية للموقع."
+          }
+        }
+      ]
+    }
+  ]
+});
 ---
 
-<MainLayout title="قص وتخريم خرسانة | 01070046464 | Drill Max | شركة دريل ماكس" preloadImage="/images/core-drill-hero.webp">
-  
+<MainLayout
+  title="قص وتخريم خرسانة | 01070046464 | Drill Max | شركة دريل ماكس"
+  description="دريل ماكس أفضل شركة قص وتخريم خرسانة في مصر. صنايعي كور وفني منشار لعمل فتحات الغاز والتكييف والتعديلات المعمارية. اتصل 01070046464."
+  preloadImage="/images/core-drill-hero.webp"
+  ogImage="/images/core-drill-hero.webp"
+  schema={combinedSchema}
+>
+
   <!-- HERO SECTION -->
   <section class="hero">
     <div class="hero-bg"></div>
@@ -26,7 +159,7 @@ import MainLayout from '../layouts/MainLayout.astro';
       <div class="about-text">
         <span class="section-subtitle">نبذة عن Drill Max</span>
         <h2>شريكك الاستراتيجي لخدمات قص وتخريم خرسانة بأفضل شركة كور وفني كور في مصر</h2>
-        <p>بصفتنا شركة قص خرسانة رائدة في مصر، تقدم Drill Max حلولاً متكاملة ل قص وتخريم خرسانة المسلحة بأعلى معايير الدقة والأمان. يضم فريقنا أمهر <a href="/core-drilling-صنايعي-كور/">صنايعي كور</a> و<a href="/saw-cuttingقص-خرسانة/">صنايعي منشار</a> محترفين، جاهزين لتنفيذ أصعب المشاريع. سواء كنت تحتاج إلى <a href="/core-drilling-صنايعي-كور/">كور دريل</a> لعمل فتحات أسطوانية دقيقة لمواسير الغاز الطبيعي أو التكييف، أو كنت تبحث عن فني منشار خبير لاستخدام المنشار الجداري في قص جدران وأسقف لعمل تعديلات معمارية وإنشائية، فإننا نوفر لك الخبرة والمعدات الحديثة. نعتبر أنفسنا أفضل مقاول قص خرسانة يمكنك الاعتماد عليه لتنفيذ فتحات المداخن والتهوية وكل ما يخص تخريم الخرسانة بالمنشار الماسي.</p>
+        <p>بصفتنا شركة قص خرسانة رائدة في مصر، تقدم Drill Max حلولاً متكاملة ل قص وتخريم خرسانة المسلحة بأعلى معايير الدقة والأمان. يضم فريقنا أمهر <a href="/core-drilling-%D8%B5%D9%86%D8%A7%D9%8A%D8%B9%D9%8A-%D9%83%D9%88%D8%B1/">صنايعي كور</a> و<a href="/saw-cutting%D9%82%D8%B5-%D8%AE%D8%B1%D8%B3%D8%A7%D9%86%D8%A9/">صنايعي منشار</a> محترفين، جاهزين لتنفيذ أصعب المشاريع. سواء كنت تحتاج إلى <a href="/core-drilling-%D8%B5%D9%86%D8%A7%D9%8A%D8%B9%D9%8A-%D9%83%D9%88%D8%B1/">كور دريل</a> لعمل فتحات أسطوانية دقيقة لمواسير الغاز الطبيعي أو التكييف، أو كنت تبحث عن فني منشار خبير لاستخدام المنشار الجداري في قص جدران وأسقف لعمل تعديلات معمارية وإنشائية، فإننا نوفر لك الخبرة والمعدات الحديثة. نعتبر أنفسنا أفضل مقاول قص خرسانة يمكنك الاعتماد عليه لتنفيذ فتحات المداخن والتهوية وكل ما يخص تخريم الخرسانة بالمنشار الماسي.</p>
         
         <div class="features-list">
           <div class="feature-item">
@@ -764,5 +897,31 @@ import MainLayout from '../layouts/MainLayout.astro';
     .service-row { flex-direction: column !important; text-align: center; }
     .about-img-small { display: none; }
     .hero h1 { font-size: 2.5rem; }
+  }
+
+  @media (max-width: 640px) {
+    .py-section { padding: 50px 0; }
+    .hero { height: auto; min-height: 100svh; padding: 100px 0 60px; }
+    .hero h1 { font-size: 1.9rem; line-height: 1.3; }
+    .hero p { font-size: 1rem; }
+    .hero-content { max-width: 100%; }
+    .hero-content .btn { width: 100%; text-align: center; box-sizing: border-box; }
+    .section-header h2 { font-size: 1.6rem; margin-bottom: 25px; }
+    .about-text h2 { font-size: 1.5rem; }
+    .stats-row { flex-direction: column; gap: 20px; }
+    .services-grid { grid-template-columns: 1fr; }
+    .service-row { gap: 20px; padding-bottom: 25px; margin-top: 25px; }
+    .service-row-text h3 { font-size: 1.3rem; }
+    .callout-box { padding: 20px 15px; }
+    .half-box { padding: 20px 15px; }
+    .appointment-text h2 { font-size: 1.7rem; }
+    .appointment-form-box { padding: 20px 15px; }
+    .appointment-form-box input,
+    .appointment-form-box textarea { font-size: 16px; }
+    .features-list-inline { gap: 10px; font-size: 0.9rem; }
+    .testi-grid { grid-template-columns: 1fr; }
+    .testi-card { padding: 20px 15px; }
+    .work-feature { padding: 20px 15px; }
+    .work-feature h3 { font-size: 1.2rem; }
   }
 </style>

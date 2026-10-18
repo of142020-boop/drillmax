@@ -1,10 +1,53 @@
 ---
 import MainLayout from '../layouts/MainLayout.astro';
+
+const serviceSchema = JSON.stringify({
+  "@context": "https://schema.org",
+  "@type": "Service",
+  "name": "خدمة تخريم الخرسانة بالكور دريل",
+  "alternateName": "صنايعي كور | كور دريل",
+  "url": "https://drilmax.com/core-drilling-%D8%B5%D9%86%D8%A7%D9%8A%D8%B9%D9%8A-%D9%83%D9%88%D8%B1/",
+  "description": "خدمة تخريم الخرسانة المسلحة بالكور الماسي لعمل فتحات دائرية منتظمة بأي قطر مطلوب. مثالية لتمرير مواسير الغاز والتكييف والسباكة والكهرباء بدون اهتزازات أو شروخ.",
+  "serviceType": "تخريم الخرسانة",
+  "provider": {
+    "@type": "LocalBusiness",
+    "name": "Drill Max | دريل ماكس",
+    "url": "https://drilmax.com",
+    "telephone": "+201070046464"
+  },
+  "areaServed": {
+    "@type": "Country",
+    "name": "Egypt"
+  },
+  "offers": {
+    "@type": "Offer",
+    "priceCurrency": "EGP",
+    "priceSpecification": {
+      "@type": "UnitPriceSpecification",
+      "price": "200",
+      "priceCurrency": "EGP",
+      "unitText": "لكل فتحة (خرسانة مسلحة، قطر 1 بوصة)"
+    },
+    "availability": "https://schema.org/InStock"
+  },
+  "hasOfferCatalog": {
+    "@type": "OfferCatalog",
+    "name": "أنواع فتحات الكور",
+    "itemListElement": [
+      {"@type": "Offer", "itemOffered": {"@type": "Service", "name": "فتحات الغاز الطبيعي والمداخن"}},
+      {"@type": "Offer", "itemOffered": {"@type": "Service", "name": "فتحات التكييف والشفاطات"}},
+      {"@type": "Offer", "itemOffered": {"@type": "Service", "name": "فتحات السباكة والكهرباء"}},
+      {"@type": "Offer", "itemOffered": {"@type": "Service", "name": "فتحات الصواعد والصرف الصحي"}}
+    ]
+  }
+});
 ---
 
 <MainLayout 
   title="صنايعي كور تخريم خرسانة بأي مكان | أفضل سعر 01070046464" 
   description="نقدم حلولاً متقدمة لعمل جميع أنواع الفتحات الدائرية في الخرسانة المسلحة بأفضل فني كور وصنايعي كور دريل. دقة بدون تكسير، اتصل الآن للحصول على أفضل سعر."
+  ogImage="/images/gas-hole.webp"
+  schema={serviceSchema}
 >
 
   <!-- HERO SECTION -->
