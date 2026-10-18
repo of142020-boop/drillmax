@@ -17,6 +17,11 @@ pnpm-debug.log*
 .env
 .env.production
 
+# Google Search Console service-account key and generated reports
+secrets/
+reports/
+*-key.json
+
 # macOS-specific files
 .DS_Store
 
