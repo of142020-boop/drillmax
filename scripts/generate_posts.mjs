@@ -3,8 +3,6 @@ import path from 'node:path';
 
 const posts = JSON.parse(fs.readFileSync('posts.json', 'utf8'));
 const pagesDir = 'src/pages';
-
-// Available images in public/images
 const publicImgs = new Set(fs.readdirSync('public/images'));
 
 function cleanText(html) {
@@ -32,15 +30,38 @@ function resolveImage(url) {
   if (publicImgs.has(cleanBase)) return `/images/${cleanBase}`;
   if (publicImgs.has(base)) return `/images/${base}`;
   
-  // Try finding without -scaled
   const noScaled = cleanBase.replace(/-scaled/, '');
   if (publicImgs.has(noScaled)) return `/images/${noScaled}`;
 
-  // Fallback to default hero
   return '/images/core-drill-hero.webp';
 }
 
-function cleanHtml(html) {
+function injectSmartLinks(html, currentSlug) {
+  const targets = [
+    { phrase: 'صنايعي كور', url: '/core-drilling-%d8%b5%d9%86%d8%a7%d9%8a%d8%b9%d9%8a-%d9%83%d9%88%d8%b1/' },
+    { phrase: 'تخريم خرسانة', url: '/core-drilling-%d8%b5%d9%86%d8%a7%d9%8a%d8%b9%d9%8a-%d9%83%d9%88%d8%b1/' },
+    { phrase: 'قص خرسانة', url: '/saw-cutting%d9%82%d8%b5-%d8%ae%d8%b1%d8%b3%d8%a7%d9%86%d8%a9/' },
+    { phrase: 'اسعار فتحات الكور', url: '/prices/' },
+    { phrase: 'اسعار كور التخريم', url: '/prices/' },
+    { phrase: 'فني شفاطات', url: '/%d9%81%d9%86%d9%8a-%d8%b4%d9%81%d8%a7%d8%b7%d8%a7%d8%aa/' },
+    { phrase: 'تركيب شفاط المطبخ', url: '/%d9%81%d9%86%d9%8a-%d8%b4%d9%81%d8%a7%d8%b7%d8%a7%d8%aa/' },
+    { phrase: 'قص الخرسانة بالواير', url: '/%d9%82%d8%b5-%d8%a7%d9%84%d8%ae%d8%b1%d8%b3%d8%a7%d9%86%d8%a9-%d8%a8%d8%a7%d9%84%d9%88%d8%a7%d9%8a%d8%b1/' },
+    { phrase: 'تزريع الاشاير', url: '/%d8%aa%d8%b2%d8%b1%d9%8a%d8%b9-%d8%a7%d9%84%d8%a7%d8%b4%d8%a7%d9%8a%d8%b1/' }
+  ];
+
+  let result = html;
+  for (const t of targets) {
+    if (currentSlug.includes(encodeURIComponent(t.phrase)) || currentSlug.includes(t.phrase)) continue;
+    // Replace only first occurrence not inside a tag
+    const regex = new RegExp(`(?<!<[^>]*)\\b(${t.phrase})\\b(?![^<]*>)`, '');
+    if (regex.test(result)) {
+      result = result.replace(regex, `<a href="${t.url}" class="smart-internal-link" title="${t.phrase}">$1</a>`);
+    }
+  }
+  return result;
+}
+
+function cleanHtml(html, currentSlug) {
   if (!html) return '';
   let h = html;
   
@@ -64,7 +85,28 @@ function cleanHtml(html) {
   // Remove empty paragraphs
   h = h.replace(/<p>\s*(&nbsp;|\s)*<\/p>/gi, '');
 
+  // Inject smart internal linking
+  h = injectSmartLinks(h, currentSlug);
+
   return h;
+}
+
+// Map related posts by topic cluster
+function getRelatedPosts(currentPost, allPosts) {
+  const isFan = /شفاط|المطبخ/.test(currentPost.slug) || /شفاط|المطبخ/.test(currentPost.title?.rendered || '');
+  const isCore = /كور|تخريم/.test(currentPost.slug) || /كور|تخريم/.test(currentPost.title?.rendered || '');
+  const isSaw = /منشار|قص/.test(currentPost.slug) || /منشار|قص/.test(currentPost.title?.rendered || '');
+
+  const matches = allPosts.filter(p => {
+    if (p.slug === currentPost.slug) return false;
+    const txt = (p.slug + ' ' + (p.title?.rendered || ''));
+    if (isFan && /شفاط|المطبخ/.test(txt)) return true;
+    if (isCore && /كور|تخريم/.test(txt)) return true;
+    if (isSaw && /منشار|قص/.test(txt)) return true;
+    return false;
+  });
+
+  return (matches.length >= 3 ? matches : allPosts.filter(p => p.slug !== currentPost.slug)).slice(0, 3);
 }
 
 let generated = 0;
@@ -87,13 +129,18 @@ for (const p of posts) {
   const firstImg = (p.content?.rendered || '').match(/src=["']([^"']+)["']/)?.[1] || '';
   const ogImage = resolveImage(rawFeat || firstImg);
 
-  const cleanContent = cleanHtml(p.content?.rendered || '');
+  const cleanContent = cleanHtml(p.content?.rendered || '', slug);
   const dateStr = p.date ? p.date.split('T')[0] : '2026-02-15';
   const modifiedStr = p.modified ? p.modified.split('T')[0] : dateStr;
 
-  // Approximate reading time
   const wordsCount = cleanText(cleanContent).split(/\s+/).length;
   const readTime = Math.max(2, Math.round(wordsCount / 180));
+
+  const related = getRelatedPosts(p, posts).map(r => ({
+    title: cleanText(r.title?.rendered || r.title || ''),
+    url: `/${decodeURIComponent(r.slug)}/`,
+    image: resolveImage(r.uagb_featured_image_src?.full?.[0] || '')
+  }));
 
   const schemaObj = {
     "@context": "https://schema.org",
@@ -128,7 +175,7 @@ for (const p of posts) {
 import MainLayout from '../layouts/MainLayout.astro';
 
 const seo = {
-  title: "${title.replace(/"/g, '\\"')} | دريل ماكس",
+  title: "${title.replace(/"/g, '\\"')} | دريل ماكس 2026",
   description: "${description.replace(/"/g, '\\"')}",
   canonical: "/${slug}/",
   ogImage: "${ogImage}",
@@ -136,6 +183,7 @@ const seo = {
 };
 
 const contentHtml = ${JSON.stringify(cleanContent)};
+const relatedPosts = ${JSON.stringify(related)};
 ---
 
 <MainLayout {...seo}>
@@ -156,7 +204,7 @@ const contentHtml = ${JSON.stringify(cleanContent)};
 
     <div class="container post-container">
       <div class="post-grid">
-        <div class="post-content-area">
+        <div class="post-main-content">
           ${ogImage ? `
           <div class="post-featured-media">
             <img src="${ogImage}" alt="${title}" class="featured-img" loading="eager" />
@@ -164,12 +212,28 @@ const contentHtml = ${JSON.stringify(cleanContent)};
 
           <div class="post-body-text" set:html={contentHtml} />
 
+          <!-- CTA Box inside post -->
           <div class="post-cta-box">
-            <h3>جاهزون لخدمتكم على مدار 24 ساعة</h3>
-            <p>سواء كنت تحتاج تخريم فتحات كور للغاز والتكييف، أو قص خرسانة مسلحة بالمنشار والواير، فريق دريل ماكس في خدمتكم بأحدث المعدات وأفضل الأسعار.</p>
+            <h3>هل تحتاج إلى مساعدة أو استفسار فني؟</h3>
+            <p>فريق دريل ماكس جاهز لخدمتكم بأحدث ماكينات الكور والمنشار الماسي لقص وتخريم الخرسانة وتركيب الشفاطات بأعلى جودة وأفضل الأسعار في مصر.</p>
             <div class="cta-buttons">
               <a href="tel:+2001070046464" class="btn btn-call">📞 اتصل الآن: 01070046464</a>
-              <a href="https://wa.me/+201070046464" class="btn btn-wa" target="_blank" rel="noopener">💬 محادثة واتساب سريعة</a>
+              <a href="https://wa.me/+201070046464" class="btn btn-wa" target="_blank" rel="noopener">💬 تواصل عبر الواتساب</a>
+            </div>
+          </div>
+
+          <!-- Related Posts Section (Topic Clusters) -->
+          <div class="related-posts-section">
+            <h3 class="related-heading">مقالات وخدمات ذات صلة</h3>
+            <div class="related-grid">
+              {relatedPosts.map((rel) => (
+                <a href={rel.url} class="related-card">
+                  <div class="related-img-wrap">
+                    <img src={rel.image} alt={rel.title} loading="lazy" />
+                  </div>
+                  <h4 class="related-title">{rel.title}</h4>
+                </a>
+              ))}
             </div>
           </div>
         </div>
@@ -293,6 +357,20 @@ const contentHtml = ${JSON.stringify(cleanContent)};
     font-weight: 600;
     text-decoration: underline;
   }
+  .post-body-text :global(.smart-internal-link) {
+    background: #fef3c7;
+    padding: 2px 6px;
+    border-radius: 4px;
+    text-decoration: none;
+    color: #92400e;
+    font-weight: 700;
+    border-bottom: 2px solid #f59e0b;
+    transition: all 0.2s ease;
+  }
+  .post-body-text :global(.smart-internal-link:hover) {
+    background: #fde68a;
+    color: #78350f;
+  }
   .post-body-text :global(table) {
     width: 100%;
     border-collapse: collapse;
@@ -348,6 +426,65 @@ const contentHtml = ${JSON.stringify(cleanContent)};
     font-weight: 700;
     text-decoration: none !important;
   }
+  .related-posts-section {
+    margin-top: 55px;
+    padding-top: 35px;
+    border-top: 2px solid #e2e8f0;
+  }
+  .related-heading {
+    font-size: 1.6rem;
+    font-weight: 800;
+    color: #0f172a;
+    margin-bottom: 25px;
+    position: relative;
+    padding-bottom: 10px;
+  }
+  .related-heading::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    width: 60px;
+    height: 3px;
+    background: #eab308;
+    border-radius: 2px;
+  }
+  .related-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+  }
+  .related-card {
+    background: #fff;
+    border: 1px solid #e2e8f0;
+    border-radius: 10px;
+    overflow: hidden;
+    text-decoration: none;
+    transition: transform 0.2s, box-shadow 0.2s;
+    display: flex;
+    flex-direction: column;
+  }
+  .related-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.08);
+  }
+  .related-img-wrap {
+    height: 140px;
+    overflow: hidden;
+  }
+  .related-img-wrap img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+  .related-title {
+    font-size: 1rem;
+    font-weight: 700;
+    color: #1e293b;
+    padding: 15px;
+    margin: 0;
+    line-height: 1.5;
+  }
   .post-sidebar .widget {
     background: #fff;
     border: 1px solid #e2e8f0;
@@ -390,6 +527,9 @@ const contentHtml = ${JSON.stringify(cleanContent)};
     .entry-title {
       font-size: 1.6rem;
     }
+    .related-grid {
+      grid-template-columns: 1fr;
+    }
   }
 </style>
 `;
@@ -399,4 +539,4 @@ const contentHtml = ${JSON.stringify(cleanContent)};
   generated++;
 }
 
-console.log(`Successfully generated ${generated} blog post Astro pages.`);
+console.log(`Regenerated ${generated} posts with smart internal links & topic clusters.`);
