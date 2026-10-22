@@ -468,7 +468,7 @@ const seo = {
   /* Services Grid */
   .services-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(min(100%, 320px), 1fr));
     gap: 30px;
   }
   .service-card {
@@ -531,7 +531,7 @@ const seo = {
   /* Process Cards */
   .process-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(min(100%, 280px), 1fr));
     gap: 30px;
   }
   .process-card {
@@ -610,7 +610,7 @@ const seo = {
   }
   .half-box {
     flex: 1;
-    min-width: 300px;
+    min-width: min(100%, 300px);
     background: #fff;
     padding: 40px;
     border-radius: 12px;

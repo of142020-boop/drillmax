@@ -344,7 +344,7 @@ const seo = {
   }
   .half-box {
     flex: 1;
-    min-width: 300px;
+    min-width: min(100%, 300px);
   }
   .img-box {
     height: 100%;
@@ -363,7 +363,7 @@ const seo = {
   /* Process Cards */
   .process-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(min(100%, 300px), 1fr));
     gap: 30px;
   }
   .process-card {
@@ -470,6 +470,7 @@ const seo = {
     color: var(--primary);
     margin-bottom: 15px;
   }
+  .v-card.highlight .price-val { color: #fdba74; }
   .v-card p {
     color: var(--gray);
     margin: 0;

@@ -1,5 +1,6 @@
 ---
 import MainLayout from '../layouts/MainLayout.astro';
+import ContactForm from '../components/ContactForm.astro';
 
 const combinedSchema = JSON.stringify({
   "@context": "https://schema.org",
@@ -163,7 +164,7 @@ const websiteSchema = JSON.stringify({
         <p>Drill Max لخدمات قص وتخريم خرسانة وفتحات الكور مع أفضل شركة كور<br/>أكثر من +10 سنوات من الخبرة في تقطيع الخرسانات</p>
         <div style="display: flex; gap: 15px; margin-top: 20px; flex-wrap: wrap;">
           <a href="/contact/" class="btn btn-primary">اطلب عرض سعر الآن</a>
-          <a href="/services/" class="btn btn-outline" style="color:#fff; border: 2px solid #fff;">استعراض المشاريع</a>
+          <a href="/projects/" class="btn btn-outline" style="color:#fff; border: 2px solid #fff;">استعراض المشاريع</a>
         </div>
       </div>
     </div>
@@ -379,7 +380,7 @@ const websiteSchema = JSON.stringify({
       <span class="section-subtitle" style="color: var(--primary);">من مشاريعنا</span>
       <h2 style="color: #fff; margin-bottom: 20px;">معرض أعمالنا في قص وتخريم الخرسانة</h2>
       <p style="color: #cbd5e1; max-width: 800px; margin: 0 auto 30px;">من المشاريع السكنية إلى المنشآت الصناعية، كل مشروع ننفذه هو شهادة على الدقة، الجودة، والالتزام بأعلى المعايير الهندسية.</p>
-      <a href="/services/" class="btn btn-primary">عرض كل المشاريع</a>
+      <a href="/projects/" class="btn btn-primary">عرض كل المشاريع</a>
     </div>
   </section>
 
@@ -409,12 +410,7 @@ const websiteSchema = JSON.stringify({
       </div>
       <div class="appointment-form-box">
         <h3>تواصل معنا الآن</h3>
-        <form>
-          <input type="text" placeholder="الاسم الكريم" />
-          <input type="tel" placeholder="رقم الهاتف" />
-          <textarea placeholder="رسالتك أو تفاصيل المشروع" rows="4"></textarea>
-          <button type="submit" class="btn btn-dark">إرسال الرسالة</button>
-        </form>
+        <ContactForm />
       </div>
     </div>
   </section>
@@ -715,7 +711,7 @@ const websiteSchema = JSON.stringify({
   /* Services Grid */
   .services-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    grid-template-columns: repeat(auto-fill, minmax(min(100%, 300px), 1fr));
     gap: 30px;
     justify-content: center;
   }
@@ -822,7 +818,7 @@ const websiteSchema = JSON.stringify({
   }
   .half-box {
     flex: 1;
-    min-width: 300px;
+    min-width: min(100%, 300px);
     background: #fff;
     padding: 30px;
     border-radius: 8px;
@@ -891,7 +887,7 @@ const websiteSchema = JSON.stringify({
   /* Testimonials */
   .testi-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(min(100%, 300px), 1fr));
     gap: 30px;
   }
   .testi-card {

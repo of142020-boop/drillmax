@@ -1,5 +1,6 @@
 ---
 import MainLayout from '../layouts/MainLayout.astro';
+import ContactForm from '../components/ContactForm.astro';
 
 const seo = {
   title: "تواصل معنا | دريل ماكس | 01070046464",
@@ -173,18 +174,7 @@ const seo = {
       <!-- Contact Form -->
       <div class="contact-form-box">
         <h3 style="color: var(--dark); margin-bottom: 20px; font-size: 1.6rem;">أو عبر النموذج التالي</h3>
-        <form>
-          <div class="form-group">
-            <input type="text" placeholder="الاسم الكريم" required />
-          </div>
-          <div class="form-group">
-            <input type="tel" placeholder="رقم الهاتف" required />
-          </div>
-          <div class="form-group">
-            <textarea placeholder="رسالتك أو تفاصيل المشروع" rows="5" required></textarea>
-          </div>
-          <button type="submit" class="btn btn-primary w-100">إرسال الرسالة</button>
-        </form>
+        <ContactForm />
       </div>
 
     </div>
@@ -283,7 +273,7 @@ const seo = {
   .btn-primary:hover { background: var(--primary-hover); }
   
   .btn-whatsapp {
-    background: #25D366;
+    background: #087f3f;
     color: #fff;
     font-size: 1.1rem;
     display: inline-flex;

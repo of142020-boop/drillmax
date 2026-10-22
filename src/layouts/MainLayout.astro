@@ -122,7 +122,7 @@ const robotsDirectives = [
         <a href="/" class="logo">
           <img src="/images/logodrillmax-small.webp" alt="Drill Max Logo" width="66" height="66" loading="eager" fetchpriority="high" onerror="this.src='data:image/svg+xml;utf8,<svg xmlns=\'http://www.w3.org/2000/svg\' width=\'120\' height=\'40\'><text x=\'0\' y=\'30\' font-size=\'30\' fill=\'%23ffffff\' font-weight=\'bold\' font-family=\'Arial\'>Drill Max</text></svg>'"/>
         </a>
-        <nav class="main-nav">
+        <nav class="main-nav" id="main-navigation" aria-label="التنقل الرئيسي">
           <ul>
             <li><a href="/">الرئيسية</a></li>
             <li><a href="/services/">خدماتنا</a></li>
@@ -135,7 +135,7 @@ const robotsDirectives = [
           </ul>
         </nav>
         <a href="/contact/" class="cta-header-btn hide-on-mobile">تواصل معنا</a>
-        <button class="mobile-menu-btn" aria-label="Toggle Menu">
+        <button class="mobile-menu-btn" aria-label="فتح القائمة" aria-controls="main-navigation" aria-expanded="false">
           <span></span>
           <span></span>
           <span></span>
@@ -203,23 +203,29 @@ const robotsDirectives = [
 
     <script>
       document.addEventListener('DOMContentLoaded', () => {
-        // Mobile Menu
-        const menuBtn = document.querySelector('.mobile-menu-btn');
-        const nav = document.querySelector('.main-nav');
+        const menuBtn = document.querySelector<HTMLButtonElement>('.mobile-menu-btn');
+        const nav = document.querySelector<HTMLElement>('.main-nav');
         if (menuBtn && nav) {
-          menuBtn.addEventListener('click', () => {
-            nav.classList.toggle('active');
-            const spans = menuBtn.querySelectorAll('span');
-            if (nav.classList.contains('active')) {
-              spans[0].style.transform = 'rotate(45deg) translate(6px, 6px)';
-              spans[1].style.opacity = '0';
-              spans[2].style.transform = 'rotate(-45deg) translate(6px, -7px)';
-            } else {
-              spans[0].style.transform = 'none';
-              spans[1].style.opacity = '1';
-              spans[2].style.transform = 'none';
+          const setMenu = (open: boolean) => {
+            nav.classList.toggle('active', open);
+            menuBtn.setAttribute('aria-expanded', String(open));
+            menuBtn.setAttribute('aria-label', open ? 'إغلاق القائمة' : 'فتح القائمة');
+          };
+          menuBtn.addEventListener('click', () => setMenu(menuBtn.getAttribute('aria-expanded') !== 'true'));
+          nav.addEventListener('click', (event) => {
+            if ((event.target as HTMLElement).closest('a')) setMenu(false);
+          });
+          document.addEventListener('click', (event) => {
+            if (!nav.contains(event.target as Node) && !menuBtn.contains(event.target as Node)) setMenu(false);
+          });
+          document.addEventListener('keydown', (event) => {
+            if (event.key === 'Escape' && menuBtn.getAttribute('aria-expanded') === 'true') {
+              setMenu(false);
+              menuBtn.focus();
             }
           });
+          const desktop = window.matchMedia('(min-width: 993px)');
+          desktop.addEventListener('change', () => setMenu(false));
         }
 
         // Scroll to Top
@@ -241,14 +247,14 @@ const robotsDirectives = [
 
 <style is:global>
   :root {
-    --primary: #d84315; /* Accessible Dark Orange */
-    --primary-hover: #bf360c;
+    --primary: #c2410c; /* Accessible Dark Orange */
+    --primary-hover: #9a3412;
     --secondary: #ffffff; /* White */
     --dark: #1e293b; /* Dark text */
     --header-bg: #1e2530; /* Dark Charcoal for header */
     --topbar-bg: #161b22; /* Even darker for top bar */
     --light: #f8fafc;
-    --gray: #64748b;
+    --gray: #475569;
     --bg-color: #ffffff;
     --section-bg: #f9fafb; /* Light gray section background */
     --card-bg: #ffffff;
@@ -269,7 +275,7 @@ const robotsDirectives = [
   }
 
   body {
-    overflow-x: hidden;
+    overflow-x: clip;
   }
 
   a {
@@ -562,6 +568,9 @@ const robotsDirectives = [
       box-shadow: 0 4px 10px rgba(0,0,0,0.1);
       z-index: 999;
       border-top: 1px solid rgba(255,255,255,0.1);
+      max-height: calc(100dvh - 70px);
+      overflow-y: auto;
+      overscroll-behavior: contain;
     }
     .main-nav.active {
       display: flex;
@@ -569,6 +578,7 @@ const robotsDirectives = [
     .main-nav ul {
       flex-direction: column;
       width: 100%;
+      gap: 0;
     }
     .main-nav ul li {
       width: 100%;
@@ -589,7 +599,7 @@ const robotsDirectives = [
   /* ===== MOBILE FIXES ===== */
   @media (max-width: 640px) {
     /* Prevent horizontal scroll */
-    body, html { overflow-x: hidden; max-width: 100vw; }
+    body, html { overflow-x: clip; max-width: 100vw; }
 
     /* Force all WordPress images to fit screen width - CRITICAL FIX */
     .post-body-text img {
@@ -660,13 +670,13 @@ const robotsDirectives = [
     margin: 0 auto !important;
   }
   .post-body-text {
-    overflow-x: hidden !important;
+    overflow-x: clip !important;
   }
 
   /* ===== GLOBAL RESPONSIVE IMAGES (applies to ALL WordPress content) ===== */
   img {
-    max-width: 100% !important;
-    height: auto !important;
+    max-width: 100%;
+    height: auto;
   }
   figure.wp-caption,
   .wp-caption {
@@ -674,10 +684,31 @@ const robotsDirectives = [
     overflow: hidden;
   }
   body {
-    overflow-x: hidden !important;
+    overflow-x: clip !important;
     max-width: 100vw !important;
   }
 
   }
+
+  img { max-width: 100%; height: auto; }
+  iframe { max-width: 100%; }
+  .btn-wa { background: #087f3f !important; color: #fff !important; }
+  .btn-wa:hover { background: #065f30 !important; }
+  main, .container, main section > div { min-width: 0; }
+  .post-body-text img, .post-body-text figure, .post-body-text .wp-caption { max-width: 100% !important; }
+  .post-body-text a { color: #9a3412 !important; text-decoration: underline; text-underline-offset: .2em; }
+  .projects-banner .section-subtitle { color: #fdba74 !important; }
+  .appointment-text .section-subtitle { color: #fff !important; }
+  a:focus-visible, button:focus-visible { outline: 3px solid #c2410c; outline-offset: 4px; }
+  .main-header a:focus-visible, .main-header button:focus-visible { outline-color: #fdba74; }
+  .mobile-menu-btn { min-width: 48px; min-height: 48px; }
+  .mobile-menu-btn[aria-expanded="true"] span:nth-child(1) { transform: rotate(45deg) translate(6px, 6px); }
+  .mobile-menu-btn[aria-expanded="true"] span:nth-child(2) { opacity: 0; }
+  .mobile-menu-btn[aria-expanded="true"] span:nth-child(3) { transform: rotate(-45deg) translate(6px, -7px); }
+  @media (prefers-reduced-motion: reduce) {
+    html { scroll-behavior: auto; }
+    *, *::before, *::after { animation-duration: .01ms !important; transition-duration: .01ms !important; }
+  }
+
 </style>
 
