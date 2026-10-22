@@ -1,0 +1,48 @@
+{
+  "name": "دريل ماكس | Drill Max - خدمات قص وتخريم الخرسانة",
+  "short_name": "دريل ماكس",
+  "description": "شركة دريل ماكس الرائدة في خدمات قص وتخريم الخرسانة المسلحة بالكور دريل والمنشار الماسي في مصر. أكثر من 10 سنوات خبرة و+753 مشروع منجز.",
+  "lang": "ar",
+  "dir": "rtl",
+  "start_url": "/",
+  "scope": "/",
+  "display": "standalone",
+  "orientation": "portrait",
+  "background_color": "#ffffff",
+  "theme_color": "#d84315",
+  "categories": ["business", "construction", "home improvement"],
+  "icons": [
+    {
+      "src": "/images/logodrillmax.png",
+      "sizes": "192x192",
+      "type": "image/png",
+      "purpose": "any maskable"
+    },
+    {
+      "src": "/images/logodrillmax-small.webp",
+      "sizes": "512x512",
+      "type": "image/webp",
+      "purpose": "any"
+    }
+  ],
+  "shortcuts": [
+    {
+      "name": "اتصل بنا",
+      "short_name": "اتصال",
+      "url": "/contact/",
+      "icons": [{ "src": "/images/logodrillmax.png", "sizes": "192x192" }]
+    },
+    {
+      "name": "الأسعار",
+      "short_name": "أسعار",
+      "url": "/prices/",
+      "icons": [{ "src": "/images/logodrillmax.png", "sizes": "192x192" }]
+    },
+    {
+      "name": "مشاريعنا",
+      "short_name": "مشاريع",
+      "url": "/projects/",
+      "icons": [{ "src": "/images/logodrillmax.png", "sizes": "192x192" }]
+    }
+  ]
+}

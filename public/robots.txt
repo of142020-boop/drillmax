@@ -1,4 +1,20 @@
+# Drill Max - دريل ماكس
+# https://drilmax.com
+
 User-agent: *
 Allow: /
 
+# Sitemap
 Sitemap: https://drilmax.com/sitemap-index.xml
+
+# Disallow admin/private (if any)
+Disallow: /admin/
+Disallow: /private/
+Disallow: /*.json$
+
+# Allow search engines to fully index key pages
+Allow: /services/
+Allow: /prices/
+Allow: /projects/
+Allow: /contact/
+Allow: /service-areas/

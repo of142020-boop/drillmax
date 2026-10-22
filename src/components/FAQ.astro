@@ -1,0 +1,147 @@
+---
+/**
+ * FAQ.astro
+ * Renders an FAQ section with matching FAQPage JSON-LD schema.
+ * FAQ rich results can significantly boost CTR and page length.
+ */
+interface QA {
+  q: string;
+  a: string;
+}
+
+interface Props {
+  items: QA[];
+  title?: string;
+  id?: string;
+}
+
+const { items, title = "أسئلة شائعة", id = "faq" } = Astro.props;
+
+const faqSchema = JSON.stringify({
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": items.map((item) => ({
+    "@type": "Question",
+    "name": item.q,
+    "acceptedAnswer": {
+      "@type": "Answer",
+      "text": item.a,
+    },
+  })),
+});
+---
+
+<section class="faq-section" id={id}>
+  <h2 class="faq-section__title">{title}</h2>
+
+  <div class="faq-list">
+    {items.map((item, i) => (
+      <details class="faq-item" open={i === 0}>
+        <summary class="faq-item__q">
+          <h3>{item.q}</h3>
+          <span class="faq-item__icon" aria-hidden="true"></span>
+        </summary>
+        <div class="faq-item__a">
+          <p set:html={item.a} />
+        </div>
+      </details>
+    ))}
+  </div>
+
+  <script type="application/ld+json" set:html={faqSchema} />
+</section>
+
+<style>
+  .faq-section {
+    margin: 50px 0;
+    padding: 35px 30px;
+    background: var(--light, #f8fafc);
+    border-radius: 12px;
+    border: 1px solid var(--border, #e2e8f0);
+  }
+  .faq-section__title {
+    font-size: 1.6rem;
+    font-weight: 800;
+    color: var(--dark, #1e293b);
+    margin-bottom: 26px;
+    text-align: center;
+  }
+  .faq-list {
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+  }
+  .faq-item {
+    background: #fff;
+    border: 1px solid var(--border, #e2e8f0);
+    border-radius: 10px;
+    overflow: hidden;
+    transition: border-color 0.25s ease;
+  }
+  .faq-item[open] {
+    border-color: var(--primary, #f59e0b);
+  }
+  .faq-item__q {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 14px;
+    padding: 18px 20px;
+    cursor: pointer;
+    list-style: none;
+    user-select: none;
+  }
+  .faq-item__q::-webkit-details-marker { display: none; }
+  .faq-item__q h3 {
+    margin: 0;
+    font-size: 1.05rem;
+    font-weight: 700;
+    color: var(--dark, #1e293b);
+    line-height: 1.5;
+  }
+  .faq-item__icon {
+    position: relative;
+    width: 22px;
+    height: 22px;
+    flex-shrink: 0;
+  }
+  .faq-item__icon::before,
+  .faq-item__icon::after {
+    content: "";
+    position: absolute;
+    background: var(--primary, #f59e0b);
+    border-radius: 2px;
+    transition: transform 0.25s ease;
+  }
+  .faq-item__icon::before {
+    width: 16px;
+    height: 2.5px;
+    top: 50%;
+    left: 3px;
+    transform: translateY(-50%);
+  }
+  .faq-item__icon::after {
+    width: 2.5px;
+    height: 16px;
+    left: 50%;
+    top: 3px;
+    transform: translateX(-50%);
+  }
+  .faq-item[open] .faq-item__icon::after {
+    transform: translateX(-50%) scaleY(0);
+  }
+  .faq-item__a {
+    padding: 0 20px 20px;
+    color: var(--gray, #475569);
+    line-height: 1.85;
+    font-size: 0.98rem;
+  }
+  .faq-item__a p {
+    margin: 0;
+  }
+  @media (max-width: 640px) {
+    .faq-section { padding: 26px 18px; }
+    .faq-section__title { font-size: 1.35rem; }
+    .faq-item__q h3 { font-size: 0.98rem; }
+  }
+</style>
