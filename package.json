@@ -10,7 +10,8 @@
     "build": "astro build",
     "preview": "astro preview",
     "astro": "astro",
-    "analyze:seo": "node scripts/analyzer.mjs"
+    "analyze:seo": "node scripts/analyzer.mjs",
+    "check:seo": "node scripts/audit-seo.mjs"
   },
   "dependencies": {
     "@astrojs/sitemap": "^3.7.4",

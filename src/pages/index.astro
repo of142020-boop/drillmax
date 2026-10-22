@@ -40,7 +40,10 @@ const combinedSchema = JSON.stringify({
         "name": "Egypt"
       },
       "sameAs": [
-        "https://www.facebook.com/drillmaxeg"
+        "https://www.facebook.com/drillmaxeg",
+        "https://www.instagram.com/drillmaxeg",
+        "https://www.tiktok.com/@drillmaxeg",
+        "https://www.youtube.com/@drillmaxeg"
       ],
       "hasOfferCatalog": {
         "@type": "OfferCatalog",
@@ -128,6 +131,16 @@ const combinedSchema = JSON.stringify({
     }
   ]
 });
+
+// Site identity; search action requires a working search page.
+const websiteSchema = JSON.stringify({
+  "@context": "https://schema.org",
+  "@type": "WebSite",
+  "url": "https://drilmax.com",
+  "name": "Drill Max - دريل ماكس",
+  "alternateName": "دريل ماكس",
+  "description": "شركة متخصصة في قص وتخريم الخرسانة بأحدث التقنيات"
+});
 ---
 
 <MainLayout
@@ -137,6 +150,8 @@ const combinedSchema = JSON.stringify({
   ogImage="/images/core-drill-hero.webp"
   schema={combinedSchema}
 >
+<script type="application/ld+json" set:html={websiteSchema} is:inline />
+
 
   <!-- HERO SECTION -->
   <section class="hero">
@@ -417,7 +432,7 @@ const combinedSchema = JSON.stringify({
           <h3>تنفيذ تعديل معماري</h3>
           <p>“التعامل مع فريق Drill Max كان احترافيًا لأبعد الحدود. تم قص الجدران بدقة متناهية والتزام كامل بالجدول الزمني، مما ساعدنا على تسليم المشروع في موعده. أنصح بهم بشدة.”</p>
           <div class="user-info">
-            <img src="/images/Customer-1.png" alt="م. خالد المصري" width="50" height="50" loading="lazy" decoding="async" />
+            <img src="/images/Customer-1.webp" alt="م. خالد المصري" width="50" height="50" loading="lazy" decoding="async" />
             <div>
               <strong>م. خالد المصري</strong>
             </div>
@@ -428,7 +443,7 @@ const combinedSchema = JSON.stringify({
           <h3>عمل فتحات للغاز والتكييف</h3>
           <p>“كنت متخوفًا من عملية التخريم في شقتي، لكن فريق العمل كان نظيفًا ومنظمًا جدًا. قاموا بعمل الفتحات المطلوبة بسرعة وبدون أي أضرار جانبية. خدمة ممتازة.”</p>
           <div class="user-info">
-            <img src="/images/Customer-2.png" alt="هيام علي" width="50" height="50" loading="lazy" decoding="async" />
+            <img src="/images/Customer-2.webp" alt="هيام علي" width="50" height="50" loading="lazy" decoding="async" />
             <div>
               <strong>هيام علي</strong>
             </div>
@@ -439,7 +454,7 @@ const combinedSchema = JSON.stringify({
           <h3>فتحات مداخن لمطعم</h3>
           <p>“كفني تركيبات، أحتاج دائمًا لفتحات كور دقيقة بالمقاس المحدد تمامًا. Drill Max يوفرون هذه الدقة دائمًا، مما يسهل عليّ عملي كثيرًا. هم شركائي المعتمدين.”</p>
           <div class="user-info">
-            <img src="/images/Testimonial-Img-2.png" alt="محمد حامد" width="50" height="50" loading="lazy" decoding="async" />
+            <img src="/images/Testimonial-Img-2.webp" alt="محمد حامد" width="50" height="50" loading="lazy" decoding="async" />
             <div>
               <strong>محمد حامد</strong>
             </div>

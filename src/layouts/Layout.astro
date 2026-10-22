@@ -12,7 +12,7 @@ const {
   title,
   description = 'أفضل صنايعي كور وفني منشار في مصر لعمل فتحات الغاز والتكييف وقص الجدران والأسقف.',
   keywords = 'قص خرسانة, تخريم خرسانة, كور دريل, منشار خرسانة, دريل ماكس, مصر',
-  canonical = Astro.url.href,
+  canonical = new URL(Astro.url.pathname, Astro.site || "https://drilmax.com").href,
   ogImage = '/images/Site-Logo.png',
   noindex = false,
 } = Astro.props;

@@ -1,10 +1,16 @@
 <IfModule mod_rewrite.c>
 RewriteEngine On
 
-# Redirect WordPress category archives to main pages (301 permanent)
-RewriteRule ^category/%D8%A7%D8%B3%D8%B9%D8%A7%D8%B1-%D9%81%D8%AA%D8%AD%D8%A7%D8%AA-%D8%A7%D9%84%D9%83%D9%88%D8%B1/?$ /prices/ [R=301,L]
-RewriteRule ^category/%D9%81%D9%86%D9%8A-%D8%B4%D9%81%D8%A7%D8%B7%D8%A7%D8%AA/?$ /%D9%81%D9%86%D9%8A-%D8%B4%D9%81%D8%A7%D8%B7%D8%A7%D8%AA/ [R=301,L,NE]
-RewriteRule ^category/%D9%82%D8%B5-%D9%88%D8%AA%D8%AE%D8%B1%D9%8A%D9%85-%D8%A7%D9%84%D8%AE%D8%B1%D8%B3%D8%A7%D9%86%D8%A9-%D8%A7%D9%84%D9%85%D8%B3%D9%84%D8%AD%D8%A9/?$ /saw-cutting%D9%82%D8%B5-%D8%AE%D8%B1%D8%B3%D8%A7%D9%86%D8%A9/ [R=301,L,NE]
+# Permanent redirects for legacy WordPress URLs
+RewriteRule ^category/اسعار-فتحات-الكور/?$ /prices/ [R=301,L,NE]
+RewriteRule ^category/قص-وتخريم-الخرسانة-المسلحة/?$ /%D9%82%D8%B5-%D9%88%D8%AA%D8%AE%D8%B1%D9%8A%D9%85-%D8%A7%D9%84%D8%AE%D8%B1%D8%B3%D8%A7%D9%86%D8%A9-%D8%A7%D9%84%D9%85%D8%B3%D9%84%D8%AD%D8%A9/ [R=301,L,NE]
+RewriteRule ^category/فني-شفاطات/?$ /%D9%81%D9%86%D9%8A-%D8%B4%D9%81%D8%A7%D8%B7%D8%A7%D8%AA/ [R=301,L,NE]
+RewriteRule ^category/أسعار-ماكينة-تخريم-الخرسانية/?$ /%D8%A3%D8%B3%D8%B9%D8%A7%D8%B1-%D9%85%D8%A7%D9%83%D9%8A%D9%86%D8%A9-%D8%AA%D8%AE%D8%B1%D9%8A%D9%85-%D8%A7%D9%84%D8%AE%D8%B1%D8%B3%D8%A7%D9%86%D9%8A%D8%A9/ [R=301,L,NE]
+RewriteRule ^category/uncategorized/?$ /blog/ [R=301,L,NE]
+RewriteRule ^category/خدمات-الكور-دريل/?$ /core-drilling-%D8%B5%D9%86%D8%A7%D9%8A%D8%B9%D9%8A-%D9%83%D9%88%D8%B1/ [R=301,L,NE]
+RewriteRule ^category/صنايعي-الكور/?$ /core-drilling-%D8%B5%D9%86%D8%A7%D9%8A%D8%B9%D9%8A-%D9%83%D9%88%D8%B1/ [R=301,L,NE]
+RewriteRule ^category/تخريم-الخرسانة-المسلحة/?$ /%D8%AA%D8%AE%D8%B1%D9%8A%D9%85-%D8%A7%D9%84%D8%AE%D8%B1%D8%B3%D8%A7%D9%86%D8%A9-%D8%A7%D9%84%D9%85%D8%B3%D9%84%D8%AD%D8%A9/ [R=301,L,NE]
+RewriteRule ^صنايعي-كور-في-الاسكندرية/?$ /alexandria-concrete-cutting-core/ [R=301,L,NE]
 
 # Redirect wp-content/uploads to /images/
 RewriteRule ^wp-content/uploads/\d{4}/\d{2}/(.*)$ /images/$1 [R=301,L]
@@ -36,3 +42,5 @@ ExpiresByType application/javascript "access plus 1 month"
 ExpiresByType application/x-javascript "access plus 1 month"
 ExpiresByType font/woff2 "access plus 1 year"
 </IfModule>
+
+ErrorDocument 404 /404.html

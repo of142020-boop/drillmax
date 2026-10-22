@@ -5,6 +5,7 @@ export default defineConfig({
   site: 'https://drilmax.com',
   integrations: [
     sitemap({
+      filter: (page) => !new URL(page).pathname.startsWith('/category/') && !new URL(page).pathname.startsWith('/404'),
       // Priority weights for key pages (1.0 = highest)
       serialize(item) {
         const url = item.url;
@@ -17,7 +18,7 @@ export default defineConfig({
         } else if (url.endsWith('/contact/') || url.endsWith('/projects/') || url.endsWith('/service-areas/')) {
           priority = 0.9;
           changefreq = 'monthly';
-        } else if (url.includes('-concrete-cutting-core-') || url.includes('/blog/')) {
+        } else if (url.includes('-concrete-cutting-core/') || url.includes('/blog/')) {
           priority = 0.8;
           changefreq = 'weekly';
         } else if (url.includes('/privacy-policy/') || url.includes('/terms-condition/')) {
@@ -44,9 +45,15 @@ export default defineConfig({
   },
   redirects: {
     // WordPress Category Archives -> Main Services/Prices
-    '/category/اسعار-فتحات-الكور': '/prices/',
-    '/category/قص-وتخريم-الخرسانة-المسلحة': '/قص-الخرسانة-بالواير/',
-    '/category/فني-شفاطات': '/فني-شفاطات/',
+    '/category/اسعار-فتحات-الكور/': '/prices/',
+    '/category/قص-وتخريم-الخرسانة-المسلحة/': '/قص-وتخريم-الخرسانة-المسلحة/',
+    '/category/فني-شفاطات/': '/فني-شفاطات/',
+    '/category/أسعار-ماكينة-تخريم-الخرسانية/': '/أسعار-ماكينة-تخريم-الخرسانية/',
+    '/category/uncategorized/': '/blog/',
+    '/category/خدمات-الكور-دريل/': '/core-drilling-صنايعي-كور/',
+    '/category/صنايعي-الكور/': '/core-drilling-صنايعي-كور/',
+    '/category/تخريم-الخرسانة-المسلحة/': '/تخريم-الخرسانة-المسلحة/',
+    '/صنايعي-كور-في-الاسكندرية/': '/alexandria-concrete-cutting-core/',
   },
 });
 
