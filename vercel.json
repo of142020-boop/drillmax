@@ -3,23 +3,43 @@
   "trailingSlash": true,
   "redirects": [
     {
-      "source": "/category/اسعار-فتحات-الكور/",
+      "source": "/category/%D8%A7%D8%B3%D8%B9%D8%A7%D8%B1-%D9%81%D8%AA%D8%AD%D8%A7%D8%AA-%D8%A7%D9%84%D9%83%D9%88%D8%B1/",
       "destination": "/prices/",
       "permanent": true
     },
     {
-      "source": "/category/قص-وتخريم-الخرسانة-المسلحة/",
-      "destination": "/قص-وتخريم-الخرسانة-المسلحة/",
+      "source": "/category/%d8%a7%d8%b3%d8%b9%d8%a7%d8%b1-%d9%81%d8%aa%d8%ad%d8%a7%d8%aa-%d8%a7%d9%84%d9%83%d9%88%d8%b1/",
+      "destination": "/prices/",
       "permanent": true
     },
     {
-      "source": "/category/فني-شفاطات/",
-      "destination": "/فني-شفاطات/",
+      "source": "/category/%D9%82%D8%B5-%D9%88%D8%AA%D8%AE%D8%B1%D9%8A%D9%85-%D8%A7%D9%84%D8%AE%D8%B1%D8%B3%D8%A7%D9%86%D8%A9-%D8%A7%D9%84%D9%85%D8%B3%D9%84%D8%AD%D8%A9/",
+      "destination": "/%D9%82%D8%B5-%D9%88%D8%AA%D8%AE%D8%B1%D9%8A%D9%85-%D8%A7%D9%84%D8%AE%D8%B1%D8%B3%D8%A7%D9%86%D8%A9-%D8%A7%D9%84%D9%85%D8%B3%D9%84%D8%AD%D8%A9/",
       "permanent": true
     },
     {
-      "source": "/category/أسعار-ماكينة-تخريم-الخرسانية/",
-      "destination": "/أسعار-ماكينة-تخريم-الخرسانية/",
+      "source": "/category/%d9%82%d8%b5-%d9%88%d8%aa%d8%ae%d8%b1%d9%8a%d9%85-%d8%a7%d9%84%d8%ae%d8%b1%d8%b3%d8%a7%d9%86%d8%a9-%d8%a7%d9%84%d9%85%d8%b3%d9%84%d8%ad%d8%a9/",
+      "destination": "/%D9%82%D8%B5-%D9%88%D8%AA%D8%AE%D8%B1%D9%8A%D9%85-%D8%A7%D9%84%D8%AE%D8%B1%D8%B3%D8%A7%D9%86%D8%A9-%D8%A7%D9%84%D9%85%D8%B3%D9%84%D8%AD%D8%A9/",
+      "permanent": true
+    },
+    {
+      "source": "/category/%D9%81%D9%86%D9%8A-%D8%B4%D9%81%D8%A7%D8%B7%D8%A7%D8%AA/",
+      "destination": "/%D9%81%D9%86%D9%8A-%D8%B4%D9%81%D8%A7%D8%B7%D8%A7%D8%AA/",
+      "permanent": true
+    },
+    {
+      "source": "/category/%d9%81%d9%86%d9%8a-%d8%b4%d9%81%d8%a7%d8%b7%d8%a7%d8%aa/",
+      "destination": "/%D9%81%D9%86%D9%8A-%D8%B4%D9%81%D8%A7%D8%B7%D8%A7%D8%AA/",
+      "permanent": true
+    },
+    {
+      "source": "/category/%D8%A3%D8%B3%D8%B9%D8%A7%D8%B1-%D9%85%D8%A7%D9%83%D9%8A%D9%86%D8%A9-%D8%AA%D8%AE%D8%B1%D9%8A%D9%85-%D8%A7%D9%84%D8%AE%D8%B1%D8%B3%D8%A7%D9%86%D9%8A%D8%A9/",
+      "destination": "/%D8%A3%D8%B3%D8%B9%D8%A7%D8%B1-%D9%85%D8%A7%D9%83%D9%8A%D9%86%D8%A9-%D8%AA%D8%AE%D8%B1%D9%8A%D9%85-%D8%A7%D9%84%D8%AE%D8%B1%D8%B3%D8%A7%D9%86%D9%8A%D8%A9/",
+      "permanent": true
+    },
+    {
+      "source": "/category/%d8%a3%d8%b3%d8%b9%d8%a7%d8%b1-%d9%85%d8%a7%d9%83%d9%8a%d9%86%d8%a9-%d8%aa%d8%ae%d8%b1%d9%8a%d9%85-%d8%a7%d9%84%d8%ae%d8%b1%d8%b3%d8%a7%d9%86%d9%8a%d8%a9/",
+      "destination": "/%D8%A3%D8%B3%D8%B9%D8%A7%D8%B1-%D9%85%D8%A7%D9%83%D9%8A%D9%86%D8%A9-%D8%AA%D8%AE%D8%B1%D9%8A%D9%85-%D8%A7%D9%84%D8%AE%D8%B1%D8%B3%D8%A7%D9%86%D9%8A%D8%A9/",
       "permanent": true
     },
     {
@@ -28,22 +48,42 @@
       "permanent": true
     },
     {
-      "source": "/category/خدمات-الكور-دريل/",
-      "destination": "/core-drilling-صنايعي-كور/",
+      "source": "/category/%D8%AE%D8%AF%D9%85%D8%A7%D8%AA-%D8%A7%D9%84%D9%83%D9%88%D8%B1-%D8%AF%D8%B1%D9%8A%D9%84/",
+      "destination": "/core-drilling-%D8%B5%D9%86%D8%A7%D9%8A%D8%B9%D9%8A-%D9%83%D9%88%D8%B1/",
       "permanent": true
     },
     {
-      "source": "/category/صنايعي-الكور/",
-      "destination": "/core-drilling-صنايعي-كور/",
+      "source": "/category/%d8%ae%d8%af%d9%85%d8%a7%d8%aa-%d8%a7%d9%84%d9%83%d9%88%d8%b1-%d8%af%d8%b1%d9%8a%d9%84/",
+      "destination": "/core-drilling-%D8%B5%D9%86%D8%A7%D9%8A%D8%B9%D9%8A-%D9%83%D9%88%D8%B1/",
       "permanent": true
     },
     {
-      "source": "/category/تخريم-الخرسانة-المسلحة/",
-      "destination": "/تخريم-الخرسانة-المسلحة/",
+      "source": "/category/%D8%B5%D9%86%D8%A7%D9%8A%D8%B9%D9%8A-%D8%A7%D9%84%D9%83%D9%88%D8%B1/",
+      "destination": "/core-drilling-%D8%B5%D9%86%D8%A7%D9%8A%D8%B9%D9%8A-%D9%83%D9%88%D8%B1/",
       "permanent": true
     },
     {
-      "source": "/صنايعي-كور-في-الاسكندرية/",
+      "source": "/category/%d8%b5%d9%86%d8%a7%d9%8a%d8%b9%d9%8a-%d8%a7%d9%84%d9%83%d9%88%d8%b1/",
+      "destination": "/core-drilling-%D8%B5%D9%86%D8%A7%D9%8A%D8%B9%D9%8A-%D9%83%D9%88%D8%B1/",
+      "permanent": true
+    },
+    {
+      "source": "/category/%D8%AA%D8%AE%D8%B1%D9%8A%D9%85-%D8%A7%D9%84%D8%AE%D8%B1%D8%B3%D8%A7%D9%86%D8%A9-%D8%A7%D9%84%D9%85%D8%B3%D9%84%D8%AD%D8%A9/",
+      "destination": "/%D8%AA%D8%AE%D8%B1%D9%8A%D9%85-%D8%A7%D9%84%D8%AE%D8%B1%D8%B3%D8%A7%D9%86%D8%A9-%D8%A7%D9%84%D9%85%D8%B3%D9%84%D8%AD%D8%A9/",
+      "permanent": true
+    },
+    {
+      "source": "/category/%d8%aa%d8%ae%d8%b1%d9%8a%d9%85-%d8%a7%d9%84%d8%ae%d8%b1%d8%b3%d8%a7%d9%86%d8%a9-%d8%a7%d9%84%d9%85%d8%b3%d9%84%d8%ad%d8%a9/",
+      "destination": "/%D8%AA%D8%AE%D8%B1%D9%8A%D9%85-%D8%A7%D9%84%D8%AE%D8%B1%D8%B3%D8%A7%D9%86%D8%A9-%D8%A7%D9%84%D9%85%D8%B3%D9%84%D8%AD%D8%A9/",
+      "permanent": true
+    },
+    {
+      "source": "/%D8%B5%D9%86%D8%A7%D9%8A%D8%B9%D9%8A-%D9%83%D9%88%D8%B1-%D9%81%D9%8A-%D8%A7%D9%84%D8%A7%D8%B3%D9%83%D9%86%D8%AF%D8%B1%D9%8A%D8%A9/",
+      "destination": "/alexandria-concrete-cutting-core/",
+      "permanent": true
+    },
+    {
+      "source": "/%d8%b5%d9%86%d8%a7%d9%8a%d8%b9%d9%8a-%d9%83%d9%88%d8%b1-%d9%81%d9%8a-%d8%a7%d9%84%d8%a7%d8%b3%d9%83%d9%86%d8%af%d8%b1%d9%8a%d8%a9/",
       "destination": "/alexandria-concrete-cutting-core/",
       "permanent": true
     }
