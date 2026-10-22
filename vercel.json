@@ -1,0 +1,51 @@
+{
+  "$schema": "https://openapi.vercel.sh/vercel.json",
+  "trailingSlash": true,
+  "redirects": [
+    {
+      "source": "/category/اسعار-فتحات-الكور/",
+      "destination": "/prices/",
+      "permanent": true
+    },
+    {
+      "source": "/category/قص-وتخريم-الخرسانة-المسلحة/",
+      "destination": "/قص-وتخريم-الخرسانة-المسلحة/",
+      "permanent": true
+    },
+    {
+      "source": "/category/فني-شفاطات/",
+      "destination": "/فني-شفاطات/",
+      "permanent": true
+    },
+    {
+      "source": "/category/أسعار-ماكينة-تخريم-الخرسانية/",
+      "destination": "/أسعار-ماكينة-تخريم-الخرسانية/",
+      "permanent": true
+    },
+    {
+      "source": "/category/uncategorized/",
+      "destination": "/blog/",
+      "permanent": true
+    },
+    {
+      "source": "/category/خدمات-الكور-دريل/",
+      "destination": "/core-drilling-صنايعي-كور/",
+      "permanent": true
+    },
+    {
+      "source": "/category/صنايعي-الكور/",
+      "destination": "/core-drilling-صنايعي-كور/",
+      "permanent": true
+    },
+    {
+      "source": "/category/تخريم-الخرسانة-المسلحة/",
+      "destination": "/تخريم-الخرسانة-المسلحة/",
+      "permanent": true
+    },
+    {
+      "source": "/صنايعي-كور-في-الاسكندرية/",
+      "destination": "/alexandria-concrete-cutting-core/",
+      "permanent": true
+    }
+  ]
+}
