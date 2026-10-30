@@ -11,6 +11,7 @@ for(const file of walk('dist').filter(f=>f.endsWith('.html'))){
   const canonical=$('link[rel="canonical"]').attr('href');
   pages.push({url,title,description,canonical});
   const add=message=>issues.push({url,message});
+  if(url==='/' && !$('head meta[name="google-site-verification"]').toArray().some(e=>$(e).attr('content')==='2usVXI0fx-uGkGaait9BJ5p7ONU8G4AAppbzWtaddlM'))add('Original Search Console ownership verification is missing');
   if(!title||!description)add('Missing title/description');
   if(description.includes('[...]'))add('Truncated description');
   if(!canonical?.startsWith('https://drilmax.com/'))add('Invalid canonical');
