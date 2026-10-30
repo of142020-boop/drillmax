@@ -3,6 +3,17 @@
   "trailingSlash": true,
   "redirects": [
     {
+      "source": "/:path*",
+      "has": [
+        {
+          "type": "host",
+          "value": "www.drilmax.com"
+        }
+      ],
+      "destination": "https://drilmax.com/:path*",
+      "permanent": true
+    },
+    {
       "source": "/category/%D8%A7%D8%B3%D8%B9%D8%A7%D8%B1-%D9%81%D8%AA%D8%AD%D8%A7%D8%AA-%D8%A7%D9%84%D9%83%D9%88%D8%B1/",
       "destination": "/prices/",
       "permanent": true
