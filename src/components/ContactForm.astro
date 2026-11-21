@@ -9,12 +9,14 @@
     <textarea name="message" rows="4" maxlength="2000" required></textarea>
   </label>
   <p class="form-help">سنفتح واتساب بتفاصيل طلبك لتراجع الرسالة وترسلها بنفسك.</p>
-  <button type="submit">متابعة الطلب عبر واتساب</button>
-  <noscript><style>.whatsapp-request button { display: none; }</style><p>فعّل JavaScript لتجهيز الرسالة، أو <a href="https://wa.me/201070046464">تواصل معنا مباشرة عبر واتساب</a>.</p></noscript>
+  <button type="submit" disabled>متابعة الطلب عبر واتساب</button>
+  <noscript><p>فعّل JavaScript لتجهيز الرسالة، أو <a href="https://wa.me/201070046464">تواصل معنا مباشرة عبر واتساب</a>.</p></noscript>
 </form>
 
 <script>
   document.querySelectorAll<HTMLFormElement>('[data-whatsapp-form]').forEach((form) => {
+    const submitButton = form.querySelector<HTMLButtonElement>('button[type="submit"]');
+    if (submitButton) submitButton.disabled = false;
     form.addEventListener('submit', (event) => {
       event.preventDefault();
       if (!form.reportValidity()) return;
@@ -26,6 +28,17 @@
         const field = form.querySelector<HTMLInputElement | HTMLTextAreaElement>(!name ? '[name="clientName"]' : !phone ? '[name="phone"]' : '[name="message"]');
         if (field) {
           field.setCustomValidity('يرجى كتابة البيانات المطلوبة.');
+          field.reportValidity();
+          field.addEventListener('input', () => field.setCustomValidity(''), { once: true });
+        }
+        return;
+      }
+      const normalizedPhone = phone.replace(/[٠-٩]/g, d => String(d.charCodeAt(0) - 1632)).replace(/[۰-۹]/g, d => String(d.charCodeAt(0) - 1776));
+      const digits = normalizedPhone.replace(/\D/g, '');
+      if (!/^[+\d\s().-]+$/.test(normalizedPhone) || digits.length < 7 || digits.length > 15) {
+        const field = form.querySelector<HTMLInputElement>('[name="phone"]');
+        if (field) {
+          field.setCustomValidity('يرجى كتابة رقم هاتف صحيح من 7 إلى 15 رقمًا.');
           field.reportValidity();
           field.addEventListener('input', () => field.setCustomValidity(''), { once: true });
         }

@@ -1,0 +1,5 @@
+import fs from 'node:fs';import {HtmlValidate} from 'html-validate';import {load} from 'cheerio';
+const dir='reports/full-audit-2026-11-15/'+(process.argv[2]||'before');
+const validator=new HtmlValidate({rules:{'attr-quotes':'error','close-order':'error','element-permitted-content':'error','element-permitted-parent':'error','no-dup-id':'error','no-dup-attr':'error','no-trailing-whitespace':'off','void-content':'error'}});
+const pages=JSON.parse(fs.readFileSync(dir+'/pages.json'));const findings=[];for(let i=0;i<pages.length;i++){const report=await validator.validateString(fs.readFileSync(`${dir}/html/${i}.html`,'utf8'));for(const r of report.results)for(const m of r.messages)findings.push({route:pages[i].route,rule:m.ruleId,message:m.message,selector:m.selector});}
+fs.writeFileSync(dir+'/html-validation.json',JSON.stringify(findings,null,2));console.log(JSON.stringify({count:findings.length,byRule:Object.fromEntries(Object.entries(Object.groupBy(findings,x=>x.rule)).map(([k,v])=>[k,v.length])),examples:findings.slice(0,18)},null,2));

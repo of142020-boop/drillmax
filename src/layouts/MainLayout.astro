@@ -104,8 +104,7 @@ const robotsDirectives = [
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <!-- Load fonts async to eliminate render-blocking -->
-    <link rel="preload" href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700;800&display=swap" as="style" onload="this.onload=null;this.rel='stylesheet'">
-    <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700;800&display=swap"></noscript>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700;800&display=swap">
   </head>
   <body>
     <div class="top-bar">
@@ -123,7 +122,7 @@ const robotsDirectives = [
     <header class="main-header">
       <div class="container header-container">
         <a href="/" class="logo">
-          <img src="/images/logodrillmax-small.webp" alt="Drill Max Logo" width="66" height="66" loading="eager" fetchpriority="high" onerror="this.src='data:image/svg+xml;utf8,<svg xmlns=\'http://www.w3.org/2000/svg\' width=\'120\' height=\'40\'><text x=\'0\' y=\'30\' font-size=\'30\' fill=\'%23ffffff\' font-weight=\'bold\' font-family=\'Arial\'>Drill Max</text></svg>'"/>
+          <img src="/images/logodrillmax-small.webp" alt="Drill Max Logo" width="66" height="66" loading="eager" fetchpriority="high" data-logo-fallback/>
         </a>
         <nav class="main-nav" id="main-navigation" aria-label="التنقل الرئيسي">
           <ul>
@@ -146,7 +145,8 @@ const robotsDirectives = [
       </div>
     </header>
 
-    <main>
+    <a class="skip-link" href="#main-content">انتقل إلى المحتوى</a>
+    <main id="main-content" tabindex="-1">
       <slot />
     </main>
 
@@ -156,7 +156,7 @@ const robotsDirectives = [
     </a>
 
     <!-- Scroll to Top Button -->
-    <button class="scroll-to-top" aria-label="للأعلى" onclick="window.scrollTo({top: 0, behavior: 'smooth'})">
+    <button type="button" class="scroll-to-top" aria-label="للأعلى">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 384 512" fill="currentColor"><path d="M214.6 41.4c-12.5-12.5-32.8-12.5-45.3 0l-160 160c-12.5 12.5-12.5 32.8 0 45.3s32.8 12.5 45.3 0L160 141.2V448c0 17.7 14.3 32 32 32s32-14.3 32-32V141.2L329.4 246.6c12.5 12.5 32.8 12.5 45.3 0s12.5-32.8 0-45.3l-160-160z"/></svg>
     </button>
 
@@ -170,7 +170,7 @@ const robotsDirectives = [
     <footer class="main-footer">
       <div class="container footer-content">
         <div class="footer-brand">
-          <img src="/images/logodrillmax-small.webp" alt="Drill Max Logo" width="90" height="90" loading="lazy" style="height: 90px; width: 90px; margin-bottom: 20px;" onerror="this.style.display='none'" />
+          <img src="/images/logodrillmax-small.webp" alt="Drill Max Logo" width="90" height="90" loading="lazy" style="height: 90px; width: 90px; margin-bottom: 20px;" data-hide-on-error />
           <p>شركة متخصصة في خدمات قص وتخريم الخرسانة المسلحة بأحدث التقنيات الهندسية لضمان الدقة والأمان.</p>
           <div style="margin-top: 20px;">
             <p style="margin-bottom:10px;">📞 <a href={`tel:+2${phoneNumber}`} dir="ltr" style="color:#ffb74d; font-weight:bold;">{phoneNumber}</a></p>
@@ -192,6 +192,9 @@ const robotsDirectives = [
           <ul>
             <li><a href="/">الرئيسية</a></li>
             <li><a href="/projects/">كل المشاريع</a></li>
+            <li><a href="/service-areas/">مناطق الخدمة</a></li>
+            <li><a href="/blog/">الأدلة والمقالات</a></li>
+            <li><a href="/about/">عن دريل ماكس</a></li>
             <li><a href="/prices/">الأسعار</a></li>
             <li><a href="/contact/">تواصل معنا</a></li>
             <li><a href="/privacy-policy/">سياسة الخصوصية</a></li>
@@ -206,6 +209,16 @@ const robotsDirectives = [
 
     <script>
       document.addEventListener('DOMContentLoaded', () => {
+        document.querySelectorAll<HTMLImageElement>('[data-hide-on-error]').forEach((image) => {
+          image.addEventListener('error', () => { image.style.display = 'none'; });
+        });
+        document.querySelectorAll<HTMLImageElement>('[data-logo-fallback]').forEach((image) => {
+          image.addEventListener('error', () => {
+            const label = document.createElement('span');
+            label.textContent = image.alt || 'Drill Max';
+            image.replaceWith(label);
+          }, { once: true });
+        });
         const menuBtn = document.querySelector<HTMLButtonElement>('.mobile-menu-btn');
         const nav = document.querySelector<HTMLElement>('.main-nav');
         if (menuBtn && nav) {
@@ -234,6 +247,7 @@ const robotsDirectives = [
         // Scroll to Top
         const scrollBtn = document.querySelector('.scroll-to-top');
         if (scrollBtn) {
+          scrollBtn.addEventListener('click', () => window.scrollTo({top: 0, behavior: window.matchMedia('(prefers-reduced-motion: reduce)').matches ? 'instant' : 'smooth'}));
           window.addEventListener('scroll', () => {
             if (window.scrollY > 300) {
               scrollBtn.classList.add('visible');
@@ -279,6 +293,19 @@ const robotsDirectives = [
 
   body {
     overflow-x: clip;
+  }
+
+  .skip-link { position: fixed; top: -100px; right: 20px; padding: 12px 20px; background: #fff; color: #1e293b; z-index: 10000; border: 2px solid var(--primary); border-radius: 6px; }
+  .skip-link:focus { top: 12px; }
+  :focus-visible { outline: 3px solid var(--primary); outline-offset: 3px; }
+  .post-grid > *, .related-grid > * { min-width: 0; }
+  .post-body-text { overflow-wrap: anywhere; }
+  .post-body-text img, .post-body-text figure, .wp-caption { max-width: 100%; height: auto; }
+  .post-body-text table { display: block; max-width: 100%; overflow-x: auto; }
+  .post-body-text :is(h2,h3,h4,p,li) { min-width: 0; }
+  @media (prefers-reduced-motion: reduce) {
+    html { scroll-behavior: auto; }
+    *, *::before, *::after { animation-duration: .01ms !important; transition-duration: .01ms !important; }
   }
 
   a {

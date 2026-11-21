@@ -2,6 +2,7 @@ import { defineConfig } from 'astro/config';
 import sitemap from '@astrojs/sitemap';
 
 export default defineConfig({
+  vite: { build: { assetsInlineLimit: 0 } },
   site: 'https://drilmax.com',
   integrations: [
     sitemap({

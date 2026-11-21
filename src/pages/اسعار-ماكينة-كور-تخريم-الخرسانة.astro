@@ -1,4 +1,5 @@
 ---
+import { imageSize } from '../lib/image-size';
 import MainLayout from '../layouts/MainLayout.astro';
 
 const seo = {
@@ -106,7 +107,7 @@ const relatedPosts = [{"title":"أسعار ماكينة كور تخريم الخ
               {relatedPosts.map((rel) => (
                 <a href={rel.url} class="related-card">
                   <div class="related-img-wrap">
-                    <img src={rel.image} alt={rel.title} loading="lazy" />
+                    <img width={imageSize(rel.image)?.width} height={imageSize(rel.image)?.height} src={rel.image} alt={rel.title} loading="lazy" />
                   </div>
                   <h4 class="related-title">{rel.title}</h4>
                 </a>

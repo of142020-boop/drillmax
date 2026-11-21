@@ -1,11 +1,12 @@
 ---
+import { imageSize } from '../lib/image-size';
 import MainLayout from '../layouts/MainLayout.astro';
 
 const seo = {
   title: "خدمات فتحات كور الحي العاشر | وصول سريع 01070046464 | دريل ماكس",
   description: "خدمة فتحات كور في الحي العاشر بمدينة نصر للغاز والتكييف والشفاطات. تواصل مع دريل ماكس لمراجعة احتياجات الموقع وتحديد تكلفة التنفيذ.",
   canonical: "/فتحات-كور-الحي-العاشر/",
-  ogImage: "/images/فتحات-كور-الحي-العاشر-scaled.webp",
+  ogImage: "/images/audit-aad7bd4515.webp",
   schema: JSON.stringify({
   "@context": "https://schema.org",
   "@graph": [
@@ -41,7 +42,7 @@ const seo = {
       },
       "headline": "خدمات فتحات كور الحي العاشر | وصول سريع 01070046464",
       "description": "خدمة فتحات كور في الحي العاشر بمدينة نصر للغاز والتكييف والشفاطات. تواصل مع دريل ماكس لمراجعة احتياجات الموقع وتحديد تكلفة التنفيذ.",
-      "image": "https://drilmax.com/images/فتحات-كور-الحي-العاشر-scaled.webp",
+      "image": "https://drilmax.com/images/audit-aad7bd4515.webp",
       "datePublished": "2025-11-12T10:00:00+02:00",
       "dateModified": "2026-04-14T12:00:00+02:00",
       "inLanguage": "ar",
@@ -84,7 +85,7 @@ const relatedPosts = [{"title":"أسعار ماكينة كور تخريم الخ
         <div class="post-main-content">
           
           <div class="post-featured-media">
-            <img width="2560" height="1429" src="/images/فتحات-كور-الحي-العاشر-scaled.webp" alt="خدمات فتحات كور الحي العاشر | وصول سريع 01070046464" class="featured-img" loading="eager" />
+            <img width="2560" height="1429" src="/images/audit-aad7bd4515.webp" alt="خدمات فتحات كور الحي العاشر | وصول سريع 01070046464" class="featured-img" loading="eager" />
           </div>
 
           <div class="post-body-text" set:html={contentHtml} />
@@ -106,7 +107,7 @@ const relatedPosts = [{"title":"أسعار ماكينة كور تخريم الخ
               {relatedPosts.map((rel) => (
                 <a href={rel.url} class="related-card">
                   <div class="related-img-wrap">
-                    <img src={rel.image} alt={rel.title} loading="lazy" />
+                    <img width={imageSize(rel.image)?.width} height={imageSize(rel.image)?.height} src={rel.image} alt={rel.title} loading="lazy" />
                   </div>
                   <h4 class="related-title">{rel.title}</h4>
                 </a>
