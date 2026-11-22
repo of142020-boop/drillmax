@@ -10,6 +10,15 @@ export default defineConfig({
       // Priority weights for key pages (1.0 = highest)
       serialize(item) {
         const url = item.url;
+        const modifiedPages = {
+          '/فني-شفاطات/': '2026-11-22',
+          '/core-drilling-صنايعي-كور/': '2026-11-22',
+          '/prices/': '2026-11-22',
+          '/مقارنة-الشفاط-الهرمي-والمسطح/': '2026-11-22',
+          '/صيانة-اعطال-شفاط-المطبخ/': '2026-11-22',
+          '/service-areas/': '2026-11-21',
+        };
+        const lastmod = modifiedPages[decodeURIComponent(new URL(url).pathname)];
         let priority = 0.7;
         let changefreq = 'monthly';
 
@@ -32,6 +41,7 @@ export default defineConfig({
 
         return {
           ...item,
+          ...(lastmod ? { lastmod } : {}),
           priority,
           changefreq,
         };
