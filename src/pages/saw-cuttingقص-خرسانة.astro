@@ -64,6 +64,7 @@ const serviceSchema = JSON.stringify({
       serviceType: 'قص وتقطيع الخرسانة المسلحة بالمنشار الماسي (Wall & Floor Sawing)',
       provider: {
         '@type': 'LocalBusiness',
+        '@id': 'https://drilmax.com/#organization',
         name: 'Drill Max | دريل ماكس',
         url: 'https://drilmax.com/',
         telephone: '+201070046464',
@@ -84,6 +85,19 @@ const serviceSchema = JSON.stringify({
           { '@type': 'Offer', itemOffered: { '@type': 'Service', name: 'إزالة سقف خرساني وقص البلكونات والأسوار والواجهات' } },
           { '@type': 'Offer', itemOffered: { '@type': 'Service', name: 'عمل فواصل التمدد في الأرضيات الخرسانية وقص الأسفلت' } },
         ],
+      },
+    },
+    {
+      '@type': 'WebPage',
+      url: `https://drilmax.com${canonical}`,
+      name: title,
+      inLanguage: 'ar-EG',
+      dateModified: '2026-11-23',
+      isPartOf: { '@id': 'https://drilmax.com/#website' },
+      about: { '@id': 'https://drilmax.com/#organization' },
+      speakable: {
+        '@type': 'SpeakableSpecification',
+        cssSelector: ['.saw-intro h1', '.saw-lead', '#faq summary', '#faq p'],
       },
     },
     {

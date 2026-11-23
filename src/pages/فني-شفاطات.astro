@@ -66,6 +66,7 @@ const serviceSchema = JSON.stringify({
       serviceType: 'تركيب شفاطات المطابخ والحمامات وتأسيس فتحات الكور والمداخن وصيانة الأعطال',
       provider: {
         '@type': 'LocalBusiness',
+        '@id': 'https://drilmax.com/#organization',
         name: 'Drill Max | دريل ماكس',
         url: 'https://drilmax.com/',
         telephone: `+2${PHONE}`,
@@ -86,6 +87,19 @@ const serviceSchema = JSON.stringify({
           { '@type': 'Offer', itemOffered: { '@type': 'Service', name: 'صيانة أعطال شفاط المطبخ وتنظيف الدهون وتغيير فلاتر الكربون' } },
           { '@type': 'Offer', itemOffered: { '@type': 'Service', name: 'تركيب الشفاط المركزي وهود ومراوح البلاور للمطاعم' } },
         ],
+      },
+    },
+    {
+      '@type': 'WebPage',
+      url: `https://drilmax.com${canonical}`,
+      name: title,
+      inLanguage: 'ar-EG',
+      dateModified: '2026-11-23',
+      isPartOf: { '@id': 'https://drilmax.com/#website' },
+      about: { '@id': 'https://drilmax.com/#organization' },
+      speakable: {
+        '@type': 'SpeakableSpecification',
+        cssSelector: ['.ex-intro h1', '.ex-lead', '#faq summary', '#faq p'],
       },
     },
     {

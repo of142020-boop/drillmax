@@ -6,15 +6,55 @@ const combinedSchema = JSON.stringify({
   "@context": "https://schema.org",
   "@graph": [
     {
-      "@type": "LocalBusiness",
+      "@type": ["LocalBusiness", "Organization"],
+      "@id": "https://drilmax.com/#organization",
       "name": "Drill Max | دريل ماكس",
-      "alternateName": "دريل ماكس",
-      "url": "https://drilmax.com",
-      "logo": "https://drilmax.com/images/logodrillmax.png",
+      "alternateName": ["دريل ماكس", "Drill Max Egypt"],
+      "url": "https://drilmax.com/",
+      "logo": {
+        "@type": "ImageObject",
+        "url": "https://drilmax.com/images/logodrillmax.png"
+      },
       "image": "https://drilmax.com/images/core-drill-hero.webp",
-      "description": "شركة دريل ماكس رائدة في خدمات قص وتخريم الخرسانة المسلحة بالكور والمنشار الماسي في مصر. أكثر من 10 سنوات خبرة وأكثر من 753 مشروع منجز.",
+      "description": "شركة دريل ماكس رائدة في خدمات قص وتخريم الخرسانة المسلحة بالكور والمنشار الماسي والواير وتزريع الأشاير وتركيب الشفاطات والمداخن في مصر. أكثر من 10 سنوات خبرة وأكثر من 753 مشروع منجز.",
       "telephone": "+201070046464",
       "email": "support@drilmax.com",
+      "contactPoint": [
+        {
+          "@type": "ContactPoint",
+          "telephone": "+201070046464",
+          "contactType": "customer service",
+          "name": "قسم قص وتخريم الخرسانة والكور والواير وتزريع الأشاير والهدم",
+          "areaServed": "EG",
+          "availableLanguage": ["ar", "en"]
+        },
+        {
+          "@type": "ContactPoint",
+          "telephone": "+201024596959",
+          "contactType": "customer service",
+          "name": "قسم فني الشفاطات وتركيب شفاطات المطابخ والحمامات والمداخن",
+          "areaServed": "EG",
+          "availableLanguage": ["ar"]
+        },
+        {
+          "@type": "ContactPoint",
+          "telephone": "+201055550195",
+          "contactType": "sales",
+          "name": "خط التواصل البديل للمشاريع والمقاولات",
+          "areaServed": "EG",
+          "availableLanguage": ["ar"]
+        }
+      ],
+      "knowsAbout": [
+        "تخريم الخرسانة المسلحة بالكور دريل",
+        "Diamond Core Drilling",
+        "قص الخرسانة بالمنشار الماسي والليزر",
+        "Concrete Wall & Floor Sawing",
+        "قص الخرسانة بالواير الماسي",
+        "تزريع الأشاير وتدعيم الخرسانة بالكود المصري",
+        "تركيب شفاط المطبخ والحمام وتأسيس المداخن والدكت",
+        "أخذ عينات اختبار الكور للخرسانة Core Test"
+      ],
       "address": {
         "@type": "PostalAddress",
         "streetAddress": "شارع احمد السلاب، الحي العاشر، مدينة نصر",
@@ -133,10 +173,26 @@ const combinedSchema = JSON.stringify({
     {
       "@type": "WebSite",
       "@id": "https://drilmax.com/#website",
-      "url": "https://drilmax.com",
+      "url": "https://drilmax.com/",
       "name": "Drill Max - دريل ماكس",
       "alternateName": "دريل ماكس",
-      "description": "شركة متخصصة في قص وتخريم الخرسانة بأحدث التقنيات"
+      "inLanguage": "ar-EG",
+      "publisher": { "@id": "https://drilmax.com/#organization" },
+      "description": "شركة متخصصة في قص وتخريم الخرسانة بأحدث التقنيات وتركيب الشفاطات والمداخن في مصر"
+    },
+    {
+      "@type": "WebPage",
+      "@id": "https://drilmax.com/#webpage",
+      "url": "https://drilmax.com/",
+      "name": "شركة قص وتخريم خرسانة في مصر | دريل ماكس",
+      "isPartOf": { "@id": "https://drilmax.com/#website" },
+      "about": { "@id": "https://drilmax.com/#organization" },
+      "dateModified": "2026-11-23",
+      "inLanguage": "ar-EG",
+      "speakable": {
+        "@type": "SpeakableSpecification",
+        "cssSelector": [".dm-hero h1", ".dm-hero-lead", ".dm-faq-item summary", ".dm-faq-item p"]
+      }
     }
   ]
 });

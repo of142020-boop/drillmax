@@ -4,17 +4,34 @@
 User-agent: *
 Allow: /
 
-# Sitemap
-Sitemap: https://drilmax.com/sitemap-index.xml
+# Explicitly welcome AI search & citation crawlers (GEO / AEO)
+User-agent: OAI-SearchBot
+Allow: /
+
+User-agent: ChatGPT-User
+Allow: /
+
+User-agent: GPTBot
+Allow: /
+
+User-agent: PerplexityBot
+Allow: /
+
+User-agent: ClaudeBot
+Allow: /
+
+User-agent: Google-Extended
+Allow: /
+
+User-agent: Applebot-Extended
+Allow: /
 
 # Disallow admin/private (if any)
+User-agent: *
 Disallow: /admin/
 Disallow: /private/
 Disallow: /*.json$
 
-# Allow search engines to fully index key pages
-Allow: /services/
-Allow: /prices/
-Allow: /projects/
-Allow: /contact/
-Allow: /service-areas/
+# Sitemap & AI Context Index
+Sitemap: https://drilmax.com/sitemap-index.xml
+# LLMs.txt: https://drilmax.com/llms.txt

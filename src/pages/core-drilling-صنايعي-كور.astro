@@ -60,6 +60,7 @@ const serviceSchema = JSON.stringify([
     serviceType: 'تخريم الخرسانة المسلحة بالكور (Diamond Core Drilling)',
     provider: {
       '@type': 'Organization',
+      '@id': 'https://drilmax.com/#organization',
       name: 'دريل ماكس',
       url: 'https://drilmax.com/',
       telephone: '+201070046464',
@@ -80,6 +81,20 @@ const serviceSchema = JSON.stringify([
         { '@type': 'Offer', itemOffered: { '@type': 'Service', name: 'فتح كور في الكمر وتخريم الأسقف والجدران المسلحة' } },
         { '@type': 'Offer', itemOffered: { '@type': 'Service', name: 'أخذ عينات اختبار الكور للخرسانة (Core Test) ومشاريع MEP' } },
       ],
+    },
+  },
+  {
+    '@context': 'https://schema.org',
+    '@type': 'WebPage',
+    url: `https://drilmax.com${canonical}`,
+    name: title,
+    inLanguage: 'ar-EG',
+    dateModified: '2026-11-23',
+    isPartOf: { '@id': 'https://drilmax.com/#website' },
+    about: { '@id': 'https://drilmax.com/#organization' },
+    speakable: {
+      '@type': 'SpeakableSpecification',
+      cssSelector: ['.core-intro h1', '.core-lead', '#faq summary', '#faq p'],
     },
   },
   {
