@@ -777,24 +777,26 @@ const robotsDirectives = [
     align-items: center;
     justify-content: center;
     gap: 8px;
-    padding: 13px 26px;
+    min-height: 48px;
+    padding: 12px 24px;
     font-weight: 700;
-    border-radius: 8px;
+    border-radius: 4px;
     cursor: pointer;
-    border: 2px solid transparent;
+    border: 1px solid transparent;
     text-align: center;
     text-decoration: none;
     line-height: 1.4;
-    transition: background-color 0.25s ease, color 0.25s ease, border-color 0.25s ease, transform 0.25s ease;
+    transition: background-color 0.2s ease, color 0.2s ease, border-color 0.2s ease;
   }
   :where(.btn-primary) {
     background-color: var(--primary);
     color: #fff;
+    border-color: var(--primary);
   }
   :where(.btn-primary:hover) {
     background-color: var(--primary-hover);
+    border-color: var(--primary-hover);
     color: #fff;
-    transform: translateY(-2px);
   }
   :where(.btn-secondary) {
     background-color: var(--dark);
@@ -802,19 +804,19 @@ const robotsDirectives = [
     border-color: var(--dark);
   }
   :where(.btn-secondary:hover) {
-    background-color: #334155;
-    border-color: #334155;
+    background-color: #262b34;
+    border-color: #262b34;
     color: #fff;
-    transform: translateY(-2px);
   }
   :where(.btn-outline) {
     background-color: transparent;
     color: #fff;
-    border-color: rgba(255, 255, 255, 0.7);
+    border-color: rgba(255, 255, 255, 0.45);
   }
   :where(.btn-outline:hover) {
     background-color: #fff;
     color: var(--dark);
+    border-color: #fff;
   }
   :where(.btn-outline-primary) {
     background-color: transparent;
@@ -827,20 +829,23 @@ const robotsDirectives = [
   }
   :where(.hero) {
     position: relative;
-    min-height: 440px;
-    padding: 72px 0;
+    min-height: 400px;
+    padding: 68px 0 64px;
     display: flex;
     align-items: center;
     justify-content: center;
-    background: linear-gradient(135deg, #0f172a 0%, #1e293b 55%, #1e2530 100%);
+    background-color: #111419;
+    border-bottom: 3px solid var(--primary);
     color: #fff;
     overflow: hidden;
   }
   :where(.hero-bg) {
     position: absolute;
     inset: 0;
-    background: radial-gradient(circle at 20% 20%, rgba(194, 65, 12, 0.28), transparent 55%),
-                radial-gradient(circle at 80% 80%, rgba(14, 165, 233, 0.18), transparent 55%);
+    background-image:
+      linear-gradient(to left, rgba(255, 255, 255, 0.03) 1px, transparent 1px),
+      linear-gradient(to bottom, rgba(255, 255, 255, 0.03) 1px, transparent 1px);
+    background-size: 64px 64px;
     z-index: 1;
   }
   :where(.hero-container) {
