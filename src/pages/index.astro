@@ -150,376 +150,442 @@ const combinedSchema = JSON.stringify({
   schema={combinedSchema}
 >
 
-
-  <!-- HERO SECTION -->
-  <section class="hero">
-    <div class="hero-bg"></div>
-    <div class="container hero-container">
-      <div class="hero-content">
-        <span class="hero-subtitle">رواد تقطيع الخرسانات</span>
-        <h1>شركة قص وتخريم خرسانة في مصر <br/>دريل ماكس | Drill Max</h1>
-        <p>Drill Max لخدمات قص وتخريم خرسانة وفتحات الكور مع أفضل شركة كور<br/>أكثر من 10 سنوات من الخبرة في تقطيع الخرسانات</p>
-        <div style="display: flex; gap: 15px; margin-top: 20px; flex-wrap: wrap;">
-          <a href="/contact/" class="btn btn-primary">اطلب عرض سعر الآن</a>
-          <a href="/projects/" class="btn btn-outline" style="color:#fff; border: 2px solid #fff;">استعراض المشاريع</a>
+  <!-- ARCHITECTURAL SPLIT HERO -->
+  <section class="dm-hero">
+    <div class="container dm-hero-grid">
+      <div class="dm-hero-copy">
+        <p class="dm-kicker">DRILL MAX · هندسة قص وتخريم الخرسانة المسلحة في مصر</p>
+        <h1>شركة قص وتخريم خرسانة في مصر<br />دريل ماكس | Drill Max</h1>
+        <p class="dm-hero-lead">أكثر من 10 سنوات خبرة ميدانية في <strong>قص وتخريم الخرسانة المسلحة</strong> بالكور دريل والمنشار الماسي والواير بدون اهتزازات أو تكسير عشوائي — للشقق المشطبة والفيلات والمشاريع الإنشائية الكبرى.</p>
+        <div class="dm-hero-actions">
+          <a href="/contact/" class="dm-btn dm-btn-primary">اطلب عرض سعر ومعاينة</a>
+          <a href="tel:+201070046464" class="dm-btn dm-btn-ghost" dir="ltr">01070046464</a>
+          <a href="/projects/" class="dm-link-inline">استعراض المشاريع &larr;</a>
         </div>
+        <dl class="dm-hero-specs" aria-label="المواصفات الأساسية">
+          <div>
+            <dt>أقطار الكور الماسي</dt>
+            <dd>1 – 24 بوصة</dd>
+          </div>
+          <div>
+            <dt>المشاريع المنفذة</dt>
+            <dd>+753 مشروع</dd>
+          </div>
+          <div>
+            <dt>نطاق التغطية</dt>
+            <dd>جميع المحافظات</dd>
+          </div>
+        </dl>
+      </div>
+      <figure class="dm-hero-plate">
+        <img src="/images/core-drill-hero.webp" alt="فني كور دريل ينفذ تخريم خرسانة مسلحة بدقة عالية" width="1200" height="630" loading="eager" fetchpriority="high" />
+        <figcaption>
+          <span>تثبيت ماسي وتبريد مائي بدون شروخ</span>
+          <span>دقة قطع بالمليمتر</span>
+        </figcaption>
+      </figure>
+    </div>
+  </section>
+
+  <!-- 01-06 ENGINEERING SERVICES INDEX -->
+  <section class="dm-section dm-stone dm-border-b">
+    <div class="container">
+      <div class="dm-section-head dm-head-split">
+        <div>
+          <p class="dm-eyebrow">التخصصات الهندسية</p>
+          <h2>خدمات قص وتخريم خرسانة المتكاملة</h2>
+        </div>
+        <p class="dm-head-note">ستة أقسام تشغيلية متخصصة تغطي جميع احتياجات التمديدات والتعديلات المعمارية وتدعيم الخرسانة في مصر.</p>
+      </div>
+
+      <div class="dm-index-grid">
+        <a href="/core-drilling-%d8%b5%d9%86%d8%a7%d9%8a%d8%b9%d9%8a-%d9%83%d9%88%d8%b1/" class="dm-index-card">
+          <span class="dm-num">01</span>
+          <h3>تخريم الخرسانة (كور دريل)</h3>
+          <p>صنايعي ومقاول فتحات كور للتكييف والغاز والسباكة والشفاطات وأخذ عينات اختبار الكور بأقطار من 1 إلى 24 بوصة.</p>
+          <span class="dm-card-cta">عرض تفاصيل الكور &larr;</span>
+        </a>
+        <a href="/saw-cutting%d9%82%d8%b5-%d8%ae%d8%b1%d8%b3%d8%a7%d9%86%d8%a9/" class="dm-index-card">
+          <span class="dm-num">02</span>
+          <h3>قص الخرسانة بالمنشار والليزر</h3>
+          <p>فتح أبواب وشبابيك في الحوائط الخرسانية، قص أسقف الدوبلكس والسلالم وفواصل التمدد باستقامة هندسية تامة.</p>
+          <span class="dm-card-cta">عرض تفاصيل القص &larr;</span>
+        </a>
+        <a href="/%d9%82%d8%b5-%d8%a7%d9%84%d8%ae%d8%b1%d8%b3%d8%a7%d9%86%d8%a9-%d8%a8%d8%a7%d9%84%d9%88%d8%a7%d9%8a%d8%b1/" class="dm-index-card">
+          <span class="dm-num">03</span>
+          <h3>قص الخرسانة بالواير الماسي</h3>
+          <p>قطع القواعد والأعمدة والكباري والكتل الخرسانية السميكة بالمشاريع الثقيلة بدون اهتزاز إنشائي.</p>
+          <span class="dm-card-cta">تفاصيل الواير الماسي &larr;</span>
+        </a>
+        <a href="/%d8%aa%d8%b2%d8%b1%d9%8a%d8%b9-%d8%a7%d9%84%d8%a7%d8%b4%d8%a7%d9%8a%d8%b1/" class="dm-index-card">
+          <span class="dm-num">04</span>
+          <h3>تزريع الأشاير وتدعيم الخرسانة</h3>
+          <p>تزريع حديد التسليح في الأعمدة والأسقف بأفضل مواد الإيبوكسي (كيمابوكسي 165 وسيكا وهيلتي) طبقًا للكود المصري.</p>
+          <span class="dm-card-cta">تفاصيل تزريع الأشاير &larr;</span>
+        </a>
+        <a href="/%d9%81%d9%86%d9%8a-%d8%b4%d9%81%d8%a7%d8%b7%d8%a7%d8%aa/" class="dm-index-card">
+          <span class="dm-num">05</span>
+          <h3>فني شفاطات وتأسيس المداخن</h3>
+          <p>تركيب شفاط المطبخ والحمام وتخريم فتحة الكور بدون كسر السيراميك، بالإضافة للشفاطات السقفية وشفاطات المطاعم.</p>
+          <span class="dm-card-cta">تفاصيل فني الشفاطات &larr;</span>
+        </a>
+        <a href="/%D9%85%D9%82%D8%A7%D9%88%D9%84-%D9%87%D8%AF%D9%85/" class="dm-index-card">
+          <span class="dm-num">06</span>
+          <h3>مقاول هدم وتكسير وتشوين</h3>
+          <p>إزالة حوائط الشقق والمحلات وتكسير الحمامات والمطابخ والخرسانة بأمان مع تشوين ونقل المخلفات بالكامل.</p>
+          <span class="dm-card-cta">تفاصيل الهدم والتكسير &larr;</span>
+        </a>
       </div>
     </div>
   </section>
 
-  <!-- ABOUT US -->
-  <section class="about-us py-section container">
-    <div class="about-grid">
-      <div class="about-text">
-        <span class="section-subtitle">نبذة عن Drill Max</span>
+  <!-- ABOUT US (ASYMMETRIC 7/5 EDITORIAL) -->
+  <section class="dm-section">
+    <div class="container dm-about-grid">
+      <div class="dm-about-copy">
+        <p class="dm-eyebrow">نبذة عن Drill Max</p>
         <h2>شريكك الاستراتيجي لخدمات قص وتخريم خرسانة بأفضل شركة كور وفني كور في مصر</h2>
-        <p>بصفتنا شركة قص خرسانة رائدة في مصر، تقدم Drill Max حلولاً متكاملة لقص وتخريم الخرسانة المسلحة بأعلى معايير الدقة والأمان. يضم فريقنا أمهر <a href="/core-drilling-%D8%B5%D9%86%D8%A7%D9%8A%D8%B9%D9%8A-%D9%83%D9%88%D8%B1/">صنايعي كور</a> و<a href="/saw-cutting%D9%82%D8%B5-%D8%AE%D8%B1%D8%B3%D8%A7%D9%86%D8%A9/">صنايعي منشار</a> محترفين، جاهزين لتنفيذ أصعب المشاريع. سواء كنت تحتاج إلى <a href="/core-drilling-%D8%B5%D9%86%D8%A7%D9%8A%D8%B9%D9%8A-%D9%83%D9%88%D8%B1/">كور دريل</a> لعمل فتحات أسطوانية دقيقة لمواسير الغاز الطبيعي أو التكييف، أو كنت تبحث عن فني منشار خبير لاستخدام المنشار الجداري في قص جدران وأسقف لعمل تعديلات معمارية وإنشائية، فإننا نوفر لك الخبرة والمعدات الحديثة. نعتبر أنفسنا أفضل مقاول قص خرسانة يمكنك الاعتماد عليه لتنفيذ فتحات المداخن والتهوية وكل ما يخص تخريم الخرسانة بالمنشار الماسي.</p>
-        
-        <div class="features-list">
-          <div class="feature-item">
-            <h3>فريق من الخبراء</h3>
-            <p>فريقنا مكون من فنيين ومهندسين متخصصين، مما يضمن تنفيذ العمل بأعلى معايير الدقة والكفاءة الهندسية.</p>
-          </div>
-          <div class="feature-item">
-            <h3>الدقة المتناهية</h3>
-            <p>نضمن تنفيذ الفتحات والقص بأبعاد دقيقة بالمليمتر، وهو أمر حاسم للمواصفات الهندسية وفتحات الغاز والمداخن.</p>
-          </div>
-          <div class="feature-item">
-            <h3>الأمان والسلامة أولاً</h3>
-            <p>نلتزم بأعلى معايير السلامة المهنية في جميع خطوات العمل للحفاظ على سلامة فريقنا والمبنى الخاص بك.</p>
-          </div>
-        </div>
+        <p>بصفتنا شركة قص خرسانة رائدة في مصر، تقدم Drill Max حلولاً متكاملة لقص وتخريم الخرسانة المسلحة بأعلى معايير الدقة والأمان. يضم فريقنا أمهر <a href="/core-drilling-%D8%B5%D9%86%D8%A7%D9%8A%D8%B9%D9%8A-%D9%83%D9%88%D8%B1/">صنايعي كور</a> و<a href="/saw-cutting%D9%82%D8%B5-%D8%AE%D8%B1%D8%B3%D8%A7%d9%86%d8%a9/">صنايعي منشار</a> محترفين، جاهزين لتنفيذ أصعب المشاريع. سواء كنت تحتاج إلى <a href="/core-drilling-%D8%B5%D9%86%D8%A7%D9%8A%D8%B9%D9%8A-%D9%83%D9%88%D8%B1/">كور دريل</a> لعمل فتحات أسطوانية دقيقة لمواسير الغاز الطبيعي أو التكييف، أو كنت تبحث عن فني منشار خبير لاستخدام المنشار الجداري في قص جدران وأسقف لعمل تعديلات معمارية وإنشائية، فإننا نوفر لك الخبرة والمعدات الحديثة.</p>
 
-        <div class="stats-row">
-          <div class="stat-box">
+        <ol class="dm-standards-list">
+          <li>
+            <span>01</span>
+            <div>
+              <h3>فريق من الخبراء والمهندسين</h3>
+              <p>فنيون متخصصون يلتزمون بمراجعة المسارات الإنشائية والخدمات قبل بدء التثبيت والتشغيل.</p>
+            </div>
+          </li>
+          <li>
+            <span>02</span>
+            <div>
+              <h3>الدقة المتناهية بالمليمتر</h3>
+              <p>تنفيذ الفتحات والقص بأبعاد مطابقة تمامًا لمقاسات المواسير والمداخن وحلوق الأبواب.</p>
+            </div>
+          </li>
+          <li>
+            <span>03</span>
+            <div>
+              <h3>الأمان والسلامة الإنشائية أولاً</h3>
+              <p>تجهيز حماية كاملة للشقق المشطبة وتجميع مياه التبريد والحفاظ على سلامة الهيكل الخرساني.</p>
+            </div>
+          </li>
+        </ol>
+
+        <div class="dm-stat-ledger">
+          <div>
             <strong>+753</strong>
             <span>مشروع مُكتمل بنجاح</span>
           </div>
-          <div class="stat-box">
+          <div>
             <strong>+10</strong>
-            <span>سنوات من الخبرة الميدانية</span>
+            <span>سنوات خبرة ميدانية</span>
+          </div>
+          <div>
+            <strong>24 ساعة</strong>
+            <span>سرعة استجابة وتنفيذ</span>
           </div>
         </div>
       </div>
-      <div class="about-image">
-        <img src="/images/saw.webp" alt="منشار خرسانة" width="600" height="333" loading="lazy" decoding="async" />
-        <img src="/images/gas-hole.webp" alt="فتحة مدخنة غاز" class="about-img-small" width="300" height="200" loading="lazy" decoding="async" />
+
+      <div class="dm-about-media">
+        <figure class="dm-media-primary">
+          <img src="/images/saw.webp" alt="منشار قص خرسانة ماسي أثناء العمل" width="600" height="333" loading="lazy" decoding="async" />
+          <figcaption>قص جدران وأسقف بالمنشار الماسي</figcaption>
+        </figure>
+        <figure class="dm-media-secondary">
+          <img src="/images/gas-hole.webp" alt="فتحة كور لمدخنة غاز طبيعي" width="600" height="800" loading="lazy" decoding="async" />
+          <figcaption>فتحة كور دائرية دقيقة بدون تكسير</figcaption>
+        </figure>
       </div>
     </div>
   </section>
 
-  <!-- DEEP DIVE (How we work) -->
-  <section class="how-we-work py-section bg-light">
-    <div class="container work-grid">
-      <div class="work-text">
-        <span class="section-subtitle">قص وتخريم خرسانة</span>
+  <!-- ENGINEERING MANIFESTO (HOW WE WORK) -->
+  <section class="dm-section dm-stone dm-border-y">
+    <div class="container dm-manifesto-grid">
+      <div class="dm-manifesto-intro">
+        <p class="dm-eyebrow">قص وتخريم خرسانة</p>
         <h2>العلم والهندسة بدلاً من التكسير العشوائي</h2>
-        <p>لو بتفكر تعمل أي تعديل في بيتك أو في موقع الشغل، سواء كنت مهندس، مقاول، أو صاحب مكان… غالبًا أول كلمة بتيجي في بالك هي “التكسير”. وعلى طول بييجي وراها كابوس البهدلة، صوت الهيلتي اللي مابيسكتش، الغبار اللي بيملى كل حتة، والخوف من إن الحيطان تشرخ وتفتح عليك باب مصاريف أنت في غنى عنه.</p>
-        <p>الخبر الكويس… إن الكابوس ده بقى موضة قديمة.</p>
-        <p>النهاردة، علم الهندسة قدم لنا حلول بديلة، حلول بتعتمد على الدقة والنضافة والأمان. بنتكلم عن “القص والتخريم العلمي للخرسانة”. والأبطال في القصة دي هما جهازين أساسيين: الكور دريل ومنشار الخرسانة. تعالوا نعرف بالتفصيل إزاي الأدوات دي غيرت مفهوم التعديلات المعمارية وخلّت الشغل يطلع “على مية بيضا”.</p>
-        
-        <div class="work-feature">
-          <h3>أولاً: الجرّاح الدقيق… الكور دريل (Core Drill)</h3>
-          <p>تخيل معايا إن الحيطة الخرسانة دي عيان، وإحنا محتاجين نعمله عملية دقيقة من غير ما نلمس أي شريان أو عضو سليم. الجرّاح بتاعنا في الحالة دي هو ماكينة الكور.</p>
-          <p>ده مش مجرد شنيور عملاق، لأ. ده جهاز بيعمل فتحات دائرية منتظمة ومثالية في قلب الخرسانة المسلحة بالحديد بتاعها. الفتحة بتطلع “متشطّبة” لوحدها، يعني حوافها ناعمة ومظبوطة بالمللي.</p>
-          <ul class="styled-list">
-            <li><strong>امتى بنلجأ للكور دريل؟</strong></li>
-            <li><strong>فتحات التكييف:</strong> كلنا بنركب تكييفات، ومواسير الفريون لازم تعدي من الحيطة. الكور بيعملك الفتحة دي بالقطر اللي أنت عايزه بالظبط، من غير أي بهدلة.</li>
-            <li><strong>فتحة شفاط المطبخ أو سخان الغاز:</strong> دي من أشهر الطلبات. بدل ما تكسر حوالين المدخنة وتبهدل السيراميك، الكور بيعملك فتحة نضيفة على قد المدخنة بالظبط.</li>
-            <li><strong>تمديدات السباكة والكهرباء:</strong> لو بتعمل تعديل في حمام أو مطبخ، أو بتمد كابلات جديدة، الكور بيفتحلك المسارات بتاعتك في أي حيطة أو سقف بمنتهى السهولة والنضافة.</li>
-            <li><strong>أخذ عينات من الخرسانة:</strong> للمهندسين في المواقع، لما بيحتاجوا ياخدوا عينة من عمود أو سقف عشان يختبروها في المعمل، مفيش حل غير جهاز الكور دريل عشان يطلع عينة سليمة من غير ما يأثر على العنصر الإنشائي.</li>
-          </ul>
-          <p class="highlight-text"><strong>الزبدة في الكور:</strong> بيعمل فتحة مدورة نضيفة، بالأقطار التي تسمح بها المعدات وتصميم الموقع، من غير ما يسبب أي اهتزاز أو شروخ في المبنى. شغل هادي ومحترم.</p>
-        </div>
-        
-        <div class="work-feature">
-          <h3>ثانياً: الفنان الهندسي… منشار قص الخرسانة</h3>
-          <p>طيب لو محتاجين نعمل فتحة كبيرة ومستقيمة؟ يعني مثلاً عايزين نفتح باب مكان حيطة، أو نوسع شباك، أو حتى نشيل حيطة كاملة عشان نفتح الريسبشن على الليفنج. هنا الكور مش هينفع، ولازم نستدعي الوحش التاني: منشار قص الخرسانة.</p>
-          <p>المنشار ده حكايته حكاية. الأسطوانة بتاعته مش زي أي أسطوانة، دي بتكون مترصّعة بالألماس الصناعي، وده بيخليها تقطع في الخرسانة المسلحة زي ما السكينة بتقطع في التورتة. القص بيكون مستقيم زي الخط اللي مرسوم بالمسطرة.</p>
-          <ul class="styled-list">
-            <li><strong>بنستخدم المنشار في إيه؟</strong></li>
-            <li><strong>عمل فتحات للأبواب والشبابيك:</strong> دي أشهر وظيفة ليه. بنحدد الأبعاد المطلوبة، والمنشار بيمشي عليها بالظبط، يطلعلك فتحة جاهزة على تركيب الحلوق على طول.</li>
-            <li><strong>قص حوائط وأسقف:</strong> لو عايز تشيل حيطة خرسانة بالكامل، أو تقص جزء من سقف عشان تعمل سلم داخلي (دوبلكس)، المنشار هو الحل الوحيد الآمن والدقيق.</li>
-            <li><strong>فواصل التمدد:</strong> في الأرضيات الخرسانية الكبيرة (زي أرضيات المصانع والجراجات)، لازم نعمل فواصل عشان نسمح للخرسانة تتمدد وتنكمش. المنشار بيعمل الفواصل دي بشكل هندسي سليم.</li>
-            <li><strong>قص كتل خرسانية ضخمة:</strong> ساعات بنحتاج نشيل قواعد قديمة أو كتل خرسانية من غير ما نستخدم متفجرات أو تكسير عنيف، المنشار بيقطعها لحتت صغيرة عشان نعرف ننقلها.</li>
-          </ul>
-          <p class="highlight-text"><strong>الزبدة في المنشار:</strong> بيعمل قص مستقيم ونضيف لأبعد الحدود، بيخليك تعمل تعديلات معمارية كانت مستحيلة زمان، وكل ده بأمان تام على المبنى.</p>
-        </div>
+        <p>لو بتفكر تعمل أي تعديل في بيتك أو في موقع الشغل، سواء كنت مهندس، مقاول، أو صاحب مكان… غالبًا أول كلمة بتيجي في بالك هي “التكسير”. وعلى طول بييجي وراها كابوس البهدلة، صوت الهيلتي، الغبار، والخوف من إن الحيطان تشرخ وتفتح عليك باب مصاريف إضافية.</p>
+        <p>النهاردة، علم الهندسة قدّم الحل البديل المعتمد على الدقة والنضافة والأمان: <strong>القص والتخريم العلمي للخرسانة</strong> باستخدام جهازين أساسيين هما الكور دريل ومنشار الخرسانة الماسي.</p>
+        <p class="dm-intro-cta-note">لو عندك تعديل معماري أو فتحات تأسيس، تواصل معنا لنحدد أنسب معدة وأوضح سعر قبل التنفيذ.</p>
+      </div>
 
-        <div class="work-feature alert">
-          <h3>طيب ليه منستخدمش الهيلتي ونوفر؟</h3>
-          <p>ده أهم سؤال. التكسير بالهيلتي أو الكومبريسور ممكن يبان أرخص في الأول، لكنه أغلى بكتير على المدى الطويل. الدق والاهتزازات العنيفة دي بتعمل كوارث:</p>
-          <ul class="styled-list">
-            <li>بتسبب شروخ دقيقة في باقي الحوائط والأسقف ممكن متظهرش إلا بعدين.</li>
-            <li>بتضعف تماسك الحديد مع الخرسانة، يعني بتأثر على عمر المبنى.</li>
-            <li>بتعمل بهدلة وغبار بيحتاجوا مصاريف تنضيف وترميم تانية خالص.</li>
-            <li>الفتحة عمرها ما بتكون منتظمة وبتحتاج مجهود ومونة زيادة في التشطيب.</li>
+      <div class="dm-chapters">
+        <article class="dm-chapter">
+          <div class="dm-chapter-head">
+            <span class="dm-num">01</span>
+            <h3>الجرّاح الدقيق… الكور دريل (Core Drill)</h3>
+          </div>
+          <p>ماكينة الكور ليست مجرد شنيور عملاق؛ هي جهاز هندسي ينفذ فتحات دائرية منتظمة في قلب الخرسانة المسلحة بحديدها بحواف ناعمة ومضبوطة بالملليمتر:</p>
+          <ul>
+            <li><strong>فتحات التكييف:</strong> فتحات مواسير الفريون والصرف بالقطر والميل المطلوب دون تكسير.</li>
+            <li><strong>فتحة شفاط المطبخ وسخان الغاز:</strong> فتحة دائرية نظيفة على مقاس المدخنة تمامًا دون كسر السيراميك.</li>
+            <li><strong>تمديدات السباكة والكهرباء:</strong> مسارات دقيقة للصرف والتغذية والكابلات في الأسقف والحوائط.</li>
+            <li><strong>أخذ عينات من الخرسانة (Core Test):</strong> استخراج عينات قياسية للمعامل دون الإضرار بالعنصر الإنشائي.</li>
           </ul>
-          <p>من الآخر… شغل الكور والمنشار مش مجرد رفاهية، ده هو الشغل الهندسي الصح اللي بيحافظ على بيتك وعلى فلوسك. لما تفكر في أي تعديل، متخليش الخوف من التكسير يوقفك. العلم قدم لنا حلول تخلي أصعب التعديلات مجرد عملية بسيطة ونضيفة.</p>
-        </div>
-        
-        <p class="mt-4" style="font-weight: 600;">لو عندك أي تعديل في دماغك ومحتاج شغل مظبوط ومحترف، كلمنا وقولنا فكرتك، وسيب الباقي علينا. إحنا معانا الخبرة والمعدات اللي بتحول أي فكرة صعبة لواقع سهل.</p>
+          <p class="dm-takeaway"><strong>الخلاصة في الكور:</strong> فتحة مدوّرة نظيفة بالمقاس المطلوب بدون أي اهتزاز أو شروخ في المبنى.</p>
+        </article>
+
+        <article class="dm-chapter">
+          <div class="dm-chapter-head">
+            <span class="dm-num">02</span>
+            <h3>الفنان الهندسي… منشار قص الخرسانة الماسي</h3>
+          </div>
+          <p>عند الحاجة لفتحة كبيرة ومستقيمة كفتح باب في حائط خرساني أو توسيع شباك أو فتح سقف دوبلكس، تتولى أسطوانة المنشار المرصّعة بالألماس الصناعي القص باستقامة المسطرة:</p>
+          <ul>
+            <li><strong>فتح الأبواب والشبابيك:</strong> أبعاد مضبوطة جاهزة لتركيب الحلوق مباشرة دون ترميمات.</li>
+            <li><strong>قص الحوائط والأسقف:</strong> إزالة جدار كامل أو فتح سلم داخلي (دوبلكس) بأمان تام.</li>
+            <li><strong>فواصل التمدد:</strong> قص فواصل هندسية دقيقة لأرضيات المصانع والجراجات.</li>
+            <li><strong>قص الكتل الخرسانية الضخمة:</strong> تقطيع القواعد لكتل قابلة للنقل دون تكسير عنيف.</li>
+          </ul>
+          <p class="dm-takeaway"><strong>الخلاصة في المنشار:</strong> قص مستقيم ونظيف يتيح تنفيذ تعديلات معمارية دقيقة بأمان تام على المبنى.</p>
+        </article>
+
+        <article class="dm-chapter dm-chapter-warn">
+          <div class="dm-chapter-head">
+            <span class="dm-num">03</span>
+            <h3>لماذا لا نستخدم الهيلتي أو الكمبروسر للتوفير؟</h3>
+          </div>
+          <p>التكسير بالهيلتي يبدو أرخص في البداية لكنه أغلى بكثير على المدى الطويل لأن الطرق العنيف يسبب:</p>
+          <ul>
+            <li>شروخًا شعرية في الحوائط والأسقف قد تظهر لاحقًا بعد التشطيب.</li>
+            <li>إضعاف تماسك حديد التسليح مع الخرسانة والتأثير على العمر الإنشائي.</li>
+            <li>غبارًا كثيفًا ومصاريف محارة وترميم ودهانات إضافية لتسوية الفتحة العشوائية.</li>
+          </ul>
+        </article>
       </div>
     </div>
   </section>
 
-  <!-- SERVICES CARDS -->
-  <section class="services-section py-section">
+  <!-- DETAILED SERVICES ARCHITECTURE -->
+  <section class="dm-section">
     <div class="container">
-      <div class="text-center section-header">
-        <span class="section-subtitle">خدماتنا الأساسية</span>
-        <h2>خدمات قص وتخريم خرسانة المتكاملة</h2>
+      <div class="dm-section-head">
+        <p class="dm-eyebrow">دليل خدمات Drill Max</p>
+        <h2>تفاصيل التنفيذ الهندسي في كل قسم</h2>
       </div>
 
-      <div class="services-grid">
-        <div class="service-card">
-          <img src="/images/gas-hole.webp" alt="كور دريل" class="service-img" width="400" height="220" loading="lazy" decoding="async" />
-          <div class="service-content">
-            <h3>تخريم الخرسانة (كور دريل)</h3>
-            <a href="/core-drilling-%d8%b5%d9%86%d8%a7%d9%8a%d8%b9%d9%8a-%d9%83%d9%88%d8%b1/" class="btn btn-outline-primary mt-2" aria-label="عرض تفاصيل كور دريل">عرض التفاصيل</a>
-          </div>
-        </div>
-
-        <div class="service-card">
-          <img src="/images/saw.webp" alt="قص منشار" class="service-img" width="400" height="222" loading="lazy" decoding="async" />
-          <div class="service-content">
-            <h3>قص الخرسانة بالمنشار</h3>
-            <a href="/saw-cutting%d9%82%d8%b5-%d8%ae%d8%b1%d8%b3%d8%a7%d9%86%d8%a9/" class="btn btn-outline-primary mt-2" aria-label="عرض تفاصيل قص الخرسانة">عرض التفاصيل</a>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- DETAILED SEO SERVICES SECTION -->
-  <section class="detailed-services py-section bg-light border-top">
-    <div class="container">
-      <div class="text-center section-header">
-        <span class="section-subtitle">دليل خدمات Drill Max</span>
-        <h2>دليل خدمات Drill Max الشامل لقص وتخريم خرسانة</h2>
-      </div>
-
-      <!-- Service Row 1 -->
-      <div class="service-row">
-        <div class="service-row-text">
-          <div class="icon-box">✓</div>
+      <!-- Editorial Row 01 -->
+      <div class="dm-editorial-row">
+        <div class="dm-editorial-text">
+          <span class="dm-row-tag">قسم 01 · الكور الماسي</span>
           <h3>خدمات تخريم الخرسانة (كور دريل)</h3>
           <p>نمتلك خبرة واسعة في تنفيذ فتحات السقف المعقدة لتمرير صواعد السباكة والدكت، حيث نستخدم أحدث ماكينة كور ثقب الخرسانة التي تخترق أصلد الصبّات. سواء كنت بحاجة إلى تخريم خرسانة عادية أو مسلحة، فإن فنيينا يضمنون تنفيذ كل ثقب بدقة متناهية تحافظ على كفاءة الأعصاب الإنشائية للسقف.</p>
-          <p>نحن شركة تخريم الخرسانة رائدة، ونقدم خدمات تخريم الخرسانة المسلحة باستخدام كور تخريم من أفضل الأنواع. سواء كنت تبحث عن معلومات حول أسعار ماكينة كور تخريم الخرسانة أو تحتاج إلى <a href="/core-drilling-صنايعي-كور/">صنايعي كور</a> محترف، فإننا نوفر الحل. تشمل خدماتنا عمل فتحات بالكور لجميع الأغراض، من تخريم السقف إلى تخريم صبات الخرسانة. نستخدم بنط كور تخريم وأسطوانة قطع خرسانة عالية الجودة لضمان فتحات كور خرسانة دقيقة.</p>
+          <p>نحن شركة تخريم خرسانة رائدة، ونوفر خدمات تخريم الخرسانة المسلحة باستخدام أفضل ريش وأسطوانات الكور. سواء كنت تحتاج إلى <a href="/core-drilling-صنايعي-كور/">صنايعي كور</a> محترف لشقة مشطبة أو مقايسة مشروع كامل، نوفر لك التنفيذ الأسرع والأدق.</p>
+          <a href="/core-drilling-صنايعي-كور/" class="dm-btn dm-btn-outline">تصفح خدمة الكور دريل</a>
         </div>
-        <div class="service-row-img">
-          <img src="/images/gas-hole.webp" alt="كور دريل" class="rounded-img shadow-lg" width="500" height="333" loading="lazy" decoding="async" />
+        <div class="dm-editorial-media">
+          <img src="/images/فتحات-كور.webp" alt="فتحات كور دائرية نظيفة في الخرسانة" width="1000" height="836" loading="lazy" decoding="async" />
         </div>
       </div>
 
-      <!-- Service Row 2 (Reversed) -->
-      <div class="service-row reverse">
-        <div class="service-row-text">
-          <div class="icon-box">✓</div>
+      <!-- Editorial Row 02 -->
+      <div class="dm-editorial-row dm-row-flip">
+        <div class="dm-editorial-text">
+          <span class="dm-row-tag">قسم 02 · المنشار والليزر</span>
           <h3>خدمة قص الخرسانة بالمنشار الماسي</h3>
-          <p>نعتبر أفضل شركة كور متخصصة في تنفيذ تعديلات المباني، حيث نوفر حلولاً هندسية لعمل فتحات أبواب وشبابيك في الحوائط المسلحة. نستخدم منشار لقص الجدران يضمن استقامة كاملة في قص الجدار وتوسعة المداخل بدون اهتزاز، مما يجعلنا في مقدمة شركات قص الخرسانة التي يثق بها أصحاب الفيلات والمشاريع التجارية.</p>
-          <p>بصفتنا مقاول قص خرسانة معتمد، نستخدم أحدث منشار قص خرسانة لتنفيذ أصعب المهام. تشمل خدماتنا قص الخرسانة المسلحة، قص جدار بالمنشار، وقص سقف خرساني. يستخدم فريقنا منشار تقطيع خرسانة وصاروخ قص الخرسانة لضمان طريقة قص الجدار بدون تكسير. إذا كنت تبحث عن شركة قص خرسانة أو معلم قص جدار، فنحن نقدم أفضل اسعار قص الخرسانة للمتر.</p>
+          <p>نوفر حلولاً هندسية معتمدة لعمل فتحات أبواب وشبابيك في الحوائط المسلحة باستخدام المنشار الجداري الذي يضمن استقامة كاملة في قص الجدار وتوسعة المداخل بدون اهتزاز، مما يجعلنا خيارًا موثوقًا لأصحاب الفيلات والمشاريع التجارية.</p>
+          <p>بصفتنا مقاول قص خرسانة معتمد، تشمل أعمالنا قص الخرسانة المسلحة، قص جدار بالمنشار، وقص سقف خرساني بأفضل <a href="/prices/">أسعار قص الخرسانة للمتر</a> وبدون تكسير.</p>
+          <a href="/saw-cuttingقص-خرسانة/" class="dm-btn dm-btn-outline">تصفح خدمة قص الخرسانة</a>
         </div>
-        <div class="service-row-img">
-          <img src="/images/saw.webp" alt="منشار ماسي" class="rounded-img shadow-lg" width="500" height="333" loading="lazy" decoding="async" />
-        </div>
-      </div>
-
-      <!-- Callout Box -->
-      <div class="callout-box mt-5">
-        <div class="callout-content">
-          <h3>التطبيقات والفتحات المتخصصة</h3>
-          <p>نتخصص في عمل فتحات الغاز، بما في ذلك فتحة تهوية سخان الغاز وفتحات سخان الغاز بالمقاسات القياسية. نقوم بتنفيذ فتحات التكييف المركزي، فتحة مكيف شباك، وفتحة مكيف صحراوي. كما تشمل أعمالنا فتحات الشفاطات للمطابخ، بما في ذلك شفاط الهود، وفتحات المطبخ على الصالة. بالإضافة إلى فتحات صواعد الكهرباء والتمديدات الصحية. للمشاريع الأكثر تعقيدًا، نقدم خدمة تقطيع بالواير وقص الاسفلت باستخدام أحدث المعدات.</p>
-        </div>
-      </div>
-      
-      <!-- Half Boxes -->
-      <div class="row-flex mt-5">
-        <div class="half-box">
-          <div class="half-img-wrapper">
-            <img src="/images/demolition.webp" alt="مقاول هدم" class="rounded-img" width="500" height="300" loading="lazy" decoding="async" />
-          </div>
-          <h3>خدمات تكسير وهدم خرسانة محترفة</h3>
-          <p>“هل تبحث عن مقاول هدم موثوق؟ في دريل ماكس، نقدم حلول هدم وتكسير هندسية دقيقة للمباني السكنية والتجارية. نستخدم أحدث المعدات لإزالة الجدران، تكسير الأرضيات، وهدم الهياكل الخرسانية بأعلى معايير الأمان، مع التزامنا الكامل بتشوين وإزالة المخلفات وتسليم الموقع نظيفًا.”</p>
-          <a href="/%D9%85%D9%82%D8%A7%D9%88%D9%84-%D9%87%D8%AF%D9%85/" class="btn btn-outline-primary mt-2">اطلب خدمة مقاول هدم وتكسير الآن</a>
-        </div>
-        <div class="half-box">
-          <div class="half-img-wrapper">
-            <img src="/images/wire-saw.webp" alt="قص واير" class="rounded-img" width="500" height="300" loading="lazy" decoding="async" />
-          </div>
-          <h3>قص الخرسانة بالواير (Wire Sawing)</h3>
-          <p>“الحل الهندسي الأمثل لقص الكتل الخرسانية الضخمة، الكباري، والأساسات بسماكات يحددها نظام القطع وظروف الموقع ومع تقليل الاهتزازات. تكنولوجيا الواير الماسي تمكننا من تنفيذ أصعب القطوعات الإنشائية تحت ظروف العمل المعقدة بدقة استثنائية ونظافة تامة.”</p>
-          <a href="/%d9%82%d8%b5-%d8%a7%d9%84%d8%ae%d8%b1%d8%b3%d8%a7%d9%86%d8%a9-%d8%a8%d8%a7%d9%84%d9%88%d8%a7%d9%8a%d8%b1/" class="btn btn-outline-primary mt-2">تفاصيل الخدمة</a>
+        <div class="dm-editorial-media">
+          <img src="/images/saw.webp" alt="قص الخرسانة بالمنشار الماسي" width="600" height="333" loading="lazy" decoding="async" />
         </div>
       </div>
 
-      <!-- Service Row 3 -->
-      <div class="service-row mt-5">
-        <div class="service-row-text">
-          <div class="icon-box">✓</div>
+      <!-- Technical Callout Strip -->
+      <div class="dm-spec-strip">
+        <div>
+          <span class="dm-row-tag">تطبيقات متخصصة</span>
+          <h3>الفتحات القياسية للتمديدات والمشاريع</h3>
+        </div>
+        <p>نتخصص في عمل فتحات الغاز وهواية ومدخنة سخان الغاز بالمقاسات القياسية، وفتحات التكييف المركزي والاسبليت والشباك، وفتحات شفاطات المطابخ والهود والمطاعم، وصواعد الكهرباء والسباكة، بالإضافة لقص الواير وقص الأسفلت في المشاريع الكبرى.</p>
+      </div>
+
+      <!-- Dual Split: Demolition & Wire Saw -->
+      <div class="dm-dual-grid">
+        <article class="dm-dual-card">
+          <img src="/images/demolition.webp" alt="مقاول هدم وتكسير حوائط وخرسانة" width="500" height="300" loading="lazy" decoding="async" />
+          <div class="dm-dual-body">
+            <span class="dm-row-tag">قسم 03 · الهدم والتشوين</span>
+            <h3>خدمات تكسير وهدم خرسانة محترفة</h3>
+            <p>نقدم حلول هدم وتكسير هندسية دقيقة للمباني السكنية والتجارية: إزالة الجدران، تكسير الأرضيات والحمامات والمطابخ، وهدم الهياكل الخرسانية بأعلى معايير الأمان مع تشوين وإزالة المخلفات وتسليم الموقع نظيفًا.</p>
+            <a href="/%D9%85%D9%82%D8%A7%D9%88%D9%84-%D9%87%D8%AF%D9%85/" class="dm-btn dm-btn-outline">اطلب مقاول هدم وتكسير</a>
+          </div>
+        </article>
+        <article class="dm-dual-card">
+          <img src="/images/wire-saw.webp" alt="قص الخرسانة بالواير الماسي" width="500" height="300" loading="lazy" decoding="async" />
+          <div class="dm-dual-body">
+            <span class="dm-row-tag">قسم 04 · الواير الماسي</span>
+            <h3>قص الخرسانة بالواير (Wire Sawing)</h3>
+            <p>الحل الهندسي الأمثل لقص الكتل الخرسانية الضخمة والكباري والأساسات بسماكات كبيرة مع تقليل الاهتزازات. تكنولوجيا الواير الماسي تمكننا من تنفيذ أصعب القطوعات الإنشائية بدقة استثنائية.</p>
+            <a href="/%d9%82%d8%b5-%d8%a7%d9%84%d8%ae%d8%b1%d8%b3%d8%a7%d9%86%d8%a9-%d8%a8%d8%a7%d9%84%d9%88%d8%a7%d9%8a%d8%b1/" class="dm-btn dm-btn-outline">تفاصيل قص الواير</a>
+          </div>
+        </article>
+      </div>
+
+      <!-- Editorial Row 03: Exhaust Fans -->
+      <div class="dm-editorial-row dm-row-last">
+        <div class="dm-editorial-text">
+          <span class="dm-row-tag">قسم 05 · التهوية والشفاطات</span>
           <h3>خدمة تركيب شفاط المطبخ وجميع الشفاطات والسخانات</h3>
-          <p>قبل البحث عن أسعار السخان الغاز أو اختيار أفضل السخانات الغاز، يجب التأكد من تأسيس فتحة تهوية سخان الغاز بشكل احترافي. نوفر لك فني مداخن خبيراً يقوم بعمليات فتح كور وقص خرسانه لتجهيز مسارات الشفاطات والمداخن بأمان تام، مع ضمان عدم تضرر السيراميك أو الديكور الداخلي.</p>
-          <p><strong>لماذا تعتبر دريل ماكس خيارك الأول لتركيب الشفاط؟</strong></p>
-          <p>المشكلة الأكبر التي تواجه العملاء عند تركيب شفاط المطبخ هي الخوف من تكسير السيراميك أو تشويه ديكور المطبخ أثناء عمل فتحة التهوية. هنا تأتي ميزتنا التنافسية؛ نحن لسنا مجرد فنيين تركيب، بل خبراء في قص الخرسانة. نستخدم أحدث ماكينات الكور دريل (Core Drill) لعمل فتحة دائرية دقيقة (بالملليمتر) دون إحداث أي شرخ أو غبار. نستلم منك المطبخ ونسلمك إياه بنظام تهوية يعمل بكفاءة 100%.</p>
-          <a href="/%d9%81%d9%86%d9%8a-%d8%b4%d9%81%d8%a7%d8%b7%d8%a7%d8%aa/" class="btn btn-outline-primary mt-3">تفاصيل خدمة تركيب الشفاطات والمداخن</a>
+          <p>المشكلة الأكبر التي تواجه العملاء عند تركيب شفاط المطبخ أو تأسيس فتحة تهوية سخان الغاز هي الخوف من تكسير السيراميك أو تشويه ديكور المطبخ. ميزتنا التنافسية أننا خبراء قص وتخريم خرسانة وفنيو تركيب معًا: ننفذ الفتحة بالكور دريل بدقة ملليمترية بدون كسر أو غبار، ونركّب الشفاط والمدخنة في زيارة واحدة.</p>
+          <a href="/%d9%81%d9%86%d9%8a-%d8%b4%d9%81%d8%a7%d8%b7%d8%a7%d8%aa/" class="dm-btn dm-btn-outline">تفاصيل خدمة تركيب الشفاطات والمداخن</a>
         </div>
-        <div class="service-row-img">
-          <img src="/images/kitchen-fan.webp" alt="تركيب شفاط مطبخ" class="rounded-img shadow-lg" width="500" height="333" loading="lazy" decoding="async" />
+        <div class="dm-editorial-media">
+          <img src="/images/kitchen-fan.webp" alt="تركيب شفاط مطبخ وتأسيس مدخنة" width="500" height="333" loading="lazy" decoding="async" />
         </div>
       </div>
-
     </div>
   </section>
 
-  <!-- PROJECTS GALLERY BANNER -->
-  <section class="projects-banner py-section text-center" style="background: var(--dark); color: #fff;">
+  <!-- DARK STEEL PROJECTS BAND -->
+  <section class="dm-dark-band">
+    <div class="container dm-band-split">
+      <div>
+        <p class="dm-kicker">سابقة الأعمال</p>
+        <h2>معرض أعمالنا في قص وتخريم الخرسانة</h2>
+        <p>من الشقق السكنية والفيلات إلى المنشآت الصناعية والمشاريع الكبرى — كل موقع ننفذه هو شهادة ميدانية على الدقة والالتزام بالمواصفات الهندسية.</p>
+      </div>
+      <a href="/projects/" class="dm-btn dm-btn-primary">عرض كل المشاريع &larr;</a>
+    </div>
+  </section>
+
+  <!-- STRUCTURED EGYPT COVERAGE DIRECTORY -->
+  <section class="dm-section dm-border-b">
     <div class="container">
-      <span class="section-subtitle" style="color: var(--primary);">من مشاريعنا</span>
-      <h2 style="color: #fff; margin-bottom: 20px;">معرض أعمالنا في قص وتخريم الخرسانة</h2>
-      <p style="color: #cbd5e1; max-width: 800px; margin: 0 auto 30px;">من المشاريع السكنية إلى المنشآت الصناعية، كل مشروع ننفذه هو شهادة على الدقة، الجودة، والالتزام بأعلى المعايير الهندسية.</p>
-      <a href="/projects/" class="btn btn-primary">عرض كل المشاريع</a>
-    </div>
-  </section>
-
-  <!-- SEO LOCATION BANNER -->
-  <section class="location-banner py-section">
-    <div class="container text-center">
-      <h2 style="margin-bottom: 16px; font-size: 1.8rem;">نغطي جميع محافظات مصر بفرق قص وتخريم الخرسانة</h2>
-      <p style="font-size: 1.1rem; line-height: 1.9; color: var(--gray); max-width: 1000px; margin: 0 auto 22px;">
-        سواء كنت تبحث عن <strong><a href="/core-drilling-صنايعي-كور/">صنايعي ومقاول فتحات كور</a></strong> لتنفيذ فتحات دقيقة، أو <strong><a href="/saw-cuttingقص-خرسانة/">مقاول قص خرسانة بالمنشار والليزر</a></strong>، فإن فرق Drill Max تغطي القاهرة الكبرى والجيزة والمحافظات: <a href="/new-cairo-tagamoa-concrete-cutting-core/">التجمع الخامس والقاهرة الجديدة</a>، <a href="/new-capital-shorouk-madinaty-core/">العاصمة الإدارية والشروق ومدينتي</a>، <a href="/تخريم-خرسانة-مدينة-نصر/">مدينة نصر</a> و<a href="/فتحات-كور-الحي-العاشر/">الحي العاشر</a>، و<a href="/october-zayed-concrete-cutting-core/">6 أكتوبر والشيخ زايد</a>، و<a href="/alexandria-concrete-cutting-core/">الإسكندرية</a>، و<a href="/mansoura-concrete-cutting-core/">المنصورة والدقهلية</a>، و<a href="/hurghada-concrete-cutting-core/">الغردقة والبحر الأحمر</a>، و<a href="/minya-concrete-cutting-core/">المنيا</a>، و<a href="/assiut-concrete-cutting-core/">أسيوط</a>. راجع أيضاً <a href="/service-areas/">خريطة مناطق الخدمة</a>، <a href="/اسعار-فتحات-الكور/">أسعار فتحات الكور</a>، <a href="/مادة-تزريع-الحديد-كيمابوكسي-165/">دليل مواد تزريع الحديد</a>، و<a href="/شفاط-مركزي-وشفاطات-مطاعم/">الشفاط المركزي وشفاطات المطاعم</a>.
-      </p>
-    </div>
-  </section>
-
-  <!-- APPOINTMENT SECTION (Orange Background) -->
-  <section class="appointment py-section">
-    <div class="container appointment-grid">
-      <div class="appointment-text">
-        <span class="section-subtitle" style="color: rgba(255,255,255,0.8);">هل لديك مشروع قص أو تخريم خرسانة؟</span>
-        <h2>جاهزون لتنفيذ أعمال قص وتخريم الخرسانة بدقة هندسية</h2>
-        <p>إذا كنت تجهز شقة أو فيلا أو مشروع مقاولات وتحتاج إلى <a href="/فني-شفاطات/" style="color:#fff; text-decoration:underline;">فني شفاطات</a> أو فتحات كور للتكييف والغاز والسباكة أو <a href="/تزريع-الاشاير/" style="color:#fff; text-decoration:underline;">تزريع الأشاير</a>، فنحن نوفر لك الحل الهندسي الشامل بأحدث ماكينات الكور دريل ومناشير القص الماسية بدون تكسير عشوائي أو مصاريف ترميم إضافية.</p>
-        <p>سواء كنت مقاولاً تحتاج إلى شريك موثوق لتنفيذ التعديلات الإنشائية، أو مهندساً معمارياً يتطلب تصميمك فتحات دقيقة، فإن Drill Max هي الحل الأمثل.</p>
-        <div class="features-list-inline">
-          <span>✓ دقة هندسية</span>
-          <span>✓ معدات حديثة</span>
-          <span>✓ السلامة الإنشائية</span>
-          <span>✓ التزام بالمواعيد</span>
+      <div class="dm-section-head dm-head-split">
+        <div>
+          <p class="dm-eyebrow">التغطية الجغرافية</p>
+          <h2>نغطي جميع محافظات مصر بفرق قص وتخريم الخرسانة</h2>
         </div>
+        <p class="dm-head-note">فرق مجهزة بالكور والمنشار تتحرك يوميًا داخل القاهرة الكبرى والمدن الجديدة والمحافظات لخدمة <a href="/core-drilling-صنايعي-كور/">فتحات الكور</a> و<a href="/saw-cuttingقص-خرسانة/">قص الخرسانة بالمنشار والليزر</a>.</p>
       </div>
-      <div class="appointment-form-box">
-        <h3>تواصل معنا الآن</h3>
+
+      <div class="dm-directory-grid">
+        <a href="/new-cairo-tagamoa-concrete-cutting-core/">التجمع الخامس والقاهرة الجديدة</a>
+        <a href="/new-capital-shorouk-madinaty-core/">العاصمة الإدارية والشروق ومدينتي</a>
+        <a href="/تخريم-خرسانة-مدينة-نصر/">مدينة نصر ومصر الجديدة</a>
+        <a href="/فتحات-كور-الحي-العاشر/">الحي العاشر وشرق القاهرة</a>
+        <a href="/october-zayed-concrete-cutting-core/">6 أكتوبر والشيخ زايد</a>
+        <a href="/alexandria-concrete-cutting-core/">الإسكندرية والساحل</a>
+        <a href="/mansoura-concrete-cutting-core/">المنصورة والدقهلية</a>
+        <a href="/hurghada-concrete-cutting-core/">الغردقة والبحر الأحمر</a>
+        <a href="/minya-concrete-cutting-core/">المنيا</a>
+        <a href="/assiut-concrete-cutting-core/">أسيوط</a>
+        <a href="/service-areas/">خريطة جميع مناطق الخدمة</a>
+        <a href="/اسعار-فتحات-الكور/">أسعار فتحات الكور</a>
+        <a href="/مادة-تزريع-الحديد-كيمابوكسي-165/">دليل مواد تزريع الحديد</a>
+        <a href="/شفاط-مركزي-وشفاطات-مطاعم/">الشفاط المركزي وشفاطات المطاعم</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- EXECUTIVE DIRECT CONSULTATION & FORM -->
+  <section class="dm-consult">
+    <div class="container dm-consult-grid">
+      <div class="dm-consult-copy">
+        <p class="dm-kicker">طلب معاينة أو تسعير فوري</p>
+        <h2>جاهزون لتنفيذ أعمال قص وتخريم الخرسانة بدقة هندسية</h2>
+        <p>سواء كنت تجهز شقة أو فيلا أو مشروع مقاولات وتحتاج إلى <a href="/فني-شفاطات/">فني شفاطات</a> أو فتحات كور للتكييف والغاز والسباكة أو <a href="/تزريع-الاشاير/">تزريع الأشاير</a>، نوفر لك الحل الهندسي الشامل بأحدث ماكينات الكور دريل ومناشير القص الماسية بدون تكسير عشوائي أو مصاريف ترميم إضافية.</p>
+        <ul class="dm-consult-points">
+          <li>دقة هندسية بالمليمتر</li>
+          <li>معدات ماسية حديثة</li>
+          <li>الحفاظ على السلامة الإنشائية</li>
+          <li>التزام كامل بمواعيد التسليم</li>
+        </ul>
+      </div>
+      <div class="dm-form-panel">
+        <h3>أرسل تفاصيل مشروعك الآن</h3>
         <ContactForm />
       </div>
     </div>
   </section>
 
-  <!-- TESTIMONIALS -->
-  <section class="testimonials py-section bg-light">
+  <!-- EDITORIAL TESTIMONIALS -->
+  <section class="dm-section dm-stone dm-border-b">
     <div class="container">
-      <div class="text-center section-header">
-        <span class="section-subtitle">ماذا يقول عملاؤنا عن شركة قص وتخريم خرسانة</span>
-        <h2>آراء العملاء</h2>
+      <div class="dm-section-head">
+        <p class="dm-eyebrow">تقييمات ميدانية</p>
+        <h2>ماذا يقول عملاؤنا من المهندسين وأصحاب المنازل؟</h2>
       </div>
-      <div class="testi-grid">
-        <div class="testi-card">
-          <div class="stars">★★★★★</div>
-          <h3>تنفيذ تعديل معماري</h3>
+      <div class="dm-testi-grid">
+        <article class="dm-testi-card">
+          <div class="dm-testi-meta"><span>01 · تعديل معماري</span><span class="dm-stars" aria-label="تقييم 5 من 5">★★★★★</span></div>
           <p>“التعامل مع فريق Drill Max كان احترافيًا لأبعد الحدود. تم قص الجدران بدقة متناهية والتزام كامل بالجدول الزمني، مما ساعدنا على تسليم المشروع في موعده. أنصح بهم بشدة.”</p>
-          <div class="user-info">
-            <img src="/images/Customer-1.webp" alt="م. خالد المصري" width="50" height="50" loading="lazy" decoding="async" />
-            <div>
-              <strong>م. خالد المصري</strong>
-            </div>
+          <div class="dm-user">
+            <img src="/images/Customer-1.webp" alt="م. خالد المصري" width="48" height="48" loading="lazy" decoding="async" />
+            <strong>م. خالد المصري</strong>
           </div>
-        </div>
-        <div class="testi-card">
-          <div class="stars">★★★★★</div>
-          <h3>عمل فتحات للغاز والتكييف</h3>
+        </article>
+        <article class="dm-testi-card">
+          <div class="dm-testi-meta"><span>02 · فتحات غاز وتكييف</span><span class="dm-stars" aria-label="تقييم 5 من 5">★★★★★</span></div>
           <p>“كنت متخوفةً من عملية التخريم في شقتي، لكن فريق العمل كان نظيفًا ومنظمًا جدًا. قاموا بعمل الفتحات المطلوبة بسرعة وبدون أي أضرار جانبية. خدمة ممتازة.”</p>
-          <div class="user-info">
-            <img src="/images/Customer-2.webp" alt="هيام علي" width="50" height="50" loading="lazy" decoding="async" />
-            <div>
-              <strong>هيام علي</strong>
-            </div>
+          <div class="dm-user">
+            <img src="/images/Customer-2.webp" alt="هيام علي" width="48" height="48" loading="lazy" decoding="async" />
+            <strong>هيام علي</strong>
           </div>
-        </div>
-        <div class="testi-card">
-          <div class="stars">★★★★★</div>
-          <h3>فتحات مداخن لمطعم</h3>
+        </article>
+        <article class="dm-testi-card">
+          <div class="dm-testi-meta"><span>03 · فتحات مداخن لمطعم</span><span class="dm-stars" aria-label="تقييم 5 من 5">★★★★★</span></div>
           <p>“كفني تركيبات، أحتاج دائمًا لفتحات كور دقيقة بالمقاس المحدد تمامًا. Drill Max يوفرون هذه الدقة دائمًا، مما يسهل عليّ عملي كثيرًا. هم شركائي المعتمدين.”</p>
-          <div class="user-info">
-            <img src="/images/Testimonial-Img-2.webp" alt="محمد حامد" width="50" height="50" loading="lazy" decoding="async" />
-            <div>
-              <strong>محمد حامد</strong>
-            </div>
+          <div class="dm-user">
+            <img src="/images/Testimonial-Img-2.webp" alt="محمد حامد" width="48" height="48" loading="lazy" decoding="async" />
+            <strong>محمد حامد</strong>
           </div>
-        </div>
+        </article>
       </div>
     </div>
   </section>
 
-  <!-- FINAL SEO TRUST TEXT -->
-  <section class="seo-text py-section container">
-    <div class="text-center section-header">
-      <span class="section-subtitle">خبرة وجودة يمكنك الوثوق بها</span>
-      <h2>نتائج مثبتة وعلاقات مبنية على الثقة</h2>
-    </div>
-    <div class="seo-content" style="max-width: 900px; margin: 0 auto; color: var(--gray); line-height: 1.8;">
-      <p>نحن لا نكتفي بكوننا مجرد شركة قص خرسانة، بل نعتبر أنفسنا شركاء استراتيجيين في نجاح مشاريعكم. علاقاتنا القوية مع كبرى شركات المقاولات هي انعكاس للثقة التي يضعها عملاؤنا فينا، مشروعًا تلو الآخر.</p>
-      
-      <div style="display: flex; gap: 30px; margin: 20px 0; font-weight: bold; color: var(--dark);">
-        <span>+753 مشروع</span>
-        <span>+10 سنوات</span>
+  <!-- PROVEN TRACK RECORD -->
+  <section class="dm-section">
+    <div class="container dm-track-grid">
+      <div>
+        <p class="dm-eyebrow">خبرة وجودة يمكنك الوثوق بها</p>
+        <h2>لماذا تختار Drill Max لأصعب التعديلات الإنشائية؟</h2>
+        <p>نحن لا نكتفي بكوننا مجرد شركة قص خرسانة، بل نعمل كشريك تنفيذي موثوق لكبرى شركات المقاولات والمهندسين وأصحاب الفيلات والمصانع. من المعاينة الفنية وحتى التسليم، نلتزم بالمواصفات القياسية لعمل فتحات التكييف ومسارات الفريون والسباكة والغاز الطبيعي والشفاطات دون إحداث أي اهتزازات أو أضرار بالهيكل الإنشائي.</p>
+        <p>تمتد خبرتنا لتشمل القطاع الصناعي والتجاري، حيث نساعد مديري المصانع في قص الخرسانة لتركيب خطوط إنتاج جديدة أو تنفيذ فتحات التهوية المركزية الضخمة باستخدام المنشار الجداري والواير الماسي.</p>
       </div>
-
-      <p>هل تبحث عن فني كور محترف لتنفيذ فتحات دائرية في الخرسانة المسلحة؟ في Drill Max، نقدم خدمة تخريم الخرسانة الاحترافية لعمل جميع أنواع الفتحات بدون تكسير أو إحداث أي اهتزازات ضارة بالمبنى. سواء كنت تحتاج لعمل فتحات التكييف ومسارات مواسير الفريون، أو فتحات صرف التكييف، أو فتحات الشفاطات للمطابخ، فإن فريقنا من أمهر صنايعية الكور يستخدم تقنية الكور الماسي لضمان مقاسات دقيقة. نتخصص أيضًا في تجهيز فتحات المداخن والهوايات، وفتحات السباكة والكهرباء، بالإضافة إلى عمل فتحات الغاز الطبيعي بأمان تام. كل ثقب في الخرسانة نقوم به يتم بشكل نظيف ويحافظ على سلامة وقوة الجدار.</p>
-      
-      <ul class="styled-list" style="margin: 30px 0; list-style: none; padding: 0; font-weight: 700; color: var(--dark);">
-        <li style="margin-bottom: 10px;">✓ فريق من الخبراء والمهندسين</li>
-        <li style="margin-bottom: 10px;">✓ دقة هندسية ومعدات حديثة</li>
-        <li style="margin-bottom: 10px;">✓ السلامة الإنشائية أولويتنا</li>
-        <li style="margin-bottom: 10px;">✓ التزام بالمواعيد وتنفيذ نظيف</li>
-      </ul>
-
-      <h2 style="color: var(--dark); font-size: 1.8rem; margin: 40px 0 20px;">لماذا تختار Drill Max؟ حلول هندسية دقيقة: شريكك لنجاح أصعب التعديلات الإنشائية</h2>
-      <p>في Drill Max، نتجاوز مفهوم الخدمة التقليدية لنقدم حلاً هندسياً متكاملاً لأعمال تقطيع الخرسانة المسلحة. من المعاينة الدقيقة وحتى تسليم المشاريع، نلتزم بأعلى المواصفات القياسية لضمان تنفيذ عمل خالٍ من العيوب يحافظ على السلامة الإنشائية لمبناك.</p>
-      <p>سواء كنت مقاولاً تحتاج إلى شريك موثوق لتنفيذ التعديلات الإنشائية، أو مهندساً معمارياً يتطلب تصميمك فتحات دقيقة، فإن Drill Max هي الحل الأمثل. كما نخدم أصحاب المنازل والفيلات الذين يسعون لتجديد منازلهم، ونوفر لهم خدمات تخريم الخرسانة لعمل كافة فتحات التشطيبات اللازمة. تمتد خبرتنا لتشمل القطاع الصناعي، حيث نساعد مديري المصانع في قص الخرسانة لتركيب خطوط إنتاج جديدة أو عمل فتحات تهوية ضخمة باستخدام المنشار الجداري. لكل عميل، نقدم استشارة هندسية وحلولاً مخصصة تضمن أفضل النتائج.</p>
-      
-      <div class="text-center mt-5">
-        <img src="/images/core-drill-hero.webp" alt="صنايعي كور دريل" width="800" height="400" loading="lazy" decoding="async" style="max-width: 100%; height: auto; border-radius: 8px; box-shadow: 0 10px 30px rgba(0,0,0,0.1);" />
+      <div class="dm-track-facts">
+        <div class="dm-fact-row"><strong>+753 مشروع</strong><span>سجل تنفيذ ميداني في السكني والتجاري والصناعي</span></div>
+        <div class="dm-fact-row"><strong>+10 سنوات</strong><span>خبرة عملية متواصلة في السوق المصري</span></div>
+        <div class="dm-fact-row"><strong>تجهيز كامل</strong><span>ماكينات كور ومنشار وواير ماسي وأنظمة شفط مياه</span></div>
+        <div class="dm-fact-row"><strong>تواصل مباشر</strong><span>اتصل على <a href="tel:+201070046464" dir="ltr">01070046464</a> أو <a href="tel:+201055550195" dir="ltr">01055550195</a></span></div>
       </div>
     </div>
   </section>
 
-  <!-- HOME FAQ (Matches FAQPage Schema) -->
-  <section class="home-faq py-section bg-light border-top">
-    <div class="container" style="max-width: 900px;">
-      <div class="text-center section-header">
-        <span class="section-subtitle">إجابات واضحة قبل الطلب</span>
+  <!-- HOME FAQ (Matches FAQPage Schema 100%) -->
+  <section class="dm-section dm-stone dm-border-t">
+    <div class="container dm-faq-wrap">
+      <div class="dm-section-head">
+        <p class="dm-eyebrow">إجابات واضحة قبل الطلب</p>
         <h2>الأسئلة الشائعة حول قص وتخريم الخرسانة</h2>
       </div>
-      <div class="home-faq-list">
-        <details class="home-faq-item" open>
+      <div class="dm-faq-list">
+        <details class="dm-faq-item" open>
           <summary>ما هو الكور دريل وما هي استخداماته؟</summary>
           <p>الكور دريل هو جهاز متخصص يُستخدم لعمل فتحات دائرية في الخرسانة المسلحة بدقة عالية. يُستخدم لعمل فتحات التكييف، فتحات الغاز الطبيعي، فتحات الشفاطات، تمديدات السباكة والكهرباء، وأخذ عينات من الخرسانة. الميزة الأساسية أنه يعمل بدون اهتزازات أو تكسير.</p>
         </details>
-        <details class="home-faq-item">
+        <details class="dm-faq-item">
           <summary>ما الفرق بين الكور دريل ومنشار قص الخرسانة؟</summary>
           <p>الكور دريل يُستخدم لعمل فتحات دائرية بأي قطر مطلوب، بينما يُستخدم منشار قص الخرسانة لعمل فتحات مستطيلة أو مربعة كالأبواب والشبابيك. كلاهما يعمل بالألماس الصناعي ويضمن قصًا نظيفًا بدون اهتزازات ضارة.</p>
         </details>
-        <details class="home-faq-item">
+        <details class="dm-faq-item">
           <summary>كم سعر عمل فتحة كور في الخرسانة؟</summary>
           <p>يبدأ سعر فتحة الكور من 200 جنيه للخرسانة المسلحة و100 جنيه لحوائط الطوب بقطر 1 بوصة، ويزيد السعر تدريجياً مع زيادة القطر. للحصول على عرض سعر دقيق يرجى التواصل على 01070046464.</p>
         </details>
-        <details class="home-faq-item">
+        <details class="dm-faq-item">
           <summary>هل يمكنكم العمل في جميع محافظات مصر؟</summary>
           <p>نعم، تقدم Drill Max خدماتها في جميع أنحاء مصر. نخدم القاهرة والجيزة والتجمع الخامس ومدينة نصر و6 أكتوبر والشيخ زايد والإسكندرية والغردقة والمنصورة والمنيا وأسيوط وغيرها.</p>
         </details>
-        <details class="home-faq-item">
+        <details class="dm-faq-item">
           <summary>هل الكور دريل يسبب أضراراً للجدران؟</summary>
           <p>لا، الكور دريل مصمم خصيصاً لعمل فتحات بدون إحداث أي اهتزازات أو شروخ في المبنى. على عكس الطرق التقليدية (الهيلتي والتكسير)، يحافظ الكور دريل على السلامة الإنشائية الكاملة للجدار أو السقف.</p>
         </details>
-        <details class="home-faq-item">
+        <details class="dm-faq-item">
           <summary>كيف أطلب خدمة قص أو تخريم الخرسانة؟</summary>
           <p>يمكنك التواصل معنا عبر الاتصال على 01070046464 أو 01055550195، أو عبر الواتساب، أو من خلال نموذج التواصل على موقعنا. يقوم فريقنا بالرد فوراً ويجدول معاينة مجانية للموقع.</p>
         </details>
@@ -530,448 +596,464 @@ const combinedSchema = JSON.stringify({
 </MainLayout>
 
 <style>
-  /* Global Resets for this page */
-  .py-section { padding: 80px 0; }
-  .bg-light { background-color: var(--section-bg); }
-  .text-center { text-align: center; }
-  .border-top { border-top: 1px solid var(--border-color); }
-  .mt-2 { margin-top: 10px; }
-  .mt-3 { margin-top: 15px; }
-  .mt-4 { margin-top: 20px; }
-  .mt-5 { margin-top: 40px; }
-  
-  .section-subtitle {
+  /* Architectural Utilities */
+  .dm-section { padding: 84px 0; background: #fff; }
+  .dm-stone { background: var(--section-bg); }
+  .dm-border-t { border-top: 1px solid var(--border-color); }
+  .dm-border-b { border-bottom: 1px solid var(--border-color); }
+  .dm-border-y { border-top: 1px solid var(--border-color); border-bottom: 1px solid var(--border-color); }
+
+  .dm-eyebrow {
     color: var(--primary);
     font-weight: 700;
-    font-size: 1rem;
-    text-transform: uppercase;
+    font-size: 0.86rem;
+    letter-spacing: 0.04em;
     margin-bottom: 10px;
-    display: inline-block;
   }
-  .section-header h2 {
-    font-size: 2.5rem;
-    color: var(--dark);
-    margin-bottom: 50px;
-  }
-  
-  .btn {
-    display: inline-block;
-    padding: 14px 30px;
-    font-weight: 700;
-    border-radius: 4px;
-    cursor: pointer;
-    transition: background 0.3s, color 0.3s;
-    border: none;
-    text-align: center;
-  }
-  .btn-primary { background: var(--primary); color: #fff; }
-  .btn-primary:hover { background: var(--primary-hover); }
-  .btn-dark { background: var(--dark); color: #fff; width: 100%; }
-  .btn-dark:hover { background: #334155; }
-  
-  .btn-outline {
-    background: transparent;
-    padding: 12px 28px;
-  }
-  .btn-outline:hover {
-    background: #fff;
-    color: var(--dark) !important;
-  }
-
-  .btn-outline-primary {
-    background: transparent;
-    border: 2px solid var(--primary);
-    color: var(--primary);
-    padding: 10px 20px;
-  }
-  .btn-outline-primary:hover {
-    background: var(--primary);
-    color: #fff;
-  }
-
-  /* Hero Section */
-  .hero {
-    position: relative;
-    min-height: 560px;
-    padding: 80px 0;
-    display: flex;
-    align-items: center;
-  }
-  .home-faq-list { display: flex; flex-direction: column; gap: 14px; }
-  .home-faq-item { background: #fff; border: 1px solid var(--border-color); border-radius: 10px; padding: 20px 24px; }
-  .home-faq-item summary { font-weight: 700; color: var(--dark); font-size: 1.08rem; cursor: pointer; }
-  .home-faq-item p { color: var(--gray); line-height: 1.85; margin-top: 12px; }
-  .hero-bg {
-    position: absolute;
-    top: 0; left: 0; width: 100%; height: 100%;
-    background: url('/images/core-drill-hero.webp') center/cover no-repeat;
-    z-index: 1;
-  }
-  .hero-bg::after {
-    content: '';
-    position: absolute;
-    top: 0; left: 0; width: 100%; height: 100%;
-    background: linear-gradient(to right, rgba(30, 37, 48, 0.3), rgba(30, 37, 48, 0.95));
-  }
-  .hero-container {
-    position: relative;
-    z-index: 2;
-  }
-  .hero-content {
-    max-width: 650px;
-    margin-right: 0;
-  }
-  .hero-subtitle {
+  .dm-kicker {
     color: #fdba74;
-    font-size: 1.2rem;
     font-weight: 700;
-    margin-bottom: 15px;
-    display: block;
+    font-size: 0.85rem;
+    letter-spacing: 0.04em;
+    margin-bottom: 14px;
   }
-  .hero h1 {
-    font-size: 3.5rem;
-    color: #fff;
-    line-height: 1.2;
-    margin-bottom: 20px;
-    font-weight: 800;
+  .dm-section-head { margin-bottom: 44px; }
+  .dm-section-head h2 {
+    font-size: clamp(1.7rem, 3vw, 2.35rem);
+    color: var(--dark);
+    line-height: 1.35;
   }
-  .hero p {
-    color: #cbd5e1;
-    font-size: 1.2rem;
-    line-height: 1.8;
-    margin-bottom: 20px;
-  }
-
-  /* About Us */
-  .about-grid {
+  .dm-head-split {
     display: grid;
-    grid-template-columns: 1.2fr 1fr;
-    gap: 60px;
-    align-items: center;
+    grid-template-columns: 1.1fr 0.9fr;
+    gap: 32px;
+    align-items: end;
   }
-  .about-text h2 {
-    font-size: 2.2rem;
-    color: var(--dark);
-    margin-bottom: 20px;
-    line-height: 1.4;
-  }
-  .about-text p {
-    color: var(--gray);
-    line-height: 1.8;
-    margin-bottom: 30px;
-  }
-  .features-list { margin-bottom: 40px; }
-  .feature-item { margin-bottom: 20px; }
-  .feature-item h3 {
-    color: var(--dark);
-    font-size: 1.2rem;
-    margin-bottom: 5px;
-  }
-  .feature-item h3::before {
-    content: '■';
-    color: var(--primary);
-    margin-left: 10px;
-  }
-  .feature-item p { margin-right: 25px; font-size: 0.95rem; }
-  
-  .stats-row {
-    display: flex;
-    gap: 40px;
-    border-top: 1px solid var(--border-color);
-    padding-top: 30px;
-  }
-  .stat-box strong {
-    display: block;
-    font-size: 2.5rem;
-    color: var(--primary);
-    line-height: 1;
-  }
-  .stat-box span {
-    color: var(--dark);
-    font-weight: 600;
-  }
-  .about-image { position: relative; }
-  .about-image img {
-    width: 100%;
-    border-radius: 8px;
-    box-shadow: 0 20px 40px rgba(0,0,0,0.1);
-  }
-  .about-img-small {
-    position: absolute;
-    bottom: -40px;
-    right: -40px;
-    width: 50% !important;
-    border: 10px solid #fff;
-  }
+  .dm-head-note { color: var(--gray); font-size: 1rem; line-height: 1.85; margin: 0; }
+  .dm-head-note a { color: var(--primary-hover); text-decoration: underline; text-underline-offset: 4px; }
 
-  /* How We Work */
-  .work-grid {
-    max-width: 900px;
-    margin: 0 auto;
-  }
-  .work-text h2 {
-    font-size: 2.2rem;
-    color: var(--dark);
-    margin-bottom: 20px;
-  }
-  .work-text p {
-    color: var(--gray);
-    line-height: 1.8;
-    margin-bottom: 20px;
-  }
-  .styled-list {
-    margin-right: 20px;
-    margin-bottom: 20px;
-    color: var(--gray);
-    line-height: 1.8;
-  }
-  .styled-list li { margin-bottom: 10px; }
-  .highlight-text {
-    background: rgba(255,87,34,0.1);
-    padding: 15px;
-    border-right: 3px solid var(--primary);
-    color: var(--dark);
-  }
-  .work-feature {
-    background: #fff;
-    padding: 30px;
-    border-right: 3px solid var(--primary);
-    margin-bottom: 30px;
-    box-shadow: 0 4px 15px rgba(0,0,0,0.03);
-  }
-  .work-feature h3 {
-    color: var(--dark);
-    font-size: 1.4rem;
-    margin-bottom: 15px;
-  }
-  .work-feature.alert { background: rgba(255,87,34,0.05); }
-
-  /* Services Grid */
-  .services-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(min(100%, 300px), 1fr));
-    gap: 30px;
-    justify-content: center;
-  }
-  .service-card {
-    background: #fff;
-    border: 1px solid var(--border-color);
-    border-radius: 8px;
-    overflow: hidden;
-    transition: transform 0.3s, box-shadow 0.3s;
-  }
-  .service-card:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 15px 30px rgba(0,0,0,0.08);
-  }
-  .service-img {
-    width: 100%;
-    height: 220px;
-    object-fit: cover;
-  }
-  .service-content {
-    padding: 30px;
-    text-align: center;
-  }
-  .service-content h3 {
-    font-size: 1.3rem;
-    color: var(--dark);
-    margin-bottom: 15px;
-  }
-
-  /* Beautiful SEO Service Rows */
-  .service-row {
-    display: flex;
-    align-items: center;
-    gap: 50px;
-    margin-top: 50px;
-    padding-bottom: 50px;
-    border-bottom: 1px solid var(--border-color);
-  }
-  .service-row.reverse {
-    flex-direction: row-reverse;
-  }
-  .service-row-text {
-    flex: 1;
-  }
-  .service-row-img {
-    flex: 1;
-    text-align: center;
-  }
-  .service-row-img img {
-    max-width: 100%;
-    height: auto;
-    border-radius: 12px;
-  }
-  .icon-box {
+  /* Crisp Industrial Buttons */
+  .dm-btn {
     display: inline-flex;
     align-items: center;
     justify-content: center;
-    width: 40px;
-    height: 40px;
-    background: rgba(255,87,34,0.1);
-    color: var(--primary);
-    border-radius: 8px;
-    font-weight: bold;
-    font-size: 1.2rem;
-    margin-bottom: 15px;
+    min-height: 48px;
+    padding: 12px 24px;
+    font-weight: 700;
+    font-size: 0.98rem;
+    border-radius: 4px;
+    border: 1px solid transparent;
+    transition: background-color 0.2s, color 0.2s, border-color 0.2s;
+    text-decoration: none;
   }
-  .service-row-text h3 {
-    font-size: 1.8rem;
-    color: var(--dark);
-    margin-bottom: 20px;
-  }
-  .service-row-text p {
-    color: var(--gray);
-    line-height: 1.8;
-    margin-bottom: 15px;
-    font-size: 1.05rem;
-  }
-  .shadow-lg {
-    box-shadow: 0 15px 35px rgba(0,0,0,0.1);
-  }
+  .dm-btn-primary { background: var(--primary); color: #fff; border-color: var(--primary); }
+  .dm-btn-primary:hover { background: var(--primary-hover); border-color: var(--primary-hover); }
+  .dm-btn-ghost { background: transparent; color: #fff; border-color: rgba(255,255,255,0.35); font-variant-numeric: tabular-nums; }
+  .dm-btn-ghost:hover { background: #fff; color: var(--dark); border-color: #fff; }
+  .dm-btn-outline { background: transparent; color: var(--dark); border-color: var(--dark); margin-top: 8px; }
+  .dm-btn-outline:hover { background: var(--dark); color: #fff; }
+  .dm-link-inline { color: #e5e2da; font-weight: 600; font-size: 0.95rem; border-bottom: 1px solid rgba(255,255,255,0.3); padding-bottom: 3px; }
+  .dm-link-inline:hover { color: #fdba74; border-color: #fdba74; }
 
-  /* Callout Box */
-  .callout-box {
-    background: #fff;
-    border-right: 4px solid var(--primary);
-    padding: 40px;
-    border-radius: 8px;
-    box-shadow: 0 5px 20px rgba(0,0,0,0.03);
+  /* Architectural Split Hero */
+  .dm-hero {
+    background-color: #111419;
+    background-image:
+      linear-gradient(to left, rgba(255,255,255,0.03) 1px, transparent 1px),
+      linear-gradient(to bottom, rgba(255,255,255,0.03) 1px, transparent 1px);
+    background-size: 64px 64px;
+    color: #fff;
+    padding: 68px 0 74px;
+    border-bottom: 3px solid var(--primary);
   }
-  .callout-box h3 {
-    color: var(--dark);
-    font-size: 1.5rem;
-    margin-bottom: 15px;
-  }
-  .callout-box p {
-    color: var(--gray);
-    line-height: 1.8;
-  }
-
-  .row-flex {
-    display: flex;
-    gap: 40px;
-    flex-wrap: wrap;
-  }
-  .half-box {
-    flex: 1;
-    min-width: min(100%, 300px);
-    background: #fff;
-    padding: 30px;
-    border-radius: 8px;
-    box-shadow: 0 4px 15px rgba(0,0,0,0.03);
-    text-align: center;
-    border: 1px solid var(--border-color);
-  }
-  .half-img-wrapper {
-    margin-bottom: 20px;
-    height: 200px;
-    overflow: hidden;
-    border-radius: 8px;
-  }
-  .half-img-wrapper img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-  }
-  .half-box h3 { color: var(--dark); margin-bottom: 15px; font-size: 1.4rem;}
-  .half-box p { color: var(--gray); line-height: 1.8; margin-bottom: 20px;}
-
-  /* Appointment / Contact */
-  .appointment { background: var(--primary); color: #fff; }
-  .appointment-grid {
+  .dm-hero-grid {
     display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 60px;
+    grid-template-columns: 1.15fr 0.95fr;
+    gap: 48px;
     align-items: center;
   }
-  .appointment-text h2 {
-    font-size: 2.5rem;
-    margin-bottom: 20px;
-    line-height: 1.4;
+  .dm-hero h1 {
+    font-size: clamp(2rem, 3.8vw, 3.15rem);
+    line-height: 1.28;
+    color: #fff;
+    font-weight: 800;
+    margin-bottom: 18px;
   }
-  .appointment-text p {
-    font-size: 1.1rem;
-    line-height: 1.8;
-    margin-bottom: 20px;
-    opacity: 0.9;
+  .dm-hero-lead {
+    color: #d6d3cb;
+    font-size: 1.08rem;
+    line-height: 1.85;
+    max-width: 58ch;
+    margin-bottom: 28px;
   }
-  .features-list-inline {
+  .dm-hero-actions {
     display: flex;
     flex-wrap: wrap;
-    gap: 20px;
-    font-weight: 700;
-    font-size: 1.1rem;
-    margin-top: 30px;
+    align-items: center;
+    gap: 14px;
+    margin-bottom: 34px;
   }
-  .appointment-form-box {
+  .dm-hero-specs {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 16px;
+    padding-top: 24px;
+    border-top: 1px solid rgba(255,255,255,0.14);
+  }
+  .dm-hero-specs dt { font-size: 0.82rem; color: #a1a8b3; margin-bottom: 4px; }
+  .dm-hero-specs dd { font-size: 1.15rem; font-weight: 700; color: #fff; font-variant-numeric: tabular-nums; margin: 0; }
+  .dm-hero-plate {
+    margin: 0;
+    border: 1px solid rgba(255,255,255,0.16);
+    background: #1a1e25;
+    padding: 10px;
+    border-radius: 4px;
+  }
+  .dm-hero-plate img { width: 100%; height: auto; display: block; border-radius: 2px; }
+  .dm-hero-plate figcaption {
+    display: flex;
+    justify-content: space-between;
+    gap: 12px;
+    padding: 10px 4px 2px;
+    font-size: 0.82rem;
+    color: #b8bec8;
+  }
+
+  /* 01-06 Engineering Index Grid */
+  .dm-index-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    border-top: 1px solid var(--border-color);
+    border-inline-start: 1px solid var(--border-color);
     background: #fff;
-    padding: 40px;
-    border-radius: 8px;
-    box-shadow: 0 20px 40px rgba(0,0,0,0.2);
   }
-  .appointment-form-box h3 { color: var(--dark); margin-bottom: 20px; font-size: 1.5rem; }
-  .appointment-form-box input,
-  .appointment-form-box textarea {
-    width: 100%;
-    padding: 15px;
-    margin-bottom: 15px;
+  .dm-index-card {
+    display: flex;
+    flex-direction: column;
+    padding: 30px 28px;
+    border-bottom: 1px solid var(--border-color);
+    border-inline-end: 1px solid var(--border-color);
+    background: #fff;
+    transition: background-color 0.2s;
+  }
+  .dm-index-card:hover { background: #faf9f6; }
+  .dm-num {
+    font-family: var(--font-display);
+    font-size: 0.85rem;
+    font-weight: 800;
+    color: var(--primary);
+    letter-spacing: 0.08em;
+    font-variant-numeric: tabular-nums;
+    margin-bottom: 12px;
+    display: inline-block;
+  }
+  .dm-index-card h3 { font-size: 1.25rem; color: var(--dark); margin-bottom: 10px; line-height: 1.4; }
+  .dm-index-card p { color: var(--gray); font-size: 0.95rem; line-height: 1.8; margin-bottom: 18px; flex: 1; }
+  .dm-card-cta { color: var(--primary-hover); font-weight: 700; font-size: 0.9rem; }
+
+  /* About Asymmetric Grid */
+  .dm-about-grid {
+    display: grid;
+    grid-template-columns: 1.2fr 0.85fr;
+    gap: 56px;
+    align-items: start;
+  }
+  .dm-about-copy h2 { font-size: clamp(1.65rem, 2.8vw, 2.25rem); line-height: 1.4; margin-bottom: 18px; }
+  .dm-about-copy > p { color: var(--gray); line-height: 1.9; margin-bottom: 28px; }
+  .dm-about-copy a { color: var(--primary-hover); text-decoration: underline; text-underline-offset: 4px; }
+  .dm-standards-list { list-style: none; padding: 0; margin: 0 0 32px; border-top: 1px solid var(--border-color); }
+  .dm-standards-list li {
+    display: grid;
+    grid-template-columns: 36px 1fr;
+    gap: 14px;
+    padding: 16px 0;
+    border-bottom: 1px solid var(--border-color);
+  }
+  .dm-standards-list span { color: var(--primary); font-weight: 800; font-size: 0.9rem; padding-top: 3px; }
+  .dm-standards-list h3 { font-size: 1.08rem; color: var(--dark); margin-bottom: 4px; }
+  .dm-standards-list p { color: var(--gray); font-size: 0.93rem; line-height: 1.75; margin: 0; }
+  .dm-stat-ledger {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+    background: var(--section-bg);
     border: 1px solid var(--border-color);
     border-radius: 4px;
-    font-family: inherit;
+    padding: 20px;
   }
+  .dm-stat-ledger strong { display: block; font-family: var(--font-display); font-size: 1.8rem; color: var(--dark); line-height: 1.2; font-variant-numeric: tabular-nums; }
+  .dm-stat-ledger span { font-size: 0.86rem; color: var(--gray); }
+  .dm-about-media { display: grid; gap: 18px; }
+  .dm-about-media figure { margin: 0; border: 1px solid var(--border-color); padding: 8px; background: var(--section-bg); border-radius: 4px; }
+  .dm-about-media img { width: 100%; height: 240px; object-fit: cover; display: block; border-radius: 2px; }
+  .dm-about-media figcaption { padding: 8px 4px 2px; font-size: 0.84rem; color: var(--gray); font-weight: 500; }
+
+  /* Engineering Manifesto */
+  .dm-manifesto-grid {
+    display: grid;
+    grid-template-columns: 0.85fr 1.25fr;
+    gap: 52px;
+    align-items: start;
+  }
+  .dm-manifesto-intro { position: sticky; top: 112px; }
+  .dm-manifesto-intro h2 { font-size: clamp(1.65rem, 2.7vw, 2.2rem); line-height: 1.4; margin-bottom: 18px; }
+  .dm-manifesto-intro p { color: var(--gray); line-height: 1.9; margin-bottom: 16px; }
+  .dm-intro-cta-note {
+    padding: 14px 16px;
+    background: #fff;
+    border: 1px solid var(--border-color);
+    border-inline-start: 3px solid var(--primary);
+    color: var(--dark);
+    font-weight: 600;
+    font-size: 0.95rem;
+  }
+  .dm-chapters { display: grid; gap: 22px; }
+  .dm-chapter {
+    background: #fff;
+    border: 1px solid var(--border-color);
+    border-radius: 4px;
+    padding: 28px;
+  }
+  .dm-chapter-warn { border-inline-start: 4px solid var(--primary); background: #faf7f2; }
+  .dm-chapter-head { display: flex; align-items: baseline; gap: 12px; margin-bottom: 12px; }
+  .dm-chapter-head .dm-num { margin: 0; }
+  .dm-chapter h3 { font-size: 1.3rem; color: var(--dark); margin: 0; }
+  .dm-chapter p { color: var(--gray); line-height: 1.85; margin-bottom: 14px; }
+  .dm-chapter ul { list-style: disc; padding-inline-start: 22px; color: var(--gray); margin-bottom: 16px; }
+  .dm-chapter li { margin-bottom: 8px; line-height: 1.8; }
+  .dm-takeaway {
+    margin: 0;
+    padding: 12px 16px;
+    background: var(--section-bg);
+    border-inline-start: 3px solid var(--primary);
+    color: var(--dark);
+    font-size: 0.95rem;
+  }
+
+  /* Detailed Editorial Rows */
+  .dm-editorial-row {
+    display: grid;
+    grid-template-columns: 1.1fr 0.9fr;
+    gap: 48px;
+    align-items: center;
+    padding: 44px 0;
+    border-top: 1px solid var(--border-color);
+  }
+  .dm-row-flip .dm-editorial-media { order: -1; }
+  .dm-row-last { padding-bottom: 0; }
+  .dm-row-tag {
+    display: inline-block;
+    font-size: 0.8rem;
+    font-weight: 700;
+    color: var(--primary);
+    letter-spacing: 0.04em;
+    margin-bottom: 10px;
+  }
+  .dm-editorial-text h3 { font-size: clamp(1.45rem, 2.3vw, 1.85rem); color: var(--dark); margin-bottom: 14px; line-height: 1.4; }
+  .dm-editorial-text p { color: var(--gray); line-height: 1.9; margin-bottom: 14px; }
+  .dm-editorial-text a:not(.dm-btn) { color: var(--primary-hover); text-decoration: underline; text-underline-offset: 4px; }
+  .dm-editorial-media { border: 1px solid var(--border-color); padding: 8px; background: var(--section-bg); border-radius: 4px; }
+  .dm-editorial-media img { width: 100%; height: 300px; object-fit: cover; display: block; border-radius: 2px; }
+
+  .dm-spec-strip {
+    display: grid;
+    grid-template-columns: 0.75fr 1.25fr;
+    gap: 32px;
+    align-items: center;
+    background: var(--section-bg);
+    border: 1px solid var(--border-color);
+    border-inline-start: 4px solid var(--primary);
+    padding: 28px 30px;
+    margin: 20px 0 40px;
+    border-radius: 4px;
+  }
+  .dm-spec-strip h3 { font-size: 1.35rem; color: var(--dark); margin: 0; }
+  .dm-spec-strip p { color: var(--gray); line-height: 1.85; margin: 0; }
+
+  .dm-dual-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 28px;
+    margin-bottom: 12px;
+  }
+  .dm-dual-card {
+    border: 1px solid var(--border-color);
+    border-radius: 4px;
+    background: #fff;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+  }
+  .dm-dual-card img { width: 100%; height: 230px; object-fit: cover; display: block; border-bottom: 1px solid var(--border-color); }
+  .dm-dual-body { padding: 26px; display: flex; flex-direction: column; flex: 1; }
+  .dm-dual-body h3 { font-size: 1.35rem; color: var(--dark); margin-bottom: 10px; }
+  .dm-dual-body p { color: var(--gray); line-height: 1.85; margin-bottom: 18px; flex: 1; }
+
+  /* Dark Steel Projects Band */
+  .dm-dark-band {
+    background: #14171c;
+    color: #fff;
+    padding: 64px 0;
+    border-top: 1px solid #262b34;
+    border-bottom: 1px solid #262b34;
+  }
+  .dm-band-split {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 36px;
+  }
+  .dm-dark-band h2 { font-size: clamp(1.65rem, 2.8vw, 2.2rem); color: #fff; margin-bottom: 10px; }
+  .dm-dark-band p { color: #c7cbd3; max-width: 62ch; line-height: 1.8; margin: 0; }
+
+  /* Directory Grid */
+  .dm-directory-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+    gap: 12px;
+  }
+  .dm-directory-grid a {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 13px 16px;
+    background: var(--section-bg);
+    border: 1px solid var(--border-color);
+    border-radius: 4px;
+    color: var(--dark);
+    font-weight: 600;
+    font-size: 0.93rem;
+  }
+  .dm-directory-grid a:hover { border-color: var(--primary); color: var(--primary-hover); background: #fff; }
+
+  /* Consultation Band */
+  .dm-consult {
+    background: #14171c;
+    color: #fff;
+    padding: 84px 0;
+    border-top: 3px solid var(--primary);
+  }
+  .dm-consult-grid {
+    display: grid;
+    grid-template-columns: 1.05fr 0.95fr;
+    gap: 52px;
+    align-items: center;
+  }
+  .dm-consult-copy h2 { font-size: clamp(1.75rem, 3vw, 2.35rem); line-height: 1.38; color: #fff; margin-bottom: 18px; }
+  .dm-consult-copy p { color: #d6d3cb; line-height: 1.9; margin-bottom: 24px; }
+  .dm-consult-copy a { color: #fdba74; text-decoration: underline; text-underline-offset: 4px; }
+  .dm-consult-points {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 12px 20px;
+    padding-top: 20px;
+    border-top: 1px solid rgba(255,255,255,0.14);
+  }
+  .dm-consult-points li {
+    position: relative;
+    padding-inline-start: 16px;
+    color: #f5f4f0;
+    font-weight: 600;
+    font-size: 0.95rem;
+  }
+  .dm-consult-points li::before {
+    content: '';
+    position: absolute;
+    inset-inline-start: 0;
+    top: 11px;
+    width: 7px;
+    height: 7px;
+    background: var(--primary);
+  }
+  .dm-form-panel {
+    background: #fff;
+    color: var(--dark);
+    padding: 34px;
+    border-radius: 4px;
+    border: 1px solid var(--border-color);
+  }
+  .dm-form-panel h3 { font-size: 1.35rem; color: var(--dark); margin-bottom: 18px; }
 
   /* Testimonials */
-  .testi-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(min(100%, 300px), 1fr));
-    gap: 30px;
-  }
-  .testi-card {
+  .dm-testi-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; }
+  .dm-testi-card {
     background: #fff;
-    padding: 40px;
-    border-radius: 8px;
     border: 1px solid var(--border-color);
-    box-shadow: 0 10px 20px rgba(0,0,0,0.02);
+    border-radius: 4px;
+    padding: 28px;
+    display: flex;
+    flex-direction: column;
   }
-  .stars { color: #fbbf24; font-size: 1.2rem; margin-bottom: 10px; }
-  .testi-card h3 { color: var(--dark); font-size: 1.1rem; margin-bottom: 15px; font-weight: bold; }
-  .testi-card p { color: var(--gray); line-height: 1.8; margin-bottom: 30px; font-style: italic; }
-  .user-info { display: flex; align-items: center; gap: 15px; }
-  .user-info img { width: 50px; height: 50px; border-radius: 50%; object-fit: cover; }
-  .user-info strong { display: block; color: var(--dark); font-size: 1rem; }
+  .dm-testi-meta {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-bottom: 14px;
+    margin-bottom: 16px;
+    border-bottom: 1px solid var(--border-color);
+    font-size: 0.85rem;
+    font-weight: 700;
+    color: var(--gray);
+  }
+  .dm-stars { color: #b45309; letter-spacing: 1px; }
+  .dm-testi-card p { color: var(--dark); line-height: 1.85; margin-bottom: 22px; flex: 1; font-size: 0.96rem; }
+  .dm-user { display: flex; align-items: center; gap: 12px; }
+  .dm-user img { width: 44px; height: 44px; border-radius: 4px; object-fit: cover; border: 1px solid var(--border-color); }
+  .dm-user strong { color: var(--dark); font-size: 0.95rem; }
+
+  /* Track Record */
+  .dm-track-grid { display: grid; grid-template-columns: 1.15fr 0.85fr; gap: 52px; align-items: start; }
+  .dm-track-grid h2 { font-size: clamp(1.6rem, 2.7vw, 2.15rem); line-height: 1.4; margin-bottom: 16px; }
+  .dm-track-grid p { color: var(--gray); line-height: 1.9; margin-bottom: 16px; }
+  .dm-track-facts { border-top: 1px solid var(--border-color); }
+  .dm-fact-row {
+    display: grid;
+    grid-template-columns: 120px 1fr;
+    gap: 16px;
+    padding: 18px 0;
+    border-bottom: 1px solid var(--border-color);
+    align-items: baseline;
+  }
+  .dm-fact-row strong { color: var(--dark); font-family: var(--font-display); font-size: 1.15rem; font-variant-numeric: tabular-nums; }
+  .dm-fact-row span { color: var(--gray); font-size: 0.94rem; line-height: 1.7; }
+  .dm-fact-row a { color: var(--primary-hover); font-weight: 700; text-decoration: underline; text-underline-offset: 4px; }
+
+  /* FAQ */
+  .dm-faq-wrap { max-width: 920px; }
+  .dm-faq-list { border-top: 1px solid var(--border-color); }
+  .dm-faq-item { border-bottom: 1px solid var(--border-color); background: #fff; padding: 0 22px; }
+  .dm-faq-item summary {
+    padding: 20px 0;
+    font-weight: 700;
+    font-size: 1.04rem;
+    color: var(--dark);
+    cursor: pointer;
+    list-style: none;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 16px;
+  }
+  .dm-faq-item summary::after { content: '+'; font-size: 1.35rem; color: var(--primary); font-weight: 700; flex-shrink: 0; }
+  .dm-faq-item[open] summary::after { content: '−'; }
+  .dm-faq-item p { color: var(--gray); line-height: 1.9; padding: 0 0 20px; margin: 0; }
 
   @media (max-width: 992px) {
-    .about-grid, .appointment-grid, .row-flex { grid-template-columns: 1fr; }
-    .service-row { flex-direction: column !important; text-align: center; }
-    .about-img-small { display: none; }
-    .hero h1 { font-size: 2.5rem; }
+    .dm-hero-grid, .dm-head-split, .dm-about-grid, .dm-manifesto-grid,
+    .dm-editorial-row, .dm-spec-strip, .dm-consult-grid, .dm-track-grid { grid-template-columns: 1fr; gap: 32px; }
+    .dm-row-flip .dm-editorial-media { order: 0; }
+    .dm-manifesto-intro { position: static; }
+    .dm-index-grid, .dm-testi-grid { grid-template-columns: 1fr 1fr; }
+    .dm-band-split { flex-direction: column; align-items: flex-start; }
   }
 
   @media (max-width: 640px) {
-    .py-section { padding: 50px 0; }
-    .hero { height: auto; min-height: 100svh; padding: 100px 0 60px; }
-    .hero h1 { font-size: 1.9rem; line-height: 1.3; }
-    .hero p { font-size: 1rem; }
-    .hero-content { max-width: 100%; }
-    .hero-content .btn { width: 100%; text-align: center; box-sizing: border-box; }
-    .section-header h2 { font-size: 1.6rem; margin-bottom: 25px; }
-    .about-text h2 { font-size: 1.5rem; }
-    .stats-row { flex-direction: column; gap: 20px; }
-    .services-grid { grid-template-columns: 1fr; }
-    .service-row { gap: 20px; padding-bottom: 25px; margin-top: 25px; }
-    .service-row-text h3 { font-size: 1.3rem; }
-    .callout-box { padding: 20px 15px; }
-    .half-box { padding: 20px 15px; }
-    .appointment-text h2 { font-size: 1.7rem; }
-    .appointment-form-box { padding: 20px 15px; }
-    .appointment-form-box input,
-    .appointment-form-box textarea { font-size: 16px; }
-    .features-list-inline { gap: 10px; font-size: 0.9rem; }
-    .testi-grid { grid-template-columns: 1fr; }
-    .testi-card { padding: 20px 15px; }
-    .work-feature { padding: 20px 15px; }
-    .work-feature h3 { font-size: 1.2rem; }
+    .dm-section { padding: 54px 0; }
+    .dm-hero { padding: 44px 0 52px; }
+    .dm-hero-specs, .dm-stat-ledger { grid-template-columns: 1fr; gap: 12px; }
+    .dm-index-grid, .dm-dual-grid, .dm-testi-grid, .dm-consult-points { grid-template-columns: 1fr; }
+    .dm-hero-actions .dm-btn { width: 100%; }
+    .dm-form-panel { padding: 22px 18px; }
+    .dm-fact-row { grid-template-columns: 1fr; gap: 4px; }
   }
 </style>

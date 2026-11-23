@@ -118,19 +118,19 @@ const robotsDirectives = [
     <!-- Google Fonts with preconnect and font-display swap -->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700;800&display=swap" />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cairo:wght@700;800&family=IBM+Plex+Sans+Arabic:wght@400;500;600;700&display=swap" />
   </head>
   <body>
     <a class="skip-link" href="#main-content">انتقل إلى المحتوى</a>
     <div class="top-bar">
       <div class="container top-bar-container">
         <div class="top-bar-contact">
-          <span>لديك أي استفسار؟</span>
-          <span>📞 <a href={`tel:+2${phoneNumber}`} dir="ltr">{phoneNumber}</a></span>
-          <span>📧 <a href="mailto:support@drilmax.com">support@drilmax.com</a></span>
+          <span class="top-bar-label">استشارات ومعاينات فورية في جميع محافظات مصر</span>
+          <span class="top-bar-item"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/></svg><a href={`tel:+2${phoneNumber}`} dir="ltr">{phoneNumber}</a></span>
+          <span class="top-bar-item"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><rect width="20" height="16" x="2" y="4" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/></svg><a href="mailto:support@drilmax.com">support@drilmax.com</a></span>
         </div>
         <div class="top-bar-social">
-          <!-- Add social links here when available -->
+          <span>يومياً 8:00 ص – 10:00 م</span>
         </div>
       </div>
     </div>
@@ -186,9 +186,9 @@ const robotsDirectives = [
         <div class="footer-brand">
           <img src="/images/logodrillmax-small.webp" alt="Drill Max Logo" width="90" height="90" loading="lazy" style="height: 90px; width: 90px; margin-bottom: 20px;" data-hide-on-error />
           <p>شركة متخصصة في خدمات قص وتخريم الخرسانة المسلحة بأحدث التقنيات الهندسية لضمان الدقة والأمان.</p>
-          <div style="margin-top: 20px;">
-            <p style="margin-bottom:10px;">📞 <a href={`tel:+2${phoneNumber}`} dir="ltr" style="color:#ffb74d; font-weight:bold;">{phoneNumber}</a></p>
-            <p>📧 <a href="mailto:support@drilmax.com" style="color:#ffb74d;">support@drilmax.com</a></p>
+          <div class="footer-contact-list">
+            <p><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/></svg><a href={`tel:+2${phoneNumber}`} dir="ltr" class="footer-phone">{phoneNumber}</a></p>
+            <p><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><rect width="20" height="16" x="2" y="4" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/></svg><a href="mailto:support@drilmax.com" class="footer-mail">support@drilmax.com</a></p>
           </div>
         </div>
         <div class="footer-links">
@@ -295,18 +295,21 @@ const robotsDirectives = [
 <style is:global>
   h1 .heading-contact { display: inline-block; font-size: 0.7em; white-space: nowrap; }
   :root {
-    --primary: #c2410c; /* Accessible Dark Orange */
+    --primary: #c2410c; /* Accessible Industrial Orange */
     --primary-hover: #9a3412;
-    --secondary: #ffffff; /* White */
-    --dark: #1e293b; /* Dark text */
-    --header-bg: #1e2530; /* Dark Charcoal for header */
-    --topbar-bg: #161b22; /* Even darker for top bar */
-    --light: #f8fafc;
-    --gray: #475569;
+    --secondary: #ffffff;
+    --dark: #14171c; /* Foundry Charcoal Ink */
+    --header-bg: #111419; /* Matte Deep Steel */
+    --topbar-bg: #0b0d10;
+    --light: #f5f4f0; /* Warm Architectural Concrete */
+    --surface-muted: #eae8e1;
+    --gray: #4b5058; /* Neutral Graphite */
     --bg-color: #ffffff;
-    --section-bg: #f9fafb; /* Light gray section background */
+    --section-bg: #f5f4f0; /* Warm Concrete Section Surface */
     --card-bg: #ffffff;
-    --border-color: #e2e8f0;
+    --border-color: #dad7ce; /* Architectural Hairline */
+    --font-display: 'Cairo', 'IBM Plex Sans Arabic', sans-serif;
+    --font-body: 'IBM Plex Sans Arabic', 'Cairo', sans-serif;
   }
 
   * {
@@ -316,10 +319,16 @@ const robotsDirectives = [
   }
 
   html {
-    font-family: 'Cairo', sans-serif;
+    font-family: var(--font-body);
     background-color: var(--bg-color);
     color: var(--dark);
     scroll-behavior: smooth;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  h1, h2, h3 {
+    font-family: var(--font-display);
+    letter-spacing: -0.01em;
   }
 
   body {
@@ -371,13 +380,29 @@ const robotsDirectives = [
   }
   .top-bar-contact {
     display: flex;
-    gap: 20px;
+    gap: 22px;
     align-items: center;
   }
+  .top-bar-item {
+    display: inline-flex;
+    align-items: center;
+    gap: 7px;
+    font-variant-numeric: tabular-nums;
+  }
+  .top-bar-item svg { color: #ea580c; flex-shrink: 0; }
+  .top-bar-label { color: #a1a8b3; }
   .top-bar-social {
     display: flex;
     gap: 15px;
+    color: #a1a8b3;
+    font-size: 0.82rem;
   }
+  .footer-contact-list { margin-top: 20px; display: grid; gap: 10px; }
+  .footer-contact-list p { display: inline-flex; align-items: center; gap: 9px; margin: 0; }
+  .footer-contact-list svg { color: #ea580c; flex-shrink: 0; }
+  .footer-phone { color: #f5f4f0; font-weight: 700; font-variant-numeric: tabular-nums; }
+  .footer-mail { color: #d6d3cb; }
+  .footer-phone:hover, .footer-mail:hover { color: #fdba74; }
   .top-bar a {
     color: #cbd5e1;
   }
