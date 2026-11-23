@@ -76,7 +76,7 @@ const serviceSchema = JSON.stringify({
           </ul>
         </div>
         <div class="half-box img-box shadow-hover" style="min-height: auto;">
-          <img width="2080" height="2048" src="/images/تزريع-الاشاير.webp" alt="تزريع الاشاير" style="width: 100%; border-radius: 12px; object-fit: cover;" />
+          <img width="2080" height="2048" src="/images/تزريع-الاشاير.webp" alt="تزريع الاشاير" style="width: 100%; border-radius:4px; object-fit: cover;" />
         </div>
       </div>
     </div>
@@ -224,7 +224,7 @@ const serviceSchema = JSON.stringify({
     padding: 80px 0;
   }
   .bg-light {
-    background-color: #f8fafc;
+    background-color: #f5f4f0;
   }
   .section-header {
     margin-bottom: 50px;
@@ -255,7 +255,7 @@ const serviceSchema = JSON.stringify({
     text-decoration: none;
   }
   .btn-primary { background: var(--primary); color: #fff; }
-  .btn-primary:hover { background: var(--primary-hover); transform: translateY(-2px); }
+  .btn-primary:hover { background: var(--primary-hover);  }
 
   /* Hero Section */
   .hero {
@@ -265,6 +265,7 @@ const serviceSchema = JSON.stringify({
     display: flex;
     align-items: center;
     justify-content: center;
+    border-bottom: 3px solid var(--primary, #c2410c);
   }
   .hero-bg {
     position: absolute;
@@ -276,14 +277,14 @@ const serviceSchema = JSON.stringify({
     content: '';
     position: absolute;
     top: 0; left: 0; width: 100%; height: 100%;
-    background: linear-gradient(to right, rgba(30, 37, 48, 0.7), rgba(30, 37, 48, 0.95));
+    background: linear-gradient(to right, rgba(17, 20, 25, 0.7), rgba(17, 20, 25, 0.95));
   }
   .hero-container {
     position: relative;
     z-index: 2;
   }
   .hero-subtitle {
-    color: var(--primary);
+    color: #fdba74; letter-spacing: 0.03em;
     font-size: 1.2rem;
     font-weight: 700;
     margin-bottom: 15px;
@@ -296,7 +297,7 @@ const serviceSchema = JSON.stringify({
     font-weight: 800;
   }
   .hero p {
-    color: #cbd5e1;
+    color: #d6d3cb;
     line-height: 1.8;
   }
 
@@ -317,14 +318,13 @@ const serviceSchema = JSON.stringify({
     height: 100%;
     min-height: 350px;
     overflow: hidden;
-    border-radius: 12px;
+    border-radius:4px;
   }
   .shadow-hover {
     transition: transform 0.3s, box-shadow 0.3s;
   }
   .shadow-hover:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 15px 30px rgba(0,0,0,0.08);
+    
   }
 
   /* Lists */
@@ -346,9 +346,8 @@ const serviceSchema = JSON.stringify({
   .process-card {
     background: #fff;
     padding: 40px;
-    border-radius: 12px;
+    border-radius:4px;
     border: 1px solid var(--border-color);
-    box-shadow: 0 5px 20px rgba(0,0,0,0.02);
   }
   .process-card h3 { 
     color: var(--dark); 
@@ -364,9 +363,8 @@ const serviceSchema = JSON.stringify({
   .content-box {
     background: #fff;
     padding: 60px;
-    border-radius: 12px;
+    border-radius:4px;
     border: 1px solid var(--border-color);
-    box-shadow: 0 5px 30px rgba(0,0,0,0.03);
     max-width: 1000px;
     margin: 0 auto;
   }
@@ -395,8 +393,7 @@ const serviceSchema = JSON.stringify({
     background: #fff;
     border: 1px solid var(--border-color);
     padding: 30px;
-    border-radius: 12px;
-    box-shadow: 0 5px 20px rgba(0,0,0,0.03);
+    border-radius:4px;
   }
   .faq-box h5 {
     font-size: 1.2rem;

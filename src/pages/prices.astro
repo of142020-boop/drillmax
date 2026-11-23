@@ -275,7 +275,7 @@ const seo = {
         </div>
         
         <div class="half-box img-box shadow-hover">
-          <img width="1200" height="1364" src="/images/core-1.webp" alt="صنايعي كور دريل يعمل" style="width: 100%; border-radius: 12px; object-fit: cover; height: 100%; min-height: 400px;" />
+          <img width="1200" height="1364" src="/images/core-1.webp" alt="صنايعي كور دريل يعمل" style="width: 100%; border-radius:4px; object-fit: cover; height: 100%; min-height: 400px;" />
         </div>
       </div>
     </div>
@@ -305,7 +305,7 @@ const seo = {
         </div>
         
         <div class="half-box img-box shadow-hover">
-          <img width="900" height="968" src="/images/saw-cutting-1.webp" alt="قص الخرسانة المسلحة بالمنشار الحائطي الماسي" style="width: 100%; border-radius: 12px; object-fit: cover; height: 100%; min-height: 400px;" />
+          <img width="900" height="968" src="/images/saw-cutting-1.webp" alt="قص الخرسانة المسلحة بالمنشار الحائطي الماسي" style="width: 100%; border-radius:4px; object-fit: cover; height: 100%; min-height: 400px;" />
         </div>
       </div>
     </div>
@@ -381,7 +381,7 @@ const seo = {
     padding: 80px 0;
   }
   .bg-light {
-    background-color: #f8fafc;
+    background-color: #f5f4f0;
   }
   .section-header {
     margin-bottom: 50px;
@@ -405,7 +405,7 @@ const seo = {
     text-decoration: none;
   }
   .btn-primary { background: var(--primary); color: #fff; }
-  .btn-primary:hover { background: var(--primary-hover); transform: translateY(-2px); }
+  .btn-primary:hover { background: var(--primary-hover);  }
 
   /* Hero Section */
   .hero {
@@ -415,6 +415,7 @@ const seo = {
     display: flex;
     align-items: center;
     justify-content: center;
+    border-bottom: 3px solid var(--primary, #c2410c);
   }
   .hero-bg {
     position: absolute;
@@ -426,14 +427,14 @@ const seo = {
     content: '';
     position: absolute;
     top: 0; left: 0; width: 100%; height: 100%;
-    background: linear-gradient(to right, rgba(30, 37, 48, 0.8), rgba(30, 37, 48, 0.95));
+    background: linear-gradient(to right, rgba(17, 20, 25, 0.8), rgba(17, 20, 25, 0.95));
   }
   .hero-container {
     position: relative;
     z-index: 2;
   }
   .hero-subtitle {
-    color: var(--primary);
+    color: #fdba74; letter-spacing: 0.03em;
     font-size: 1.2rem;
     font-weight: 700;
     margin-bottom: 15px;
@@ -446,7 +447,7 @@ const seo = {
     font-weight: 800;
   }
   .hero p {
-    color: #cbd5e1;
+    color: #d6d3cb;
     line-height: 1.8;
   }
 
@@ -470,14 +471,13 @@ const seo = {
     height: 100%;
     min-height: 350px;
     overflow: hidden;
-    border-radius: 12px;
+    border-radius:4px;
   }
   .shadow-hover {
     transition: transform 0.3s, box-shadow 0.3s;
   }
   .shadow-hover:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 15px 30px rgba(0,0,0,0.08);
+    
   }
 
   /* Process Cards */
@@ -489,16 +489,14 @@ const seo = {
   .process-card {
     background: #fff;
     padding: 40px 30px;
-    border-radius: 12px;
+    border-radius:4px;
     border: 1px solid var(--border-color);
-    box-shadow: 0 5px 20px rgba(0,0,0,0.02);
     position: relative;
     overflow: hidden;
     transition: transform 0.3s, box-shadow 0.3s;
   }
   .process-card:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 15px 30px rgba(0,0,0,0.08);
+    
   }
   .step-num {
     position: absolute;
@@ -530,9 +528,8 @@ const seo = {
   .content-box {
     background: #fff;
     padding: 50px;
-    border-radius: 12px;
+    border-radius:4px;
     border: 1px solid var(--border-color);
-    box-shadow: 0 5px 30px rgba(0,0,0,0.03);
   }
   
   /* Tables */
@@ -543,6 +540,8 @@ const seo = {
     width: 100%;
     border-collapse: collapse;
     margin-top: 20px;
+    font-variant-numeric: tabular-nums;
+    border: 1px solid var(--border-color);
   }
   .price-table th, .price-table td {
     padding: 15px;
@@ -556,11 +555,11 @@ const seo = {
     font-size: 1.1rem;
   }
   .price-table tr:hover td {
-    background-color: #f8fafc;
+    background-color: #f5f4f0;
   }
   .price-notes {
     padding: 15px;
-    background-color: rgba(253, 203, 30, 0.1);
+    background-color: #f5f4f0;
     border-right: 4px solid var(--primary);
     border-radius: 4px;
     color: var(--dark);
@@ -576,8 +575,7 @@ const seo = {
     background: #fff;
     border: 1px solid var(--border-color);
     padding: 30px;
-    border-radius: 12px;
-    box-shadow: 0 5px 15px rgba(0,0,0,0.02);
+    border-radius:4px;
   }
   .v-card h3 {
     font-size: 1.3rem;
@@ -605,7 +603,7 @@ const seo = {
     color: #fff;
   }
   .v-card.highlight p {
-    color: #cbd5e1;
+    color: #d6d3cb;
   }
 
   /* Lists & Calc Box */
@@ -618,14 +616,14 @@ const seo = {
   .styled-list li strong { color: var(--dark); }
   
   .calc-box {
-    background: #f1f5f9;
+    background: #eae8e1;
     padding: 20px;
-    border-radius: 8px;
+    border-radius: 4px;
     font-family: monospace;
     font-size: 1.1rem;
     color: var(--dark);
     text-align: center;
-    border: 1px dashed #cbd5e1;
+    border: 1px dashed #d6d3cb;
   }
 
   /* Quote Box */
@@ -633,15 +631,14 @@ const seo = {
     background: var(--primary);
     color: #fff;
     padding: 40px;
-    border-radius: 12px;
+    border-radius:4px;
     text-align: center;
     font-size: 1.45rem;
     font-weight: 700;
     line-height: 1.6;
-    box-shadow: 0 10px 30px rgba(194, 65, 12, 0.25);
   }
   .faq-stack { display: flex; flex-direction: column; gap: 14px; }
-  .price-faq-item { background: #fff; border: 1px solid var(--border-color); border-radius: 10px; padding: 20px 24px; }
+  .price-faq-item { background: #fff; border: 1px solid var(--border-color); border-radius: 4px; padding: 20px 24px; }
   .price-faq-item summary { font-weight: 700; color: var(--dark); font-size: 1.1rem; cursor: pointer; }
   .price-faq-item p { color: var(--gray); line-height: 1.85; margin-top: 12px; }
 

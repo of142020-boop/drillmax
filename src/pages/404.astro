@@ -3,15 +3,33 @@ import MainLayout from '../layouts/MainLayout.astro';
 ---
 
 <MainLayout title="الصفحة غير موجودة | Drill Max" description="نعتذر، الصفحة التي تبحث عنها غير موجودة." noindex={true}>
-  <section class="not-found" style="padding: 100px 20px; text-align: center; min-height: 60vh; display: flex; flex-direction: column; justify-content: center; align-items: center;">
-    <h1 style="font-size: 6rem; color: var(--primary); margin-bottom: 20px; font-weight: 900;">404</h1>
-    <h2 style="font-size: 2rem; color: var(--dark); margin-bottom: 20px;">عذراً، الصفحة التي تبحث عنها غير موجودة!</h2>
-    <p style="color: var(--gray); font-size: 1.2rem; margin-bottom: 40px; max-width: 600px;">
-      يبدو أن الرابط الذي اتبعته قديم أو تم تغيير مسار الصفحة. لا تقلق، يمكنك العودة لاستكشاف خدماتنا.
-    </p>
-    <div style="display: flex; gap: 15px; justify-content: center; flex-wrap: wrap;">
-      <a href="/" class="btn btn-primary" style="background: var(--primary); color: #fff; padding: 12px 30px; border-radius: 5px; font-weight: bold;">العودة للرئيسية</a>
-      <a href="/services/" class="btn" style="background: #1e293b; color: #fff; padding: 12px 30px; border-radius: 5px; font-weight: bold;">تصفح الخدمات</a>
+  <section class="not-found">
+    <div class="nf-card">
+      <p class="nf-code">404</p>
+      <h1>الصفحة غير موجودة</h1>
+      <p class="nf-desc">
+        يبدو أن الرابط الذي اتبعته قديم أو تم نقله لمسار أحدث. يمكنك العودة للرئيسية أو الانتقال مباشرة إلى خدمات دريل ماكس.
+      </p>
+      <div class="nf-actions">
+        <a href="/" class="nf-btn nf-primary">العودة للرئيسية</a>
+        <a href="/services/" class="nf-btn nf-dark">تصفح الخدمات</a>
+        <a href="/core-drilling-صنايعي-كور/" class="nf-btn nf-outline">خدمة فتحات الكور</a>
+      </div>
     </div>
   </section>
 </MainLayout>
+<style>
+  .not-found { background: var(--section-bg, #f5f4f0); padding: 92px 20px; min-height: 62vh; display: flex; align-items: center; justify-content: center; border-bottom: 1px solid var(--border-color, #dad7ce); }
+  .nf-card { max-width: 640px; width: 100%; background: #fff; border: 1px solid var(--border-color, #dad7ce); border-top: 3px solid var(--primary, #c2410c); border-radius: 4px; padding: 48px 36px; text-align: center; }
+  .nf-code { font-family: var(--font-display); font-size: clamp(4rem, 10vw, 5.5rem); font-weight: 800; color: var(--primary, #c2410c); line-height: 1; margin-bottom: 12px; font-variant-numeric: tabular-nums; }
+  .nf-card h1 { font-size: clamp(1.5rem, 3vw, 2rem); color: var(--dark, #14171c); margin-bottom: 14px; }
+  .nf-desc { color: var(--gray, #4b5058); font-size: 1.04rem; line-height: 1.85; margin-bottom: 28px; }
+  .nf-actions { display: flex; gap: 12px; justify-content: center; flex-wrap: wrap; }
+  .nf-btn { display: inline-flex; align-items: center; justify-content: center; min-height: 46px; padding: 11px 22px; border-radius: 4px; font-weight: 700; text-decoration: none; border: 1px solid transparent; }
+  .nf-primary { background: var(--primary, #c2410c); color: #fff; }
+  .nf-primary:hover { background: var(--primary-hover, #9a3412); }
+  .nf-dark { background: var(--dark, #14171c); color: #fff; }
+  .nf-dark:hover { background: #262b34; }
+  .nf-outline { background: transparent; color: var(--dark, #14171c); border-color: var(--border-color, #dad7ce); }
+  .nf-outline:hover { border-color: var(--primary, #c2410c); color: var(--primary, #c2410c); }
+</style>

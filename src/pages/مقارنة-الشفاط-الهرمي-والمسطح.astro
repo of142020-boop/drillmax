@@ -143,241 +143,262 @@ const relatedPosts = [{"title":"أشهر اعطال شفاط المطبخ وطر
 
 <style>
   .post-hero {
-    background: linear-gradient(135deg, #1e293b 0%, #0f172a 100%);
+    background-color: #111419;
+    background-image:
+      linear-gradient(to left, rgba(255, 255, 255, 0.03) 1px, transparent 1px),
+      linear-gradient(to bottom, rgba(255, 255, 255, 0.03) 1px, transparent 1px);
+    background-size: 64px 64px;
     color: #fff;
-    padding: 45px 0 35px;
+    padding: 46px 0 38px;
     border-bottom: 3px solid var(--primary, #c2410c);
   }
   .breadcrumb-trail {
-    font-size: 0.95rem;
-    color: #94a3b8;
-    margin-bottom: 15px;
+    font-size: 0.88rem;
+    color: #a1a8b3;
+    margin-bottom: 14px;
   }
   .breadcrumb-trail a {
-    color: #cbd5e1;
+    color: #d6d3cb;
     text-decoration: none;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.2);
   }
   .breadcrumb-trail a:hover {
     color: #fdba74;
+    border-color: #fdba74;
   }
   .entry-title {
-    font-size: 2.2rem;
+    font-size: clamp(1.6rem, 3vw, 2.25rem);
     font-weight: 800;
-    line-height: 1.4;
+    line-height: 1.38;
     color: #fff;
-    margin-bottom: 15px;
+    margin-bottom: 14px;
   }
   .entry-meta-info {
     display: flex;
     gap: 20px;
     flex-wrap: wrap;
-    color: #94a3b8;
-    font-size: 0.95rem;
+    color: #a1a8b3;
+    font-size: 0.9rem;
   }
   .post-container {
-    padding: 50px 20px;
+    padding: 52px 20px 64px;
   }
   .post-grid {
     display: grid;
     grid-template-columns: 1fr 320px;
-    gap: 40px;
+    gap: 44px;
     align-items: start;
   }
   .post-featured-media {
-    margin-bottom: 35px;
-    border-radius: 12px;
+    margin-bottom: 32px;
+    padding: 8px;
+    background: var(--section-bg, #f5f4f0);
+    border: 1px solid var(--border-color, #dad7ce);
+    border-radius: 4px;
     overflow: hidden;
-    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
   }
   .featured-img {
     width: 100%;
     height: auto;
     display: block;
     object-fit: cover;
+    border-radius: 2px;
   }
   .post-body-text {
-    font-size: 1.15rem;
-    line-height: 2;
-    color: #334155;
+    font-size: 1.06rem;
+    line-height: 1.95;
+    color: #2b3038;
   }
   .post-body-text :global(h2) {
-    font-size: 1.7rem;
-    font-weight: 700;
-    color: #0f172a;
-    margin: 35px 0 15px;
-    padding-bottom: 8px;
-    border-bottom: 2px solid #e2e8f0;
+    font-size: clamp(1.35rem, 2.4vw, 1.7rem);
+    font-weight: 800;
+    color: var(--dark, #14171c);
+    margin: 40px 0 16px;
+    padding-top: 20px;
+    border-top: 1px solid var(--border-color, #dad7ce);
+  }
+  .post-body-text :global(h2:first-child) {
+    border-top: 0;
+    padding-top: 0;
+    margin-top: 0;
   }
   .post-body-text :global(h3) {
-    font-size: 1.35rem;
+    font-size: 1.22rem;
     font-weight: 700;
-    color: #1e293b;
-    margin: 25px 0 12px;
+    color: var(--dark, #14171c);
+    margin: 26px 0 12px;
   }
   .post-body-text :global(p) {
-    margin-bottom: 20px;
+    margin-bottom: 18px;
   }
   .post-body-text :global(ul), .post-body-text :global(ol) {
-    margin: 15px 0 25px 25px;
-    padding-right: 20px;
+    margin: 14px 0 24px;
+    padding-inline-start: 24px;
+    list-style: disc;
+  }
+  .post-body-text :global(ol) {
+    list-style: decimal;
   }
   .post-body-text :global(li) {
-    margin-bottom: 8px;
+    margin-bottom: 9px;
   }
   .post-body-text :global(img) {
     max-width: 100%;
     height: auto;
-    border-radius: 8px;
+    border-radius: 4px;
+    border: 1px solid var(--border-color, #dad7ce);
     margin: 20px 0;
   }
   .post-body-text :global(a) {
-    color: #d97706;
+    color: #9a3412;
     font-weight: 600;
     text-decoration: underline;
+    text-underline-offset: 4px;
   }
   .post-body-text :global(.smart-internal-link) {
-    background: #fef3c7;
-    padding: 2px 6px;
-    border-radius: 4px;
+    background: #f5f4f0;
+    padding: 1px 6px;
+    border-radius: 3px;
     text-decoration: none;
-    color: #92400e;
+    color: #9a3412;
     font-weight: 700;
-    border-bottom: 2px solid #f59e0b;
-    transition: all 0.2s ease;
+    border-bottom: 2px solid #c2410c;
+    transition: background-color 0.2s ease, color 0.2s ease;
   }
   .post-body-text :global(.smart-internal-link:hover) {
-    background: #fde68a;
-    color: #78350f;
+    background: #eae8e1;
+    color: #14171c;
   }
   .post-body-text :global(table) {
     width: 100%;
     border-collapse: collapse;
-    margin: 25px 0;
+    margin: 24px 0;
+    border: 1px solid var(--border-color, #dad7ce);
+    font-variant-numeric: tabular-nums;
   }
   .post-body-text :global(th), .post-body-text :global(td) {
-    border: 1px solid #cbd5e1;
-    padding: 12px;
+    border: 1px solid var(--border-color, #dad7ce);
+    padding: 12px 14px;
     text-align: right;
   }
   .post-body-text :global(th) {
-    background: #f1f5f9;
+    background: var(--surface-muted, #eae8e1);
+    color: var(--dark, #14171c);
     font-weight: 700;
   }
   .post-cta-box {
-    margin-top: 50px;
-    padding: 30px;
-    background: #f8fafc;
-    border: 2px dashed #cbd5e1;
-    border-radius: 12px;
-    text-align: center;
+    margin-top: 48px;
+    padding: 32px 28px;
+    background: #14171c;
+    color: #fff;
+    border-top: 3px solid var(--primary, #c2410c);
+    border-radius: 4px;
+    text-align: right;
   }
   .post-cta-box h3 {
-    font-size: 1.5rem;
+    font-size: 1.45rem;
     font-weight: 800;
-    color: #0f172a;
+    color: #fff;
     margin-bottom: 10px;
   }
   .post-cta-box p {
-    color: #64748b;
-    margin-bottom: 25px;
-    line-height: 1.7;
+    color: #d6d3cb;
+    margin-bottom: 22px;
+    line-height: 1.8;
   }
   .cta-buttons {
     display: flex;
-    justify-content: center;
-    gap: 15px;
+    justify-content: flex-start;
+    gap: 12px;
     flex-wrap: wrap;
   }
   .btn-call {
     background: var(--primary, #c2410c);
     color: #fff !important;
-    padding: 12px 25px;
-    border-radius: 8px;
+    padding: 12px 22px;
+    border-radius: 4px;
     font-weight: 700;
     text-decoration: none !important;
+    font-variant-numeric: tabular-nums;
+  }
+  .btn-call:hover {
+    background: var(--primary-hover, #9a3412);
   }
   .btn-wa {
-    background: #25d366;
+    background: #15803d;
     color: #fff !important;
-    padding: 12px 25px;
-    border-radius: 8px;
+    padding: 12px 22px;
+    border-radius: 4px;
     font-weight: 700;
     text-decoration: none !important;
   }
   .related-posts-section {
-    margin-top: 55px;
-    padding-top: 35px;
-    border-top: 2px solid #e2e8f0;
+    margin-top: 52px;
+    padding-top: 32px;
+    border-top: 1px solid var(--border-color, #dad7ce);
   }
   .related-heading {
-    font-size: 1.6rem;
+    font-size: 1.45rem;
     font-weight: 800;
-    color: #0f172a;
-    margin-bottom: 25px;
-    position: relative;
-    padding-bottom: 10px;
-  }
-  .related-heading::after {
-    content: '';
-    position: absolute;
-    bottom: 0;
-    right: 0;
-    width: 60px;
-    height: 3px;
-    background: var(--primary, #c2410c);
-    border-radius: 2px;
+    color: var(--dark, #14171c);
+    margin-bottom: 22px;
   }
   .related-grid {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
-    gap: 20px;
+    gap: 18px;
   }
   .related-card {
     background: #fff;
-    border: 1px solid #e2e8f0;
-    border-radius: 10px;
+    border: 1px solid var(--border-color, #dad7ce);
+    border-radius: 4px;
     overflow: hidden;
     text-decoration: none;
-    transition: transform 0.2s, box-shadow 0.2s;
+    transition: border-color 0.2s, background-color 0.2s;
     display: flex;
     flex-direction: column;
   }
   .related-card:hover {
-    transform: translateY(-4px);
-    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.08);
+    border-color: var(--primary, #c2410c);
+    background: #faf9f6;
   }
   .related-img-wrap {
-    height: 140px;
+    height: 145px;
     overflow: hidden;
+    border-bottom: 1px solid var(--border-color, #dad7ce);
   }
   .related-img-wrap img {
     width: 100%;
     height: 100%;
     object-fit: cover;
+    display: block;
   }
   .related-title {
-    font-size: 1rem;
+    font-size: 0.96rem;
     font-weight: 700;
-    color: #1e293b;
-    padding: 15px;
+    color: var(--dark, #14171c);
+    padding: 14px;
     margin: 0;
-    line-height: 1.5;
+    line-height: 1.55;
+  }
+  .post-sidebar {
+    position: sticky;
+    top: 108px;
   }
   .post-sidebar .widget {
-    background: #fff;
-    border: 1px solid #e2e8f0;
-    border-radius: 12px;
-    padding: 25px;
-    margin-bottom: 25px;
-    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.04);
+    background: var(--section-bg, #f5f4f0);
+    border: 1px solid var(--border-color, #dad7ce);
+    border-radius: 4px;
+    padding: 24px;
+    margin-bottom: 20px;
   }
   .widget-title {
-    font-size: 1.2rem;
-    font-weight: 700;
-    margin-bottom: 18px;
+    font-size: 1.12rem;
+    font-weight: 800;
+    margin-bottom: 16px;
     padding-bottom: 10px;
     border-bottom: 2px solid var(--primary, #c2410c);
-    color: #0f172a;
+    color: var(--dark, #14171c);
   }
   .service-links {
     list-style: none;
@@ -385,14 +406,20 @@ const relatedPosts = [{"title":"أشهر اعطال شفاط المطبخ وطر
     margin: 0;
   }
   .service-links li {
-    margin-bottom: 12px;
-    border-bottom: 1px dashed #f1f5f9;
-    padding-bottom: 8px;
+    margin-bottom: 10px;
+    border-bottom: 1px solid var(--border-color, #dad7ce);
+    padding-bottom: 10px;
+  }
+  .service-links li:last-child {
+    border-bottom: 0;
+    margin-bottom: 0;
+    padding-bottom: 0;
   }
   .service-links a {
-    color: #334155;
+    color: var(--dark, #14171c);
     text-decoration: none;
     font-weight: 600;
+    font-size: 0.94rem;
     transition: color 0.2s;
   }
   .service-links a:hover {
@@ -402,8 +429,8 @@ const relatedPosts = [{"title":"أشهر اعطال شفاط المطبخ وطر
     .post-grid {
       grid-template-columns: 1fr;
     }
-    .entry-title {
-      font-size: 1.6rem;
+    .post-sidebar {
+      position: static;
     }
     .related-grid {
       grid-template-columns: 1fr;
