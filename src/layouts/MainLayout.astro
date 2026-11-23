@@ -331,7 +331,7 @@ const robotsDirectives = [
   :focus-visible { outline: 3px solid var(--primary); outline-offset: 3px; }
   .post-grid > *, .related-grid > * { min-width: 0; }
   .post-body-text { overflow-wrap: anywhere; }
-  .post-body-text img, .post-body-text figure, .wp-caption { max-width: 100%; height: auto; }
+  .post-body-text img, .post-body-text figure { max-width: 100%; height: auto; }
   .post-body-text table { display: block; max-width: 100%; overflow-x: auto; }
   .post-body-text :is(h2,h3,h4,p,li) { min-width: 0; }
   @media (prefers-reduced-motion: reduce) {
@@ -664,7 +664,7 @@ const robotsDirectives = [
     /* Prevent horizontal scroll */
     body, html { overflow-x: clip; max-width: 100vw; }
 
-    /* Force all WordPress images to fit screen width - CRITICAL FIX */
+    /* Force all article images to fit screen width */
     .post-body-text img {
       max-width: 100% !important;
       width: 100% !important;  /* Override inline width attributes */
@@ -672,8 +672,7 @@ const robotsDirectives = [
       display: block;
       box-sizing: border-box;
     }
-    .post-body-text figure,
-    .post-body-text .wp-caption {
+    .post-body-text figure {
       max-width: 100% !important;
       width: 100% !important;
       box-sizing: border-box;
@@ -714,13 +713,11 @@ const robotsDirectives = [
     /* Header logo size on small screens */
     .logo img { height: 52px !important; width: 52px !important; }
 
-  /* ===== FORCE RESPONSIVE FOR WORDPRESS CONTENT ===== */
+  /* ===== FORCE RESPONSIVE FOR ARTICLE CONTENT ===== */
   .post-body-text figure,
   .post-body-text figure[style*="width"],
   .post-body-text img[style*="width"],
-  .post-body-text li[style*="width"],
-  .post-body-text .wp-caption,
-  .post-body-text .aligncenter {
+  .post-body-text li[style*="width"] {
     width: 100% !important;
     max-width: 100% !important;
     box-sizing: border-box;
@@ -729,20 +726,16 @@ const robotsDirectives = [
     height: auto !important;
     display: block;
   }
-  .post-body-text .wp-caption {
-    margin: 0 auto !important;
-  }
   .post-body-text {
     overflow-x: clip !important;
   }
 
-  /* ===== GLOBAL RESPONSIVE IMAGES (applies to ALL WordPress content) ===== */
+  /* ===== GLOBAL RESPONSIVE IMAGES ===== */
   img {
     max-width: 100%;
     height: auto;
   }
-  figure.wp-caption,
-  .wp-caption {
+  .post-body-text figure {
     max-width: 100% !important;
     overflow: hidden;
   }
@@ -845,7 +838,7 @@ const robotsDirectives = [
   .btn-wa { background: #087f3f !important; color: #fff !important; }
   .btn-wa:hover { background: #065f30 !important; }
   main, .container, main section > div { min-width: 0; }
-  .post-body-text img, .post-body-text figure, .post-body-text .wp-caption { max-width: 100% !important; }
+  .post-body-text img, .post-body-text figure { max-width: 100% !important; }
   .post-body-text a { color: #9a3412 !important; text-decoration: underline; text-underline-offset: .2em; }
   .projects-banner .section-subtitle { color: #fdba74 !important; }
   .appointment-text .section-subtitle { color: #fff !important; }
