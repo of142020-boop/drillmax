@@ -2,7 +2,7 @@
 import MainLayout from '../layouts/MainLayout.astro';
 
 const PHONE    = "01070046464";
-const WHATSAPP = `https://wa.me/20${PHONE}`;
+const WHATSAPP = `https://wa.me/2${PHONE}`;
 
 const MINYA_AREAS = [
   "مدينة المنيا وكورنيش النيل",
@@ -61,7 +61,7 @@ const schema = JSON.stringify([
     "name": "دريل ماكس لقص وتخريم الخرسانة بالمنيا",
     "description": "نقدم خدمات تخريم الخرسانة وقص الجدران بالمنشار الماسي في جميع مراكز محافظة المنيا وصعيد مصر",
     "url": "https://drilmax.com/minya-concrete-cutting-core/",
-    "telephone": "+2001070046464",
+    "telephone": "+201070046464",
     "priceRange": "$$",
     "address": { "@type": "PostalAddress", "addressLocality": "المنيا", "addressRegion": "EG-MN", "addressCountry": "EG" },
     "geo": { "@type": "GeoCoordinates", "latitude": 28.0871, "longitude": 30.7618 },
@@ -95,14 +95,14 @@ const schema = JSON.stringify([
         </nav>
         <span class="hero-subtitle" style="color: rgba(255,255,255,0.85);">دريل ماكس | عروس الصعيد</span>
         <h1 style="text-align: center; font-size: clamp(1.8rem, 4vw, 3rem); line-height: 1.3;">
-          قص وتخريم خرسانة بالمنيا<br>كور ومنشار ماسي | 01070046464
+          قص وتخريم خرسانة بالمنيا <br>كور ومنشار ماسي | 01070046464
         </h1>
         <p style="text-align: center; font-size: 1.15rem; margin-top: 18px; color: rgba(255,255,255,0.9); line-height: 1.8;">
           لأن مباني عروس الصعيد تمتاز بالصلابة والقوة، نوفر في المنيا معدات ثقيلة متطورة لقص وتخريم الخرسانة بمنتهى الدقة وبدون إحداث تشققات.
         </p>
         <div style="display: flex; gap: 12px; margin-top: 28px; justify-content: center; flex-wrap: wrap;">
           <a href={WHATSAPP} target="_blank" rel="noopener noreferrer" class="btn btn-primary" style="font-size: 1.05rem; padding: 14px 30px;">واتساب مباشر</a>
-          <a href={`tel:${PHONE}`} class="btn btn-outline" style="background: rgba(255,255,255,0.15); color: #fff; border-color: rgba(255,255,255,0.5); font-size: 1.05rem; padding: 14px 30px;">اتصل: {PHONE}</a>
+          <a href={`tel:+2${PHONE}`} class="btn btn-outline" style="background: rgba(255,255,255,0.15); color: #fff; border-color: rgba(255,255,255,0.5); font-size: 1.05rem; padding: 14px 30px;">اتصل: {PHONE}</a>
         </div>
       </div>
     </div>
@@ -111,7 +111,7 @@ const schema = JSON.stringify([
   <div class="container city-page-wrapper">
     <div class="city-page-grid">
 
-      <main class="city-main-content">
+      <div class="city-main-content">
         <section class="city-card">
           <div class="inline-badge">✅ الخيار الأول للمقاولات في صعيد مصر</div>
           <h2 style="margin-top:15px;">احترافية قص وتخريم الخرسانة في محافظة المنيا</h2>
@@ -173,14 +173,14 @@ const schema = JSON.stringify([
             ))}
           </div>
         </section>
-      </main>
+      </div>
 
       <aside class="city-sidebar">
         <div class="sidebar-cta">
           <h3>معاينة مجانية بالمنيا</h3>
           <p>تواصل معنا للحصول على استشارة فنية وعرض سعر مجاني لأي مكان في المنيا.</p>
           <a href={WHATSAPP} target="_blank" rel="noopener noreferrer" class="cta-whatsapp">💬 واتساب مباشر</a>
-          <a href={`tel:${PHONE}`} class="cta-phone">📞 {PHONE}</a>
+          <a href={`tel:+2${PHONE}`} class="cta-phone">📞 {PHONE}</a>
         </div>
 
         <div class="sidebar-dark">
@@ -215,7 +215,7 @@ const schema = JSON.stringify([
         </div>
         <div class="bottom-cta-buttons">
           <a href={WHATSAPP} target="_blank" rel="noopener noreferrer" class="btn-wa">تواصل عبر الواتساب</a>
-          <a href={`tel:${PHONE}`} class="btn-call">اتصل هاتفياً الآن</a>
+          <a href={`tel:+2${PHONE}`} class="btn-call">اتصل هاتفياً الآن</a>
         </div>
       </div>
     </section>
@@ -223,6 +223,7 @@ const schema = JSON.stringify([
 </MainLayout>
 
 <style>
+.text-center { text-align: center; }
 .city-page-wrapper { max-width: 1200px; margin: 0 auto; padding: 50px 20px; }
 .city-page-grid { display: grid; grid-template-columns: 1fr 320px; gap: 30px; align-items: start; }
 .city-main-content { display: flex; flex-direction: column; gap: 26px; }
@@ -280,7 +281,7 @@ const schema = JSON.stringify([
 .cta-badge { display: inline-flex; align-items:center; gap:6px; padding: 8px 20px; border-radius: 999px; background: rgba(14,165,233,0.15); color: #7dd3fc; font-weight: 800; font-size: 0.9rem; margin-bottom: 20px; border: 1px solid rgba(14,165,233,0.3); }
 .bottom-cta-text h2 { font-size: clamp(1.6rem, 3vw, 2.4rem); font-weight: 900; margin-bottom: 16px; line-height: 1.3; }
 .bottom-cta-text p { color: rgba(255,255,255,0.8); line-height: 1.8; font-size:1.1rem;}
-.cta-phone-big { margin-top: 16px; font-size: 1.8rem; font-weight: 900; color: var(--primary); }
+.cta-phone-big { margin-top: 16px; font-size: 1.8rem; font-weight: 900; color: #fdba74; }
 .bottom-cta-buttons { display: flex; flex-direction: column; gap: 14px; min-width: 240px; }
 .btn-wa { display: flex; align-items: center; justify-content: center; background: #16a34a; color: white; padding: 18px 30px; border-radius: 16px; font-weight: 900; font-size: 1.15rem; text-decoration: none; transition: background 0.2s; }
 .btn-wa:hover { background: #15803d; }

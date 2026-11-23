@@ -1,0 +1,240 @@
+---
+import MainLayout from '../layouts/MainLayout.astro';
+
+const PHONE = "01024596959";
+const WHATSAPP = `https://wa.me/2${PHONE}`;
+
+const FAQ = [
+  {
+    q: "ما الفرق بين الشفاط المركزي والشفاط المنزلي العادي؟",
+    a: "الشفاط المركزي يعتمد على موتور طرد قوي (بلاور أو مروحة دكت خطية) يُثبّت غالباً خارج المطبخ أو على السطح ويُسحب الهواء إليه عبر شبكة دكت معزولة، مما يوفر قوة سحب عالية جداً وضوضاء أقل بكثير داخل المطبخ، وهو مثالي للفيلات والمطابخ المفتوحة والمطاعم."
+  },
+  {
+    q: "هل تنفذون فتحات الكور في الخرسانة لمداخن وهود المطاعم؟",
+    a: "نعم، ميزتنا الأساسية في دريل ماكس أننا نمتلك ماكينات كور دريل ومنشار خرسانة لتنفيذ فتحات الدكت والمداخن بأقطار كبيرة (6 و8 و10 بوصة فأكثر أو فتحات مربعة بالمنشار) بدقة هندسية بدون تكسير، ثم استكمال التمديدات والتقفيل."
+  },
+  {
+    q: "ما العوامل التي تحدد تكلفة تركيب شفاط مطاعم أو شفاط مركزي للمطبخ؟",
+    a: "تعتمد التكلفة على مساحة المطبخ وعدد الشوايات/البوتاجازات، نوع الهود المطلوب (ستانلس 304 بفلاتر دهون)، طول ومسار الدكت الصاج، قدرة الموتور (البلاور)، ووجود فتحات جاهزة أم الحاجة لتخريم الخرسانة. نقدم معاينة فنية لتحديد مقايسة واضحة."
+  },
+  {
+    q: "كيف نمنع وصول روائح المطبخ أو المطعم للجيران والشارع؟",
+    a: "يتم ذلك بتصميم مسار مدخنة مرتفع فوق مستوى السطح وفق اشتراطات المكان، مع إمكانية دمج صندوق فلاتر (دهون + كربون نشط أو وحدة معالجة روائح) وعزل الوصلات جيداً لمنع أي تسرب."
+  },
+  {
+    q: "هل تتوفر صيانة وتنظيف لمواتير ومداخن شفاطات المطاعم؟",
+    a: "نعم، نوفر فحص وصيانة مواتير الشفاطات المركزية ومراوح الطرد، فحص السيور والكباستور، ومعالجة مشاكل ضعف السحب والضوضاء. كما يمكنك مراجعة دليل صيانة أعطال الشفاطات."
+  }
+];
+
+const schema = JSON.stringify({
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "Service",
+      "name": "تركيب الشفاط المركزي وشفاطات وهود المطاعم في مصر",
+      "alternateName": "شفاط مركزي | شفاط مركزي للمطبخ | شفاطات مطاعم | هود مطابخ مطاعم",
+      "url": "https://drilmax.com/%D8%B4%D9%81%D8%A7%D8%B7-%D9%85%D8%B1%D9%83%D8%B2%D9%8A-%D9%88%D8%B4%D9%81%D8%A7%D8%B7%D8%A7%D8%AA-%D9%85%D8%B7%D8%A7%D8%B9%D9%85/",
+      "description": "تأسيس وتركيب الشفاط المركزي للمطابخ والفيلات وشفاطات وهود المطاعم والكافيهات ومداخن الصاج وفتحات الكور في مصر.",
+      "serviceType": "أنظمة الشفط والتهوية المركزية والمطاعم",
+      "provider": {
+        "@type": "LocalBusiness",
+        "name": "Drill Max | دريل ماكس",
+        "url": "https://drilmax.com",
+        "telephone": `+2${PHONE}`
+      },
+      "areaServed": { "@type": "Country", "name": "Egypt" }
+    },
+    {
+      "@type": "FAQPage",
+      "mainEntity": FAQ.map(x => ({
+        "@type": "Question",
+        "name": x.q,
+        "acceptedAnswer": { "@type": "Answer", "text": x.a }
+      }))
+    },
+    {
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        { "@type": "ListItem", "position": 1, "item": { "@id": "https://drilmax.com/", "name": "الرئيسية" } },
+        { "@type": "ListItem", "position": 2, "item": { "@id": "https://drilmax.com/%D9%81%D9%86%D9%8A-%D8%B4%D9%81%D8%A7%D8%B7%D8%A7%D8%AA/", "name": "فني شفاطات" } },
+        { "@type": "ListItem", "position": 3, "item": { "@id": "https://drilmax.com/%D8%B4%D9%81%D8%A7%D8%B7-%D9%85%D8%B1%D9%83%D8%B2%D9%8A-%D9%88%D8%B4%D9%81%D8%A7%D8%B7%D8%A7%D8%AA-%D9%85%D8%B7%D8%A7%D8%B9%D9%85/", "name": "شفاط مركزي وشفاطات مطاعم" } }
+      ]
+    }
+  ]
+});
+---
+
+<MainLayout
+  title="شفاط مركزي للمطبخ وشفاطات وهود المطاعم في مصر | 01024596959"
+  description="تأسيس وتركيب شفاط مركزي للمطبخ والفيلا وشفاطات وهود مطابخ المطاعم والكافيهات ومداخن الصاج وفتحات الكور بدون تكسير في مصر. اتصل 01024596959."
+  canonical="/شفاط-مركزي-وشفاطات-مطاعم/"
+  phoneNumber={PHONE}
+  ogImage="/images/exhaust-fan-foundation.webp"
+  schema={schema}
+>
+  <section class="hero">
+    <div class="hero-bg"></div>
+    <div class="container hero-container text-center">
+      <div class="hero-content" style="max-width: 920px; margin: 0 auto;">
+        <span class="hero-subtitle">دريل ماكس | التهوية المركزية وهود المطاعم (B2B &amp; Villas)</span>
+        <h1 style="font-size: clamp(1.9rem, 4.2vw, 3rem); line-height: 1.35;">شفاط مركزي للمطبخ وتركيب شفاطات وهود المطاعم في مصر</h1>
+        <p style="font-size: 1.18rem; margin-top: 16px; color: rgba(255,255,255,0.92); line-height: 1.9;">
+          حلول متكاملة لتأسيس فتحات المداخن بالكور والمنشار، وتمديد دكت الصاج، وتركيب الشفاط المركزي للمطابخ المفتوحة والفيلات وهود مطابخ المطاعم والكافيهات ومراوح الطرد الحلزونية.
+        </p>
+        <div style="display: flex; gap: 14px; margin-top: 28px; justify-content: center; flex-wrap: wrap;">
+          <a href={`tel:+2${PHONE}`} class="btn btn-primary">📞 اطلب معاينة فنية: {PHONE}</a>
+          <a href={WHATSAPP} target="_blank" rel="noopener noreferrer" class="btn btn-wa">💬 أرسل مخطط المطبخ على واتساب</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="ce-section bg-light">
+    <div class="container">
+      <div class="ce-grid-2">
+        <div class="ce-card">
+          <h2>1. الشفاط المركزي للمطابخ والفيلات (سحب قوي بدون إزعاج)</h2>
+          <p>في المطابخ المفتوحة (American Kitchen) والفيلات الحديثة بالتجمع الخامس والشيخ زايد، غالباً لا تكفي الشفاطات العادية للتخلص من روائح القلي والحرارة العالية، أو يصدر عنها ضجيج مرتفع. هنا يقدّم <strong>الشفاط المركزي للمطبخ</strong> حلاً مثالياً بتركيب موتور شفط مركزي خارجي (في المنور أو السطح) متصل بدكت معزول يسحب الأبخرة بكفاءة عالية وبهدوء تام.</p>
+          <ul>
+            <li>تصميم مسار الدكت قبل إغلاق الجبس بورد أو بعد التشطيب بأقل تدخل ممكن.</li>
+            <li>دمج نقاط السحب للمطبخ والحمامات مع صمامات عدم رجوع (Backdraft Dampers).</li>
+            <li>تنفيذ فتحات الكور الماسي في الجدران والأسقف بدون تكسير للسيراميك أو الرخام.</li>
+          </ul>
+          <p>للشفاطات المنزلية السقفية داخل الجبس بورد راجع <a href="/تركيب-شفاط-سقفي-جبس-بورد/">دليل تركيب الشفاط السقفي والجبس بورد</a>.</p>
+        </div>
+
+        <div class="ce-card">
+          <h2>2. شفاطات وهود مطابخ المطاعم والكافيهات</h2>
+          <p>تشغيل مطعم أو مطبخ سحابي (Cloud Kitchen) أو كافيه يتطلب منظومة تهوية مصممة هندسياً تسحب الدهون والحرارة المستمرة دون انقطاع وتمنع تراكم الدخان في صالة العملاء:</p>
+          <ul>
+            <li><strong>هود مطابخ مطاعم ستانلس:</strong> تجهيز وتثبيت الهود بفلاتر دهون قابلة للفك والغسيل (Baffle Filters).</li>
+            <li><strong>مداخن صاج مجلفن (Rigid Duct):</strong> تنفيذ مسارات محكمة الغلق ومثبتة هندسياً لمنع تسرب الزيوت والروائح.</li>
+            <li><strong>مراوح طرد حلزونية (Blower):</strong> اختيار قدرة الموتور بما يناسب طول المدخنة وعدد الأكواع ومعدل السحب المطلوب.</li>
+            <li><strong>تجهيز فتحات الخرسانة:</strong> تخريم فتحات دائرية أو قص فتحات مستطيلة للداكت مباشرة عبر فريقنا بدون الحاجة لمقاول منفصل.</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="ce-section">
+    <div class="container">
+      <div class="ce-header">
+        <h2>مقارنة منظومات الشفط المركزية والتجارية</h2>
+        <p>نساعدك على تحديد المنظومة المناسبة لحجم التشغيل وميزانية المشروع قبل التنفيذ:</p>
+      </div>
+      <div class="ce-table-wrap">
+        <table>
+          <thead>
+            <tr>
+              <th scope="col">نوع المنظومة</th>
+              <th scope="col">الاستخدام الأنسب</th>
+              <th scope="col">نوع الدكت والفتحة</th>
+              <th scope="col">الميزة الأساسية</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <th scope="row">شفاط مركزي للمطبخ المنزلي / الفيلا</th>
+              <td>المطابخ المفتوحة، الفيلات، والشفاطات متعددة النقاط</td>
+              <td>دكت مرن معزول أو صاج + فتحة كور 6 بوصة</td>
+              <td>هدوء تشغيل داخل المطبخ وسحب قوي للروائح</td>
+            </tr>
+            <tr>
+              <th scope="row">شفاط مطاعم وهود ستانلس + بلاور</th>
+              <td>المطاعم، المشويات، المطابخ السحابية، الفنادق</td>
+              <td>دكت صاج مجلفن + فتحات كور/منشار حسب المقاس</td>
+              <td>تحمّل التشغيل المستمر وسحب كثيف للدهون والحرارة</td>
+            </tr>
+            <tr>
+              <th scope="row">شفاط مركزي للحمامات (سقفي متعدد)</th>
+              <td>الفيلات، العيادات، المكاتب الإدارية</td>
+              <td>مروحة خطية فوق الجبس بورد + دكت 4–6 بوصة</td>
+              <td>سحب متوازن لعدة حمامات بمخرج طرد خارجي واحد</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </section>
+
+  <section class="ce-section bg-light">
+    <div class="container">
+      <div class="ce-grid-2 align-center">
+        <div>
+          <h2>ميزة دريل ماكس: التأسيس الخرساني + التركيب من فريق واحد</h2>
+          <p>عادةً يضطر صاحب المطعم أو الفيلا للتعامل مع مقاول خرسانة لفتح مسار المدخنة، ثم فني تكييف أو صاج لتركيب الدكت، ثم فني شفاطات للتثبيت. في <strong>دريل ماكس</strong> نختصر عليك الوقت والتكلفة عبر تنسيق العمل كاملاً:</p>
+          <ul class="ce-list">
+            <li>تنفيذ <a href="/core-drilling-صنايعي-كور/">فتحات الكور في الخرسانة</a> أو <a href="/saw-cuttingقص-خرسانة/">قص الجدران والأسقف بالمنشار</a> لمرور الدكت بأي مقاس.</li>
+            <li>تركيب وتثبيت الهود والمدخنة والموتور وعزل نقاط الاختراق لمنع تسرب المياه أو الحشرات.</li>
+            <li>دعم فني وصيانة مستمرة عبر <a href="/فني-شفاطات/">قسم فني الشفاطات</a> و<a href="/صيانة-اعطال-شفاط-المطبخ/">خدمة صيانة الأعطال</a>.</li>
+            <li>تغطية شاملة في <a href="/new-cairo-tagamoa-concrete-cutting-core/">التجمع الخامس والقاهرة الجديدة</a> و<a href="/october-zayed-concrete-cutting-core/">6 أكتوبر والشيخ زايد</a> و<a href="/alexandria-concrete-cutting-core/">الإسكندرية</a> و<a href="/service-areas/">جميع محافظات مصر</a>.</li>
+          </ul>
+        </div>
+        <div class="ce-media">
+          <img src="/images/exhaust-fan-foundation.webp" alt="تأسيس فتحة مدخنة شفاط مركزي وشفاط مطاعم بالكور دريل" width="1200" height="1200" loading="lazy" />
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="ce-section">
+    <div class="container" style="max-width: 900px;">
+      <div class="ce-header">
+        <h2>أسئلة شائعة حول الشفاط المركزي وشفاطات المطاعم</h2>
+      </div>
+      <div class="ce-faq">
+        {FAQ.map(item => (
+          <details>
+            <summary>{item.q}</summary>
+            <p>{item.a}</p>
+          </details>
+        ))}
+      </div>
+
+      <div class="ce-cta-box">
+        <h2>جهّز تفاصيل مطبخك أو مطعمك واحصل على معاينة فنية</h2>
+        <p>أرسل صور الموقع أو المخطط الهندسي ومسار المدخنة المقترح لنحدد لك القدرة المناسبة وتكلفة التأسيس والتركيب.</p>
+        <div style="display:flex; gap:12px; justify-content:center; flex-wrap:wrap; margin-top:20px;">
+          <a href={`tel:+2${PHONE}`} class="btn btn-primary">📞 اتصل {PHONE}</a>
+          <a href={WHATSAPP} target="_blank" rel="noopener noreferrer" class="btn btn-wa">💬 واتساب مباشر</a>
+          <a href="/فني-شفاطات/" class="btn btn-outline">العودة لصفحة فني الشفاطات</a>
+        </div>
+      </div>
+    </div>
+  </section>
+</MainLayout>
+
+<style>
+.text-center { text-align: center; }
+.ce-section { padding: 64px 0; }
+.bg-light { background: #f8fafc; }
+.ce-header { text-align: center; margin-bottom: 32px; }
+.ce-header h2 { font-size: clamp(1.5rem, 3vw, 2.1rem); color: var(--dark); margin-bottom: 10px; }
+.ce-header p { color: var(--gray); font-size: 1.05rem; }
+.ce-grid-2 { display: grid; grid-template-columns: 1fr 1fr; gap: 28px; }
+.align-center { align-items: center; }
+.ce-card { background: #fff; border: 1px solid #e2e8f0; border-radius: 16px; padding: 32px; box-shadow: 0 4px 18px rgba(15,23,42,0.04); }
+.ce-card h2 { font-size: 1.45rem; color: var(--dark); margin-bottom: 14px; line-height: 1.5; }
+.ce-card p, .ce-section p { color: #334155; line-height: 1.95; font-size: 1.02rem; margin-bottom: 14px; }
+.ce-card ul, .ce-list { padding-inline-start: 22px; list-style: disc; color: #334155; line-height: 1.9; margin-bottom: 16px; }
+.ce-card a, .ce-list a { color: #9a3412; text-decoration: underline; text-underline-offset: 3px; font-weight: 600; }
+.ce-table-wrap { overflow-x: auto; border: 1px solid #cbd5e1; border-radius: 12px; background: #fff; }
+.ce-table-wrap table { width: 100%; border-collapse: collapse; }
+.ce-table-wrap th, .ce-table-wrap td { padding: 15px; border-bottom: 1px solid #e2e8f0; text-align: right; vertical-align: top; }
+.ce-table-wrap thead th { background: #0f172a; color: #fff; }
+.ce-table-wrap tbody th { background: #f8fafc; color: #0f172a; }
+.ce-media img { width: 100%; border-radius: 16px; box-shadow: 0 10px 28px rgba(15,23,42,0.1); }
+.ce-faq { display: flex; flex-direction: column; gap: 12px; }
+.ce-faq details { background: #fff; border: 1px solid #e2e8f0; border-radius: 12px; padding: 18px 22px; }
+.ce-faq summary { font-weight: 800; color: var(--dark); cursor: pointer; font-size: 1.04rem; }
+.ce-faq details p { margin: 12px 0 0; color: #475569; }
+.ce-cta-box { margin-top: 40px; background: #0f172a; color: #fff; border-radius: 18px; padding: 36px; text-align: center; }
+.ce-cta-box h2 { color: #fff; margin-bottom: 10px; font-size: 1.6rem; }
+.ce-cta-box p { color: #cbd5e1; max-width: 640px; margin: 0 auto; }
+@media (max-width: 820px) {
+  .ce-grid-2 { grid-template-columns: 1fr; }
+  .ce-card { padding: 24px; }
+}
+</style>

@@ -31,6 +31,21 @@ const {
   nofollow = false,
 } = Astro.props;
 
+// Render contact details on the server so crawlers and visitors see the same text.
+const contactNumber = phoneNumber.replace(/\D/g, '');
+const withContactNumber = (text: string) =>
+  noindex || text.includes(contactNumber) ? text : `${text} | ${contactNumber}`;
+const contactTitle = withContactNumber(title);
+const contactDescription = withContactNumber(description);
+const pageContent = await Astro.slots.render('default');
+const contentWithContact = noindex
+  ? pageContent
+  : pageContent.replace(/(<h1\b[^>]*>)([\s\S]*?)(<\/h1>)/gi,
+      (_match, open: string, content: string, close: string) =>
+        content.replace(/<[^>]*>/g, '').includes(contactNumber)
+          ? `${open}${content}${close}`
+          : `${open}${content} <bdi class="heading-contact" dir="ltr">${contactNumber}</bdi>${close}`);
+
 const canonicalURL = new URL(canonical || Astro.url.pathname, Astro.site || "https://drilmax.com");
 canonicalURL.search = "";
 canonicalURL.hash = "";
@@ -66,8 +81,8 @@ const robotsDirectives = [
     <meta name="msapplication-TileColor" content="#d84315" />
     <meta name="format-detection" content="telephone=yes" />
     <meta name="generator" content={Astro.generator} />
-    <title>{title}</title>
-    <meta name="description" content={description} />
+    <title>{contactTitle}</title>
+    <meta name="description" content={contactDescription} />
     <meta name="keywords" content={keywords} />
     <meta name="author" content="Drill Max | دريل ماكس" />
     <meta name="robots" content={robotsDirectives} />
@@ -77,8 +92,8 @@ const robotsDirectives = [
     <meta property="og:locale" content="ar_EG" />
     <meta property="og:type" content={ogType} />
     <meta property="og:site_name" content="Drill Max | دريل ماكس" />
-    <meta property="og:title" content={title} />
-    <meta property="og:description" content={description} />
+    <meta property="og:title" content={contactTitle} />
+    <meta property="og:description" content={contactDescription} />
     <meta property="og:url" content={canonicalURL.href} />
     <meta property="og:image" content={ogImageAbsolute} />
     <meta property="og:image:alt" content={title} />
@@ -89,8 +104,8 @@ const robotsDirectives = [
     <meta name="twitter:card" content="summary_large_image" />
     <meta name="twitter:site" content="@drillmaxeg" />
     <meta name="twitter:creator" content="@drillmaxeg" />
-    <meta name="twitter:title" content={title} />
-    <meta name="twitter:description" content={description} />
+    <meta name="twitter:title" content={contactTitle} />
+    <meta name="twitter:description" content={contactDescription} />
     <meta name="twitter:image" content={ogImageAbsolute} />
     <meta name="twitter:image:alt" content={title} />
 
@@ -100,13 +115,13 @@ const robotsDirectives = [
     <!-- Preload Hero Image for LCP -->
     {preloadImage && <link rel="preload" href={preloadImage} as="image" fetchpriority="high" />}
 
-    <!-- Google Fonts - Non-blocking async load -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <!-- Load fonts async to eliminate render-blocking -->
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700;800&display=swap">
+    <!-- Google Fonts with preconnect and font-display swap -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700;800&display=swap" />
   </head>
   <body>
+    <a class="skip-link" href="#main-content">انتقل إلى المحتوى</a>
     <div class="top-bar">
       <div class="container top-bar-container">
         <div class="top-bar-contact">
@@ -145,9 +160,8 @@ const robotsDirectives = [
       </div>
     </header>
 
-    <a class="skip-link" href="#main-content">انتقل إلى المحتوى</a>
     <main id="main-content" tabindex="-1">
-      <slot />
+      <Fragment set:html={contentWithContact} />
     </main>
 
     <!-- Floating Call Button -->
@@ -178,21 +192,37 @@ const robotsDirectives = [
           </div>
         </div>
         <div class="footer-links">
-          <h2>الخدمات الرئيسية</h2>
+          <p class="footer-heading">الخدمات الرئيسية</p>
           <ul>
             <li><a href="/core-drilling-%d8%b5%d9%86%d8%a7%d9%8a%d8%b9%d9%8a-%d9%83%d9%88%d8%b1/">تخريم الخرسانة (كور)</a></li>
             <li><a href="/saw-cutting%d9%82%d8%b5-%d8%ae%d8%b1%d8%b3%d8%a7%d9%86%d8%a9/">قص الخرسانة بالمنشار</a></li>
             <li><a href="/%d9%82%d8%b5-%d8%a7%d9%84%d8%ae%d8%b1%d8%b3%d8%a7%d9%86%d8%a9-%d8%a8%d8%a7%d9%84%d9%88%d8%a7%d9%8a%d8%b1/">قص الخرسانة بالواير</a></li>
             <li><a href="/%d8%aa%d8%b2%d8%b1%d9%8a%d8%b9-%d8%a7%d9%84%d8%a7%d8%b4%d8%a7%d9%8a%d8%b1/">تزريع الأشاير</a></li>
             <li><a href="/%d9%81%d9%86%d9%8a-%d8%b4%d9%81%d8%a7%d8%b7%d8%a7%d8%aa/">تركيب الشفاطات</a></li>
+            <li><a href="/%d9%85%d9%82%d8%a7%d9%88%d9%84-%d9%87%d8%af%d9%85/">مقاول هدم وتكسير</a></li>
           </ul>
         </div>
         <div class="footer-links">
-          <h2>روابط سريعة</h2>
+          <p class="footer-heading">مناطق الخدمة</p>
+          <ul>
+            <li><a href="/new-cairo-tagamoa-concrete-cutting-core/">التجمع الخامس والقاهرة الجديدة</a></li>
+            <li><a href="/new-capital-shorouk-madinaty-core/">العاصمة الإدارية والشروق ومدينتي</a></li>
+            <li><a href="/october-zayed-concrete-cutting-core/">6 أكتوبر والشيخ زايد</a></li>
+            <li><a href="/alexandria-concrete-cutting-core/">الإسكندرية</a></li>
+            <li><a href="/%d8%aa%d8%ae%d8%b1%d9%8a%d9%85-%d8%ae%d8%b1%d8%b3%d8%a7%d9%86%d8%a9-%d9%85%d8%af%d9%8a%d9%86%d8%a9-%d9%86%d8%b5%d8%b1/">مدينة نصر</a></li>
+            <li><a href="/mansoura-concrete-cutting-core/">المنصورة والدقهلية</a></li>
+            <li><a href="/hurghada-concrete-cutting-core/">الغردقة والبحر الأحمر</a></li>
+            <li><a href="/minya-concrete-cutting-core/">المنيا</a></li>
+            <li><a href="/assiut-concrete-cutting-core/">أسيوط</a></li>
+            <li><a href="/service-areas/">كل مناطق التغطية</a></li>
+          </ul>
+        </div>
+        <div class="footer-links">
+          <p class="footer-heading">روابط سريعة</p>
           <ul>
             <li><a href="/">الرئيسية</a></li>
+            <li><a href="/services/">جميع الخدمات</a></li>
             <li><a href="/projects/">كل المشاريع</a></li>
-            <li><a href="/service-areas/">مناطق الخدمة</a></li>
             <li><a href="/blog/">الأدلة والمقالات</a></li>
             <li><a href="/about/">عن دريل ماكس</a></li>
             <li><a href="/prices/">الأسعار</a></li>
@@ -263,6 +293,7 @@ const robotsDirectives = [
 </html>
 
 <style is:global>
+  h1 .heading-contact { display: inline-block; font-size: 0.7em; white-space: nowrap; }
   :root {
     --primary: #c2410c; /* Accessible Dark Orange */
     --primary-hover: #9a3412;
@@ -419,8 +450,8 @@ const robotsDirectives = [
 
   .footer-content {
     display: grid;
-    grid-template-columns: 2fr 1fr 1fr;
-    gap: 40px;
+    grid-template-columns: 1.5fr 1fr 1fr 1fr;
+    gap: 32px;
     margin-bottom: 40px;
   }
 
@@ -438,8 +469,10 @@ const robotsDirectives = [
     max-width: 400px;
   }
 
+  .footer-links .footer-heading,
   .footer-links h2 {
     font-size: 1.3rem;
+    font-weight: 700;
     margin-bottom: 20px;
     color: #fff;
   }
@@ -720,6 +753,93 @@ const robotsDirectives = [
 
   }
 
+  /* Global low-specificity button & hero defaults for pages without local overrides */
+  :where(.btn) {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    padding: 13px 26px;
+    font-weight: 700;
+    border-radius: 8px;
+    cursor: pointer;
+    border: 2px solid transparent;
+    text-align: center;
+    text-decoration: none;
+    line-height: 1.4;
+    transition: background-color 0.25s ease, color 0.25s ease, border-color 0.25s ease, transform 0.25s ease;
+  }
+  :where(.btn-primary) {
+    background-color: var(--primary);
+    color: #fff;
+  }
+  :where(.btn-primary:hover) {
+    background-color: var(--primary-hover);
+    color: #fff;
+    transform: translateY(-2px);
+  }
+  :where(.btn-secondary) {
+    background-color: var(--dark);
+    color: #fff;
+    border-color: var(--dark);
+  }
+  :where(.btn-secondary:hover) {
+    background-color: #334155;
+    border-color: #334155;
+    color: #fff;
+    transform: translateY(-2px);
+  }
+  :where(.btn-outline) {
+    background-color: transparent;
+    color: #fff;
+    border-color: rgba(255, 255, 255, 0.7);
+  }
+  :where(.btn-outline:hover) {
+    background-color: #fff;
+    color: var(--dark);
+  }
+  :where(.btn-outline-primary) {
+    background-color: transparent;
+    color: var(--primary);
+    border-color: var(--primary);
+  }
+  :where(.btn-outline-primary:hover) {
+    background-color: var(--primary);
+    color: #fff;
+  }
+  :where(.hero) {
+    position: relative;
+    min-height: 440px;
+    padding: 72px 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: linear-gradient(135deg, #0f172a 0%, #1e293b 55%, #1e2530 100%);
+    color: #fff;
+    overflow: hidden;
+  }
+  :where(.hero-bg) {
+    position: absolute;
+    inset: 0;
+    background: radial-gradient(circle at 20% 20%, rgba(194, 65, 12, 0.28), transparent 55%),
+                radial-gradient(circle at 80% 80%, rgba(14, 165, 233, 0.18), transparent 55%);
+    z-index: 1;
+  }
+  :where(.hero-container) {
+    position: relative;
+    z-index: 2;
+  }
+  :where(.hero h1) {
+    color: #fff;
+    font-weight: 800;
+  }
+  :where(.hero-subtitle) {
+    color: #fdba74;
+    font-weight: 700;
+    display: block;
+    margin-bottom: 12px;
+  }
+
   img { max-width: 100%; height: auto; }
   iframe { max-width: 100%; }
   .btn-wa { background: #087f3f !important; color: #fff !important; }
@@ -735,10 +855,6 @@ const robotsDirectives = [
   .mobile-menu-btn[aria-expanded="true"] span:nth-child(1) { transform: rotate(45deg) translate(6px, 6px); }
   .mobile-menu-btn[aria-expanded="true"] span:nth-child(2) { opacity: 0; }
   .mobile-menu-btn[aria-expanded="true"] span:nth-child(3) { transform: rotate(-45deg) translate(6px, -7px); }
-  @media (prefers-reduced-motion: reduce) {
-    html { scroll-behavior: auto; }
-    *, *::before, *::after { animation-duration: .01ms !important; transition-duration: .01ms !important; }
-  }
 
 </style>
 

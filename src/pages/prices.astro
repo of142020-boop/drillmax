@@ -2,8 +2,8 @@
 import MainLayout from '../layouts/MainLayout.astro';
 
 const seo = {
-  title: "أسعار قص وتخريم الخرسانة: عوامل التكلفة وعرض السعر | دريل ماكس",
-  description: "قارن عوامل تكلفة قص الخرسانة بالمنشار وتخريم الكور، وما يشمله عرض التنفيذ والمعاينة. جهز المقاسات والصور للحصول على تسعير يناسب موقع مشروعك.",
+  title: "أسعار قص وتخريم الخرسانة في مصر | دريل ماكس | 01070046464",
+  description: "تعرّف على أسعار قص وتخريم الخرسانة في مصر: جدول أسعار فتحات الكور وسعر متر المنشار والواير وعوامل التكلفة وخصومات المقاولين. اتصل 01070046464.",
   canonical: "/prices/",
   ogImage: "/images/gas-hole.webp",
   schema: JSON.stringify({
@@ -60,6 +60,102 @@ const seo = {
             "item": { "@id": "https://drilmax.com/prices/", "name": "الأسعار" }
           }
         ]
+      },
+      {
+        "@type": "OfferCatalog",
+        "@id": "https://drilmax.com/prices/#catalog",
+        "name": "أسعار خدمات قص وتخريم الخرسانة",
+        "url": "https://drilmax.com/prices/",
+        "itemListElement": [
+          {
+            "@type": "Offer",
+            "name": "فتحة كور 1 بوصة - خرسانة مسلحة",
+            "description": "عمل فتحة دائرية بقطر 1 بوصة في الخرسانة المسلحة باستخدام الكور دريل",
+            "price": "200",
+            "priceCurrency": "EGP",
+            "availability": "https://schema.org/InStock",
+            "url": "https://drilmax.com/prices/"
+          },
+          {
+            "@type": "Offer",
+            "name": "فتحة كور 1 بوصة - حائط طوب",
+            "description": "عمل فتحة دائرية بقطر 1 بوصة في حائط الطوب باستخدام الكور دريل",
+            "price": "100",
+            "priceCurrency": "EGP",
+            "availability": "https://schema.org/InStock",
+            "url": "https://drilmax.com/prices/"
+          },
+          {
+            "@type": "Offer",
+            "name": "قص خرسانة بالمنشار الماسي - المتر",
+            "description": "قص خرسانة مستقيمة بالمنشار الماسي الجداري - السعر لكل متر طولي حسب السماكة وكثافة التسليح",
+            "priceSpecification": {
+              "@type": "PriceSpecification",
+              "minPrice": "500",
+              "maxPrice": "1300",
+              "priceCurrency": "EGP"
+            },
+            "availability": "https://schema.org/InStock",
+            "url": "https://drilmax.com/prices/"
+          },
+          {
+            "@type": "Offer",
+            "name": "قص خرسانة بالواير الماسي - المتر",
+            "description": "قص خرسانة بالواير الماسي للزوايا والأشكال المعقدة - السعر لكل متر طولي",
+            "price": "400",
+            "priceCurrency": "EGP",
+            "availability": "https://schema.org/InStock",
+            "url": "https://drilmax.com/prices/"
+          },
+          {
+            "@type": "Offer",
+            "name": "فتحات سخان الغاز - تثبيت الأنابيب",
+            "description": "تأهيل وتثبيت فتحة سخان الغاز مع تركيب الأنابيب بشكل آمن",
+            "price": "250",
+            "priceCurrency": "EGP",
+            "availability": "https://schema.org/InStock",
+            "url": "https://drilmax.com/prices/"
+          },
+          {
+            "@type": "Offer",
+            "name": "فتحات تكييف - تمديد فريون",
+            "description": "عمل فتحات تمديدات التكييف في الخرسانة المسلحة",
+            "price": "300",
+            "priceCurrency": "EGP",
+            "availability": "https://schema.org/InStock",
+            "url": "https://drilmax.com/prices/"
+          }
+        ]
+      },
+      {
+        "@type": "FAQPage",
+        "@id": "https://drilmax.com/prices/#faq",
+        "mainEntity": [
+          {
+            "@type": "Question",
+            "name": "كيف يتم احتساب سعر فتحة الكور؟",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "السعر يعتمد على ثلاثة عوامل: قطر الفتحة، نوع الخرسانة (مسلحة أم طوب)، وسمك الجدار. كلما زاد القطر زاد السعر. التواصل معنا يعطيك عرض سعر دقيق خلال دقائق."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "هل السعر يشمل المعاينة؟",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "نعم، المعاينة مجانية تماماً في جميع محافظات مصر داخل نطاق عملنا الأساسي. المعاينة ضرورية لتحديد المعدات والوقت المطلوب بشكل دقيق."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "ما هي طرق الدفع المتاحة؟",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "نقبل الدفع نقداً أو عبر تحويل بنكي. للمشاريع الكبيرة نوفر إمكانية الدفع على مراحل حسب جدول تنفيذ متفق عليه."
+            }
+          }
+        ]
       }
     ]
   })
@@ -73,7 +169,7 @@ const seo = {
     <div class="container hero-container text-center">
       <div class="hero-content" style="max-width: 900px; margin: 0 auto;">
         <span class="hero-subtitle" style="color: #fff;">دريل ماكس | الأسعار</span>
-        <h1 style="text-align: center; font-size: 3.5rem;">أسعار شفافة وتنافسية لخدماتنا</h1>
+        <h1 style="text-align: center; font-size: 3.2rem;">أسعار قص وتخريم الخرسانة في مصر (جدول الكور والمنشار)</h1>
         <p style="text-align: center; font-size: 1.3rem;">نؤمن بالشفافية الكاملة. إليك قائمة أسعارنا الاسترشادية لخدمات قص وتخريم خرسانات في مصر. للحصول على عرض سعر دقيق ومخصص لمشروعك، يرجى التواصل معنا.</p>
         <div style="display: flex; gap: 15px; margin-top: 30px; justify-content: center; flex-wrap: wrap;">
           <a href="/contact/" class="btn btn-primary">اطلب عرض سعر الآن</a>
@@ -82,7 +178,7 @@ const seo = {
     </div>
   </section>
 
-  <section class="py-section bg-light"><div class="container"><h2>اختر بند التسعير المناسب لعملك</h2><p>تجمع هذه الصفحة عوامل تكلفة الخدمات. أما تفاصيل سعر الفتحة الواحدة فتجدها في <a href="/اسعار-فتحات-الكور/">دليل أسعار فتحات الكور</a>، وتفاصيل التنفيذ في <a href="/core-drilling-صنايعي-كور/">خدمة صنايعي الكور</a> و<a href="/saw-cuttingقص-خرسانة/">خدمة قص الخرسانة بالمنشار</a>.</p><p>اسأل عند المقارنة: هل العرض يشمل الانتقال والتثبيت وحماية التشطيب وجمع المياه ونقل القطع أو المخلفات؟ أرسل العدد والمقاسات والسماكة والعنوان، ولا تعتبر أرقامًا استرشادية عرضًا نهائيًا قبل مراجعة البنود.</p></div></section>
+  <section class="py-section" style="padding: 48px 0;"><div class="container"><div class="content-box" style="padding: 32px;"><h2>اختر بند التسعير المناسب لعملك</h2><p style="margin-top: 10px; color: var(--gray); line-height: 1.85;">تجمع هذه الصفحة عوامل تكلفة الخدمات. أما تفاصيل سعر الفتحة الواحدة فتجدها في <a href="/اسعار-فتحات-الكور/" style="color: var(--primary); text-decoration: underline;">دليل أسعار فتحات الكور</a>، وتفاصيل التنفيذ في <a href="/core-drilling-صنايعي-كور/" style="color: var(--primary); text-decoration: underline;">خدمة صنايعي الكور</a> و<a href="/saw-cuttingقص-خرسانة/" style="color: var(--primary); text-decoration: underline;">خدمة قص الخرسانة بالمنشار</a>.</p><p style="margin-top: 10px; color: var(--gray); line-height: 1.85;">اسأل عند المقارنة: هل العرض يشمل الانتقال والتثبيت وحماية التشطيب وجمع المياه ونقل القطع أو المخلفات؟ أرسل العدد والمقاسات والسماكة والعنوان، ولا تعتبر أرقامًا استرشادية عرضًا نهائيًا قبل مراجعة البنود.</p></div></div></section>
   <!-- PROCESS SECTION -->
   <section class="py-section bg-light">
     <div class="container">
@@ -173,8 +269,8 @@ const seo = {
           </div>
           
           <div class="price-notes mt-4">
-            <p><strong>ملاحظة:</strong> الأسعار لا تشمل السقالات للأماكن المرتفعة. يوجد خصم خاص للكميات.</p>
-            <a href="tel:01070046464" class="btn btn-primary mt-3" style="width: 100%; display: block; text-align: center;">📞 معاينة مجانية الآن</a>
+            <p><strong>ملاحظة:</strong> الأسعار لا تشمل السقالات للأماكن المرتفعة. يوجد خصم خاص للكميات. لتفاصيل تسعير الأقطار الكبيرة والسماكات راجع <a href="/اسعار-فتحات-الكور/" style="color: var(--primary); font-weight: 700; text-decoration: underline;">دليل أسعار فتحات الكور التفصيلي</a> أو <a href="/core-drilling-صنايعي-كور/" style="color: var(--primary); text-decoration: underline;">صفحة خدمة الكور دريل</a>.</p>
+            <a href="tel:+201070046464" class="btn btn-primary mt-3" style="width: 100%; display: block; text-align: center;">📞 معاينة مجانية الآن</a>
           </div>
         </div>
         
@@ -195,13 +291,13 @@ const seo = {
           
           <div class="price-cards-vertical">
             <div class="v-card">
-              <h4>التسعير الأساسي</h4>
+              <h3>التسعير الأساسي</h3>
               <div class="price-val">500 - 1300 جنيه</div>
               <p>للمتر الطولي، حسب سُمك الخرسانة من 10سم وحتى 40سم. السعر يعتمد على كثافة حديد التسليح.</p>
             </div>
             
             <div class="v-card highlight">
-              <h4>سماكات أكبر من 40 سم</h4>
+              <h3>سماكات أكبر من 40 سم</h3>
               <div class="price-val">سعر خاص</div>
               <p>نقدم أسعارًا تنافسية للمشاريع الكبرى والأعماق الخاصة. يتم تحديد السعر بعد المعاينة والاتفاق.</p>
             </div>
@@ -209,7 +305,7 @@ const seo = {
         </div>
         
         <div class="half-box img-box shadow-hover">
-          <img width="1200" height="1364" src="/images/core-drill-1.webp" alt="صنايعي كور يستخدم ماكينة كور دريل" style="width: 100%; border-radius: 12px; object-fit: cover; height: 100%; min-height: 400px;" />
+          <img width="900" height="968" src="/images/saw-cutting-1.webp" alt="قص الخرسانة المسلحة بالمنشار الحائطي الماسي" style="width: 100%; border-radius: 12px; object-fit: cover; height: 100%; min-height: 400px;" />
         </div>
       </div>
     </div>
@@ -250,6 +346,29 @@ const seo = {
       <!-- QUOTE -->
       <div class="quote-box mt-5">
         <p>“لضمان أعلى مستويات الدقة والكفاءة، نعتمد بشكل أساسي على معدات كور ماركة هلتي، الشركة الرائدة عالميًا في تقنيات البناء.”</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- PRICES FAQ (Matches FAQPage Schema) -->
+  <section class="py-section bg-light">
+    <div class="container" style="max-width: 900px;">
+      <div class="section-header">
+        <h2>أسئلة شائعة حول الأسعار وطرق الدفع</h2>
+      </div>
+      <div class="faq-stack">
+        <details class="price-faq-item" open>
+          <summary>كيف يتم احتساب سعر فتحة الكور؟</summary>
+          <p>السعر يعتمد على ثلاثة عوامل: قطر الفتحة، نوع الخرسانة (مسلحة أم طوب)، وسمك الجدار. كلما زاد القطر زاد السعر. التواصل معنا يعطيك عرض سعر دقيق خلال دقائق.</p>
+        </details>
+        <details class="price-faq-item">
+          <summary>هل السعر يشمل المعاينة؟</summary>
+          <p>نعم، المعاينة مجانية تماماً في جميع محافظات مصر داخل نطاق عملنا الأساسي. المعاينة ضرورية لتحديد المعدات والوقت المطلوب بشكل دقيق.</p>
+        </details>
+        <details class="price-faq-item">
+          <summary>ما هي طرق الدفع المتاحة؟</summary>
+          <p>نقبل الدفع نقداً أو عبر تحويل بنكي. للمشاريع الكبيرة نوفر إمكانية الدفع على مراحل حسب جدول تنفيذ متفق عليه.</p>
+        </details>
       </div>
     </div>
   </section>
@@ -300,7 +419,7 @@ const seo = {
   .hero-bg {
     position: absolute;
     top: 0; left: 0; width: 100%; height: 100%;
-    background: url('/images/core-drill-augers-concrete-cutting-drilling-austria-drill-799344f1b8cd17dc43aacb2df36c2cea-scaled-e1756834714837.png.webp') center/cover no-repeat;
+    background: url('/images/audit-73338bdd67.webp') center/cover no-repeat;
     z-index: 1;
   }
   .hero-bg::after {
@@ -387,7 +506,7 @@ const seo = {
     left: -15px;
     font-size: 5rem;
     font-weight: 900;
-    color: rgba(253, 203, 30, 0.1);
+    color: rgba(194, 65, 12, 0.08);
     line-height: 1;
   }
   .process-card h3 { 
@@ -460,7 +579,7 @@ const seo = {
     border-radius: 12px;
     box-shadow: 0 5px 15px rgba(0,0,0,0.02);
   }
-  .v-card h4 {
+  .v-card h3 {
     font-size: 1.3rem;
     color: var(--dark);
     margin-bottom: 10px;
@@ -482,7 +601,7 @@ const seo = {
     color: #fff;
     border: none;
   }
-  .v-card.highlight h4 {
+  .v-card.highlight h3 {
     color: #fff;
   }
   .v-card.highlight p {
@@ -512,15 +631,19 @@ const seo = {
   /* Quote Box */
   .quote-box {
     background: var(--primary);
-    color: #000;
+    color: #fff;
     padding: 40px;
     border-radius: 12px;
     text-align: center;
-    font-size: 1.5rem;
+    font-size: 1.45rem;
     font-weight: 700;
     line-height: 1.6;
-    box-shadow: 0 10px 30px rgba(253, 203, 30, 0.3);
+    box-shadow: 0 10px 30px rgba(194, 65, 12, 0.25);
   }
+  .faq-stack { display: flex; flex-direction: column; gap: 14px; }
+  .price-faq-item { background: #fff; border: 1px solid var(--border-color); border-radius: 10px; padding: 20px 24px; }
+  .price-faq-item summary { font-weight: 700; color: var(--dark); font-size: 1.1rem; cursor: pointer; }
+  .price-faq-item p { color: var(--gray); line-height: 1.85; margin-top: 12px; }
 
   @media (max-width: 768px) {
     .hero h1 { font-size: 2.2rem !important; }

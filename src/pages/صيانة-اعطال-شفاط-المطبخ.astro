@@ -1,412 +1,139 @@
 ---
-import { imageSize } from '../lib/image-size';
-import MainLayout from '../layouts/MainLayout.astro';
+import GuideLayout from '../layouts/GuideLayout.astro';
 
-const seo = {
-  title: "تصليح شفاط المطبخ: ضعف السحب والصوت والتوقف | دريل ماكس",
-  description: "شفاط المطبخ لا يسحب أو يصدر صوتًا؟ تعرف على ما يُراجع في الفلاتر والدكت، والحالات التي تحتاج فنيًا، وعوامل تكلفة التصليح حسب الموديل.",
-  canonical: "/صيانة-اعطال-شفاط-المطبخ/",
-  ogImage: "/images/audit-834e15e0af.webp",
-  schema: JSON.stringify({
-  "@context": "https://schema.org",
-  "@graph": [
-    {
-      "@type": "BreadcrumbList",
-      "@id": "https://drilmax.com/صيانة-اعطال-شفاط-المطبخ/#breadcrumb",
-      "itemListElement": [
-        {
-          "@type": "ListItem",
-          "position": 1,
-          "name": "الرئيسية",
-          "item": "https://drilmax.com/"
-        },
-        {
-          "@type": "ListItem",
-          "position": 2,
-          "name": "المدونة",
-          "item": "https://drilmax.com/blog/"
-        },
-        {
-          "@type": "ListItem",
-          "position": 3,
-          "name": "تصليح شفاط المطبخ: ضعف السحب والصوت والتوقف",
-          "item": "https://drilmax.com/صيانة-اعطال-شفاط-المطبخ/"
-        }
-      ]
-    },
-    {
-      "@type": "BlogPosting",
-      "@id": "https://drilmax.com/صيانة-اعطال-شفاط-المطبخ/#article",
-      "isPartOf": {
-        "@id": "https://drilmax.com/#website"
-      },
-      "headline": "تصليح شفاط المطبخ: ضعف السحب والصوت والتوقف",
-      "description": "شفاط المطبخ لا يسحب أو يصدر صوتًا؟ تعرف على ما يُراجع في الفلاتر والدكت، والحالات التي تحتاج فنيًا، وعوامل تكلفة التصليح حسب الموديل.",
-      "image": "https://drilmax.com/images/audit-834e15e0af.webp",
-      "datePublished": "2026-02-18T10:00:00+02:00",
-      "dateModified": "2026-11-22T12:00:00+02:00",
-      "inLanguage": "ar",
-      "mainEntityOfPage": "https://drilmax.com/صيانة-اعطال-شفاط-المطبخ/",
-      "author": {
-        "@type": "Organization",
-        "name": "Drill Max دريل ماكس",
-        "url": "https://drilmax.com"
-      },
-      "publisher": {
-        "@id": "https://drilmax.com/#organization"
-      }
-    }
-  ]
-})
-};
-
-const contentHtml = "<p><strong>قبل طلب التصليح:</strong> حدد هل المشكلة توقف التشغيل، أم صوت أو اهتزاز، أم ضعف سحب. يُراجع التنظيف ومسار الهواء وفق دليل الموديل؛ أما رائحة الاحتراق أو التوقف المتكرر فتحتاج إيقاف الاستخدام وفحصًا مختصًا.</p><h2>تصليح شفاط المطبخ: ضعف السحب والصوت والتوقف وتغيير الفتلة</h2>\n<p>هل بدأ صوت شفاط المطبخ يصبح مزعجاً؟ أو ربما انقطع “حبل” التشغيل فجأة وتوقف الشفاط عن العمل؟ بمرور الوقت وتراكم الدهون العنيدة، تتعرض شفاطات المطبخ لأعطال شائعة قد تبدو معقدة، ويحتاج تحديد سببها إلى التمييز بين التنظيف الدوري وأعطال الجهاز التي يفحصها المختص.</p>\n<p>في هذا الدليل العملي، سنشرح لك كيفية التعامل مع أشهر اعطال شفاط المطبخ، بدءاً من طريقة تنظيف الشفاط من الزيوت المتجمعة، وصولاً إلى إصلاح الأعطال الفنية الدقيقة مثل تغيير المفتاح أو الفتلة.</p>\n<p><img width=\"2400\" height=\"1792\" decoding=\"async\" class=\"size-medium wp-image-3180 aligncenter\" src=\"/images/audit-834e15e0af.webp\" alt=\"اعطال شفاط المطبخ\"></p>\n<section aria-labelledby=\"repair-checklist\"><h2 id=\"repair-checklist\">تصليح شفاط مطبخ أم مراجعة التركيب؟</h2>\n<p>قبل طلب تصليح شفاط المطبخ، سجّل رقم الموديل ووصف العطل: هل الجهاز لا يعمل، أم يعمل بصوت مرتفع، أم يدور دون سحب كافٍ؟ هذه أعراض مختلفة، ولا يكفي ضعف السحب وحده للحكم بأن الموتور يحتاج إلى تغيير.</p>\n<ul><li><strong>الجهاز يعمل والسحب ضعيف:</strong> تُراجع حالة الفلاتر ووضع التشغيل ومسار الهواء. إذا بدأ الضعف بعد التركيب أو تغيير وحدات المطبخ، راجع <a href=\"/تركيب-شفاط-المطبخ/#duct\">قطر ماسورة الشفاط ومسار الدكت</a>.</li>\n<li><strong>شفاط بدون مدخنة:</strong> تُراجع ملحقات إعادة التدوير وفتحات رجوع الهواء والفلاتر المناسبة، كما يوضح <a href=\"/تركيب-شفاط-المطبخ/#recirculation\">دليل تركيب الشفاط بدون مدخنة</a>.</li>\n<li><strong>صوت أو اهتزاز جديد:</strong> يحتاج الفني إلى التمييز بين مشكلة التثبيت أو ملامسة جزء متحرك أو عطل داخل الجهاز؛ لا تشغّله بعد إزالة أغطية الحماية.</li>\n<li><strong>توقف متكرر أو رائحة احتراق:</strong> أوقف الاستخدام وافصل التغذية بطريقة آمنة، واطلب فحصًا مختصًا قبل إعادة التشغيل.</li></ul>\n<h3>ما الذي يحدد تكلفة تصليح شفاط المطبخ؟</h3>\n<p>التكلفة تتأثر بتشخيص العطل والموديل والقطعة المطلوبة وإمكانية الوصول إلى الجهاز، وهل يحتاج مسار الهواء إلى تعديل. اطلب توضيح تكلفة الفحص والقطع والعمل قبل التنفيذ، وراجع جهة الضمان أولًا إن كان الجهاز مشمولًا به. يمكنك إرسال الموديل وصور الموقع ووصف العطل إلى <a href=\"/فني-شفاطات/\">فني الشفاطات</a> لمناقشة نطاق العمل.</p></section><h2>1. طريقة فك الشفاط وتنظيفه من الدهون (خطوة بخطوة)</h2>\n<p>السبب رقم 1 لأي عطل هو الدهون. تراكم الزيوت على الموتور يجعله ثقيلاً ويسبب ارتفاع صوته أو احتراقه. إليك طريقة تنظيف الشفاط الصحيحة:</p>\n<ol start=\"1\">\n<li>\n<p>فصل الكهرباء: الأمان أولاً. انزع الفيشة أو افصل المفتاح الأوتوماتيك.</p>\n</li>\n<li>\n<p>طريقة فك الشفاط:</p>\n<ul>\n<li>\n<p>في شفاطات المروحة (توشيبا/فريش): اضغط على الكليبس الموجود أسفل الإطار لفك الشبكة الأمامية، ثم قم بفك الصامولة المثبتة للمروحة (عكس اتجاه عقارب الساعة) واسحب الريشة.</p>\n</li>\n<li>\n<p>في الشفاط المسطح/الهرمي: قم بفك فلتر شفاط المطبخ المعدني (الشبك).</p>\n</li>\n</ul>\n</li>\n<li>\n<p>خلطة التنظيف السحرية: لا تستخدم الليفة الخشنة حتى لا تجرح البلاستيك. استخدم مزيجاً من (ماء ساخن + بيكربونات الصوديوم + خل + صابون أطباق). انقع الريشة والشبكة لمدة 30 دقيقة، وستذوب الدهون تماماً.</p>\n</li>\n</ol>\n<h2>2. حل مشكلة: شفاط المطبخ لا يعمل (أو يزنّ)</h2>\n<p>إذا قمت بتشغيل الشفاط وسمعت صوت “زن” (Humming noise) لكن المروحة لا تدور، فالمشكلة غالباً ليست في الموتور نفسه بل في مكثف شفاط المطبخ (Capacitor).</p>\n<ul>\n<li>\n<p>التشخيص: حاول دفع ريشة المروحة بيدك (بحذر). إذا دارت واستكملت الدوران، فهذا يعني أن “المكثف” تالف ويحتاج لتغيير.</p>\n</li>\n<li>\n<p>الحل: اشترِ مكثفاً جديداً بنفس القيم (ميكروفاراد) من أي محل قطع غيار أجهزة منزلية، وقم بتركيبه مكان القديم.</p>\n</li>\n</ul>\n<h2>3. طريقة تركيب فتلة شفاط توشيبا (وتغيير المفتاح)</h2>\n<p>هذه المشكلة تواجه 90% من ملاك شفاطات توشيبا. ينقطع الحبل (الفتلة) المسؤول عن التشغيل وفتح “الشيش” الخلفي. إليك الحل لمشكلة تركيب فتلة شفاط توشيبا:</p>\n<ol start=\"1\">\n<li>\n<p>قم بفك غطاء علبة التروس الصغيرة الموجودة بجانب الموتور.</p>\n</li>\n<li>\n<p>ستجد “سوستة” وذراعاً مسؤولاً عن الشد.</p>\n</li>\n<li>\n<p>اشترِ “خيط سنارة” قوي أو خيط مخصص للشفاطات.</p>\n</li>\n<li>\n<p>اربط الخيط الجديد في مكان القديم داخل الذراع، ومرره عبر الفتحة المخصصة لأسفل.</p>\n</li>\n<li>\n<p>إذا كان العطل في “الشداد” نفسه (لا يثبت على وضع التشغيل)، هنا ستحتاج إلى تغيير مفتاح شفاط توشيبا بالكامل، وهو متوفر كقطعة غيار أصلية.</p>\n</li>\n</ol>\n<h2>4. علاج مشكلة صوت شفاط المطبخ العالي</h2>\n<p>أحياناً يعمل الشفاط بكفاءة لكن صوته يشبه “الجرار”. الأسباب والحلول:</p>\n<ul>\n<li>\n<p>ريشة غير متزنة: تأكد من أن صامولة تثبيت المروحة مربوطة بإحكام.</p>\n</li>\n<li>\n<p>احتكاك الإطار: الدهون قد تشوه الشكل البلاستيكي قليلاً، مما يجعل الريشة تحتك بالإطار. الحل هو التنظيف العميق أو صنفرة خفيفة لمكان الاحتكاك.</p>\n</li>\n<li>\n<p>جفاف الموتور: ضع نقطتين من “زيت الماكينات” (وليس زيت طعام!) على عامود الموتور لتليين الحركة.</p>\n</li>\n</ul>\n<h2>جدول: متى تصلح الشفاط ومتى تشتري جديداً؟</h2>\n<table>\n<thead>\n<tr>\n<td>العطل</td>\n<td>الحل المقترح</td>\n<td>التكلفة</td>\n</tr>\n</thead>\n<tbody>\n<tr>\n<td><span>الشفاط متسخ جداً</span></td>\n<td><span>تنظيف عميق (بيكروبونات وخل)</span></td>\n<td><span>زهيدة</span></td>\n</tr>\n<tr>\n<td><span>انقطاع الفتلة</span></td>\n<td><span>تركيب فتلة شفاط توشيبا جديدة</span></td>\n<td><span>زهيدة</span></td>\n</tr>\n<tr>\n<td><span>صوت عالي</span></td>\n<td><span>تنظيف وتزييت</span></td>\n<td><span>متوسطة</span></td>\n</tr>\n<tr>\n<td><span>رائحة شياط / دخان</span></td>\n<td><span>احتراق الموتور (يحتاج لف)</span></td>\n<td><span>مرتفعة (يفضل شراء جديد)</span></td>\n</tr>\n<tr>\n<td><span>كسر في الجسم</span></td>\n<td><span>لا يمكن إصلاحه</span></td>\n<td><span>شراء جديد</span></td>\n</tr>\n</tbody>\n</table>\n<hr>\n<h2><img width=\"2400\" height=\"1792\" loading=\"lazy\" decoding=\"async\" class=\"size-medium wp-image-3181 aligncenter\" src=\"/images/audit-710a0d6874.webp\" alt=\"طريقة تنظيف الشفاط\"></h2>\n<h2></h2>\n<h2>الأسئلة الشائعة حول صيانة الشفاطات</h2>\n<p>1. كم مرة يجب تنظيف فلتر شفاط المطبخ؟</p>\n<p>للحفاظ على قوة الشفط، يجب غسل الفلاتر المعدنية (الألومنيوم) مرة واحدة شهرياً بماء ساخن. أما فلاتر الروائح في الشفاطات بدون مدخنة فتُراجع تعليمات موديلها لتحديد قابلية التنظيف أو التجديد وموعد الاستبدال؛ تختلف الأنواع ولا يصلح لها جدول واحد.</p>\n<p>2. هل يمكنني تغيير موتور الشفاط بنفسي؟</p>\n<p>تغيير الموتور أو العمل داخل الدائرة الكهربائية يحتاج إلى فني مختص وقطعة مطابقة للموديل وتعليمات المصنع؛ لا تكفي مشابهة الشكل أو القدرة لتأكيد التوافق.</p>\n<p>3. أين أجد قطع غيار شفاط المطبخ؟</p>\n<p>قطع غيار الماركات الشهيرة مثل توشيبا وفريش متوفرة في مراكز الخدمة المعتمدة أو في محلات شارع “كلوت بك” و”العتبة” في القاهرة (ومثيلاتها في المحافظات).</p>\n<p>4. الشفاط يطرد الهواء للداخل بدلاً من الخارج، ما السبب؟</p>\n<p>هذا يحدث غالباً بعد فك الشفاط وتركيبه بشكل خاطئ، أو تركيب المروحة “بالمقلوب”. تأكد من أن وجه الريشة المقعر باتجاه الشفط الصحيح، وأن توصيلات الكهرباء (في المواتير 3 فاز) سليمة.</p>\n<hr>\n<h3>الخاتمة</h3>\n<p>الحفاظ على صيانة شفاط المطبخ بشكل دوري يوفر عليك تكلفة شراء جهاز جديد، ويضمن لك بيئة صحية خالية من الروائح. معظم اعطال شفاط المطبخ بسيطة ويمكنك حلها بنفسك بقليل من الصبر والأدوات البسيطة.</p>\n<p>هل واجهتك مشكلة لم نذكرها؟</p>\n<p>إذا كان الشفاط تالفاً تماماً وتفكر في شراء واحد جديد، لا تنسَ قراءة دليلنا السابق: [<a href=\"/%d8%a3%d8%b3%d8%b9%d8%a7%d8%b1-%d8%b4%d9%81%d8%a7%d8%b7%d8%a7%d8%aa-%d8%a7%d9%84%d9%85%d8%b7%d8%a8%d8%ae-%d8%a7%d9%81%d8%b6%d9%84-%d8%a7%d9%86%d9%88%d8%a7%d8%b9/\">دليل أسعار شفاطات المطبخ 2026</a>]&nbsp;لتختار البديل الأنسب. أما إذا كنت تواجه مشكلة في مكان التركيب نفسه، فراجع مقال [<a href=\"/%d8%aa%d8%b1%d9%83%d9%8a%d8%a8-%d8%b4%d9%81%d8%a7%d8%b7-%d8%a7%d9%84%d9%85%d8%b7%d8%a8%d8%ae/\">خطوات تركيب شفاط المطبخ</a>]</p>\n";
-const relatedPosts = [{"title":"الشفاط الهرمي أم المسطح (البلت ان)؟ مقارنة شاملة للمميزات والعيوب","url":"/مقارنة-الشفاط-الهرمي-والمسطح/","image":"/images/الشفاط-الهرمي-والمسطح.webp"},{"title":"دليل أسعار شفاطات المطبخ 2026: كيف تختار الأفضل بين توشيبا وفريش؟","url":"/أسعار-شفاطات-المطبخ-افضل-انواع/","image":"/images/core-drill-hero.webp"},{"title":"خطوات تركيب شفاط المطبخ والحمام باحترافية: الدليل الشامل","url":"/تركيب-شفاط-المطبخ/","image":"/images/core-drill-hero.webp"}];
+const toc = [
+  { id: 'diagnosis', label: 'التشخيص السريع: هل العطل في الشفاط أم في التركيب والدكت؟' },
+  { id: 'humming', label: 'حل مشكلة موتور الشفاط بيزن ولا يعمل (المكثف والدهون)' },
+  { id: 'pull-cord', label: 'تصليح الشفاط التوشيبا وتغيير الفتلة والمفتاح' },
+  { id: 'noise-weak', label: 'علاج صوت شفاط المطبخ العالي وضعف السحب' },
+  { id: 'cleaning', label: 'طريقة فك وتنظيف شفاط المطبخ والفلاتر بأمان' },
+  { id: 'cost-table', label: 'جدول أعطال الشفاط: متى تصلّحه ومتى تستبدله؟' },
+  { id: 'faq', label: 'أسئلة شائعة حول تصليح وصيانة شفاطات المطابخ' },
+];
 ---
 
-<MainLayout {...seo}>
-  <article class="post-single">
-    <header class="post-hero">
-      <div class="container">
-        <nav class="breadcrumb-trail" aria-label="Breadcrumb">
-          <a href="/">الرئيسية</a> &raquo; <a href="/blog/">المدونة</a> &raquo; <span>تصليح شفاط المطبخ: ضعف السحب والصوت والتوقف</span>
-        </nav>
-        <h1 class="entry-title">تصليح شفاط المطبخ: ضعف السحب والصوت والتوقف</h1>
-        <div class="entry-meta-info">
-          <span>📅 2026-02-18</span>
-          <span>⏱️ قراءة: 4 دقائق</span>
-          <span>👷‍♂️ فريق دريل ماكس</span>
-        </div>
-      </div>
-    </header>
+<GuideLayout
+  title="تصليح وصيانة أعطال شفاط المطبخ والزن والفتلة | 01024596959"
+  heading="تصليح وصيانة أعطال شفاط المطبخ: ضعف السحب والزن وتغيير الفتلة"
+  description="دليل تصليح وصيانة أعطال شفاط المطبخ: حل مشكلة موتور الشفاط يزن ولا يعمل، ضعف السحب، تغيير فتلة توشيبا وفريش وتكلفة الصيانة. اتصل 01024596959."
+  path="/صيانة-اعطال-شفاط-المطبخ/"
+  published="2026-02-18T10:00:00+02:00"
+  modifiedDate="2026-11-23T11:00:00+02:00"
+  modifiedLabel="23 نوفمبر 2026"
+  image="/images/audit-834e15e0af.webp"
+  eyebrow="دليل الصيانة والتصليح · شفاطات المطابخ والحمامات"
+  phoneNumber="01024596959"
+  ctaHeading="شفاط المطبخ لا يسحب أو الموتور يزنّ وتحتاج فني صيانة؟"
+  ctaBody="أرسل رقم الموديل ووصف العطل وصورة الشفاط لتحديد ما إذا كان يحتاج صيانة وتنظيف دكت أو تغيير قطعة غيار وحجز الفني."
+  ctaHref="/فني-شفاطات/"
+  ctaLabel="اطلب فني صيانة شفاطات (01024596959)"
+  toc={toc}
+  related={[
+    { href: '/فني-شفاطات/', label: 'حجز فني شفاطات مطبخ وحمام', desc: 'تركيب وصيانة وتصليح شفاطات المطبخ والحمام وتأسيس المداخن.' },
+    { href: '/تأسيس-مدخنة-شفاط-المطبخ-بلت-ان/', label: 'تأسيس ومدخنة شفاط المطبخ والبلت إن', desc: 'تجنب اختناق الدكت والأكواع التي تسبب ضعف السحب والضوضاء.' },
+    { href: '/تركيب-شفاط-المطبخ/', label: 'دليل تركيب شفاط المطبخ والمقاسات', desc: 'ضبط الارتفاع ومسار الطرد وإعادة التدوير بفلتر الكربون.' },
+    { href: '/مقارنة-الشفاط-الهرمي-والمسطح/', label: 'الشفاط الهرمي أم المسطح؟', desc: 'قارن الأنواع والعيوب إذا قررت استبدال الشفاط التالف بجديد.' },
+  ]}
+>
+  <div class="guide-summary">
+    <p><strong>قبل طلب تصليح شفاط المطبخ:</strong> فرّق بين 3 حالات رئيسية: (1) <strong>ضعف السحب</strong> وغالباً سببه دهون الفلاتر أو انسداد/اختناق الدكت، (2) <strong>موتور الشفاط يزن ولا يدور</strong> وسببه الشائع تلف المكثف (الكباستور) أو تجمّد الدهون على الجلبة، (3) <strong>رائحة احتراق أو قفلة كهربائية</strong> وفيها يجب فصل الكهرباء فوراً واستدعاء فني صيانة مختص.</p>
+  </div>
 
-    <div class="container post-container">
-      <div class="post-grid">
-        <div class="post-main-content">
-          
-          <div class="post-featured-media">
-            <img width="2400" height="1792" src="/images/audit-834e15e0af.webp" alt="تصليح شفاط المطبخ: ضعف السحب والصوت والتوقف" class="featured-img" loading="eager" />
-          </div>
+  <h2 id="diagnosis">تصليح شفاط مطبخ أم مشكلة في مسار الدكت والتركيب؟</h2>
+  <p>لا يعني ضعف السحب تلقائياً أن الموتور تالف ويحتاج تغييراً؛ فكثير من بلاغات <strong>صيانة شفاط المطبخ</strong> التي نفحصها يكون الموتور فيها سليماً تماماً، لكن السبب يكون أحد ما يلي:</p>
+  <ul>
+    <li><strong>انسداد فلاتر الألومنيوم أو تشبّع فلتر الكربون:</strong> في الشفاط المسطح والهرمي والبلت إن، يؤدي إهمال غسل الفلاتر لتكوّن طبقة شحمية تسد مرور الهواء.</li>
+    <li><strong>تضييق قطر المدخنة أو انثناء الجرجور:</strong> إذا بدأ ضعف السحب منذ يوم التركيب فالمشكلة غالباً في <a href="/تأسيس-مدخنة-شفاط-المطبخ-بلت-ان/">قطر المدخنة أو كثرة الأكواع</a>.</li>
+    <li><strong>تعلّق صمام عدم الرجوع (الردّاد):</strong> تراكم الدهون على ريشة الردّاد الخلفية يمنعها من الفتح أثناء التشغيل فيرتد الهواء للداخل.</li>
+  </ul>
 
-          <div class="post-body-text" set:html={contentHtml} />
+  <figure class="guide-figure">
+    <img src="/images/audit-834e15e0af.webp" alt="فحص وتصليح أعطال شفاط المطبخ وتنظيف الفلاتر والدهون" width="1024" height="765" loading="lazy" />
+    <figcaption>تشخيص العطل بدقة بين الموتور والمكثف ومسار الدكت يوفر عليك تكلفة تغيير جهاز سليم.</figcaption>
+  </figure>
 
-          <!-- CTA Box inside post -->
-          <div class="post-cta-box">
-            <h3>هل تحتاج إلى مساعدة أو استفسار فني؟</h3>
-            <p>فريق دريل ماكس جاهز لخدمتكم بأحدث ماكينات الكور والمنشار الماسي لقص وتخريم الخرسانة وتركيب الشفاطات بأعلى جودة وأفضل الأسعار في مصر.</p>
-            <div class="cta-buttons">
-              <a href="tel:+201070046464" class="btn btn-call">📞 اتصل الآن: 01070046464</a>
-              <a href="https://wa.me/201070046464" class="btn btn-wa" target="_blank" rel="noopener">💬 تواصل عبر الواتساب</a>
-            </div>
-          </div>
+  <h2 id="humming">حل مشكلة: موتور الشفاط بيزن ولا يعمل</h2>
+  <p>عندما تضغط على زر التشغيل وتسمع <strong>صوت زنّة (Humming) دون دوران الريشة</strong> أو بدوران بطيء جداً، فهناك سببان شائعان يراجعهما الفني:</p>
+  <div class="measurement-cards" aria-label="أسباب زن الموتور وعدم الدوران">
+    <div class="measurement-card"><strong>1. تلف المكثف (الكباستور)</strong><p>السبب الأكثر شيوعاً؛ يفقد المكثف قدرته على إعطاء دفعة البدء للموتور. يُستبدل بمكثف مطابق تماماً لقيمة الميكروفاراد الأصلية.</p></div>
+    <div class="measurement-card"><strong>2. تجمّد الشحم على الجلب</strong><p>تراكم أبخرة الزيوت داخل محور الدوران يجعل العمود «يقفش»؛ يحتاج فكاً وتنظيفاً وتلييناً بزيت ماكينات مخصص (وليس زيت طعام).</p></div>
+    <div class="measurement-card"><strong>3. ضعف ملفات الموتور</strong><p>إذا استمر تشغيل الموتور وهو متوقف لفترات طويلة ترتفع حرارته وتتلف ملفاته؛ لذلك افصل الشفاط فور سماع الزنّ.</p></div>
+  </div>
 
-          <!-- Related Posts Section (Topic Clusters) -->
-          <div class="related-posts-section">
-            <h3 class="related-heading">مقالات وخدمات ذات صلة</h3>
-            <div class="related-grid">
-              {relatedPosts.map((rel) => (
-                <a href={rel.url} class="related-card">
-                  <div class="related-img-wrap">
-                    <img width={imageSize(rel.image)?.width} height={imageSize(rel.image)?.height} src={rel.image} alt={rel.title} loading="lazy" />
-                  </div>
-                  <h4 class="related-title">{rel.title}</h4>
-                </a>
-              ))}
-            </div>
-          </div>
-        </div>
+  <h2 id="pull-cord">تصليح الشفاط التوشيبا وفريش: تركيب الفتلة وتغيير المفتاح</h2>
+  <p>في شفاطات الشباك والحائط الكلاسيكية (توشيبا وفريش وتورنيدو 25 و30 سم)، يُعد انقطاع حبل التشغيل (الفتلة) أو تعطل الشدّاد/المفتاح أشهر عطل منزلي:</p>
+  <ul>
+    <li><strong>انقطاع الفتلة فقط:</strong> إذا كانت السوستة والشداد يتحركان بسلاسة، يُركّب خيط مجدول مخصص للشفاطات في ذراع التشغيل بعد فصل الكهرباء وفك غطاء علبة التروس الجانبية.</li>
+    <li><strong>عدم ثبات الشدّاد أو تعطل اتجاه الشفط/الطرد:</strong> هنا يكون الخلل في <strong>مفتاح الشفاط الداخلي</strong> نفسه ويحتاج استبدالاً بقطعة مطابقة للموديل.</li>
+    <li><strong>توقف الريش الخلفية (الشيش) عن الفتح:</strong> غالباً بسبب تراكم الدهون على مفصلات الشيش أو انفلات الذراع الميكانيكي المتصل بالشدّاد.</li>
+  </ul>
 
-        <aside class="post-sidebar">
-          <div class="widget">
-            <h3 class="widget-title">خدمات دريل ماكس</h3>
-            <ul class="service-links">
-              <li><a href="/core-drilling-%d8%b5%d9%86%d8%a7%d9%8a%d8%b9%d9%8a-%d9%83%d9%88%d8%b1/">فتحات كور دريل</a></li>
-              <li><a href="/saw-cutting%d9%82%d8%b5-%d8%ae%d8%b1%d8%b3%d8%a7%d9%86%d8%a9/">قص خرسانة بالمنشار</a></li>
-              <li><a href="/%d9%82%d8%b5-%d8%a7%d9%84%d8%ae%d8%b1%d8%b3%d8%a7%d9%86%d8%a9-%d8%a8%d8%a7%d9%84%d9%88%d8%a7%d9%8a%d8%b1/">قص بالواير الماسي</a></li>
-              <li><a href="/%d8%aa%d8%b2%d8%b1%d9%8a%d8%b9-%d8%a7%d9%84%d8%a7%d8%b4%d8%a7%d9%8a%d8%b1/">تزريع أشاير حديد</a></li>
-              <li><a href="/%d9%81%d9%86%d9%8a-%d8%b4%d9%81%d8%a7%d8%b7%d8%a7%d8%aa/">فني شفاطات ومطابخ</a></li>
-              <li><a href="/%d9%85%d9%82%d8%a7%d9%88%d9%84-%d9%87%d8%af%d9%85/">أعمال التكسير والهدم</a></li>
-              <li><a href="/prices/">قائمة الأسعار وعروضنا</a></li>
-            </ul>
-          </div>
+  <h2 id="noise-weak">علاج صوت شفاط المطبخ العالي والاهتزاز</h2>
+  <p>إذا تحوّل صوت الشفاط إلى ضوضاء عالية أو اهتزاز مزعج في الدولاب أو الزجاج، يُراجع ما يلي:</p>
+  <ol>
+    <li><strong>ثبات الريشة وصامولة التثبيت:</strong> ارتخاء الصامولة أو تراكم دهون غير متساوٍ على الريش يُخلّ باتزان المروحة ويسبب اهتزازاً قوياً.</li>
+    <li><strong>ثبات جسم الشفاط بالإطار أو الدولاب:</strong> ارتخاء مسامير التثبيت في الخشب أو الألوميتال ينقل الاهتزاز لكل وحدة المطبخ.</li>
+    <li><strong>جفاف الجلب أو تآكل رولمان البلي:</strong> يصدر صوت صفير أو احتكاك معدني يحتاج صيانة سريعة قبل احتراق الموتور.</li>
+  </ol>
 
-          <div class="widget direct-contact">
-            <h3 class="widget-title">طلب استشارة مجانية</h3>
-            <p>تواصل مع مهندس مختص لمناقشة أبعاد الفتحات وتكاليف المشروع فوراً.</p>
-            <a href="tel:+201070046464" class="btn btn-primary" style="display:block; text-align:center; margin-top:15px;">01070046464</a>
-          </div>
-        </aside>
-      </div>
-    </div>
-  </article>
-</MainLayout>
+  <h2 id="cleaning">طريقة تنظيف شفاط المطبخ والفلاتر بأمان</h2>
+  <p>التنظيف الدوري كل 4–6 أسابيع يضاعف عمر الموتور ويمنع 70% من الأعطال:</p>
+  <ol>
+    <li>افصل الكهرباء تماماً (انزع الفيشة أو افصل القاطع) قبل لمس أي جزء.</li>
+    <li>فك الفلاتر المعدنية (في المسطح/الهرمي) أو الشبكة والريشة (في شفاط الشباك) دون رش ماء مباشر على الموتور أو لوحة المفاتيح.</li>
+    <li>انقع الفلاتر المعدنية أو الريشة في ماء دافئ مع سائل أطباق وبيكربونات الصوديوم (تجنب الصودا الكاوية القوية التي تؤكسد فلاتر الألومنيوم وتُضعف البلاستيك).</li>
+    <li>جفّف القطع تماماً قبل إعادة التركيب والتشغيل.</li>
+  </ol>
 
-<style>
-  .post-hero {
-    background: linear-gradient(135deg, #1e293b 0%, #0f172a 100%);
-    color: #fff;
-    padding: 45px 0 35px;
-    border-bottom: 3px solid var(--accent, #eab308);
-  }
-  .breadcrumb-trail {
-    font-size: 0.95rem;
-    color: #94a3b8;
-    margin-bottom: 15px;
-  }
-  .breadcrumb-trail a {
-    color: #cbd5e1;
-    text-decoration: none;
-  }
-  .breadcrumb-trail a:hover {
-    color: #eab308;
-  }
-  .entry-title {
-    font-size: 2.2rem;
-    font-weight: 800;
-    line-height: 1.4;
-    color: #fff;
-    margin-bottom: 15px;
-  }
-  .entry-meta-info {
-    display: flex;
-    gap: 20px;
-    flex-wrap: wrap;
-    color: #94a3b8;
-    font-size: 0.95rem;
-  }
-  .post-container {
-    padding: 50px 20px;
-  }
-  .post-grid {
-    display: grid;
-    grid-template-columns: 1fr 320px;
-    gap: 40px;
-    align-items: start;
-  }
-  .post-featured-media {
-    margin-bottom: 35px;
-    border-radius: 12px;
-    overflow: hidden;
-    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
-  }
-  .featured-img {
-    width: 100%;
-    height: auto;
-    display: block;
-    object-fit: cover;
-  }
-  .post-body-text {
-    font-size: 1.15rem;
-    line-height: 2;
-    color: #334155;
-  }
-  .post-body-text :global(h2) {
-    font-size: 1.7rem;
-    font-weight: 700;
-    color: #0f172a;
-    margin: 35px 0 15px;
-    padding-bottom: 8px;
-    border-bottom: 2px solid #e2e8f0;
-  }
-  .post-body-text :global(h3) {
-    font-size: 1.35rem;
-    font-weight: 700;
-    color: #1e293b;
-    margin: 25px 0 12px;
-  }
-  .post-body-text :global(p) {
-    margin-bottom: 20px;
-  }
-  .post-body-text :global(ul), .post-body-text :global(ol) {
-    margin: 15px 0 25px 25px;
-    padding-right: 20px;
-  }
-  .post-body-text :global(li) {
-    margin-bottom: 8px;
-  }
-  .post-body-text :global(img) {
-    max-width: 100%;
-    height: auto;
-    border-radius: 8px;
-    margin: 20px 0;
-  }
-  .post-body-text :global(a) {
-    color: #d97706;
-    font-weight: 600;
-    text-decoration: underline;
-  }
-  .post-body-text :global(.smart-internal-link) {
-    background: #fef3c7;
-    padding: 2px 6px;
-    border-radius: 4px;
-    text-decoration: none;
-    color: #92400e;
-    font-weight: 700;
-    border-bottom: 2px solid #f59e0b;
-    transition: all 0.2s ease;
-  }
-  .post-body-text :global(.smart-internal-link:hover) {
-    background: #fde68a;
-    color: #78350f;
-  }
-  .post-body-text :global(table) {
-    width: 100%;
-    border-collapse: collapse;
-    margin: 25px 0;
-  }
-  .post-body-text :global(th), .post-body-text :global(td) {
-    border: 1px solid #cbd5e1;
-    padding: 12px;
-    text-align: right;
-  }
-  .post-body-text :global(th) {
-    background: #f1f5f9;
-    font-weight: 700;
-  }
-  .post-cta-box {
-    margin-top: 50px;
-    padding: 30px;
-    background: #f8fafc;
-    border: 2px dashed #cbd5e1;
-    border-radius: 12px;
-    text-align: center;
-  }
-  .post-cta-box h3 {
-    font-size: 1.5rem;
-    font-weight: 800;
-    color: #0f172a;
-    margin-bottom: 10px;
-  }
-  .post-cta-box p {
-    color: #64748b;
-    margin-bottom: 25px;
-    line-height: 1.7;
-  }
-  .cta-buttons {
-    display: flex;
-    justify-content: center;
-    gap: 15px;
-    flex-wrap: wrap;
-  }
-  .btn-call {
-    background: #eab308;
-    color: #000 !important;
-    padding: 12px 25px;
-    border-radius: 8px;
-    font-weight: 700;
-    text-decoration: none !important;
-  }
-  .btn-wa {
-    background: #25d366;
-    color: #fff !important;
-    padding: 12px 25px;
-    border-radius: 8px;
-    font-weight: 700;
-    text-decoration: none !important;
-  }
-  .related-posts-section {
-    margin-top: 55px;
-    padding-top: 35px;
-    border-top: 2px solid #e2e8f0;
-  }
-  .related-heading {
-    font-size: 1.6rem;
-    font-weight: 800;
-    color: #0f172a;
-    margin-bottom: 25px;
-    position: relative;
-    padding-bottom: 10px;
-  }
-  .related-heading::after {
-    content: '';
-    position: absolute;
-    bottom: 0;
-    right: 0;
-    width: 60px;
-    height: 3px;
-    background: #eab308;
-    border-radius: 2px;
-  }
-  .related-grid {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 20px;
-  }
-  .related-card {
-    background: #fff;
-    border: 1px solid #e2e8f0;
-    border-radius: 10px;
-    overflow: hidden;
-    text-decoration: none;
-    transition: transform 0.2s, box-shadow 0.2s;
-    display: flex;
-    flex-direction: column;
-  }
-  .related-card:hover {
-    transform: translateY(-4px);
-    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.08);
-  }
-  .related-img-wrap {
-    height: 140px;
-    overflow: hidden;
-  }
-  .related-img-wrap img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-  }
-  .related-title {
-    font-size: 1rem;
-    font-weight: 700;
-    color: #1e293b;
-    padding: 15px;
-    margin: 0;
-    line-height: 1.5;
-  }
-  .post-sidebar .widget {
-    background: #fff;
-    border: 1px solid #e2e8f0;
-    border-radius: 12px;
-    padding: 25px;
-    margin-bottom: 25px;
-    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.04);
-  }
-  .widget-title {
-    font-size: 1.2rem;
-    font-weight: 700;
-    margin-bottom: 18px;
-    padding-bottom: 10px;
-    border-bottom: 2px solid #eab308;
-    color: #0f172a;
-  }
-  .service-links {
-    list-style: none;
-    padding: 0;
-    margin: 0;
-  }
-  .service-links li {
-    margin-bottom: 12px;
-    border-bottom: 1px dashed #f1f5f9;
-    padding-bottom: 8px;
-  }
-  .service-links a {
-    color: #334155;
-    text-decoration: none;
-    font-weight: 600;
-    transition: color 0.2s;
-  }
-  .service-links a:hover {
-    color: #eab308;
-  }
-  @media (max-width: 900px) {
-    .post-grid {
-      grid-template-columns: 1fr;
-    }
-    .entry-title {
-      font-size: 1.6rem;
-    }
-    .related-grid {
-      grid-template-columns: 1fr;
-    }
-  }
-</style>
+  <figure class="guide-figure">
+    <img src="/images/audit-710a0d6874.webp" alt="تنظيف فلاتر وريش شفاط المطبخ لاستعادة قوة السحب" width="1024" height="765" loading="lazy" />
+    <figcaption>تنظيف الفلاتر المعدنية شهرياً يحافظ على قوة السحب ويحمي الموتور من الحمل الزائد.</figcaption>
+  </figure>
+
+  <h2 id="cost-table">جدول أعطال شفاط المطبخ: متى يكون التصليح مجدياً ومتى تستبدله؟</h2>
+  <div class="guide-table-wrap">
+    <table>
+      <caption>مقارنة تكلفة وجدوى تصليح أشهر أعطال شفاطات المطبخ</caption>
+      <thead>
+        <tr>
+          <th scope="col">العطل الظاهر</th>
+          <th scope="col">الإجراء الفني الشائع</th>
+          <th scope="col">التكلفة والجدوى</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <th scope="row">انقطاع فتلة الشفاط أو تلف المفتاح</th>
+          <td>تركيب فتلة جديدة أو تغيير مفتاح أصلي</td>
+          <td>اقتصادية جداً — التصليح هو الخيار الأفضل</td>
+        </tr>
+        <tr>
+          <th scope="row">موتور الشفاط يزن ولا يدور</th>
+          <td>تغيير المكثف + تنظيف وتزييت المحور</td>
+          <td>منخفضة إلى متوسطة — مجدية جداً</td>
+        </tr>
+        <tr>
+          <th scope="row">ضعف السحب رغم دوران الموتور</th>
+          <td>تنظيف الفلاتر + تعديل/تنظيف الدكت والردّاد</td>
+          <td>متوسطة — تعيد كفاءة السحب بالكامل</td>
+        </tr>
+        <tr>
+          <th scope="row">احتراق كامل للموتور أو كسر الجسم</th>
+          <td>تغيير موتور مطابق أو استبدال الجهاز</td>
+          <td>قارن سعر الموتور الأصلي بسعر شفاط جديد</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+  <p>تختلف تكلفة الصيانة حسب الموديل (شباك، مسطح، هرمي، بلت إن، أو <a href="/شفاط-مركزي-وشفاطات-مطاعم/">شفاط مركزي</a>) والقطعة المطلوبة وإمكانية الوصول للجهاز. أرسل صورة العطل ورقم الموديل إلى <a href="/فني-شفاطات/">فني الشفاطات (01024596959)</a> لتحديد التكلفة قبل الزيارة.</p>
+
+  <h2 id="faq">أسئلة شائعة حول صيانة وتصليح شفاط المطبخ</h2>
+  <h3>الشفاط يطرد الهواء للداخل بدلاً من سحبه للخارج، ما السبب؟</h3>
+  <p>يحدث ذلك في شفاطات الشباك بسبب تركيب الريشة بالمقلوب بعد التنظيف أو تشغيل مفتاح الاتجاه على وضع إدخال الهواء؛ أما في الشفاطات بمدخنة فيحدث بسبب انسداد الدكت أو عطل صمام عدم الرجوع.</p>
+
+  <h3>كم مرة يجب تغيير فلتر الكربون في الشفاط بدون مدخنة؟</h3>
+  <p>تختلف المدة حسب كثافة الطهي ونوع الفلتر (بعضها يُستبدل كل 4–6 أشهر وبعضها قابل للتجديد وفق كتيب الموديل). راجع دليل جهازك أو <a href="/تركيب-شفاط-المطبخ/#recirculation">شرح الشفاط بدون مدخنة</a>.</p>
+
+  <h3>هل توفرون صيانة لشفاطات الحمام السقفية والشفاطات المركزية؟</h3>
+  <p>نعم، يفحص فريقنا أعطال شفاطات المطابخ والحمامات السقفية والمركزية ومسارات الدكت. راجع أيضاً <a href="/تركيب-شفاط-سقفي-جبس-بورد/">دليل الشفاط السقفي والجبس بورد</a>.</p>
+</GuideLayout>

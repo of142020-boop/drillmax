@@ -9,20 +9,20 @@
   "display": "standalone",
   "orientation": "portrait",
   "background_color": "#ffffff",
-  "theme_color": "#d84315",
+  "theme_color": "#c2410c",
   "categories": ["business", "construction", "home improvement"],
   "icons": [
     {
-      "src": "/images/logodrillmax.png",
-      "sizes": "192x192",
-      "type": "image/png",
-      "purpose": "any maskable"
-    },
-    {
       "src": "/images/logodrillmax-small.webp",
-      "sizes": "512x512",
+      "sizes": "256x256",
       "type": "image/webp",
       "purpose": "any"
+    },
+    {
+      "src": "/images/logodrillmax.png",
+      "sizes": "500x500",
+      "type": "image/png",
+      "purpose": "any maskable"
     }
   ],
   "shortcuts": [
@@ -30,19 +30,19 @@
       "name": "اتصل بنا",
       "short_name": "اتصال",
       "url": "/contact/",
-      "icons": [{ "src": "/images/logodrillmax.png", "sizes": "192x192" }]
+      "icons": [{ "src": "/images/logodrillmax.png", "sizes": "500x500", "type": "image/png" }]
     },
     {
       "name": "الأسعار",
       "short_name": "أسعار",
       "url": "/prices/",
-      "icons": [{ "src": "/images/logodrillmax.png", "sizes": "192x192" }]
+      "icons": [{ "src": "/images/logodrillmax.png", "sizes": "500x500", "type": "image/png" }]
     },
     {
       "name": "مشاريعنا",
       "short_name": "مشاريع",
       "url": "/projects/",
-      "icons": [{ "src": "/images/logodrillmax.png", "sizes": "192x192" }]
+      "icons": [{ "src": "/images/logodrillmax.png", "sizes": "500x500", "type": "image/png" }]
     }
   ]
 }

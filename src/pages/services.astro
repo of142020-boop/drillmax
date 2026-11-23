@@ -2,8 +2,8 @@
 import MainLayout from '../layouts/MainLayout.astro';
 
 const seo = {
-  title: "خدمات قص الخرسانة وتخريم الخرسانة - قص بالواير 01070046464",
-  description: "نقدم في دريل ماكس خدمات قص الخرسانة بالواير وتخريم الخرسانة المسلحة وعمل فتحات كور بأحدث الأجهزة. دقة بدون تكسير أو اهتزازات. اتصل بنا الآن للحصول على أفضل سعر.",
+  title: "خدمات قص وتخريم الخرسانة وتزريع الأشاير في مصر | 01070046464",
+  description: "دليل خدمات قص وتخريم الخرسانة من دريل ماكس: صنايعي كور، قص بالمنشار والواير، تزريع الأشاير، فني شفاطات، ومقاول هدم وتكسير. اتصل 01070046464.",
   canonical: "/services/",
   ogImage: "/images/gas-hole.webp",
   schema: JSON.stringify({
@@ -107,8 +107,8 @@ const seo = {
             "position": "4",
             "item": {
               "@type": "Service",
-              "name": "تركيب فني شفاطات",
-              "description": "تركيب شفاطات المطبخ المركزية مع تخريم فتحات التهوية في الجدران والأسقف",
+              "name": "تركيب شفاطات المطبخ والمداخن",
+              "description": "تركيب شفاطات المطبخ والحمام مع تخريم فتحات التهوية وتأسيس مسار الدكت",
               "url": "https://drilmax.com/%d9%81%d9%86%d9%8a-%d8%b4%d9%81%d8%a7%d8%b7%d8%a7%d8%aa/",
               "provider": { "@id": "https://drilmax.com/#organization" }
             }
@@ -136,6 +136,18 @@ const seo = {
             }
           }
         ]
+      },
+      {
+        "@type": "HowTo",
+        "@id": "https://drilmax.com/services/#howto",
+        "name": "كيفية طلب خدمة قص وتخريم الخرسانة من Drill Max",
+        "description": "دليل خطوة بخطوة لطلب خدمة قص أو تخريم الخرسانة بالكور من شركة دريل ماكس",
+        "totalTime": "PT24H",
+        "step": [
+          { "@type": "HowToStep", "position": 1, "name": "المعاينة وطلب عرض السعر", "text": "تواصل معنا عبر الهاتف أو الواتساب لتحديد نوع الخدمة المطلوبة والمعدات اللازمة وتقديم عرض سعر تفصيلي.", "url": "https://drilmax.com/services/" },
+          { "@type": "HowToStep", "position": 2, "name": "التخطيط وتجهيز الموقع", "text": "بعد الموافقة على العرض، نجدول موعد التنفيذ ونجهز الموقع بتحديد أماكن الفتحات والقص، مع ضمان السلامة الإنشائية." },
+          { "@type": "HowToStep", "position": 3, "name": "التنفيذ والتسليم", "text": "يقوم فريق العمل بتنفيذ القص أو التخريم باستخدام أحدث معدات الكور والمنشار الماسي، مع تسليم الموقع نظيفاً وجاهزاً." }
+        ]
       }
     ]
   })
@@ -150,8 +162,8 @@ const seo = {
     <div class="container hero-container text-center">
       <div class="hero-content" style="max-width: 900px; margin: 0 auto;">
         <span class="hero-subtitle">دريل ماكس | خدماتنا</span>
-        <h1 style="text-align: center; font-size: 3rem;">خدمات قص الخرسانة وتخريم الخرسانة - قص بالواير - 01070046464</h1>
-        <p style="text-align: center; font-size: 1.3rem;">نقدم حلولاً هندسية دقيقة لتنفيذ كافة أعمال الفتحات الخرسانية والتعديلات الإنشائية، سواء كنت مقاولاً، مهندساً، أو صاحب منزل او صاحب مشروع تجاري.</p>
+        <h1 style="text-align: center; font-size: 3rem;">خدمات قص وتخريم الخرسانة وتزريع الأشاير والهدم في مصر</h1>
+        <p style="text-align: center; font-size: 1.3rem;">نقدم حلولاً هندسية دقيقة لتنفيذ كافة أعمال الفتحات الخرسانية والتعديلات الإنشائية، سواء كنت مقاولاً، مهندساً، أو صاحب منزل أو صاحب مشروع تجاري.</p>
         <div style="display: flex; gap: 15px; margin-top: 30px; justify-content: center; flex-wrap: wrap;">
           <a href="/contact/" class="btn btn-primary">اطلب خدمة الآن</a>
         </div>
@@ -162,6 +174,10 @@ const seo = {
   <!-- MAIN SERVICES OVERVIEW -->
   <section class="services-overview py-section bg-light">
     <div class="container">
+      <div class="text-center section-header">
+        <span class="section-subtitle">حلولنا الهندسية المتكاملة</span>
+        <h2>جميع خدمات دريل ماكس في مصر</h2>
+      </div>
       <div class="services-grid">
         
         <!-- Service 1 -->
@@ -175,7 +191,7 @@ const seo = {
             <ul class="styled-list">
               <li>عمل فتحات الغاز الطبيعي وفتحات المداخن وفتحات الصرف الصحي بدقة وأمان.</li>
               <li>تخريم فتحات الشفاطات المركزية وهوايات المطابخ.</li>
-              <li>فتحات التكييف المركزي ووفتحات الاسبليت وفتحات مسارات الصرف.</li>
+              <li>فتحات التكييف المركزي وفتحات السبليت وفتحات مسارات الصرف.</li>
               <li>تجهيز مسارات مواسير السباكة والصرف الصحي (فتحات الصواعد).</li>
             </ul>
             <div style="display:flex;gap:10px;flex-wrap:wrap;">
@@ -227,6 +243,66 @@ const seo = {
           </div>
         </div>
 
+        <!-- Service 4 -->
+        <div class="service-card shadow-hover">
+          <div class="service-img-wrap">
+            <img width="2080" height="2048" src="/images/تزريع-الاشاير.webp" alt="تزريع الأشاير وتدعيم الخرسانة" class="service-img" loading="lazy" />
+          </div>
+          <div class="service-content text-right">
+            <h3>تزريع الأشاير وتدعيم الخرسانة</h3>
+            <p class="service-desc">تنفيذ وصلات تزريع أشاير الحديد وربط الخرسانة الجديدة بالقديمة وتدعيم الأعمدة والأسقف بمواد معتمدة مثل Hilti وSika وكيما بوكسي.</p>
+            <ul class="styled-list">
+              <li>تزريع أشاير الأعمدة والكمرات والأسقف.</li>
+              <li>تثبيت الجوايط وقواعد الماكينات الصناعية.</li>
+              <li>معالجة التعشيش وتدعيم العناصر الإنشائية.</li>
+            </ul>
+            <div style="display:flex;gap:10px;flex-wrap:wrap;">
+              <a href="/%d8%aa%d8%b2%d8%b1%d9%8a%d8%b9-%d8%a7%d9%84%d8%a7%d8%b4%d8%a7%d9%8a%d8%b1/" class="btn btn-primary" style="flex:1;min-width:140px;">اعرف أكثر</a>
+              <a href="/contact/" class="btn btn-outline-primary" style="flex:1;min-width:140px;">استفسر الآن</a>
+            </div>
+          </div>
+        </div>
+
+        <!-- Service 5 -->
+        <div class="service-card shadow-hover">
+          <div class="service-img-wrap">
+            <img width="1200" height="1200" src="/images/exhaust-fan-foundation.webp" alt="تركيب شفاط المطبخ وتأسيس المداخن" class="service-img" loading="lazy" />
+          </div>
+          <div class="service-content text-right">
+            <h3>تركيب الشفاطات وتأسيس المداخن</h3>
+            <p class="service-desc">فني شفاطات متخصص لتركيب شفاطات المطابخ والحمامات (بلت إن، هرمي، مسطح، سقفي) وتجهيز فتحات الكور ومسارات الدكت.</p>
+            <ul class="styled-list">
+              <li>تأسيس فتحة الشفاط في الخرسانة بالكور دريل.</li>
+              <li>تركيب الشفاطات المسطحة والهرمية والمدمجة.</li>
+              <li>تمديد الدكت والعزل والهوايات الخارجية.</li>
+            </ul>
+            <div style="display:flex;gap:10px;flex-wrap:wrap;">
+              <a href="/%d9%81%d9%86%d9%8a-%d8%b4%d9%81%d8%a7%d8%b7%d8%a7%d8%aa/" class="btn btn-primary" style="flex:1;min-width:140px;">اعرف أكثر</a>
+              <a href="/contact/" class="btn btn-outline-primary" style="flex:1;min-width:140px;">استفسر الآن</a>
+            </div>
+          </div>
+        </div>
+
+        <!-- Service 6 -->
+        <div class="service-card shadow-hover">
+          <div class="service-img-wrap">
+            <img width="1000" height="712" src="/images/demolition.webp" alt="مقاول هدم وتكسير وتشوين مخلفات" class="service-img" loading="lazy" />
+          </div>
+          <div class="service-content text-right">
+            <h3>مقاول هدم وتكسير وتشوين</h3>
+            <p class="service-desc">أعمال تكسير الحوائط والأرضيات وتجهيز الشقق والمحلات للتجديد مع فرز وتشوين ونقل المخلفات وتسليم الموقع نظيفاً.</p>
+            <ul class="styled-list">
+              <li>تكسير الحوائط والأرضيات والحمامات والمطابخ.</li>
+              <li>تجهيز المواقع السكنية والتجارية والصناعية.</li>
+              <li>رفع ونقل المخلفات وتسليم الموقع نظيفاً.</li>
+            </ul>
+            <div style="display:flex;gap:10px;flex-wrap:wrap;">
+              <a href="/%d9%85%d9%82%d8%a7%d9%88%d9%84-%d9%87%d8%af%d9%85/" class="btn btn-primary" style="flex:1;min-width:140px;">اعرف أكثر</a>
+              <a href="/contact/" class="btn btn-outline-primary" style="flex:1;min-width:140px;">استفسر الآن</a>
+            </div>
+          </div>
+        </div>
+
       </div>
     </div>
   </section>
@@ -235,9 +311,9 @@ const seo = {
   <section class="process-section py-section border-top">
     <div class="container">
       <div class="text-center section-header">
-        <span class="section-subtitle">خطوات العمل معنا</span>
-        <h2>عملية طلب قص خرسانة و تخريم خرسانة وعمل فتحات كور لتنفيذ الخدمة ببساطة</h2>
-        <p style="color: var(--gray); font-size: 1.1rem; max-width: 600px; margin: 0 auto;">نؤمن بالشفافية والوضوح في كل خطوة. إليك كيف يمكنك الحصول على خدماتنا لقص وتخريم الخرسانة.</p>
+        <span class="section-subtitle">خطوات التنفيذ</span>
+        <h2>كيف تطلب خدماتنا وتبدأ تنفيذ مشروعك ببساطة</h2>
+        <p style="color: var(--gray); font-size: 1.1rem; max-width: 600px; margin: 0 auto;">نؤمن بالشفافية والوضوح في كل خطوة، مع تسعير مفصل في <a href="/prices/" style="color: var(--primary); font-weight: 700;">صفحة الأسعار</a> وتغطية شاملة في <a href="/service-areas/" style="color: var(--primary); font-weight: 700;">جميع محافظات مصر</a>.</p>
       </div>
       
       <div class="process-grid mt-5">
@@ -274,12 +350,12 @@ const seo = {
         </div>
         
         <div class="guide-content">
-          <h4>مقدمة: إعادة تعريف التعامل مع الخرسانة في مصر</h4>
+          <h3>مقدمة: إعادة تعريف التعامل مع الخرسانة في مصر</h3>
           <p>في قلب كل مشروع بناء ناجح تكمن القدرة على التعامل مع الخرسانة بدقة وقوة. لم تعد عمليات التعديل الإنشائي تقتصر على الهدم العشوائي، بل أصبحت فنًا هندسيًا يتطلب خبرة وتقنيات متقدمة. في Drill Max، نحن لا نرى الخرسانة كعائق، بل كلوحة قابلة للتشكيل. نقدم مجموعة متكاملة من الحلول التي تغطي كافة مستويات التعامل مع الخرسانة المسلحة، بدءًا من عمل الفتحات الدقيقة التي تتطلبها التشطيبات الحديثة، وصولًا إلى تنفيذ التعديلات الإنشائية المعقدة التي تغير من شكل المبنى بالكامل. نحن شريكك الهندسي الذي يضمن تنفيذ مشروعك بأمان، دقة، وكفاءة لا مثيل لها.</p>
 
           <hr class="separator" />
 
-          <h4>تخريم الخرسانة ب<a href="/core-drilling-صنايعي-كور/">الكور دريل</a></h4>
+          <h3>تخريم الخرسانة ب<a href="/core-drilling-صنايعي-كور/">الكور دريل</a></h3>
           <p>تعتبر تقنية الكور دريل هي المعيار الذهبي عندما يتعلق الأمر بعمل فتحات أسطوانية نظيفة في الهياكل الخرسانية. على عكس التكسير العشوائي الذي يسبب اهتزازات ضارة ويؤدي إلى تصدعات دقيقة، فإن عملية التخريم بالكور هي عملية قص دائرية ناعمة تحافظ بالكامل على السلامة الإنشائية للجدار أو السقف. فريقنا من أمهر <a href="/core-drilling-صنايعي-كور/">فنيي الكور</a> يستخدم أحدث المعدات لضمان تنفيذ فتحات بحواف مثالية لا تتطلب أي أعمال ترميم لاحقة، مما يجعلها الحل الأمثل للمباني المأهولة والمشاريع التي تتطلب أعلى معايير الجودة.</p>
           
           <h5 class="mt-4 text-dark">أهم تطبيقات خدمة الكور دريل:</h5>
@@ -298,7 +374,7 @@ const seo = {
 
           <hr class="separator" />
 
-          <h4><a href="/saw-cuttingقص-خرسانة/" style="color: inherit;">قص الخرسانة بالمنشار</a> الماسي</h4>
+          <h3><a href="/saw-cuttingقص-خرسانة/" style="color: inherit;">قص الخرسانة بالمنشار</a> الماسي</h3>
           <p>عندما تتجاوز المتطلبات مجرد فتحة دائرية، وتتطلب تعديلات معمارية كبرى، يصبح <a href="/saw-cuttingقص-خرسانة/">القص بالمنشار الماسي</a> هو الحل الهندسي الأمثل. نحن متخصصون في استخدام المنشار الجداري والمنشار الأرضي لتنفيذ تقطيع الخرسانة المسلحة بدقة متناهية. هذه الخدمة تسمح للمهندسين والمقاولين بإعادة هيكلة المساحات، وتنفيذ تصميمات جديدة، وإزالة أجزاء كاملة من الهيكل الخرساني بشكل آمن ومدروس.</p>
 
           <h5 class="mt-4 text-dark">أهم تطبيقات خدمة القص بالمنشار:</h5>
@@ -317,8 +393,8 @@ const seo = {
 
           <hr class="separator" />
 
-          <h4>القطع بالواير الماسي</h4>
-          <p>للمشاريع الاستثنائية التي تفوق قدرات المعدات التقليدية، نقدم خدمة القطع بالواير الماسي (Wire Sawing). هذه التقنية المتطورة هي قمة الحلول الهندسية، حيث تسمح بقص كتل خرسانية ضخمة بأي سمك وفي أصعب الظروف. يعمل الواير الماسي المرصع بالألماس على قطع الخرسانة بهدوء وبدون أي اهتزازات تقريبًا، مما يجعله الحل الوحيد للمشاريع الحساسة والإنشاءات العملاقة.</p>
+          <h3>القطع بالواير الماسي</h3>
+          <p>للمشاريع الاستثنائية التي تفوق قدرات المعدات التقليدية، نقدم خدمة القطع بالواير الماسي (Wire Sawing). هذه التقنية المتطورة هي قمة الحلول الهندسية، حيث تسمح بقص كتل خرسانية ضخمة بأي سمك وفي أصعب الظروف. يعمل الواير الماسي المرصع بالألماس على قطع الخرسانة بهدوء ومع تقليل الاهتزازات تقريبًا، مما يجعله الحل الوحيد للمشاريع الحساسة والإنشاءات العملاقة.</p>
 
           <h5 class="mt-4 text-dark">أهم تطبيقات خدمة القطع بالواير:</h5>
           <ul class="styled-list mb-4">
@@ -424,8 +500,8 @@ const seo = {
   /* Hero Section */
   .hero {
     position: relative;
-    height: 60vh;
-    min-height: 450px;
+    min-height: 440px;
+    padding: 72px 0;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -447,7 +523,7 @@ const seo = {
     z-index: 2;
   }
   .hero-subtitle {
-    color: var(--primary);
+    color: #fdba74;
     font-size: 1.2rem;
     font-weight: 700;
     margin-bottom: 15px;
@@ -569,7 +645,7 @@ const seo = {
     max-width: 1000px;
     margin: 0 auto;
   }
-  .guide-content h4 {
+  .guide-content h3, .guide-content h4 {
     color: var(--dark);
     font-size: 1.6rem;
     margin-top: 30px;

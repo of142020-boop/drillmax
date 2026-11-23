@@ -1,0 +1,281 @@
+---
+import MainLayout from '../layouts/MainLayout.astro';
+
+const PHONE = "01070046464";
+const WHATSAPP = `https://wa.me/2${PHONE}`;
+
+const AREAS = [
+  { name: "العاصمة الإدارية الجديدة (R3 – R7 – R8 – الداون تاون)", popular: true },
+  { name: "مدينتي (كل المجموعات والفيلات)", popular: true },
+  { name: "مدينة الشروق وهليوبوليس الجديدة", popular: true },
+  { name: "مدينة الرحاب (القديمة والامتداد)", popular: true },
+  { name: "مدينة بدر وحدائق العاصمة", popular: false },
+  { name: "مدينة العبور والعبور الجديدة", popular: false },
+  { name: "مدينة المستقبل (المستقبل سيتي)", popular: false },
+  { name: "الحي المالي ومنطقة الأعمال المركزية (CBD)", popular: false },
+  { name: "العاشر من رمضان والمنطقة الصناعية", popular: false },
+  { name: "طريق السويس والإسماعيلية الصحراوي", popular: false },
+];
+
+const STATS = [
+  { num: "+400", label: "وحدة ومشروع بشرق القاهرة" },
+  { num: "نفس اليوم", label: "استجابة سريعة للمعاينة" },
+  { num: "0%", label: "تكسير عشوائي أو غبار" },
+  { num: "MEP", label: "عقود مقاولين وكميات" },
+];
+
+const SERVICES = [
+  { icon: "🏗️", title: "فتحات كور MEP للمولات والأبراج بالعاصمة الإدارية", desc: "تنفيذ مئات فتحات الكور بمسارات الكابلات والصرف والتكييف المركزي بدقة هندسية والتزام بالجدول الزمني.", details: "خصومات خاصة للكميات والمقاولين" },
+  { icon: "🏡", title: "فتحات تكييف وغاز وشفاطات في مدينتي والشروق", desc: "تخريم خرسانة نظيف للشقق والفيلات المشطبة (أقطار 2 إلى 8 بوصة) دون إتلاف السيراميك أو الواجهات.", details: "التزام تام بقواعد الكمبوند" },
+  { icon: "✂️", title: "قص خرسانة بالمنشار والليزر لتعديلات الفيلات", desc: "فتح أبواب وشبابيك جديدة وقص أسقف الدوبلكس والمصاعد بحواف مستقيمة وبدون اهتزاز.", details: "أعماق حتى 70 سم" },
+  { icon: "🔩", title: "تزريع الأشاير وتدعيم الخرسانة بالكود المصري", desc: "تزريع أشاير الأعمدة والأسقف والسلالم بمواد كيمابوكسي 165 وسيكا وهيلتي المعتمدة.", details: "تنفيذ وتوريد مواد أصلية" },
+  { icon: "💨", title: "فني شفاطات وتأسيس مداخن المطابخ والحمامات", desc: "عمل فتحة الكور وتركيب الشفاط البلت إن والهرمي والسقفي مع فريق الشفاطات (01024596959).", details: "تأسيس وتشطيب نظيف" },
+  { icon: "🧱", title: "تكسير حوائط وتعديلات الشقق وتشوين المخلفات", desc: "تجهيز الشقق والمحلات للتجديد مع رفع وتشوين كامل للمخلفات وتسليم الموقع نظيفاً.", details: "إنجاز سريع ومنظم" },
+];
+
+const FAQ = [
+  {
+    q: "هل تعمل فرق دريل ماكس داخل العاصمة الإدارية الجديدة لمشاريع شركات المقاولات؟",
+    a: "نعم، ننفّذ أعمال فتحات الكور وقص الخرسانة بالمنشار والواير وتزريع الأشاير لشركات المقاولات ومكاتب الـ MEP في الداون تاون، الحي المالي، وجميع الأحياء السكنية (R3، R7، R8) مع تسعير مخصص للكميات."
+  },
+  {
+    q: "هل تصلون إلى مدينتي والرحاب والشروق لتنفيذ فتحات تكييف وغاز في الشقق المشطبة؟",
+    a: "نعم، نخدم مدينتي والرحاب والشروق وهليوبوليس الجديدة يومياً بمعدات كور ماسية بالتبريد المائي وحماية كاملة للسيراميك والأرضيات والالتزام الكامل بمواعيد العمل المسموحة في المدينة."
+  },
+  {
+    q: "ما أسعار فتحات الكور وقص الخرسانة في الشروق ومدينتي والعاصمة الإدارية؟",
+    a: "تُحسب فتحات الكور حسب القطر بالبوصة ونوع الحائط والعدد، ويُحسب القص بالمنشار بالمتر الطولي حسب السماكة وكثافة التسليح، مع خصم واضح عند تنفيذ أكثر من فتحة أو للمشاريع الكبرى."
+  },
+  {
+    q: "هل تغطون مدينة العبور والعاشر من رمضان للمصانع والمخازن؟",
+    a: "نعم، ننفّذ قص فواصل التمدد للأرضيات الخرسانية، وفتحات الكور، وقص القواعد، وتزريع جوايط الماكينات في مصانع العبور والعاشر من رمضان وبدر."
+  }
+];
+
+const schema = JSON.stringify([
+  {
+    "@context": "https://schema.org",
+    "@type": "LocalBusiness",
+    "name": "دريل ماكس لقص وتخريم الخرسانة - العاصمة الإدارية والشروق ومدينتي",
+    "description": "خدمات صنايعي كور وفتحات كور وقص الخرسانة بالمنشار والليزر وتزريع الأشاير في العاصمة الإدارية الجديدة والشروق ومدينتي والرحاب وبدر والعبور.",
+    "url": "https://drilmax.com/new-capital-shorouk-madinaty-core/",
+    "telephone": "+201070046464",
+    "priceRange": "$$",
+    "address": { "@type": "PostalAddress", "addressLocality": "العاصمة الإدارية والشروق ومدينتي", "addressRegion": "EG-C", "addressCountry": "EG" },
+    "geo": { "@type": "GeoCoordinates", "latitude": 30.0131, "longitude": 31.7346 },
+    "openingHours": "Mo-Su 08:00-22:00",
+    "areaServed": [
+      { "@type": "City", "name": "العاصمة الإدارية الجديدة" },
+      { "@type": "City", "name": "الشروق" },
+      { "@type": "City", "name": "مدينتي" },
+      { "@type": "City", "name": "الرحاب" },
+      { "@type": "City", "name": "العبور" }
+    ]
+  },
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": FAQ.map(x => ({ "@type": "Question", "name": x.q, "acceptedAnswer": { "@type": "Answer", "text": x.a } }))
+  },
+  {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      { "@type": "ListItem", "position": 1, "item": { "@id": "https://drilmax.com/", "name": "الرئيسية" } },
+      { "@type": "ListItem", "position": 2, "item": { "@id": "https://drilmax.com/service-areas/", "name": "مناطق الخدمة" } },
+      { "@type": "ListItem", "position": 3, "item": { "@id": "https://drilmax.com/new-capital-shorouk-madinaty-core/", "name": "العاصمة الإدارية والشروق ومدينتي" } }
+    ]
+  }
+]);
+---
+
+<MainLayout
+  title="قص وتخريم خرسانة العاصمة الإدارية والشروق ومدينتي | 01070046464"
+  description="مقاول فتحات كور وقص خرسانة بالمنشار وتزريع أشاير في العاصمة الإدارية والشروق ومدينتي والرحاب وبدر والعبور بدون تكسير. اتصل 01070046464."
+  canonical="/new-capital-shorouk-madinaty-core/"
+  ogImage="/images/قص-وتخريم-الخرسانة-المسلحة.webp"
+  schema={schema}
+>
+  <section class="hero">
+    <div class="hero-bg"></div>
+    <div class="container hero-container text-center">
+      <div class="hero-content" style="max-width: 920px; margin: 0 auto;">
+        <nav aria-label="breadcrumb" style="margin-bottom: 16px; font-size: 0.9rem; color: rgba(255,255,255,0.75); display:flex; align-items:center; justify-content:center; gap:6px;">
+          <a href="/" style="color: rgba(255,255,255,0.8); text-decoration: none;">الرئيسية</a>
+          <span>›</span>
+          <a href="/service-areas/" style="color: rgba(255,255,255,0.8); text-decoration: none;">مناطق الخدمة</a>
+          <span>›</span>
+          <span style="color: #fff;">العاصمة الإدارية والشروق ومدينتي</span>
+        </nav>
+        <div class="hero-rating">🏗️ <span>فرق شرق القاهرة · تغطية يومية للمدن الجديدة والمشاريع</span></div>
+        <h1 style="text-align: center; font-size: clamp(1.85rem, 4.3vw, 3.05rem); line-height: 1.35; margin-top: 12px;">
+          قص وتخريم خرسانة في العاصمة الإدارية <br />
+          <span style="color: #fdba74;">والشروق ومدينتي والرحاب والعبور</span>
+        </h1>
+        <p style="text-align: center; font-size: 1.16rem; margin-top: 18px; color: rgba(255,255,255,0.92); line-height: 1.9; max-width: 760px; margin-left: auto; margin-right: auto;">
+          مقاول فتحات كور وقص خرسانة بالمنشار الماسي والليزر وتزريع الأشاير للشقق والفيلات المشطبة ومشاريع شركات المقاولات والمصانع في شرق القاهرة والمدن الجديدة.
+        </p>
+        <div style="display: flex; gap: 12px; margin-top: 30px; justify-content: center; flex-wrap: wrap;">
+          <a href={WHATSAPP} target="_blank" rel="noopener noreferrer" class="btn btn-primary" style="font-size: 1.05rem; padding: 15px 32px;">💬 أرسل تفاصيل الموقع عبر واتساب</a>
+          <a href={`tel:+2${PHONE}`} class="btn btn-outline" style="background: rgba(255,255,255,0.12); color: #fff; border-color: rgba(255,255,255,0.45); font-size: 1.05rem; padding: 15px 32px;">📞 اتصل {PHONE}</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <div class="stats-bar">
+    <div class="container stats-inner">
+      {STATS.map(s => (
+        <div class="stat-item">
+          <div class="stat-num">{s.num}</div>
+          <div class="stat-label">{s.label}</div>
+        </div>
+      ))}
+    </div>
+  </div>
+
+  <div class="container city-page-wrapper">
+    <div class="city-page-grid">
+      <div class="city-main-content">
+        <section class="city-card">
+          <div class="inline-badge">✅ تغطية فورية لمدن شرق القاهرة والعاصمة الجديدة</div>
+          <h2 style="margin-top: 15px;">شريكك الهندسي لفتحات الكور وقص الخرسانة في العاصمة الإدارية والمدن الجديدة</h2>
+          <img width="1200" height="670" src="/images/قص-وتخريم-الخرسانة-المسلحة.webp" alt="أعمال قص وتخريم الخرسانة المسلحة في العاصمة الإدارية ومدينتي والشروق" style="width:100%; border-radius:16px; margin: 18px 0 22px; object-fit:cover; max-height:420px; box-shadow:0 10px 40px rgba(0,0,0,0.12);" loading="eager" />
+          <p>تشهد <strong>العاصمة الإدارية الجديدة</strong> ومدن <strong>مدينتي والشروق والرحاب وبدر والمستقبل سيتي والعبور</strong> أعلى كثافة مشاريع إنشائية وتشطيبات سكنية وإدارية في مصر؛ وهو ما يتطلب تنفيذ <a href="/core-drilling-صنايعي-كور/">فتحات الكور الماسي</a> و<a href="/saw-cuttingقص-خرسانة/">قص الخرسانة بالمنشار والليزر</a> وفق المعايير الهندسية المعتمدة بدون اهتزازات أو تأخير.</p>
+          <p style="margin-top: 14px;">سواء كنت صاحب وحدة في <strong>مدينتي أو الشروق أو الرحاب</strong> تحتاج فتحات تكييف وغاز وشفاط بدون إتلاف السيراميك، أو مدير مشروع في <strong>العاصمة الإدارية أو العاشر من رمضان</strong> تحتاج مقاول كور ومنشار و<a href="/تزريع-الاشاير/">تزريع أشاير</a> بعقد كميات، فإن فرق دريل ماكس تصل إليك بسرعة وتلتزم بتسليم دقيق ونظيف.</p>
+        </section>
+
+        <section class="city-card">
+          <h2>خدماتنا في العاصمة الإدارية والشروق ومدينتي</h2>
+          <div class="services-full-grid">
+            {SERVICES.map(s => (
+              <div class="service-full-card">
+                <div class="service-icon-big">{s.icon}</div>
+                <div class="service-content">
+                  <h3>{s.title}</h3>
+                  <p>{s.desc}</p>
+                  <span class="service-tag">{s.details}</span>
+                </div>
+              </div>
+            ))}
+          </div>
+        </section>
+
+        <section class="city-card">
+          <h2>المدن والأحياء التي نغطيها يومياً في محور شرق القاهرة</h2>
+          <div class="areas-grid">
+            {AREAS.map(a => (
+              <div class={`area-card ${a.popular ? 'popular' : ''}`}>
+                <span class="area-icon">{a.popular ? '⭐' : '📍'}</span>
+                <span>{a.name}</span>
+              </div>
+            ))}
+          </div>
+          <p style="margin-top: 20px; color: var(--gray); font-size: 0.95rem; background: #f8fafc; padding: 14px; border-radius: 12px; border-right: 4px solid var(--primary);">
+            💡 راجع أيضاً خدماتنا المجاورة في <a href="/new-cairo-tagamoa-concrete-cutting-core/">التجمع الخامس والقاهرة الجديدة</a> و<a href="/تخريم-خرسانة-مدينة-نصر/">مدينة نصر</a> و<a href="/october-zayed-concrete-cutting-core/">6 أكتوبر والشيخ زايد</a> و<a href="/service-areas/">جميع محافظات مصر</a>.
+          </p>
+        </section>
+
+        <section class="city-card">
+          <h2>أسئلة شائعة من عملائنا بالعاصمة الإدارية والشروق ومدينتي</h2>
+          <div class="faq-list">
+            {FAQ.map(item => (
+              <details class="faq-item">
+                <summary class="faq-q">
+                  <span>{item.q}</span>
+                  <svg class="faq-icon" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"></polyline></svg>
+                </summary>
+                <p class="faq-a">{item.a}</p>
+              </details>
+            ))}
+          </div>
+        </section>
+      </div>
+
+      <aside class="city-sidebar">
+        <div class="sidebar-cta">
+          <h3>💬 عرض سعر فوري لشرق القاهرة</h3>
+          <p>أرسل موقعك ومقاسات الفتحات أو الأمتار المطلوبة لتأكيد السعر والموعد.</p>
+          <a href={WHATSAPP} target="_blank" rel="noopener noreferrer" class="cta-whatsapp">واتساب مباشر</a>
+          <a href={`tel:+2${PHONE}`} class="cta-phone">{PHONE}</a>
+          <div class="sidebar-trust">
+            <div>✅ أسعار خاصة للكميات والمقاولين</div>
+            <div>✅ عمل نظيف داخل الكمبوندات</div>
+          </div>
+        </div>
+
+        <div class="sidebar-card">
+          <h3>روابط وخدمات ذات صلة</h3>
+          {[
+            { href: "/core-drilling-صنايعي-كور/", label: "صنايعي ومقاول فتحات كور" },
+            { href: "/saw-cuttingقص-خرسانة/", label: "قص الخرسانة بالمنشار والليزر" },
+            { href: "/قص-الخرسانة-بالواير/", label: "قص الخرسانة بالواير الماسي" },
+            { href: "/مادة-تزريع-الحديد-كيمابوكسي-165/", label: "دليل مواد تزريع الحديد" },
+            { href: "/اسعار-فتحات-الكور/", label: "أسعار فتحات الكور في مصر" },
+            { href: "/new-cairo-tagamoa-concrete-cutting-core/", label: "خدمات التجمع الخامس" },
+            { href: "/service-areas/", label: "خريطة التغطية الكاملة" },
+          ].map(s => (
+            <a href={s.href} class="related-link"><span class="related-arrow">›</span>{s.label}</a>
+          ))}
+        </div>
+      </aside>
+    </div>
+  </div>
+</MainLayout>
+
+<style>
+.text-center { text-align: center; }
+.hero-rating { display:inline-flex; align-items:center; gap:8px; background:rgba(255,255,255,0.15); padding:8px 18px; border-radius:999px; font-size:0.95rem; color:white; }
+.stats-bar { background: var(--dark); padding: 30px 0; }
+.stats-inner { display:grid; grid-template-columns: repeat(4, 1fr); gap:20px; max-width:1200px; margin:0 auto; padding:0 20px; }
+.stat-item { text-align:center; }
+.stat-num { font-size: 2rem; font-weight: 900; color: #fdba74; }
+.stat-label { color: rgba(255,255,255,0.78); font-size: 0.9rem; margin-top: 4px; }
+.city-page-wrapper { max-width: 1200px; margin: 0 auto; padding: 50px 20px; }
+.city-page-grid { display: grid; grid-template-columns: 1fr 330px; gap: 30px; align-items: start; }
+.city-main-content { display: flex; flex-direction: column; gap: 28px; }
+.city-card { background: white; border-radius: 20px; border: 1px solid rgba(0,0,0,0.07); padding: 40px; box-shadow: 0 4px 24px rgba(0,0,0,0.04); }
+.inline-badge { display: inline-flex; align-items: center; gap: 6px; padding: 6px 16px; border-radius: 999px; background: #fff7ed; color: #9a3412; font-weight: 700; font-size: 0.85rem; }
+.city-card h2 { color: var(--dark); font-size: 1.7rem; margin-bottom: 14px; font-weight: 900; line-height: 1.4; }
+.city-card p { color: var(--gray); line-height: 1.95; font-size: 1.05rem; }
+.city-card a { color: #9a3412; text-decoration: underline; text-underline-offset: 3px; font-weight: 600; }
+.services-full-grid { display: flex; flex-direction: column; gap: 14px; margin-top:20px; }
+.service-full-card { display:flex; align-items:flex-start; gap:16px; padding:18px 20px; border-radius:16px; border:1px solid #e5e7eb; background:#fafafa; }
+.service-icon-big { font-size:2rem; flex-shrink:0; width:50px; text-align:center; }
+.service-content h3 { color:var(--dark); font-size:1.05rem; font-weight:900; margin-bottom:4px; }
+.service-content p { color:var(--gray); font-size:0.93rem; line-height:1.65; margin:0; }
+.service-tag { display:inline-block; margin-top:8px; padding:3px 10px; background: #ffedd5; color:#9a3412; border-radius:999px; font-size:0.8rem; font-weight:700; }
+.areas-grid { display:grid; grid-template-columns:1fr 1fr; gap:10px; margin-top:4px; }
+.area-card { display:flex; align-items:center; gap:10px; padding:12px 16px; border-radius:12px; border:1px solid #e5e7eb; background:#fafafa; font-size:0.95rem; color:var(--dark); font-weight:600; }
+.area-card.popular { border-color:#fed7aa; background:#fff7ed; color:#9a3412; font-weight:800; }
+.faq-list { display: flex; flex-direction: column; gap: 12px; margin-top:20px; }
+.faq-item { border-radius: 16px; border: 1px solid #e5e7eb; padding: 20px 24px; cursor: pointer; background: white; }
+.faq-item[open] { border-color: var(--primary); }
+.faq-q { font-weight: 800; color: var(--dark); font-size: 1.05rem; list-style: none; display: flex; justify-content: space-between; align-items: center; gap: 12px; }
+.faq-q::-webkit-details-marker { display:none; }
+.faq-icon { color: var(--primary); transition: transform 0.3s; flex-shrink:0; }
+.faq-item[open] .faq-icon { transform: rotate(180deg); }
+.faq-a { color: var(--gray); line-height: 1.9; margin: 16px 0 0; padding: 18px; background: #f8fafc; border-radius: 12px; border-right: 4px solid var(--primary); font-size: 0.95rem; }
+.city-sidebar { display: flex; flex-direction: column; gap: 20px; position: sticky; top: 24px; }
+.sidebar-cta { background: linear-gradient(135deg, #c2410c, #7c2d12); border-radius: 20px; padding: 28px; color: white; }
+.sidebar-cta h3 { font-size: 1.3rem; font-weight: 900; margin-bottom: 10px; color: #fff; }
+.sidebar-cta p { color: rgba(255,255,255,0.9); font-size: 0.95rem; line-height: 1.7; margin-bottom: 20px; }
+.cta-whatsapp { display: block; text-align: center; padding: 14px; border-radius: 14px; background: #16a34a; color: white; font-weight: 900; font-size: 1.05rem; text-decoration: none; margin-bottom: 12px; }
+.cta-phone { display: block; text-align: center; padding: 14px; border-radius: 14px; border: 2px solid rgba(255,255,255,0.5); color: white; font-weight: 900; font-size: 1.05rem; text-decoration: none; }
+.sidebar-trust { margin-top: 16px; display: flex; flex-direction: column; gap: 6px; font-size: 0.9rem; color: rgba(255,255,255,0.9); }
+.sidebar-card { background: white; border-radius: 20px; border: 1px solid rgba(0,0,0,0.08); padding: 26px; box-shadow: 0 4px 20px rgba(0,0,0,0.03); }
+.sidebar-card h3 { color: var(--dark); font-size: 1.1rem; font-weight: 900; margin-bottom: 18px; }
+.related-link { display: flex; align-items: center; gap: 10px; color: var(--gray); text-decoration: none; padding: 10px 0; border-bottom: 1px solid #f1f5f9; font-size: 0.95rem; font-weight: 700; }
+.related-link:hover { color: var(--primary); }
+.related-link:last-child { border-bottom: none; padding-bottom: 0; }
+.related-arrow { color: var(--primary); font-size: 1.2rem; }
+@media (max-width: 1024px) {
+  .city-page-grid { grid-template-columns: 1fr; }
+  .city-sidebar { position: static; }
+  .stats-inner { grid-template-columns: repeat(2,1fr); }
+}
+@media (max-width: 600px) {
+  .areas-grid { grid-template-columns: 1fr; }
+  .city-card { padding: 24px; }
+}
+</style>

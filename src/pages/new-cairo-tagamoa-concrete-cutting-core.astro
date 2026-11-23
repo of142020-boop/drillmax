@@ -1,0 +1,381 @@
+---
+import MainLayout from '../layouts/MainLayout.astro';
+
+const PHONE = "01070046464";
+const WHATSAPP = `https://wa.me/2${PHONE}`;
+
+const NEW_CAIRO_AREAS = [
+  { name: "التجمع الخامس (التسعين الشمالي والجنوبي)", popular: true },
+  { name: "بيت الوطن واللوتس والأندلس", popular: true },
+  { name: "النرجس والياسمين والبنفسج", popular: true },
+  { name: "كمبوندات ميفيدا وهايد بارك وماونتن فيو", popular: true },
+  { name: "القطامية هايتس وبالم هيلز قطامية", popular: false },
+  { name: "مدينة الرحاب ومدينتي", popular: false },
+  { name: "التجمع الأول والتجمع الثالث", popular: false },
+  { name: "الشروق وبدر والعاصمة الإدارية", popular: false },
+  { name: "المعادي وزهراء المعادي", popular: false },
+  { name: "المنطقة الصناعية بالقاهرة الجديدة", popular: false },
+];
+
+const STATS = [
+  { num: "+500", label: "فيلا ومشروع بالقاهرة الجديدة" },
+  { num: "نفس اليوم", label: "استجابة ومعاينة سريعة" },
+  { num: "0%", label: "تكسير عشوائي أو شروخ" },
+  { num: "10+", label: "سنوات خبرة هندسية" },
+];
+
+const SERVICES = [
+  { icon: "🎯", title: "فتحات كور للتكييف الكونسيلد والاسبليت", desc: "تخريم خرسانة مسلحة بأقطار 2 إلى 10 بوصة لمواسير الفريون والصرف ومسارات الدكت بدون غبار.", details: "مناسب للشقق والفيلات المشطبة" },
+  { icon: "✂️", title: "قص خرسانة بالمنشار والليزر (تعديلات فيلات)", desc: "فتح أبواب وشبابيك جديدة، قص أسقف لعمل سلم داخلي دوبلكس، أو توسعة مساحات Open Space بحواف مستقيمة.", details: "دقة ملليمترية بدون اهتزاز" },
+  { icon: "🔥", title: "فتحات الغاز الطبيعي ومداخن السخانات", desc: "تخريم فتحات هواية الغاز ومداخن السخانات بالمقاسات القياسية المطلوبة دون إتلاف السيراميك.", details: "تنفيذ في أقل من 30 دقيقة" },
+  { icon: "💨", title: "تأسيس فتحات الشفاطات والدكت والمداخن", desc: "فتحات 4 و5 و6 بوصة لشفاطات المطابخ الهرمية والبلت إن والشفاطات السقفية مع تنسيق فني الشفاطات.", details: "حماية كاملة للرخام والديكور" },
+  { icon: "🔩", title: "تزريع الأشاير وتدعيم الخرسانة", desc: "تزريع أشاير الأعمدة والأسقف والسلالم بمواد كيمابوكسي 165 وسيكا وهيلتي المعتمدة.", details: "طبقاً لاشتراطات المهندس المشرف" },
+  { icon: "🏗️", title: "قص مكان أسانسير وفتحات MEP للمقاولين", desc: "قص أسقف المصاعد وتنفيذ مئات فتحات الكور لمشاريع المولات والمكاتب الإدارية بالتسعين والعاصمة.", details: "أسعار خاصة للكميات والمقاولين" },
+];
+
+const PROCESS = [
+  { step: "01", title: "إرسال تفاصيل وصور الموقع", desc: "أرسل صور الحائط أو السقف والمقاسات المطلوبة وعنوانك في التجمع أو القاهرة الجديدة عبر واتساب أو الهاتف." },
+  { step: "02", title: "تأكيد التكلفة والموعد", desc: "نحدد لك السعر الشفاف وموعد وصول الفريق مع مراعاة مواعيد العمل المسموحة في الكمبوند." },
+  { step: "03", title: "تجهيز الحماية والتبريد المائي", desc: "تغطية الأرضيات وتجهيز نظام تجميع المياه قبل التشغيل للحفاظ على تشطيبات الفيلا أو الشقة." },
+  { step: "04", title: "التنفيذ بالكور أو المنشار الماسي", desc: "تنفيذ الفتحات أو القص بدقة هندسية بدون تكسير أو شروخ إنشائية." },
+  { step: "05", title: "التسليم والنظافة", desc: "سحب القلب الخرساني وتنظيف نقطة العمل لتسليم الفتحة جاهزة للتركيب مباشرة." },
+];
+
+const FAQ = [
+  {
+    q: "هل تصل فرق دريل ماكس إلى كمبوندات التجمع الخامس والقاهرة الجديدة؟",
+    a: "نعم، مقرنا الرئيسي قريب جداً في مدينة نصر مما يتيح وصولاً سريعاً يومياً لجميع أحياء وكمبوندات التجمع الخامس والقاهرة الجديدة (ميفيدا، هايد بارك، ماونتن فيو، بالم هيلز، بيت الوطن، اللوتس، الرحاب، ومدينتي) مع الالتزام الكامل بقواعد الهدوء والنظافة ومواعيد العمل بالكمبوند."
+  },
+  {
+    q: "هل تخريم الكور في شقة مشطبة بالتجمع الخامس يسبب بهدلة أو تلفاً للسيراميك؟",
+    a: "نستخدم ماكينات كور دريل ماسية بالتبريد المائي مع ترتيبات تجميع المياه وحماية السيراميك والرخام والأثاث المحيط، مما يمنع تطاير الغبار ويحافظ على التشطيبات القائمة."
+  },
+  {
+    q: "كم سعر فتحة الكور في التجمع الخامس والقاهرة الجديدة؟",
+    a: "يتحدد السعر حسب قطر الفتحة بالبوصة (من 1 إلى 10 بوصة)، نوع الحائط (خرسانة مسلحة أم طوب)، سماكة الجدار، وعدد الفتحات. نقدم خصماً مميزاً عند تنفيذ أكثر من فتحة أو لمشاريع المقاولين في القاهرة الجديدة."
+  },
+  {
+    q: "هل تنفذون فتحات شفاط المطبخ وتركيب الشفاط في التجمع الخامس؟",
+    a: "نعم، ننفذ فتحة الكور في الخرسانة بقطر المخرج المناسب، كما نوفر فريق فني شفاطات متخصص لتركيب شفاط المطبخ والحمام وتأسيس المدخنة والدكت (يمكنكم حجز فني الشفاطات مباشرة عبر 01024596959)."
+  },
+  {
+    q: "هل تغطون مشاريع العاصمة الإدارية والشروق ومدينتي؟",
+    a: "نعم بالتأكيد، فرقنا المتمركزة في شرق القاهرة تخدم يومياً الشروق ومدينتي والرحاب وبدر والعاصمة الإدارية الجديدة سواء لتعديلات الوحدات السكنية أو عقود شركات المقاولات."
+  }
+];
+
+const schema = JSON.stringify([
+  {
+    "@context": "https://schema.org",
+    "@type": "LocalBusiness",
+    "name": "دريل ماكس لقص وتخريم الخرسانة - التجمع الخامس والقاهرة الجديدة",
+    "description": "خدمات صنايعي كور وفتحات كور وقص الخرسانة بالمنشار والليزر وتزريع الأشاير في التجمع الخامس والقاهرة الجديدة والرحاب ومدينتي.",
+    "url": "https://drilmax.com/new-cairo-tagamoa-concrete-cutting-core/",
+    "telephone": "+201070046464",
+    "priceRange": "$$",
+    "address": { "@type": "PostalAddress", "addressLocality": "التجمع الخامس - القاهرة الجديدة", "addressRegion": "EG-C", "addressCountry": "EG" },
+    "geo": { "@type": "GeoCoordinates", "latitude": 30.0074, "longitude": 31.4913 },
+    "openingHours": "Mo-Su 08:00-22:00",
+    "areaServed": [
+      { "@type": "City", "name": "التجمع الخامس" },
+      { "@type": "City", "name": "القاهرة الجديدة" },
+      { "@type": "City", "name": "الرحاب" },
+      { "@type": "City", "name": "مدينتي" }
+    ]
+  },
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": FAQ.map(x => ({ "@type": "Question", "name": x.q, "acceptedAnswer": { "@type": "Answer", "text": x.a } }))
+  },
+  {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      { "@type": "ListItem", "position": 1, "item": { "@id": "https://drilmax.com", "name": "الرئيسية" } },
+      { "@type": "ListItem", "position": 2, "item": { "@id": "https://drilmax.com/service-areas/", "name": "مناطق الخدمة" } },
+      { "@type": "ListItem", "position": 3, "item": { "@id": "https://drilmax.com/new-cairo-tagamoa-concrete-cutting-core/", "name": "التجمع الخامس والقاهرة الجديدة" } }
+    ]
+  }
+]);
+---
+
+<MainLayout
+  title="فتحات كور وقص خرسانة في التجمع الخامس والقاهرة الجديدة | 01070046464"
+  description="صنايعي ومقاول فتحات كور وقص خرسانة بالمنشار والليزر في التجمع الخامس والقاهرة الجديدة والرحاب ومدينتي بدون غبار أو اهتزاز. اتصل 01070046464."
+  canonical="/new-cairo-tagamoa-concrete-cutting-core/"
+  ogImage="/images/صنايعي-كور-في-التجمع.webp"
+  schema={schema}
+>
+  <section class="hero">
+    <div class="hero-bg"></div>
+    <div class="container hero-container text-center">
+      <div class="hero-content" style="max-width: 900px; margin: 0 auto;">
+        <nav aria-label="breadcrumb" style="margin-bottom: 16px; font-size: 0.9rem; color: rgba(255,255,255,0.75); display:flex; align-items:center; justify-content:center; gap:6px;">
+          <a href="/" style="color: rgba(255,255,255,0.8); text-decoration: none;">الرئيسية</a>
+          <span>›</span>
+          <a href="/service-areas/" style="color: rgba(255,255,255,0.8); text-decoration: none;">مناطق الخدمة</a>
+          <span>›</span>
+          <span style="color: #fff;">التجمع الخامس والقاهرة الجديدة</span>
+        </nav>
+        <div class="hero-rating">⭐ <span>فريق شرق القاهرة · وصول سريع لجميع كمبوندات التجمع</span></div>
+        <h1 style="text-align: center; font-size: clamp(1.9rem, 4.5vw, 3.1rem); line-height: 1.35; margin-top: 12px;">
+          فتحات كور وقص خرسانة في التجمع الخامس <br />
+          <span style="color: #fdba74;">والقاهرة الجديدة والرحاب ومدينتي</span>
+        </h1>
+        <p style="text-align: center; font-size: 1.18rem; margin-top: 18px; color: rgba(255,255,255,0.92); line-height: 1.9; max-width: 740px; margin-left: auto; margin-right: auto;">
+          صنايعي كور ومقاول قص خرسانة بالمنشار الماسي والليزر لتنفيذ فتحات التكييف والغاز والشفاطات وتعديلات الفيلات والشقق المشطبة في التجمع الخامس بأعلى نظافة وبدون اهتزاز.
+        </p>
+        <div style="display: flex; gap: 12px; margin-top: 30px; justify-content: center; flex-wrap: wrap;">
+          <a href={WHATSAPP} target="_blank" rel="noopener noreferrer" class="btn btn-primary" style="font-size: 1.05rem; padding: 15px 32px;">💬 أرسل الصور عبر واتساب</a>
+          <a href={`tel:+2${PHONE}`} class="btn btn-outline" style="background: rgba(255,255,255,0.12); color: #fff; border-color: rgba(255,255,255,0.45); font-size: 1.05rem; padding: 15px 32px;">📞 اتصل {PHONE}</a>
+        </div>
+        <div class="hero-trust">
+          <span>✅ نظافة تامة للشقق المشطبة</span>
+          <span>✅ التزام بمواعيد الكمبوندات</span>
+          <span>✅ بدون شروخ أو تكسير</span>
+          <span>✅ تسعير شفاف قبل البدء</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <div class="stats-bar">
+    <div class="container stats-inner">
+      {STATS.map(s => (
+        <div class="stat-item">
+          <div class="stat-num">{s.num}</div>
+          <div class="stat-label">{s.label}</div>
+        </div>
+      ))}
+    </div>
+  </div>
+
+  <div class="container city-page-wrapper">
+    <div class="city-page-grid">
+      <div class="city-main-content">
+        <section class="city-card">
+          <div class="inline-badge">✅ فريق متخصص في شرق القاهرة والقاهرة الجديدة</div>
+          <h2 style="margin-top: 15px;">صنايعي كور وقص خرسانة بالتجمع الخامس بدون إزعاج أو تكسير</h2>
+          <img width="1200" height="800" src="/images/صنايعي-كور-في-التجمع.webp" alt="صنايعي كور وتخريم خرسانة في التجمع الخامس والقاهرة الجديدة من دريل ماكس" style="width:100%; border-radius:16px; margin: 18px 0 22px; object-fit:cover; max-height:420px; box-shadow:0 10px 40px rgba(0,0,0,0.12);" loading="eager" />
+          <p>تتسم الفيلات والشقق الحديثة في <strong>التجمع الخامس والقاهرة الجديدة</strong> بوجود تشطيبات فاخرة وتمديدات تكييف مركزي (كونسيلد) وأنظمة سمارت هوم وجبس بورد، وهو ما يجعل التكسير التقليدي بالهيلتي مخاطرة حقيقية على الديكور والهيكل الخرساني.</p>
+          <p style="margin-top: 14px;">لذلك نعتمد في <strong>دريل ماكس</strong> على تقنية <a href="/core-drilling-صنايعي-كور/">فتحات الكور الماسي</a> و<a href="/saw-cuttingقص-خرسانة/">قص الخرسانة بالمنشار والليزر</a> بالتبريد المائي وتجميع المياه؛ لنمنحك فتحة دائرية أو قصاً مستقيماً بدقة ملليمترية تحافظ على الهدوء والنظافة المطلوبين داخل الكمبوندات الراقية.</p>
+          <div class="check-grid">
+            <div class="check-item"><span class="check-icon">✓</span> قرب مقرنا بمدينة نصر لسرعة الوصول</div>
+            <div class="check-item"><span class="check-icon">✓</span> حماية السيراميك والرخام والدهانات</div>
+            <div class="check-item"><span class="check-icon">✓</span> أقطار من 1 بوصة حتى 12+ بوصة</div>
+            <div class="check-item"><span class="check-icon">✓</span> قص أسقف دوبلكس ومصاعد وأبواب</div>
+            <div class="check-item"><span class="check-icon">✓</span> تزريع أشاير بمواد معتمدة</div>
+            <div class="check-item"><span class="check-icon">✓</span> فني شفاطات وتأسيس مداخن</div>
+          </div>
+        </section>
+
+        <section class="city-card">
+          <h2>خدماتنا في التجمع الخامس والقاهرة الجديدة</h2>
+          <p style="color: var(--gray); margin-bottom: 24px;">حلول متكاملة لأصحاب الفيلات والشقق ومكاتب التشطيب وشركات المقاولات:</p>
+          <div class="services-full-grid">
+            {SERVICES.map(s => (
+              <div class="service-full-card">
+                <div class="service-icon-big">{s.icon}</div>
+                <div class="service-content">
+                  <h3>{s.title}</h3>
+                  <p>{s.desc}</p>
+                  <span class="service-tag">{s.details}</span>
+                </div>
+              </div>
+            ))}
+          </div>
+        </section>
+
+        <section class="city-card">
+          <h2>خطوات طلب صنايعي كور أو قص خرسانة بالتجمع الخامس</h2>
+          <div class="process-list">
+            {PROCESS.map(p => (
+              <div class="process-item">
+                <div class="process-step">{p.step}</div>
+                <div class="process-content">
+                  <h3>{p.title}</h3>
+                  <p>{p.desc}</p>
+                </div>
+              </div>
+            ))}
+          </div>
+        </section>
+
+        <section class="city-card">
+          <h2>الأحياء والكمبوندات التي نغطيها يومياً في القاهرة الجديدة</h2>
+          <div class="areas-grid">
+            {NEW_CAIRO_AREAS.map(a => (
+              <div class={`area-card ${a.popular ? 'popular' : ''}`}>
+                <span class="area-icon">{a.popular ? '⭐' : '📍'}</span>
+                <span>{a.name}</span>
+              </div>
+            ))}
+          </div>
+          <p style="margin-top: 20px; color: var(--gray); font-size: 0.95rem; background: #f8fafc; padding: 14px; border-radius: 12px; border-right: 4px solid var(--primary);">
+            💡 تحتاج الخدمة في منطقة مجاورة؟ نغطي أيضاً <a href="/new-capital-shorouk-madinaty-core/">العاصمة الإدارية والشروق ومدينتي</a> و<a href="/تخريم-خرسانة-مدينة-نصر/">مدينة نصر</a> و<a href="/فتحات-كور-الحي-العاشر/">الحي العاشر</a> و<a href="/october-zayed-concrete-cutting-core/">6 أكتوبر والشيخ زايد</a> و<a href="/service-areas/">جميع محافظات مصر</a>.
+          </p>
+        </section>
+
+        <section class="city-card">
+          <h2>أسئلة شائعة من عملائنا في التجمع الخامس والقاهرة الجديدة</h2>
+          <div class="faq-list">
+            {FAQ.map(item => (
+              <details class="faq-item">
+                <summary class="faq-q">
+                  <span>{item.q}</span>
+                  <svg class="faq-icon" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"></polyline></svg>
+                </summary>
+                <p class="faq-a">{item.a}</p>
+              </details>
+            ))}
+          </div>
+        </section>
+      </div>
+
+      <aside class="city-sidebar">
+        <div class="sidebar-cta">
+          <h3>💬 اطلب معاينة بالتجمع الخامس</h3>
+          <p>أرسل صور ومقاسات الفتحات الآن لتحديد السعر وأقرب موعد تنفيذ.</p>
+          <a href={WHATSAPP} target="_blank" rel="noopener noreferrer" class="cta-whatsapp">واتساب مباشر</a>
+          <a href={`tel:+2${PHONE}`} class="cta-phone">{PHONE}</a>
+          <div class="sidebar-trust">
+            <div>✅ استشارة فنية مجانية</div>
+            <div>✅ أسعار شفافة بدون رسوم خفية</div>
+          </div>
+        </div>
+
+        <div class="sidebar-card quick-info">
+          <h3>معلومات سريعة</h3>
+          <div class="info-row"><span>⏰ أوقات العمل</span><span>يومياً 8 ص – 10 م</span></div>
+          <div class="info-row"><span>📍 التغطية</span><span>القاهرة الجديدة بالكامل</span></div>
+          <div class="info-row"><span>⚙️ المعدات</span><span>كور ومنشار ماسي</span></div>
+          <div class="info-row"><span>⚡ سرعة الوصول</span><span>نفس اليوم</span></div>
+        </div>
+
+        <div class="sidebar-card">
+          <h3>روابط وخدمات ذات صلة</h3>
+          {[
+            { href: "/core-drilling-صنايعي-كور/", label: "صنايعي ومقاول فتحات كور" },
+            { href: "/saw-cuttingقص-خرسانة/", label: "قص الخرسانة بالمنشار والليزر" },
+            { href: "/اسعار-فتحات-الكور/", label: "أسعار فتحات الكور بالتفصيل" },
+            { href: "/prices/", label: "جدول الأسعار الشامل" },
+            { href: "/تزريع-الاشاير/", label: "تزريع الأشاير وتدعيم الخرسانة" },
+            { href: "/فني-شفاطات/", label: "فني شفاطات التجمع الخامس" },
+            { href: "/service-areas/", label: "كل مناطق التغطية بمصر" },
+          ].map(s => (
+            <a href={s.href} class="related-link"><span class="related-arrow">›</span>{s.label}</a>
+          ))}
+        </div>
+      </aside>
+    </div>
+
+    <section class="bottom-cta">
+      <div class="bottom-cta-glow"></div>
+      <div class="bottom-cta-content">
+        <div class="bottom-cta-text">
+          <span class="cta-badge">⭐ فريق التجمع الخامس والقاهرة الجديدة</span>
+          <h2>نفّذ فتحات الكور وقص الخرسانة بأمان ونظافة</h2>
+          <p>تواصل مع دريل ماكس الآن لتنفيذ أعمال التخريم والقص في فيلتك أو شقتك أو مشروعك التجاري بالقاهرة الجديدة والرحاب ومدينتي.</p>
+          <div class="cta-phone-big">{PHONE}</div>
+          <div class="cta-bottom-badges">
+            <span>✅ بدون غبار</span>
+            <span>✅ بدون اهتزازات</span>
+            <span>✅ التزام بالمواعيد</span>
+          </div>
+        </div>
+        <div class="bottom-cta-buttons">
+          <a href={WHATSAPP} target="_blank" rel="noopener noreferrer" class="btn-wa">💬 تواصل عبر الواتساب</a>
+          <a href={`tel:+2${PHONE}`} class="btn-call">📞 اتصل هاتفياً الآن</a>
+        </div>
+      </div>
+    </section>
+  </div>
+</MainLayout>
+
+<style>
+.text-center { text-align: center; }
+.hero-rating { display:inline-flex; align-items:center; gap:8px; background:rgba(255,255,255,0.15); padding:8px 18px; border-radius:999px; font-size:0.95rem; color:white; backdrop-filter:blur(4px); }
+.hero-trust { display:flex; flex-wrap:wrap; gap:16px; justify-content:center; margin-top:20px; }
+.hero-trust span { color:rgba(255,255,255,0.88); font-size:0.95rem; display:flex; align-items:center; gap:4px; }
+.stats-bar { background: var(--dark); padding: 30px 0; }
+.stats-inner { display:grid; grid-template-columns: repeat(4, 1fr); gap:20px; max-width:1200px; margin:0 auto; padding:0 20px; }
+.stat-item { text-align:center; }
+.stat-num { font-size: 2rem; font-weight: 900; color: #fdba74; }
+.stat-label { color: rgba(255,255,255,0.78); font-size: 0.9rem; margin-top: 4px; }
+.city-page-wrapper { max-width: 1200px; margin: 0 auto; padding: 50px 20px; }
+.city-page-grid { display: grid; grid-template-columns: 1fr 330px; gap: 30px; align-items: start; }
+.city-main-content { display: flex; flex-direction: column; gap: 28px; }
+.city-card { background: white; border-radius: 20px; border: 1px solid rgba(0,0,0,0.07); padding: 40px; box-shadow: 0 4px 24px rgba(0,0,0,0.04); }
+.inline-badge { display: inline-flex; align-items: center; gap: 6px; padding: 6px 16px; border-radius: 999px; background: #fff7ed; color: #9a3412; font-weight: 700; font-size: 0.85rem; }
+.city-card h2 { color: var(--dark); font-size: 1.7rem; margin-bottom: 14px; font-weight: 900; line-height: 1.4; }
+.city-card p { color: var(--gray); line-height: 1.95; font-size: 1.05rem; }
+.city-card a { color: #9a3412; text-decoration: underline; text-underline-offset: 3px; font-weight: 600; }
+.check-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; margin-top: 24px; }
+.check-item { display:flex; align-items:center; gap:8px; padding: 12px 16px; background: #f8fafc; border-radius: 12px; border: 1px solid #e2e8f0; color: var(--dark); font-weight: 700; font-size: 0.95rem; }
+.check-icon { color: var(--primary); font-weight:900; font-size:1.1rem; }
+.services-full-grid { display: flex; flex-direction: column; gap: 14px; margin-top:20px; }
+.service-full-card { display:flex; align-items:flex-start; gap:16px; padding:18px 20px; border-radius:16px; border:1px solid #e5e7eb; background:#fafafa; transition:all 0.25s; }
+.service-full-card:hover { border-color: var(--primary); box-shadow:0 6px 24px rgba(0,0,0,0.07); transform:translateX(-4px); }
+.service-icon-big { font-size:2rem; flex-shrink:0; width:50px; text-align:center; }
+.service-content h3 { color:var(--dark); font-size:1.05rem; font-weight:900; margin-bottom:4px; }
+.service-content p { color:var(--gray); font-size:0.93rem; line-height:1.65; margin:0; }
+.service-tag { display:inline-block; margin-top:8px; padding:3px 10px; background: #ffedd5; color:#9a3412; border-radius:999px; font-size:0.8rem; font-weight:700; }
+.process-list { display:flex; flex-direction:column; }
+.process-item { display:flex; gap:20px; align-items:flex-start; padding:20px 0; border-bottom:1px solid #f1f5f9; }
+.process-item:last-child { border-bottom:none; }
+.process-step { width:44px; height:44px; border-radius:50%; background: var(--primary); color:white; font-weight:900; font-size:0.9rem; display:flex; align-items:center; justify-content:center; flex-shrink:0; }
+.process-content h3 { color:var(--dark); font-weight:900; font-size:1.05rem; margin-bottom:6px; }
+.process-content p { color:var(--gray); font-size:0.95rem; line-height:1.7; margin:0; }
+.areas-grid { display:grid; grid-template-columns:1fr 1fr; gap:10px; margin-top:4px; }
+.area-card { display:flex; align-items:center; gap:10px; padding:12px 16px; border-radius:12px; border:1px solid #e5e7eb; background:#fafafa; font-size:0.95rem; color:var(--dark); font-weight:600; }
+.area-card.popular { border-color:#fed7aa; background:#fff7ed; color:#9a3412; font-weight:800; }
+.faq-list { display: flex; flex-direction: column; gap: 12px; margin-top:20px; }
+.faq-item { border-radius: 16px; border: 1px solid #e5e7eb; padding: 20px 24px; cursor: pointer; background: white; }
+.faq-item[open] { border-color: var(--primary); }
+.faq-q { font-weight: 800; color: var(--dark); font-size: 1.05rem; list-style: none; display: flex; justify-content: space-between; align-items: center; gap: 12px; }
+.faq-q::-webkit-details-marker { display:none; }
+.faq-icon { color: var(--primary); transition: transform 0.3s; flex-shrink:0; }
+.faq-item[open] .faq-icon { transform: rotate(180deg); }
+.faq-a { color: var(--gray); line-height: 1.9; margin: 16px 0 0; padding: 18px; background: #f8fafc; border-radius: 12px; border-right: 4px solid var(--primary); font-size: 0.95rem; }
+.city-sidebar { display: flex; flex-direction: column; gap: 20px; position: sticky; top: 24px; }
+.sidebar-cta { background: linear-gradient(135deg, #c2410c, #7c2d12); border-radius: 20px; padding: 28px; color: white; }
+.sidebar-cta h3 { font-size: 1.3rem; font-weight: 900; margin-bottom: 10px; color: #fff; }
+.sidebar-cta p { color: rgba(255,255,255,0.9); font-size: 0.95rem; line-height: 1.7; margin-bottom: 20px; }
+.cta-whatsapp { display: block; text-align: center; padding: 14px; border-radius: 14px; background: #16a34a; color: white; font-weight: 900; font-size: 1.05rem; text-decoration: none; margin-bottom: 12px; }
+.cta-phone { display: block; text-align: center; padding: 14px; border-radius: 14px; border: 2px solid rgba(255,255,255,0.5); color: white; font-weight: 900; font-size: 1.05rem; text-decoration: none; }
+.sidebar-trust { margin-top: 16px; display: flex; flex-direction: column; gap: 6px; font-size: 0.9rem; color: rgba(255,255,255,0.9); }
+.sidebar-card { background: white; border-radius: 20px; border: 1px solid rgba(0,0,0,0.08); padding: 26px; box-shadow: 0 4px 20px rgba(0,0,0,0.03); }
+.sidebar-card h3 { color: var(--dark); font-size: 1.1rem; font-weight: 900; margin-bottom: 18px; }
+.quick-info .info-row { display:flex; justify-content:space-between; align-items:center; padding:10px 0; border-bottom:1px solid #f1f5f9; font-size:0.9rem; }
+.quick-info .info-row:last-child { border-bottom:none; }
+.quick-info .info-row span:first-child { color:var(--gray); }
+.quick-info .info-row span:last-child { color:var(--dark); font-weight:800; }
+.related-link { display: flex; align-items: center; gap: 10px; color: var(--gray); text-decoration: none; padding: 10px 0; border-bottom: 1px solid #f1f5f9; font-size: 0.95rem; font-weight: 700; }
+.related-link:hover { color: var(--primary); }
+.related-link:last-child { border-bottom: none; padding-bottom: 0; }
+.related-arrow { color: var(--primary); font-size: 1.2rem; }
+.bottom-cta { margin-top: 50px; border-radius: 24px; background: var(--dark); color: white; overflow: hidden; position: relative; padding: 64px 56px; }
+.bottom-cta-glow { position: absolute; inset: 0; background: radial-gradient(circle at 80% 50%, rgba(194,65,12,0.32), transparent 55%); }
+.bottom-cta-content { position: relative; z-index: 1; display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 40px; }
+.bottom-cta-text { max-width: 620px; }
+.cta-badge { display: inline-flex; align-items:center; gap:6px; padding: 8px 20px; border-radius: 999px; background: rgba(251,146,60,0.18); color: #fdba74; font-weight: 800; font-size: 0.9rem; margin-bottom: 20px; border: 1px solid rgba(251,146,60,0.35); }
+.bottom-cta-text h2 { font-size: clamp(1.7rem, 3vw, 2.4rem); font-weight: 900; margin-bottom: 16px; line-height: 1.3; color: #fff; }
+.bottom-cta-text p { color: rgba(255,255,255,0.85); line-height: 1.9; font-size:1.08rem; }
+.cta-phone-big { margin-top: 16px; font-size: 2rem; font-weight: 900; color: #fdba74; }
+.cta-bottom-badges { display:flex; flex-wrap:wrap; gap:12px; margin-top:16px; color:rgba(255,255,255,0.85); font-size:0.9rem; }
+.bottom-cta-buttons { display: flex; flex-direction: column; gap: 14px; min-width: 250px; }
+.btn-wa { display: flex; align-items: center; justify-content: center; gap:8px; background: #16a34a; color: white; padding: 18px 30px; border-radius: 16px; font-weight: 900; font-size: 1.1rem; text-decoration: none; }
+.btn-call { display: flex; align-items: center; justify-content: center; gap:8px; background: white; color: var(--dark); padding: 18px 30px; border-radius: 16px; font-weight: 900; font-size: 1.1rem; text-decoration: none; }
+@media (max-width: 1024px) {
+  .city-page-grid { grid-template-columns: 1fr; }
+  .city-sidebar { position: static; }
+  .stats-inner { grid-template-columns: repeat(2,1fr); }
+  .bottom-cta { padding: 48px 32px; }
+}
+@media (max-width: 600px) {
+  .check-grid, .areas-grid { grid-template-columns: 1fr; }
+  .city-card { padding: 24px; }
+  .bottom-cta { padding: 36px 24px; }
+}
+</style>

@@ -1,9 +1,28 @@
 ---
 import MainLayout from '../layouts/MainLayout.astro';
 
+const faqItems = [
+  {
+    q: "هل يؤثر تكسير الجدران على سلامة المبنى؟",
+    a: "لا، عندما يتم بشكل احترافي ومدروس. قبل البدء، نراجع طبيعة الجدران والمخططات الإنشائية للتمييز بين الجدران الحاملة وغير الحاملة، ولا يُنفّذ أي تعديل على عنصر إنشائي حامل إلا بعد اعتماد المهندس المسؤول وتوفير التدعيم اللازم."
+  },
+  {
+    q: "كم تكلفة خدمات تكسير الحوائط والأرضيات والهدم؟",
+    a: "تعتمد التكلفة على مساحة وحجم الأعمال، ونوع المواد المطلوب تكسيرها (طوب، سيراميك، خرسانة مسلحة)، والدور، وهل يشمل العرض تشوين ونقل المخلفات أم لا. نقدم معاينة فنية لتحديد عرض سعر دقيق ومفصل قبل البدء."
+  },
+  {
+    q: "هل تشمل الخدمة رفع ونقل مخلفات الهدم والتكسير؟",
+    a: "نعم، نوفر خدمة متكاملة تشمل فرز وتجميع الأنقاض وتعبئتها وتحميلها ونقلها بسيارات مخصصة للتخلص منها بالطرق القانونية وتسليم الموقع نظيفاً وجاهزاً للمرحلة التالية."
+  },
+  {
+    q: "متى يُفضّل استخدام القص بالمنشار بدلاً من التكسير؟",
+    a: "عند الحاجة لعمل فتحة باب أو شباك أو قص جزء محدد في خرسانة مسلحة مع الحفاظ على استقامة الحواف وتقليل الاهتزازات، يكون المنشار الماسي هو الحل الأنسب، بينما يُستخدم التكسير في إزالة الجدران غير الحاملة والأرضيات والحمامات بالكامل."
+  }
+];
+
 const seo = {
-  title: "مقاول هدم و خدمات تكسير في مصر | شركة دريل ماكس| 01070046464",
-  description: "هل تبحث عن مقاول هدم وتكسير محترف؟ دريل ماكس تقدم خدمات هدم وتكسير الحوائط والخرسانات مع تشوين كامل للمخلفات. دقة وأمان. اطلب معاينة مجانية.",
+  title: "مقاول هدم وتكسير حوائط وخرسانة وتشوين في مصر | 01070046464",
+  description: "مقاول هدم وتكسير حوائط وخرسانة مسلحة في مصر: إزالة حوائط الشقق والمحلات، تكسير حمامات ومطابخ، وتشوين ونقل المخلفات بأمان. اتصل 01070046464.",
   canonical: "/%d9%85%d9%82%d8%a7%d9%88%d9%84-%d9%87%d8%af%d9%85/",
   ogImage: "/images/Untitled-134.webp",
   schema: JSON.stringify({
@@ -12,7 +31,7 @@ const seo = {
       {
         "@type": "Organization",
         "@id": "https://drilmax.com/#organization",
-        "name": "Drill Max دريل ماكس",
+        "name": "Drill Max | دريل ماكس",
         "url": "https://drilmax.com",
         "sameAs": ["https://www.facebook.com/drillmaxeg"],
         "logo": {
@@ -36,174 +55,284 @@ const seo = {
         "inLanguage": "ar"
       },
       {
-        "@type": "ImageObject",
-        "@id": "https://drilmax.com/images/تكسير.webp",
-        "url": "/images/تكسير.webp",
-        "width": "200",
-        "height": "200",
-        "inLanguage": "ar",
-        "name": "هدم و خدمات تكسير"
-      },
-      {
         "@type": "BreadcrumbList",
         "@id": "https://drilmax.com/%d9%85%d9%82%d8%a7%d9%88%d9%84-%d9%87%d8%af%d9%85/#breadcrumb",
         "itemListElement": [
-          {
-            "@type": "ListItem",
-            "position": "1",
-            "item": { "@id": "https://drilmax.com", "name": "الرئيسية" }
-          },
-          {
-            "@type": "ListItem",
-            "position": "2",
-            "item": {
-              "@id": "https://drilmax.com/%d9%85%d9%82%d8%a7%d9%88%d9%84-%d9%87%d8%af%d9%85/",
-              "name": "مقاول هدم"
-            }
-          }
-        ],
-        "name": "مسار التنقل"
-      },
-      {
-        "@type": "WebPage",
-        "@id": "https://drilmax.com/%d9%85%d9%82%d8%a7%d9%88%d9%84-%d9%87%d8%af%d9%85/#webpage",
-        "url": "https://drilmax.com/%d9%85%d9%82%d8%a7%d9%88%d9%84-%d9%87%d8%af%d9%85/",
-        "name": "مقاول هدم و خدمات تكسير في مصر | شركة دريل ماكس| 01070046464",
-        "datePublished": "2025-09-12T05:26:36+00:00",
-        "dateModified": "2026-04-14T18:23:34+00:00",
-        "isPartOf": { "@id": "https://drilmax.com/#website" },
-        "inLanguage": "ar",
-        "breadcrumb": { "@id": "https://drilmax.com/%d9%85%d9%82%d8%a7%d9%88%d9%84-%d9%87%d8%af%d9%85/#breadcrumb" }
+          { "@type": "ListItem", "position": 1, "item": { "@id": "https://drilmax.com", "name": "الرئيسية" } },
+          { "@type": "ListItem", "position": 2, "item": { "@id": "https://drilmax.com/%d9%85%d9%82%d8%a7%d9%88%d9%84-%d9%87%d8%af%d9%85/", "name": "مقاول هدم وتكسير" } }
+        ]
       },
       {
         "@type": "Service",
         "@id": "https://drilmax.com/%d9%85%d9%82%d8%a7%d9%88%d9%84-%d9%87%d8%af%d9%85/#service",
-        "name": "مقاول هدم وتكسير",
-        "description": "خدمات هدم وتكسير الحوائط والخرسانات مع تشوين كامل للمخلفات بدقة وأمان",
+        "name": "مقاول هدم وتكسير وتشوين مخلفات",
+        "description": "خدمات هدم وتكسير الحوائط والخرسانات والأرضيات مع تشوين ونقل كامل للمخلفات بدقة وأمان في مصر.",
         "provider": { "@id": "https://drilmax.com/#organization" },
-        "areaServed": { "@type": "Country", "name": "مصر" },
+        "areaServed": { "@type": "Country", "name": "Egypt" },
         "url": "https://drilmax.com/%d9%85%d9%82%d8%a7%d9%88%d9%84-%d9%87%d8%af%d9%85/"
+      },
+      {
+        "@type": "FAQPage",
+        "@id": "https://drilmax.com/%d9%85%d9%82%d8%a7%d9%88%d9%84-%d9%87%d8%af%d9%85/#faq",
+        "mainEntity": faqItems.map(item => ({
+          "@type": "Question",
+          "name": item.q,
+          "acceptedAnswer": { "@type": "Answer", "text": item.a }
+        }))
       }
     ]
   })
 };
+
+const serviceBlocks = [
+  {
+    title: "تكسير الخرسانة المسلحة والهياكل",
+    desc: "متخصصون في أعمال الهدم الثقيل وتكسير الخرسانة المسلحة للأعمدة والأساسات والكمرات وفق خطة هندسية تضمن السلامة.",
+    img: "/images/تكسير.webp",
+    alt: "مقاول هدم وتكسير خرسانة مسلحة من دريل ماكس",
+    points: ["تكسير الأعمدة والكمرات والسلالم", "هدم الأساسات والقواعد الخرسانية", "تنفيذ التعديلات الإنشائية بإشراف فني"],
+    cta: "اطلب خدمة هدم خرسانة"
+  },
+  {
+    title: "تكسير وتجهيز الشقق والمكاتب للتجديدات",
+    desc: "نقدم خدمات تكسير دقيقة للمنازل والمكاتب وإزالة الجدران الفاصلة والأرضيات والأسقف لتجهيز المساحة للتشطيب الجديد.",
+    img: "/images/Untitled-1.webp",
+    alt: "أعمال تكسير حوائط وتجهيز شقة للتجديد",
+    points: ["إزالة الحوائط والجدران غير الحاملة", "تكسير الأرضيات (بلاط، سيراميك، رخام)", "إزالة الأسقف المعلقة والجبسية"],
+    cta: "احجز خدمة تجهيز وتكسير"
+  },
+  {
+    title: "هدم وتكسير للمنشآت التجارية والصناعية",
+    desc: "حلول هدم وتكسير مخصصة للمحلات التجارية والمكاتب والمصانع مع الالتزام الكامل بجدول التسليم لتقليل توقف النشاط.",
+    img: "/images/Untitled-12.webp",
+    alt: "أعمال هدم وتكسير لموقع تجاري وصناعي",
+    points: ["إزالة القواطيع والمنشآت الداخلية", "تكسير أرضيات المصانع الخرسانية", "تجهيز المواقع التجارية والمولات"],
+    cta: "اطلب عرض سعر لمشروع تجاري"
+  },
+  {
+    title: "تكسير وتجهيز الحمامات والمطابخ",
+    desc: "إزالة كاملة للحمامات والمطابخ القديمة بما يشمل السيراميك والأرضيات وتكسير مسارات السباكة القديمة استعداداً للتجديد.",
+    img: "/images/demolition.webp",
+    alt: "فريق عمل دريل ماكس أثناء تنفيذ عملية تكسير لجدار داخلي",
+    points: ["إزالة البلاط والسيراميك والرخام", "فك وتكسير الأحواض والمراحيض", "فك وإزالة وحدات وتجهيزات المطبخ القديمة"],
+    cta: "اطلب خدمة تكسير حمام أو مطبخ"
+  },
+  {
+    title: "إزالة وتشوين المخلفات وتسليم الموقع نظيفاً",
+    desc: "لا يكتمل عملنا إلا بتسليم موقعك نظيفاً بالكامل؛ نتولى فرز وتجميع وتحميل ونقل جميع مخلفات الهدم والأنقاض بطريقة آمنة وقانونية.",
+    img: "/images/Untitled-14.webp",
+    alt: "سيارة نقل وتشوين مخلفات هدم من موقع عمل لدريل ماكس",
+    points: ["فرز وتجميع وتعبئة المخلفات", "تحميل ونقل آمن للأنقاض", "التخلص من المخلفات بالطرق القانونية"],
+    cta: "اطلب خدمة شاملة مع التشوين"
+  }
+];
 ---
 
 <MainLayout {...seo}>
-  <section class="py-section">
-    <div class="container" style="max-width: 1000px; margin: 0 auto; background: #fff; padding: 40px; border-radius: 8px; box-shadow: 0 4px 6px rgba(0,0,0,0.05);">
-      <div class="page-content" style="line-height: 1.8; color: var(--gray);">
-        <div data-elementor-type="wp-page" data-elementor-id="1688" class="elementor elementor-1688" data-elementor-post-type="page"><div class="elementor-element elementor-element-9ee2404 e-flex e-con-boxed e-con e-parent e-lazyloaded e-no-lazyload e-lazyloaded e-no-lazyload" data-id="9ee2404" data-element_type="container" data-e-type="container"><div class="e-con-inner"><div class="elementor-element elementor-element-5b9aaf7 elementor-widget elementor-widget-heading" data-id="5b9aaf7" data-element_type="widget" data-e-type="widget" data-widget_type="heading.default"><div class="elementor-widget-container"><h1 class="elementor-heading-title elementor-size-default">خدمات تكسير وهدم وتشوين في مصر افضل مقاول هدم  | شركة دريل ماكس| 01070046464</h1></div></div><div class="elementor-element elementor-element-0cd1438 elementor-widget elementor-widget-text-editor" data-id="0cd1438" data-element_type="widget" data-e-type="widget" data-widget_type="text-editor.default"><div class="elementor-widget-container"><p>تُعتبر عملية هدم المباني الخطوة الجوهرية التي تسبق أي مشروع تجديد أو بناء ناجح. على عكس المفهوم الشائع، فإن الهدم ليس مجرد إزالة عشوائية، بل هو عملية هندسية تتطلب تخطيطًا دقيقًا وخبرة لضمان الأمان الكامل للموقع. في “دريل ماكس”، نقدم خدمات هدم&nbsp;&nbsp;<a href="https://ar.wikipedia.org/wiki/%D8%AE%D8%B1%D8%B3%D8%A7%D9%86%D8%A9" target="_blank" rel="noopener">الخرسانة&nbsp;</a>متكاملة تضمن لك بداية صحيحة لمشروعك.</p></div></div><div class="elementor-element elementor-element-dfef29c elementor-widget elementor-widget-heading" data-id="dfef29c" data-element_type="widget" data-e-type="widget" data-widget_type="heading.default"><div class="elementor-widget-container"><h2 class="elementor-heading-title elementor-size-default">لماذا تحتاج إلى مقاول  هدم  محترف؟</h2></div></div><div class="elementor-element elementor-element-a58060e elementor-widget elementor-widget-spacer" data-id="a58060e" data-element_type="widget" data-e-type="widget" data-widget_type="spacer.default"><div class="elementor-widget-container"><div class="elementor-spacer"><div class="elementor-spacer-inner"></div></div></div></div><div class="elementor-element elementor-element-5ac2b5f elementor-widget elementor-widget-heading" data-id="5ac2b5f" data-element_type="widget" data-e-type="widget" data-widget_type="heading.default"><div class="elementor-widget-container"><h2 class="elementor-heading-title elementor-size-default">خدمات الهدم  والتكسير التي نقدمها</h2></div></div><div class="elementor-element elementor-element-0775879 elementor-widget__width-initial elementor-widget elementor-widget-html" data-id="0775879" data-element_type="widget" data-e-type="widget" data-widget_type="html.default"><div class="elementor-widget-container"><div style="background-color: #f8f9fa; padding: 60px 20px; text-align: center;"><h2 style="font-size: 3em; color: #333; font-weight: bold;">خدمات تكسير وهدم احترافية ومتكاملة</h2><p style="font-size: 1.2em; color: #555; max-width: 800px; margin: 20px auto;">
-في Drill Max، نقدم حلول هدم وتكسير دقيقة وآمنة للمباني السكنية والتجارية. سواء كنت تحتاج لإزالة جدار، أو تكسير أرضيات، أو هدمง خرساني بالكامل، فريقنا جاهز لتنفيذ مشروعك بأعلى معايير الجودة.</p>
-<a href="/contact/" style="background-color: #ff5722; color: white; padding: 15px 30px; text-decoration: none; border-radius: 5px; font-size: 1.1em; font-weight: bold; display: inline-block; margin-top: 20px;">اطلب معاينة وعرض سعر مجاني الآن</a></div><div style="padding: 50px 20px; text-align: center;"><h2 style="font-size: 2.5em; color: #333; font-weight: bold; margin-bottom: 40px;">خدماتنا في التكسير والهدم</h2><div style="display: flex; flex-wrap: wrap; justify-content: center; gap: 20px;"><div style="background: #fff; border: 1px solid #eee; border-radius: 8px; padding: 20px; width: 300px; box-shadow: 0 4px 8px rgba(0,0,0,0.1);"><h3 style="font-size: 1.5em; color: #ff5722;">تكسير وهدم الجدران والحوائط</h3><p>نقوم بإزالة وتكسير جميع أنواع الحوائط الداخلية والخارجية (طوب، بلوك، خرسانة) بدقة عالية لعمل توسعات أو تعديلات معمارية دون التأثير على سلامة المبنى.</p></div><div style="background: #fff; border: 1px solid #eee; border-radius: 8px; padding: 20px; width: 300px; box-shadow: 0 4px 8px rgba(0,0,0,0.1);"><h3 style="font-size: 1.5em; color: #ff5722;">إزالة وتكسير الأرضيات والأسقف</h3><p>متخصصون في إزالة وتكسير الأرضيات (بلاط، سيراميك، رخام) والأسقف الخرسانية أو الجبسية، وتجهيزها بالكامل لمرحلة التشطيبات الجديدة.</p></div><div style="background: #fff; border: 1px solid #eee; border-radius: 8px; padding: 20px; width: 300px; box-shadow: 0 4px 8px rgba(0,0,0,0.1);"><h3 style="font-size: 1.5em; color: #ff5722;">تكسير الخرسانة المسلحة</h3><p>نستخدم أحدث معدات التكسير الهيدروليكية والكهربائية لتكسير القواعد والأعمدة والسلالم الخرسانية بكفاءة وسرعة وأمان فائق.</p></div></div></div><div style="background-color: #f8f9fa; padding: 50px 20px; text-align: center;"><h2 style="font-size: 2.5em; color: #333; font-weight: bold; margin-bottom: 40px;">لماذا تختار Drill Max لتنفيذ أعمال الهدم؟</h2><div style="display: flex; flex-wrap: wrap; justify-content: center; gap: 30px; max-width: 1000px; margin: auto;"><div style="flex: 1; min-width: 250px;"><h4 style="font-size: 1.3em; color: #333;">✔️ الأمان أولويتنا القصوى</h4><p>نلتزم بأعلى معايير السلامة المهنية ونقوم بتأمين الموقع بالكامل قبل البدء في أي أعمال لضمان سلامة الجميع.</p></div><div style="flex: 1; min-width: 250px;"><h4 style="font-size: 1.3em; color: #333;">✔️ دقة هندسية في التنفيذ</h4><p>يعمل فريقنا من المهندسين والفنيين على تنفيذ أعمال التكسير بدقة متناهية وفقاً للمخططات الهندسية المعتمدة.</p></div><div style="flex: 1; min-width: 250px;"><h4 style="font-size: 1.3em; color: #333;">✔️ إنجاز سريع للمشروع</h4><p>نستخدم معدات حديثة وقوية تضمن لنا إنجاز العمل في أسرع وقت ممكن، مع الالتزام الكامل بالجدول الزمني للمشروع.</p></div><div style="flex: 1; min-width: 250px;"><h4 style="font-size: 1.3em; color: #333;">✔️ تسليم الموقع نظيفًا</h4><p>نتكفل بإزالة جميع المخلفات الناتجة عن أعمال الهدم والتكسير، ونحرص على تسليم الموقع نظيفًا وجاهزًا للمرحلة التالية.</p></div></div></div><div style="padding: 50px 20px; max-width: 800px; margin: auto;"><h2 style="text-align: center; font-size: 2.5em; color: #333; font-weight: bold; margin-bottom: 40px;">أسئلة شائعة حول خدمات التكسير</h2><div><h3 style="font-size: 1.4em; color: #ff5722;">هل يؤثر تكسير الجدران على سلامة المبنى؟</h3><p>لا، عندم يتم بشكل احترافي. قبل البدء، نقوم بدراسة المخططات الإنشائية وتحديد الجدران الحاملة من غير الحاملة، ونستخدم تقنيات تضمن عدم المساس بسلامة وهيكل المبنى إطلاقًا.</p></div><hr style="margin: 20px 0;"><div><h3 style="font-size: 1.4em; color: #ff5722;">كم تكلفة خدمات تكسير الحوائط والأرضيات؟</h3><p>تعتمد التكلفة على عدة عوامل مثل حجم العمل، نوع المواد المراد تكسيرها (خرسانة، طوب)، وسهولة الوصول للموقع. لذلك، نقدم معاينة مجانية للموقع لتحديد كافة التفاصيل وتقديم عرض سعر دقيق ومفصل.</p></div></div><div style="background-color: #333; color: white; padding: 60px 20px; text-align: center;"><h2 style="font-size: 2.5em; font-weight: bold;">جاهزون لبدء مشروع التكسير الخاص بك؟</h2><p style="font-size: 1.2em; max-width: 700px; margin: 20px auto;">
-تواصل مع خبرائنا اليوم لمناقشة متطلبات مشروعك. فريقنا مستعد لتقديم أفضل الحلول الهندسية التي تناسب احتياجاتك وميزانيتك.</p>
-<a href="/contact/" style="background-color: #ff5722; color: white; padding: 15px 30px; text-decoration: none; border-radius: 5px; font-size: 1.1em; font-weight: bold; display: inline-block; margin-top: 20px;">تواصل معنا الآن</a></div></div></div></div></div><div class="elementor-element elementor-element-7a3nz2r e-flex e-con-boxed e-con e-parent e-lazyloaded e-no-lazyload e-lazyloaded e-no-lazyload" data-id="7a3nz2r" data-element_type="container" data-e-type="container" data-settings="{&quot;background_background&quot;:&quot;classic&quot;}"><div class="e-con-inner"><div class="elementor-element elementor-element-b4ed00e elementor-widget elementor-widget-uael-infobox" data-id="b4ed00e" data-element_type="widget" data-e-type="widget" data-widget_type="uael-infobox.default"><div class="elementor-widget-container"><div class="uael-module-content uael-infobox uael-imgicon-style-normal  infobox-has-icon uael-infobox-icon-above-title  uael-infobox-link-type-none"><div class="uael-infobox-left-right-wrap"><div class="uael-infobox-content"><div class="uael-module-content uael-imgicon-wrap "></div><div class="uael-infobox-title-wrap"><h6 class="uael-infobox-title-prefix elementor-inline-editing" data-elementor-setting-key="infobox_title_prefix" data-elementor-inline-editing-toolbar="basic">خبراء الهدم والتكسير</h6><h2 class="uael-infobox-title elementor-inline-editing" data-elementor-setting-key="infobox_title" data-elementor-inline-editing-toolbar="basic">أساس التجديد يبدأ بالهدم الصحيح</h2></div><div class="uael-infobox-text-wrap"><div class="uael-infobox-text elementor-inline-editing" data-elementor-setting-key="infobox_description" data-elementor-inline-editing-toolbar="advanced">
-من إزالة جدار بسيط إلى هدم المنشآت بالكامل، نقدم حلول تكسير آمنة وسريعة ومعتمدة تلبي كافة متطلبات مشاريعكم السكنية والتجارية.</div></div></div></div></div></div></div></div></div><div class="elementor-element elementor-element-9hlxawi e-flex e-con-boxed e-con e-parent e-lazyloaded e-no-lazyload e-lazyloaded e-no-lazyload" data-id="9hlxawi" data-element_type="container" data-e-type="container" data-settings="{&quot;background_background&quot;:&quot;classic&quot;}"><div class="e-con-inner"><div class="elementor-element elementor-element-b8850a6 e-grid e-con-full e-con e-child" data-id="b8850a6" data-element_type="container" data-e-type="container"><div class="elementor-element elementor-element-534bc52 e-con-full e-flex e-con e-child" data-id="534bc52" data-element_type="container" data-e-type="container" data-settings="{&quot;background_background&quot;:&quot;classic&quot;}"><div class="elementor-element elementor-element-0e8a1e7 e-con-full e-flex e-con e-child" data-id="0e8a1e7" data-element_type="container" data-e-type="container" data-settings="{&quot;background_background&quot;:&quot;classic&quot;}"><div class="elementor-element elementor-element-6ed0795 elementor-widget elementor-widget-image" data-id="6ed0795" data-element_type="widget" data-e-type="widget" data-widget_type="image.default"><div class="elementor-widget-container"><figure class="wp-caption">
-<img src="/images/تكسير.webp" alt="مقاول هدم" width="1000" height="712" /><figcaption class="image-caption" style="text-align: center; color: var(--gray); font-size: 0.9rem; margin-top: 10px;">مقاول هدم</figcaption></figure></div></div></div><div class="elementor-element elementor-element-e34cbc7 e-con-full e-flex e-con e-child" data-id="e34cbc7" data-element_type="container" data-e-type="container" data-settings="{&quot;background_background&quot;:&quot;classic&quot;}"><div class="elementor-element elementor-element-bc29fcd elementor-widget elementor-widget-uael-infobox" data-id="bc29fcd" data-element_type="widget" data-e-type="widget" data-widget_type="uael-infobox.default"><div class="elementor-widget-container"><div class="uael-module-content uael-infobox uael-imgicon-style-normal  uael-infobox-left  infobox-has-icon uael-infobox-icon-above-title  uael-infobox-link-type-none"><div class="uael-infobox-left-right-wrap"><div class="uael-infobox-content"><div class="uael-module-content uael-imgicon-wrap "></div><div class="uael-infobox-title-wrap"><h4 class="uael-infobox-title elementor-inline-editing" data-elementor-setting-key="infobox_title" data-elementor-inline-editing-toolbar="basic">تكسير الخرسانة المسلحة والهياكل مع افض مقاول هدم</h4></div><div class="uael-infobox-text-wrap"><div class="uael-infobox-text elementor-inline-editing" data-elementor-setting-key="infobox_description" data-elementor-inline-editing-toolbar="advanced">
-متخصصون في أعمال الهدم الثقيل وتكسير الخرسانة المسلحة للأعمدة والأساسات والكمرات، باستخدام أحدث المعدات التي تضمن إنجاز العمل بسرعة وأمان فائق.</div></div></div></div></div></div></div><div class="elementor-element elementor-element-2a5a60e elementor-icon-list--layout-traditional elementor-list-item-link-full_width elementor-widget elementor-widget-icon-list" data-id="2a5a60e" data-element_type="widget" data-e-type="widget" data-widget_type="icon-list.default"><div class="elementor-widget-container"><ul class="elementor-icon-list-items"><li class="elementor-icon-list-item">
-<span class="elementor-icon-list-icon">
-<svg aria-hidden="true" class="e-font-icon-svg e-fas-check-circle" viewBox="0 0 512 512" xmlns="http://www.w3.org/2000/svg"><path d="M504 256c0 136.967-111.033 248-248 248S8 392.967 8 256 119.033 8 256 8s248 111.033 248 248zM227.314 387.314l184-184c6.248-6.248 6.248-16.379 0-22.627l-22.627-22.627c-6.248-6.249-16.379-6.249-22.628 0L216 308.118l-70.059-70.059c-6.248-6.248-16.379-6.248-22.628 0l-22.627 22.627c-6.248 6.248-6.248 16.379 0 22.627l104 104c6.249 6.249 16.379 6.249 22.628.001z"></path></svg>						</span>
-<span class="elementor-icon-list-text">تكسير الأعمدة والكمرات</span></li><li class="elementor-icon-list-item">
-<span class="elementor-icon-list-icon">
-<svg aria-hidden="true" class="e-font-icon-svg e-fas-check-circle" viewBox="0 0 512 512" xmlns="http://www.w3.org/2000/svg"><path d="M504 256c0 136.967-111.033 248-248 248S8 392.967 8 256 119.033 8 256 8s248 111.033 248 248zM227.314 387.314l184-184c6.248-6.248 6.248-16.379 0-22.627l-22.627-22.627c-6.248-6.249-16.379-6.249-22.628 0L216 308.118l-70.059-70.059c-6.248-6.248-16.379-6.248-22.628 0l-22.627 22.627c-6.248 6.248-6.248 16.379 0 22.627l104 104c6.249 6.249 16.379 6.249 22.628.001z"></path></svg>						</span>
-<span class="elementor-icon-list-text">هدم الأساسات الخرسانية</span></li><li class="elementor-icon-list-item">
-<span class="elementor-icon-list-icon">
-<svg aria-hidden="true" class="e-font-icon-svg e-fas-check-circle" viewBox="0 0 512 512" xmlns="http://www.w3.org/2000/svg"><path d="M504 256c0 136.967-111.033 248-248 248S8 392.967 8 256 119.033 8 256 8s248 111.033 248 248zM227.314 387.314l184-184c6.248-6.248 6.248-16.379 0-22.627l-22.627-22.627c-6.248-6.249-16.379-6.249-22.628 0L216 308.118l-70.059-70.059c-6.248-6.248-16.379-6.248-22.628 0l-22.627 22.627c-6.248 6.248-6.248 16.379 0 22.627l104 104c6.249 6.249 16.379 6.249 22.628.001z"></path></svg>						</span>
-<span class="elementor-icon-list-text">عمل فتحات إنشائية</span></li></ul></div></div><div class="elementor-element elementor-element-1b2ff6f elementor-widget elementor-widget-button" data-id="1b2ff6f" data-element_type="widget" data-e-type="widget" data-widget_type="button.default"><div class="elementor-widget-container"><div class="elementor-button-wrapper">
-<a class="elementor-button elementor-button-link elementor-size-sm" href="/contact/">
-<span class="elementor-button-content-wrapper">
-<span class="elementor-button-text">اطلب خدمة هدم خرسانة</span>
-</span>
-</a></div></div></div></div></div><div class="elementor-element elementor-element-4e08303 e-con-full e-flex e-con e-child" data-id="4e08303" data-element_type="container" data-e-type="container" data-settings="{&quot;background_background&quot;:&quot;classic&quot;}"><div class="elementor-element elementor-element-f51a6d7 e-con-full e-flex e-con e-child" data-id="f51a6d7" data-element_type="container" data-e-type="container" data-settings="{&quot;background_background&quot;:&quot;classic&quot;}"><div class="elementor-element elementor-element-9ce22c4 elementor-widget elementor-widget-image" data-id="9ce22c4" data-element_type="widget" data-e-type="widget" data-widget_type="image.default"><div class="elementor-widget-container">
-<img src="/images/Untitled-1.webp" alt="Untitled 1" width="1000" height="712" /></div></div></div><div class="elementor-element elementor-element-65c4481 e-con-full e-flex e-con e-child" data-id="65c4481" data-element_type="container" data-e-type="container" data-settings="{&quot;background_background&quot;:&quot;classic&quot;}"><div class="elementor-element elementor-element-0c1477e elementor-widget elementor-widget-uael-infobox" data-id="0c1477e" data-element_type="widget" data-e-type="widget" data-widget_type="uael-infobox.default"><div class="elementor-widget-container"><div class="uael-module-content uael-infobox uael-imgicon-style-normal  uael-infobox-left  infobox-has-icon uael-infobox-icon-above-title  uael-infobox-link-type-none"><div class="uael-infobox-left-right-wrap"><div class="uael-infobox-content"><div class="uael-module-content uael-imgicon-wrap "></div><div class="uael-infobox-title-wrap"><h4 class="uael-infobox-title elementor-inline-editing" data-elementor-setting-key="infobox_title" data-elementor-inline-editing-toolbar="basic">تكسير وتجهيز للتجديدات</h4></div><div class="uael-infobox-text-wrap"><div class="uael-infobox-text elementor-inline-editing" data-elementor-setting-key="infobox_description" data-elementor-inline-editing-toolbar="advanced">
-نقدم خدمات تكسير دقيقة للمنازل والمكاتب، وإزالة الجدران والأرضيات والأسقف بكفاءة عالية لتجهيز مساحتك لمرحلة التجديد والتشطيبات الجديدة.</div></div></div></div></div></div></div><div class="elementor-element elementor-element-db5fd16 elementor-icon-list--layout-traditional elementor-list-item-link-full_width elementor-widget elementor-widget-icon-list" data-id="db5fd16" data-element_type="widget" data-e-type="widget" data-widget_type="icon-list.default"><div class="elementor-widget-container"><ul class="elementor-icon-list-items"><li class="elementor-icon-list-item">
-<span class="elementor-icon-list-icon">
-<svg aria-hidden="true" class="e-font-icon-svg e-fas-check-circle" viewBox="0 0 512 512" xmlns="http://www.w3.org/2000/svg"><path d="M504 256c0 136.967-111.033 248-248 248S8 392.967 8 256 119.033 8 256 8s248 111.033 248 248zM227.314 387.314l184-184c6.248-6.248 6.248-16.379 0-22.627l-22.627-22.627c-6.248-6.249-16.379-6.249-22.628 0L216 308.118l-70.059-70.059c-6.248-6.248-16.379-6.248-22.628 0l-22.627 22.627c-6.248 6.248-6.248 16.379 0 22.627l104 104c6.249 6.249 16.379 6.249 22.628.001z"></path></svg>						</span>
-<span class="elementor-icon-list-text">إزالة الحوائط والجدران</span></li><li class="elementor-icon-list-item">
-<span class="elementor-icon-list-icon">
-<svg aria-hidden="true" class="e-font-icon-svg e-fas-check-circle" viewBox="0 0 512 512" xmlns="http://www.w3.org/2000/svg"><path d="M504 256c0 136.967-111.033 248-248 248S8 392.967 8 256 119.033 8 256 8s248 111.033 248 248zM227.314 387.314l184-184c6.248-6.248 6.248-16.379 0-22.627l-22.627-22.627c-6.248-6.249-16.379-6.249-22.628 0L216 308.118l-70.059-70.059c-6.248-6.248-16.379-6.248-22.628 0l-22.627 22.627c-6.248 6.248-6.248 16.379 0 22.627l104 104c6.249 6.249 16.379 6.249 22.628.001z"></path></svg>						</span>
-<span class="elementor-icon-list-text">تكسير الأرضيات (بلاط وسيراميك)</span></li><li class="elementor-icon-list-item">
-<span class="elementor-icon-list-icon">
-<svg aria-hidden="true" class="e-font-icon-svg e-fas-check-circle" viewBox="0 0 512 512" xmlns="http://www.w3.org/2000/svg"><path d="M504 256c0 136.967-111.033 248-248 248S8 392.967 8 256 119.033 8 256 8s248 111.033 248 248zM227.314 387.314l184-184c6.248-6.248 6.248-16.379 0-22.627l-22.627-22.627c-6.248-6.249-16.379-6.249-22.628 0L216 308.118l-70.059-70.059c-6.248-6.248-16.379-6.248-22.628 0l-22.627 22.627c-6.248 6.248-6.248 16.379 0 22.627l104 104c6.249 6.249 16.379 6.249 22.628.001z"></path></svg>						</span>
-<span class="elementor-icon-list-text">إزالة الأسقف المعلقة والجبسية</span></li></ul></div></div><div class="elementor-element elementor-element-63bc056 elementor-widget elementor-widget-button" data-id="63bc056" data-element_type="widget" data-e-type="widget" data-widget_type="button.default"><div class="elementor-widget-container"><div class="elementor-button-wrapper">
-<a class="elementor-button elementor-button-link elementor-size-sm" href="/contact/">
-<span class="elementor-button-content-wrapper">
-<span class="elementor-button-text">احجز خدمة تجهيز وتكسير</span>
-</span>
-</a></div></div></div></div></div><div class="elementor-element elementor-element-84cfe25 e-con-full e-flex e-con e-child" data-id="84cfe25" data-element_type="container" data-e-type="container"><div class="elementor-element elementor-element-a9ca132 e-con-full e-flex e-con e-child" data-id="a9ca132" data-element_type="container" data-e-type="container" data-settings="{&quot;background_background&quot;:&quot;classic&quot;}"><div class="elementor-element elementor-element-edf7318 elementor-widget elementor-widget-image" data-id="edf7318" data-element_type="widget" data-e-type="widget" data-widget_type="image.default"><div class="elementor-widget-container">
-<img src="/images/Untitled-12.webp" alt="Untitled 12" width="1000" height="712" /></div></div></div><div class="elementor-element elementor-element-6b20e45 e-con-full e-flex e-con e-child" data-id="6b20e45" data-element_type="container" data-e-type="container" data-settings="{&quot;background_background&quot;:&quot;classic&quot;}"><div class="elementor-element elementor-element-0802931 elementor-widget elementor-widget-uael-infobox" data-id="0802931" data-element_type="widget" data-e-type="widget" data-widget_type="uael-infobox.default"><div class="elementor-widget-container"><div class="uael-module-content uael-infobox uael-imgicon-style-normal  uael-infobox-left  infobox-has-icon uael-infobox-icon-above-title  uael-infobox-link-type-none"><div class="uael-infobox-left-right-wrap"><div class="uael-infobox-content"><div class="uael-module-content uael-imgicon-wrap "></div><div class="uael-infobox-title-wrap"><h4 class="uael-infobox-title elementor-inline-editing" data-elementor-setting-key="infobox_title" data-elementor-inline-editing-toolbar="basic">هدم وتكسير للمنشآت التجارية والصناعية</h4></div><div class="uael-infobox-text-wrap"><div class="uael-infobox-text elementor-inline-editing" data-elementor-setting-key="infobox_description" data-elementor-inline-editing-toolbar="advanced">
-نقدم حلول هدم وتكسير مخصصة للمحلات التجارية، المكاتب، والمصانع مع الالتزام الكامل بمواعيد التسليم لضمان أقل تأثير ممكن على سير أعمالك.</div></div></div></div></div></div></div><div class="elementor-element elementor-element-9a4381f elementor-icon-list--layout-traditional elementor-list-item-link-full_width elementor-widget elementor-widget-icon-list" data-id="9a4381f" data-element_type="widget" data-e-type="widget" data-widget_type="icon-list.default"><div class="elementor-widget-container"><ul class="elementor-icon-list-items"><li class="elementor-icon-list-item">
-<span class="elementor-icon-list-icon">
-<svg aria-hidden="true" class="e-font-icon-svg e-fas-check-circle" viewBox="0 0 512 512" xmlns="http://www.w3.org/2000/svg"><path d="M504 256c0 136.967-111.033 248-248 248S8 392.967 8 256 119.033 8 256 8s248 111.033 248 248zM227.314 387.314l184-184c6.248-6.248 6.248-16.379 0-22.627l-22.627-22.627c-6.248-6.249-16.379-6.249-22.628 0L216 308.118l-70.059-70.059c-6.248-6.248-16.379-6.248-22.628 0l-22.627 22.627c-6.248 6.248-6.248 16.379 0 22.627l104 104c6.249 6.249 16.379 6.249 22.628.001z"></path></svg>						</span>
-<span class="elementor-icon-list-text">إزالة منشآت معدنية وهياكل</span></li><li class="elementor-icon-list-item">
-<span class="elementor-icon-list-icon">
-<svg aria-hidden="true" class="e-font-icon-svg e-fas-check-circle" viewBox="0 0 512 512" xmlns="http://www.w3.org/2000/svg"><path d="M504 256c0 136.967-111.033 248-248 248S8 392.967 8 256 119.033 8 256 8s248 111.033 248 248zM227.314 387.314l184-184c6.248-6.248 6.248-16.379 0-22.627l-22.627-22.627c-6.248-6.249-16.379-6.249-22.628 0L216 308.118l-70.059-70.059c-6.248-6.248-16.379-6.248-22.628 0l-22.627 22.627c-6.248 6.248-6.248 16.379 0 22.627l104 104c6.249 6.249 16.379 6.249 22.628.001z"></path></svg>						</span>
-<span class="elementor-icon-list-text">تكسير أرضيات المصانع الخرسانية</span></li><li class="elementor-icon-list-item">
-<span class="elementor-icon-list-icon">
-<svg aria-hidden="true" class="e-font-icon-svg e-fas-check-circle" viewBox="0 0 512 512" xmlns="http://www.w3.org/2000/svg"><path d="M504 256c0 136.967-111.033 248-248 248S8 392.967 8 256 119.033 8 256 8s248 111.033 248 248zM227.314 387.314l184-184c6.248-6.248 6.248-16.379 0-22.627l-22.627-22.627c-6.248-6.249-16.379-6.249-22.628 0L216 308.118l-70.059-70.059c-6.248-6.248-16.379-6.248-22.628 0l-22.627 22.627c-6.248 6.248-6.248 16.379 0 22.627l104 104c6.249 6.249 16.379 6.249 22.628.001z"></path></svg>						</span>
-<span class="elementor-icon-list-text">تجهيز المواقع التجارية</span></li></ul></div></div><div class="elementor-element elementor-element-1bd6531 elementor-widget elementor-widget-button" data-id="1bd6531" data-element_type="widget" data-e-type="widget" data-widget_type="button.default"><div class="elementor-widget-container"><div class="elementor-button-wrapper">
-<a class="elementor-button elementor-button-link elementor-size-sm" href="/contact/">
-<span class="elementor-button-content-wrapper">
-<span class="elementor-button-text">اطلب عرض سعر لمشروع تجاري</span>
-</span>
-</a></div></div></div></div></div><div class="elementor-element elementor-element-413f087 e-con-full e-flex e-con e-child" data-id="413f087" data-element_type="container" data-e-type="container"><div class="elementor-element elementor-element-57cf797 e-con-full e-flex e-con e-child" data-id="57cf797" data-element_type="container" data-e-type="container" data-settings="{&quot;background_background&quot;:&quot;classic&quot;}"><div class="elementor-element elementor-element-e62c55e elementor-widget elementor-widget-image" data-id="e62c55e" data-element_type="widget" data-e-type="widget" data-widget_type="image.default"><div class="elementor-widget-container"><figure class="wp-caption">
-<img src="/images/Untitled-14.webp" alt="سيارة تابعة لشركة دريل ماكس تقوم بتشوين مخلفات هدم من موقع عمل." width="1000" height="712" /><figcaption class="image-caption" style="text-align: center; color: var(--gray); font-size: 0.9rem; margin-top: 10px;">سيارة تابعة لشركة دريل ماكس تقوم بتشوين مخلفات هدم من موقع عمل.</figcaption></figure></div></div></div><div class="elementor-element elementor-element-910ecc4 e-con-full e-flex e-con e-child" data-id="910ecc4" data-element_type="container" data-e-type="container" data-settings="{&quot;background_background&quot;:&quot;classic&quot;}"><div class="elementor-element elementor-element-d86aa95 elementor-widget elementor-widget-uael-infobox" data-id="d86aa95" data-element_type="widget" data-e-type="widget" data-widget_type="uael-infobox.default"><div class="elementor-widget-container"><div class="uael-module-content uael-infobox uael-imgicon-style-normal  uael-infobox-left  infobox-has-icon uael-infobox-icon-above-title  uael-infobox-link-type-none"><div class="uael-infobox-left-right-wrap"><div class="uael-infobox-content"><div class="uael-module-content uael-imgicon-wrap "></div><div class="uael-infobox-title-wrap"><h4 class="uael-infobox-title elementor-inline-editing" data-elementor-setting-key="infobox_title" data-elementor-inline-editing-toolbar="basic">إزالة المخلفات وتسليم الموقع</h4></div><div class="uael-infobox-text-wrap"><div class="uael-infobox-text elementor-inline-editing" data-elementor-setting-key="infobox_description" data-elementor-inline-editing-toolbar="advanced">
-لا يكتمل عملنا إلا بتسليم موقعك نظيفًا بالكامل. نتولى مسؤولية إزالة جميع مخلفات الهدم والأنقاض بطريقة آمنة وصديقة للبيئة، ليكون الموقع جاهزًا للمرحلة التالية من مشروعك.</div></div></div></div></div></div></div><div class="elementor-element elementor-element-d4bd413 elementor-icon-list--layout-traditional elementor-list-item-link-full_width elementor-widget elementor-widget-icon-list" data-id="d4bd413" data-element_type="widget" data-e-type="widget" data-widget_type="icon-list.default"><div class="elementor-widget-container"><ul class="elementor-icon-list-items"><li class="elementor-icon-list-item">
-<span class="elementor-icon-list-icon">
-<svg aria-hidden="true" class="e-font-icon-svg e-fas-check-circle" viewBox="0 0 512 512" xmlns="http://www.w3.org/2000/svg"><path d="M504 256c0 136.967-111.033 248-248 248S8 392.967 8 256 119.033 8 256 8s248 111.033 248 248zM227.314 387.314l184-184c6.248-6.248 6.248-16.379 0-22.627l-22.627-22.627c-6.248-6.249-16.379-6.249-22.628 0L216 308.118l-70.059-70.059c-6.248-6.248-16.379-6.248-22.628 0l-22.627 22.627c-6.248 6.248-6.248 16.379 0 22.627l104 104c6.249 6.249 16.379 6.249 22.628.001z"></path></svg>						</span>
-<span class="elementor-icon-list-text">فرز وتجميع المخلفات</span></li><li class="elementor-icon-list-item">
-<span class="elementor-icon-list-icon">
-<svg aria-hidden="true" class="e-font-icon-svg e-fas-check-circle" viewBox="0 0 512 512" xmlns="http://www.w3.org/2000/svg"><path d="M504 256c0 136.967-111.033 248-248 248S8 392.967 8 256 119.033 8 256 8s248 111.033 248 248zM227.314 387.314l184-184c6.248-6.248 6.248-16.379 0-22.627l-22.627-22.627c-6.248-6.249-16.379-6.249-22.628 0L216 308.118l-70.059-70.059c-6.248-6.248-16.379-6.248-22.628 0l-22.627 22.627c-6.248 6.248-6.248 16.379 0 22.627l104 104c6.249 6.249 16.379 6.249 22.628.001z"></path></svg>						</span>
-<span class="elementor-icon-list-text">تحميل ونقل آمن للأنقاض</span></li><li class="elementor-icon-list-item">
-<span class="elementor-icon-list-icon">
-<svg aria-hidden="true" class="e-font-icon-svg e-fas-check-circle" viewBox="0 0 512 512" xmlns="http://www.w3.org/2000/svg"><path d="M504 256c0 136.967-111.033 248-248 248S8 392.967 8 256 119.033 8 256 8s248 111.033 248 248zM227.314 387.314l184-184c6.248-6.248 6.248-16.379 0-22.627l-22.627-22.627c-6.248-6.249-16.379-6.249-22.628 0L216 308.118l-70.059-70.059c-6.248-6.248-16.379-6.248-22.628 0l-22.627 22.627c-6.248 6.248-6.248 16.379 0 22.627l104 104c6.249 6.249 16.379 6.249 22.628.001z"></path></svg>						</span>
-<span class="elementor-icon-list-text">التخلص من المخلفات بالطرق القانونية</span></li></ul></div></div><div class="elementor-element elementor-element-884bc30 elementor-widget elementor-widget-button" data-id="884bc30" data-element_type="widget" data-e-type="widget" data-widget_type="button.default"><div class="elementor-widget-container"><div class="elementor-button-wrapper">
-<a class="elementor-button elementor-button-link elementor-size-sm" href="/contact/">
-<span class="elementor-button-content-wrapper">
-<span class="elementor-button-text">اطلب خدمة شاملة مع التنظيف</span>
-</span>
-</a></div></div></div></div></div><div class="elementor-element elementor-element-686206b e-con-full e-flex e-con e-child" data-id="686206b" data-element_type="container" data-e-type="container"><div class="elementor-element elementor-element-1a21847 e-con-full e-flex e-con e-child" data-id="1a21847" data-element_type="container" data-e-type="container" data-settings="{&quot;background_background&quot;:&quot;classic&quot;}"><div class="elementor-element elementor-element-99dc03d elementor-widget elementor-widget-image" data-id="99dc03d" data-element_type="widget" data-e-type="widget" data-widget_type="image.default"><div class="elementor-widget-container"><figure class="wp-caption">
-<img src="/images/demolition.webp" alt="فريق عمل دريل ماكس أثناء تنفيذ عملية هدم لجدار داخلي." width="1000" height="712" /><figcaption class="image-caption" style="text-align: center; color: var(--gray); font-size: 0.9rem; margin-top: 10px;">فريق عمل دريل ماكس أثناء تنفيذ عملية هدم  لجدار داخلي.</figcaption></figure></div></div></div><div class="elementor-element elementor-element-3316f56 e-con-full e-flex e-con e-child" data-id="3316f56" data-element_type="container" data-e-type="container" data-settings="{&quot;background_background&quot;:&quot;classic&quot;}"><div class="elementor-element elementor-element-6b87c18 elementor-widget elementor-widget-uael-infobox" data-id="6b87c18" data-element_type="widget" data-e-type="widget" data-widget_type="uael-infobox.default"><div class="elementor-widget-container"><div class="uael-module-content uael-infobox uael-imgicon-style-normal  uael-infobox-left  infobox-has-icon uael-infobox-icon-above-title  uael-infobox-link-type-none"><div class="uael-infobox-left-right-wrap"><div class="uael-infobox-content"><div class="uael-module-content uael-imgicon-wrap "></div><div class="uael-infobox-title-wrap"><h4 class="uael-infobox-title elementor-inline-editing" data-elementor-setting-key="infobox_title" data-elementor-inline-editing-toolbar="basic">تكسير وتجهيز الحمامات والمطابخ</h4></div><div class="uael-infobox-text-wrap"><div class="uael-infobox-text elementor-inline-editing" data-elementor-setting-key="infobox_description" data-elementor-inline-editing-toolbar="advanced">
-متخصصون في الإزالة الكاملة للحمامات والمطابخ القديمة، بما في ذلك تكسير الجدران والأرضيات وإزالة السباكة القديمة، لتجهيز المساحة بالكامل لأعمال التجديد والتشطيبات العصرية.</div></div></div></div></div></div></div><div class="elementor-element elementor-element-9ad15d8 elementor-icon-list--layout-traditional elementor-list-item-link-full_width elementor-widget elementor-widget-icon-list" data-id="9ad15d8" data-element_type="widget" data-e-type="widget" data-widget_type="icon-list.default"><div class="elementor-widget-container"><ul class="elementor-icon-list-items"><li class="elementor-icon-list-item">
-<span class="elementor-icon-list-icon">
-<svg aria-hidden="true" class="e-font-icon-svg e-fas-check-circle" viewBox="0 0 512 512" xmlns="http://www.w3.org/2000/svg"><path d="M504 256c0 136.967-111.033 248-248 248S8 392.967 8 256 119.033 8 256 8s248 111.033 248 248zM227.314 387.314l184-184c6.248-6.248 6.248-16.379 0-22.627l-22.627-22.627c-6.248-6.249-16.379-6.249-22.628 0L216 308.118l-70.059-70.059c-6.248-6.248-16.379-6.248-22.628 0l-22.627 22.627c-6.248 6.248-6.248 16.379 0 22.627l104 104c6.249 6.249 16.379 6.249 22.628.001z"></path></svg>						</span>
-<span class="elementor-icon-list-text">إزالة البلاط والسيراميك</span></li><li class="elementor-icon-list-item">
-<span class="elementor-icon-list-icon">
-<svg aria-hidden="true" class="e-font-icon-svg e-fas-check-circle" viewBox="0 0 512 512" xmlns="http://www.w3.org/2000/svg"><path d="M504 256c0 136.967-111.033 248-248 248S8 392.967 8 256 119.033 8 256 8s248 111.033 248 248zM227.314 387.314l184-184c6.248-6.248 6.248-16.379 0-22.627l-22.627-22.627c-6.248-6.249-16.379-6.249-22.628 0L216 308.118l-70.059-70.059c-6.248-6.248-16.379-6.248-22.628 0l-22.627 22.627c-6.248 6.248-6.248 16.379 0 22.627l104 104c6.249 6.249 16.379 6.249 22.628.001z"></path></svg>						</span>
-<span class="elementor-icon-list-text">تكسير وإزالة الأحواض والمراحيض</span></li><li class="elementor-icon-list-item">
-<span class="elementor-icon-list-icon">
-<svg aria-hidden="true" class="e-font-icon-svg e-fas-check-circle" viewBox="0 0 512 512" xmlns="http://www.w3.org/2000/svg"><path d="M504 256c0 136.967-111.033 248-248 248S8 392.967 8 256 119.033 8 256 8s248 111.033 248 248zM227.314 387.314l184-184c6.248-6.248 6.248-16.379 0-22.627l-22.627-22.627c-6.248-6.249-16.379-6.249-22.628 0L216 308.118l-70.059-70.059c-6.248-6.248-16.379-6.248-22.628 0l-22.627 22.627c-6.248 6.248-6.248 16.379 0 22.627l104 104c6.249 6.249 16.379 6.249 22.628.001z"></path></svg>						</span>
-<span class="elementor-icon-list-text">فك وتكسير كبائن المطبخ القديمة</span></li></ul></div></div><div class="elementor-element elementor-element-a3584aa elementor-widget elementor-widget-button" data-id="a3584aa" data-element_type="widget" data-e-type="widget" data-widget_type="button.default"><div class="elementor-widget-container"><div class="elementor-button-wrapper">
-<a class="elementor-button elementor-button-link elementor-size-sm" href="/contact/">
-<span class="elementor-button-content-wrapper">
-<span class="elementor-button-text">اطلب خدمة إزالة حمام أو مطبخ</span>
-</span>
-</a></div></div></div></div></div><div class="elementor-element elementor-element-d7a1865 e-con-full e-flex e-con e-child" data-id="d7a1865" data-element_type="container" data-e-type="container"><div class="elementor-element elementor-element-9707ae3 e-con-full e-flex e-con e-child" data-id="9707ae3" data-element_type="container" data-e-type="container" data-settings="{&quot;background_background&quot;:&quot;classic&quot;}"><div class="elementor-element elementor-element-5530122 elementor-widget elementor-widget-image" data-id="5530122" data-element_type="widget" data-e-type="widget" data-widget_type="image.default"><div class="elementor-widget-container">
-<img src="/images/Untitled-134.webp" alt="عمل فتحات في الخرسانة" width="1000" height="712" /></div></div></div><div class="elementor-element elementor-element-165057a e-con-full e-flex e-con e-child" data-id="165057a" data-element_type="container" data-e-type="container" data-settings="{&quot;background_background&quot;:&quot;classic&quot;}"><div class="elementor-element elementor-element-aeceb3d elementor-widget elementor-widget-uael-infobox" data-id="aeceb3d" data-element_type="widget" data-e-type="widget" data-widget_type="uael-infobox.default"><div class="elementor-widget-container"><div class="uael-module-content uael-infobox uael-imgicon-style-normal  uael-infobox-left  infobox-has-icon uael-infobox-icon-above-title  uael-infobox-link-type-none"><div class="uael-infobox-left-right-wrap"><div class="uael-infobox-content"><div class="uael-module-content uael-imgicon-wrap "></div><div class="uael-infobox-title-wrap"><h4 class="uael-infobox-title elementor-inline-editing" data-elementor-setting-key="infobox_title" data-elementor-inline-editing-toolbar="basic">السلامة أولاً: التخطيط الهندسي والأمان</h4></div><div class="uael-infobox-text-wrap"><div class="uael-infobox-text elementor-inline-editing" data-elementor-setting-key="infobox_description" data-elementor-inline-editing-toolbar="advanced">
-نحن نؤمن بأن أي عمل هدم ناجح يبدأ بالتخطيط الدقيق. قبل البدء، يقوم مهندسونا بدراسة الموقع وتقييم المخاطر ووضع خطة عمل مفصلة تضمن سلامة الجميع وتحافظ على سلامة الممتلكات المجاورة.</div></div></div></div></div></div></div><div class="elementor-element elementor-element-cef2f6e elementor-icon-list--layout-traditional elementor-list-item-link-full_width elementor-widget elementor-widget-icon-list" data-id="cef2f6e" data-element_type="widget" data-e-type="widget" data-widget_type="icon-list.default"><div class="elementor-widget-container"><ul class="elementor-icon-list-items"><li class="elementor-icon-list-item">
-<span class="elementor-icon-list-icon">
-<svg aria-hidden="true" class="e-font-icon-svg e-fas-check-circle" viewBox="0 0 512 512" xmlns="http://www.w3.org/2000/svg"><path d="M504 256c0 136.967-111.033 248-248 248S8 392.967 8 256 119.033 8 256 8s248 111.033 248 248zM227.314 387.314l184-184c6.248-6.248 6.248-16.379 0-22.627l-22.627-22.627c-6.248-6.249-16.379-6.249-22.628 0L216 308.118l-70.059-70.059c-6.248-6.248-16.379-6.248-22.628 0l-22.627 22.627c-6.248 6.248-6.248 16.379 0 22.627l104 104c6.249 6.249 16.379 6.249 22.628.001z"></path></svg>						</span>
-<span class="elementor-icon-list-text">معاينة هندسية شاملة للموقع</span></li><li class="elementor-icon-list-item">
-<span class="elementor-icon-list-icon">
-<svg aria-hidden="true" class="e-font-icon-svg e-fas-check-circle" viewBox="0 0 512 512" xmlns="http://www.w3.org/2000/svg"><path d="M504 256c0 136.967-111.033 248-248 248S8 392.967 8 256 119.033 8 256 8s248 111.033 248 248zM227.314 387.314l184-184c6.248-6.248 6.248-16.379 0-22.627l-22.627-22.627c-6.248-6.249-16.379-6.249-22.628 0L216 308.118l-70.059-70.059c-6.248-6.248-16.379-6.248-22.628 0l-22.627 22.627c-6.248 6.248-6.248 16.379 0 22.627l104 104c6.249 6.249 16.379 6.249 22.628.001z"></path></svg>						</span>
-<span class="elementor-icon-list-text">وضع خطة عمل تفصيلية وآمنة</span></li><li class="elementor-icon-list-item">
-<span class="elementor-icon-list-icon">
-<svg aria-hidden="true" class="e-font-icon-svg e-fas-check-circle" viewBox="0 0 512 512" xmlns="http://www.w3.org/2000/svg"><path d="M504 256c0 136.967-111.033 248-248 248S8 392.967 8 256 119.033 8 256 8s248 111.033 248 248zM227.314 387.314l184-184c6.248-6.248 6.248-16.379 0-22.627l-22.627-22.627c-6.248-6.249-16.379-6.249-22.628 0L216 308.118l-70.059-70.059c-6.248-6.248-16.379-6.248-22.628 0l-22.627 22.627c-6.248 6.248-6.248 16.379 0 22.627l104 104c6.249 6.249 16.379 6.249 22.628.001z"></path></svg>						</span>
-<span class="elementor-icon-list-text">تأمين وفصل مناطق العمل بالكامل</span></li></ul></div></div><div class="elementor-element elementor-element-48ceb45 elementor-widget elementor-widget-button" data-id="48ceb45" data-element_type="widget" data-e-type="widget" data-widget_type="button.default"><div class="elementor-widget-container"><div class="elementor-button-wrapper">
-<a class="elementor-button elementor-button-link elementor-size-sm" href="/contact/">
-<span class="elementor-button-content-wrapper">
-<span class="elementor-button-text">ناقش مشروعك مع مهندس مختص</span>
-</span>
-</a></div></div></div></div></div></div></div></div><div class="elementor-element elementor-element-8bcf111 e-flex e-con-boxed e-con e-parent e-lazyloaded e-no-lazyload e-lazyloaded e-no-lazyload" data-id="8bcf111" data-element_type="container" data-e-type="container"><div class="e-con-inner"><div class="elementor-element elementor-element-d82cab3 elementor-widget elementor-widget-heading" data-id="d82cab3" data-element_type="widget" data-e-type="widget" data-widget_type="heading.default"><div class="elementor-widget-container"><h3 class="elementor-heading-title elementor-size-default">إن اختيار مقاول هدم محترف هو قرار حاسم يؤثر بشكل مباشر على سلامة مشروعك، ميزانيتك، والجدول الزمني. فعملية الهدم ليست مجرد إزالة، بل هي خطوة تأسيسية تتطلب خبرة ودقة. لتضمن أنك تضع مشروعك في أيدٍ أمينة، إليك 5 نصائح أساسية يجب مراعاتها:</h3></div></div></div></div><div class="elementor-element elementor-element-ckgtm7n e-flex e-con-boxed e-con e-parent e-lazyloaded e-no-lazyload e-lazyloaded e-no-lazyload" data-id="ckgtm7n" data-element_type="container" data-e-type="container" data-settings="{&quot;background_background&quot;:&quot;classic&quot;}"><div class="e-con-inner"><div class="elementor-element elementor-element-8ea2407 elementor-widget elementor-widget-heading" data-id="8ea2407" data-element_type="widget" data-e-type="widget" data-widget_type="heading.default"><div class="elementor-widget-container"><h3 class="elementor-heading-title elementor-size-default">لا تتردد في السؤال عن المشاريع السابقة التي قامت بها الشركة. هل لديهم خبرة في نوع الهدم الذي تحتاجه (سكني، تجاري، خرسانة مسلحة)؟ شركة الهدم المحترفة ستمتلك معرض أعمال (بورتفوليو) واضح يمكنك الاطلاع عليه. الخبرة تترجم إلى قدرة على توقع المشاكل وحلها قبل حدوثها.</h3></div></div><div class="elementor-element elementor-element-4d19fe6 elementor-widget elementor-widget-spacer" data-id="4d19fe6" data-element_type="widget" data-e-type="widget" data-widget_type="spacer.default"><div class="elementor-widget-container"><div class="elementor-spacer"><div class="elementor-spacer-inner"></div></div></div></div><div class="elementor-element elementor-element-8907351 elementor-widget elementor-widget-heading" data-id="8907351" data-element_type="widget" data-e-type="widget" data-widget_type="heading.default"><div class="elementor-widget-container"><h3 class="elementor-heading-title elementor-size-default">أهم عامل على الإطلاق. تأكد من أن المقاول لديه التراخيص اللازمة للعمل في مصر وأنه يمتلك تأمينًا يغطي العمال والموقع. العمل مع شركة غير مرخصة أو غير مؤمن عليها يعرضك لمسؤولية قانونية ضخمة في حالة وقوع أي حوادث، لا قدر الله.</h3></div></div><div class="elementor-element elementor-element-dcc8362 elementor-widget elementor-widget-spacer" data-id="dcc8362" data-element_type="widget" data-e-type="widget" data-widget_type="spacer.default"><div class="elementor-widget-container"><div class="elementor-spacer"><div class="elementor-spacer-inner"></div></div></div></div><div class="elementor-element elementor-element-d8c0625 elementor-widget elementor-widget-heading" data-id="d8c0625" data-element_type="widget" data-e-type="widget" data-widget_type="heading.default"><div class="elementor-widget-container"><h3 class="elementor-heading-title elementor-size-default">قبل توقيع أي عقد، اطلب من المقاول شرح خطة العمل. كيف سيتم تأمين الموقع؟ ما هي إجراءات السلامة المتبعة لحماية العمال والجيران والممتلكات المجاورة؟ المقاول المحترف سيقدم لك خطة واضحة ومفصلة تعكس فهمه العميق لأصول المهنة.</h3></div></div><div class="elementor-element elementor-element-bcdf632 elementor-widget elementor-widget-spacer" data-id="bcdf632" data-element_type="widget" data-e-type="widget" data-widget_type="spacer.default"><div class="elementor-widget-container"><div class="elementor-spacer"><div class="elementor-spacer-inner"></div></div></div></div><div class="elementor-element elementor-element-fd85a03 elementor-widget elementor-widget-heading" data-id="fd85a03" data-element_type="widget" data-e-type="widget" data-widget_type="heading.default"><div class="elementor-widget-container"><h3 class="elementor-heading-title elementor-size-default">احذر من عروض الأسعار الشفهية أو غير الواضحة. عرض السعر الاحترافي يجب أن يكون مكتوبًا ويتضمن تفصيلاً كاملاً للتكاليف، الجدول الزمني المتوقع، والأهم من ذلك، يجب أن يوضح ما إذا كان السعر يشمل خدمة "التشوين" وإزالة المخلفات أم لا. هذا يمنع ظهور أي تكاليف خفية لاحقًا.</h3></div></div><div class="elementor-element elementor-element-dedaf3e elementor-widget elementor-widget-spacer" data-id="dedaf3e" data-element_type="widget" data-e-type="widget" data-widget_type="spacer.default"><div class="elementor-widget-container"><div class="elementor-spacer"><div class="elementor-spacer-inner"></div></div></div></div><div class="elementor-element elementor-element-7cbc3ff elementor-widget elementor-widget-heading" data-id="7cbc3ff" data-element_type="widget" data-e-type="widget" data-widget_type="heading.default"><div class="elementor-widget-container"><h3 class="elementor-heading-title elementor-size-default">منذ أول مكالمة، يمكنك تقييم مدى احترافية الشركة. هل يردون على استفساراتك بوضوح؟ هل يلتزمون بمواعيدهم؟ سهولة التواصل والاحترافية في التعامل هي مؤشر قوي على جودة الخدمة التي ستحصل عليها خلال تنفيذ المشروع.</h3></div></div><div class="elementor-element elementor-element-4263d2c elementor-widget elementor-widget-spacer" data-id="4263d2c" data-element_type="widget" data-e-type="widget" data-widget_type="spacer.default"><div class="elementor-widget-container"><div class="elementor-spacer"><div class="elementor-spacer-inner"></div></div></div></div><div class="elementor-element elementor-element-9971cea elementor-widget elementor-widget-heading" data-id="9971cea" data-element_type="widget" data-e-type="widget" data-widget_type="heading.default"><div class="elementor-widget-container"><h2 class="elementor-heading-title elementor-size-default">في دريل ماكس، نفخر بتطبيق كل هذه المعايير وأكثر في جميع مشاريعنا. نحن نؤمن بأن الشفافية والاحترافية هما أساس بناء الثقة مع عملائنا.</h2></div></div><div class="elementor-element elementor-element-8dd3d43 elementor-widget elementor-widget-spacer" data-id="8dd3d43" data-element_type="widget" data-e-type="widget" data-widget_type="spacer.default"><div class="elementor-widget-container"><div class="elementor-spacer"><div class="elementor-spacer-inner"></div></div></div></div><div class="elementor-element elementor-element-63f14d8 elementor-widget elementor-widget-uael-infobox" data-id="63f14d8" data-element_type="widget" data-e-type="widget" data-widget_type="uael-infobox.default"><div class="elementor-widget-container"><div class="uael-module-content uael-infobox uael-imgicon-style-normal  infobox-has-icon uael-infobox-icon-above-title  uael-infobox-link-type-none"><div class="uael-infobox-left-right-wrap"><div class="uael-infobox-content"><div class="uael-module-content uael-imgicon-wrap "></div><div class="uael-infobox-title-wrap"><h6 class="uael-infobox-title-prefix elementor-inline-editing" data-elementor-setting-key="infobox_title_prefix" data-elementor-inline-editing-toolbar="basic">هل أنت مستعد للبدء في مشروعك؟</h6><h2 class="uael-infobox-title elementor-inline-editing" data-elementor-setting-key="infobox_title" data-elementor-inline-editing-toolbar="basic">اطلب عرض سعر ومعاينة مجانية اليوم مع افضل مقاول هدم</h2></div><div class="uael-infobox-text-wrap"><div class="uael-infobox-text elementor-inline-editing" data-elementor-setting-key="infobox_description" data-elementor-inline-editing-toolbar="advanced">
-فريقنا من المهندسين والفنيين جاهز لزيارة موقعك، فهم متطلباتك، وتقديم عرض سعر تفصيلي ومنافس دون أي التزام. دعنا نساعدك في اتخاذ الخطوة الأولى نحو تنفيذ مشروعك بنجاح.</div></div></div></div></div></div></div><div class="elementor-element elementor-element-407795a elementor-align-center elementor-widget elementor-widget-button" data-id="407795a" data-element_type="widget" data-e-type="widget" data-widget_type="button.default"><div class="elementor-widget-container"><div class="elementor-button-wrapper">
-<a class="elementor-button elementor-button-link elementor-size-sm" href="/contact/">
-<span class="elementor-button-content-wrapper">
-<span class="elementor-button-icon">
-<svg aria-hidden="true" class="e-font-icon-svg e-fas-bolt" viewBox="0 0 320 512" xmlns="http://www.w3.org/2000/svg"><path d="M296 160H180.6l42.6-129.8C227.2 15 215.7 0 200 0H56C44 0 33.8 8.9 32.2 20.8l-32 240C-1.7 275.2 9.5 288 24 288h118.7L96.6 482.5c-3.6 15.2 8 29.5 23.3 29.5 8.4 0 16.4-4.4 20.8-12l176-304c9.3-15.9-2.2-36-20.7-36z"></path></svg>			</span>
-<span class="elementor-button-text">احصل على عرض سعري الآن</span>
-</span>
-</a></div></div></div></div></div></div>
+  <section class="hero">
+    <div class="hero-bg"></div>
+    <div class="container hero-container text-center">
+      <div class="hero-content" style="max-width: 900px; margin: 0 auto;">
+        <span class="hero-subtitle">دريل ماكس | مقاول هدم وتكسير حوائط وخرسانة</span>
+        <h1>مقاول هدم وتكسير حوائط وخرسانة وتشوين مخلفات في مصر</h1>
+        <p class="hero-lead">
+          نقدم خدمات مقاول هدم وتكسير حوائط وخرسانة مسلحة بدقة وأمان للشقق والفيلات والمحلات والمصانع، مع فريق عمال تكسير محترف وتشوين ونقل كامل للأنقاض وتسليم الموقع نظيفاً.
+        </p>
+        <div class="hero-actions">
+          <a href="/contact/" class="btn btn-primary">اطلب معاينة وعرض سعر</a>
+          <a href="https://wa.me/201070046464" class="btn btn-wa" target="_blank" rel="noopener noreferrer">تواصل عبر واتساب</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="demo-section bg-light">
+    <div class="container">
+      <div class="intro-box">
+        <h2>تكسير حوائط وخرسانة بأسلوب هندسي آمن</h2>
+        <p>
+          سواء كنت تبحث عن <strong>مقاول تكسير</strong> لإزالة حائط فاصل وتوسعة الريسبشن، أو <strong>مقاول هدم مباني</strong> وهياكل خرسانية، فإن التكسير الاحترافي يبدأ بمعاينة الموقع والتمييز بين الجدران الحاملة وغير الحاملة وتحديد مسارات الكهرباء والسباكة قبل تشغيل المعدات.
+        </p>
+        <p>
+          <strong>متى نختار تكسير الحوائط ومتى نختار القص بالمنشار؟</strong> لإزالة حوائط الطوب والسيراميك والحمامات بالكامل يوفّر فريق عمال التكسير لدينا سرعة عالية وتكلفة اقتصادية مع تشوين ونقل المخلفات؛ أما لفتح باب أو شباك في خرسانة مسلحة دون اهتزاز فيُدمج التنفيذ مع <a href="/saw-cutting%d9%82%d8%b5-%d8%ae%d8%b1%d8%b3%d8%a7%d9%86%d8%a9/">قص الخرسانة بالمنشار الماسي</a> و<a href="/core-drilling-%d8%b5%d9%86%d8%a7%d9%8a%d8%b9%d9%8a-%d9%83%d9%88%d8%b1/">فتحات الكور دريل</a>.
+        </p>
+        <p>
+          <strong>نطاق التغطية وعوامل التسعير:</strong> تتحدد تكلفة تكسير حوائط الشقة أو الخرسانة بناءً على مساحة الجدار وسماكته (طوب أم خرسانة مسلحة)، الطابق وتوافر المصعد، وعدد نقلات الرتش. للمزيد اقرأ <a href="/تكسير-حوائط-وخرسانة-شقق/">دليل تكسير حوائط الشقة والخرسانة وتشوين المخلفات</a>. نخدم القاهرة والجيزة و<a href="/new-cairo-tagamoa-concrete-cutting-core/">التجمع الخامس</a> و<a href="/new-capital-shorouk-madinaty-core/">العاصمة الإدارية والشروق ومدينتي</a> و<a href="/تخريم-خرسانة-مدينة-نصر/">مدينة نصر</a> و<a href="/october-zayed-concrete-cutting-core/">6 أكتوبر والشيخ زايد</a> و<a href="/alexandria-concrete-cutting-core/">الإسكندرية</a> و<a href="/service-areas/">جميع محافظات مصر</a>. راجع أيضاً <a href="/prices/">دليل الأسعار</a>.
+        </p>
+      </div>
+
+      <div class="features-grid">
+        <div class="feature-card">
+          <h3>الأمان أولويتنا القصوى</h3>
+          <p>نلتزم بمعايير السلامة المهنية وتأمين الموقع والمرافق المجاورة قبل بدء أي أعمال تكسير.</p>
+        </div>
+        <div class="feature-card">
+          <h3>التزام بالمخطط الهندسي</h3>
+          <p>مراجعة الجدران الحاملة وتجنب أي مساس بالسلامة الإنشائية للمبنى أثناء الإزالة.</p>
+        </div>
+        <div class="feature-card">
+          <h3>إنجاز سريع ومنظم</h3>
+          <p>معدات تكسير هيدروليكية وكهربائية حديثة تنجز الأعمال في الوقت المتفق عليه.</p>
+        </div>
+        <div class="feature-card">
+          <h3>تشوين ونقل المخلفات</h3>
+          <p>رفع كامل للأنقاض وتنظيف موقع العمل لتسليمه جاهزاً للمقاول أو فني التشطيبات.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="demo-section">
+    <div class="container">
+      <div class="section-header text-center">
+        <h2>خدمات الهدم والتكسير التي نقدمها</h2>
+        <p>تغطية شاملة لأعمال التكسير السكنية والتجارية والصناعية مع خيار تشوين ونقل المخلفات.</p>
+      </div>
+
+      <div class="services-stack">
+        {serviceBlocks.map((item, idx) => (
+          <div class={`service-row ${idx % 2 === 1 ? 'reverse' : ''}`}>
+            <div class="service-media">
+              <img src={item.img} alt={item.alt} width="1000" height="712" loading="lazy" />
+            </div>
+            <div class="service-body">
+              <h3>{item.title}</h3>
+              <p>{item.desc}</p>
+              <ul>
+                {item.points.map(pt => <li>{pt}</li>)}
+              </ul>
+              <a href="/contact/" class="btn btn-primary">{item.cta}</a>
+            </div>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <section class="demo-section bg-light">
+    <div class="container" style="max-width: 900px;">
+      <div class="section-header text-center">
+        <h2>أسئلة شائعة حول خدمات الهدم والتكسير</h2>
+      </div>
+      <div class="faq-list">
+        {faqItems.map(item => (
+          <details class="faq-item">
+            <summary>{item.q}</summary>
+            <p>{item.a}</p>
+          </details>
+        ))}
+      </div>
+
+      <div class="demo-cta">
+        <h2>جاهز لبدء أعمال التكسير والتجهيز في موقعك؟</h2>
+        <p>أرسل تفاصيل المساحة وصور الموقع عبر واتساب أو اتصل بنا لمناقشة نطاق العمل وتكلفة التكسير والتشوين.</p>
+        <div class="cta-actions">
+          <a href="/contact/" class="btn btn-primary">تواصل معنا الآن</a>
+          <a href="tel:+201070046464" class="btn btn-outline">اتصل: 01070046464</a>
+        </div>
       </div>
     </div>
   </section>
 </MainLayout>
+
+<style>
+  .text-center { text-align: center; }
+  .bg-light { background-color: var(--section-bg); }
+  .demo-section { padding: 64px 0; }
+  .hero h1 { font-size: clamp(2rem, 4vw, 3.1rem); line-height: 1.35; margin-bottom: 16px; }
+  .hero-lead { color: #e2e8f0; font-size: 1.12rem; line-height: 1.85; margin-bottom: 24px; }
+  .hero-actions { display: flex; gap: 14px; justify-content: center; flex-wrap: wrap; }
+
+  .section-header { max-width: 760px; margin: 0 auto 40px; }
+  .section-header h2 { font-size: clamp(1.6rem, 3vw, 2.2rem); color: var(--dark); margin-bottom: 10px; }
+  .section-header p { color: var(--gray); line-height: 1.85; font-size: 1.05rem; }
+
+  .intro-box {
+    background: #fff;
+    padding: 36px;
+    border-radius: 14px;
+    border: 1px solid var(--border-color);
+    margin-bottom: 32px;
+  }
+  .intro-box h2 { color: var(--dark); font-size: 1.7rem; margin-bottom: 14px; }
+  .intro-box p { color: var(--gray); line-height: 1.9; margin-bottom: 12px; font-size: 1.05rem; }
+  .intro-box a { color: var(--primary); font-weight: 700; text-decoration: underline; }
+
+  .features-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(min(100%, 240px), 1fr));
+    gap: 20px;
+  }
+  .feature-card {
+    background: #fff;
+    padding: 26px;
+    border-radius: 12px;
+    border: 1px solid var(--border-color);
+    border-top: 4px solid var(--primary);
+  }
+  .feature-card h3 { color: var(--dark); font-size: 1.15rem; margin-bottom: 8px; }
+  .feature-card p { color: var(--gray); line-height: 1.8; font-size: 0.98rem; }
+
+  .services-stack { display: flex; flex-direction: column; gap: 36px; }
+  .service-row {
+    display: grid;
+    grid-template-columns: 1fr 1.15fr;
+    gap: 32px;
+    align-items: center;
+    background: #fff;
+    padding: 28px;
+    border-radius: 14px;
+    border: 1px solid var(--border-color);
+    box-shadow: 0 6px 22px rgba(15, 23, 42, 0.04);
+  }
+  .service-row.reverse .service-media { order: 2; }
+  .service-media img {
+    width: 100%;
+    height: 300px;
+    object-fit: cover;
+    border-radius: 10px;
+    display: block;
+  }
+  .service-body h3 { color: var(--dark); font-size: 1.45rem; margin-bottom: 12px; }
+  .service-body p { color: var(--gray); line-height: 1.85; margin-bottom: 14px; }
+  .service-body ul { list-style: disc; padding-inline-start: 22px; color: var(--dark); line-height: 1.9; margin-bottom: 20px; }
+  .service-body li { margin-bottom: 6px; }
+
+  .faq-list { display: flex; flex-direction: column; gap: 14px; margin-bottom: 40px; }
+  .faq-item {
+    background: #fff;
+    border: 1px solid var(--border-color);
+    border-radius: 12px;
+    padding: 20px 24px;
+  }
+  .faq-item summary {
+    font-weight: 700;
+    color: var(--dark);
+    font-size: 1.08rem;
+    cursor: pointer;
+  }
+  .faq-item p {
+    color: var(--gray);
+    line-height: 1.85;
+    margin-top: 12px;
+  }
+
+  .demo-cta {
+    background: var(--header-bg);
+    color: #fff;
+    border-radius: 14px;
+    padding: 40px 28px;
+    text-align: center;
+  }
+  .demo-cta h2 { font-size: 1.7rem; margin-bottom: 12px; color: #fff; }
+  .demo-cta p { color: #cbd5e1; max-width: 650px; margin: 0 auto 22px; line-height: 1.85; }
+  .cta-actions { display: flex; gap: 14px; justify-content: center; flex-wrap: wrap; }
+
+  @media (max-width: 820px) {
+    .demo-section { padding: 40px 0; }
+    .service-row { grid-template-columns: 1fr; padding: 20px; }
+    .service-row.reverse .service-media { order: 0; }
+    .service-media img { height: 220px; }
+    .intro-box, .demo-cta { padding: 24px 18px; }
+  }
+</style>

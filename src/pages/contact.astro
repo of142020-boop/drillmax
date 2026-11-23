@@ -137,27 +137,27 @@ const seo = {
         <p style="color: var(--gray); line-height: 1.8; margin-bottom: 30px;">للاستفسارات العاجلة أو لمناقشة تفاصيل مشروعك مباشرة مع أحد خبرائنا، يمكنك استخدام بيانات الاتصال التالية:</p>
 
         <div class="info-card">
-          <div class="icon-circle">📍</div>
+          <div class="icon-circle" aria-hidden="true">📍</div>
           <div>
-            <h4>عنواننا</h4>
+            <h3>عنواننا</h3>
             <p>شارع احمد السلاب، الحي العاشر، مدينة نصر، القاهرة</p>
           </div>
         </div>
 
         <div class="info-card">
-          <div class="icon-circle">📞</div>
+          <div class="icon-circle" aria-hidden="true">📞</div>
           <div>
-            <h4>اتصل بنا</h4>
-            <p dir="ltr" style="text-align: right; margin-bottom: 5px;">01070046464</p>
-            <p dir="ltr" style="text-align: right;">01055550195</p>
+            <h3>اتصل بنا</h3>
+            <p dir="ltr" style="text-align: right; margin-bottom: 5px;"><a href="tel:+201070046464" style="color: var(--primary); font-weight: 700;">01070046464</a></p>
+            <p dir="ltr" style="text-align: right;"><a href="tel:+201055550195" style="color: var(--primary); font-weight: 700;">01055550195</a></p>
           </div>
         </div>
 
         <div class="info-card">
-          <div class="icon-circle">✉️</div>
+          <div class="icon-circle" aria-hidden="true">✉️</div>
           <div>
-            <h4>راسلنا</h4>
-            <p>support@drilmax.com</p>
+            <h3>راسلنا</h3>
+            <p><a href="mailto:support@drilmax.com" style="color: var(--primary); font-weight: 700;">support@drilmax.com</a></p>
           </div>
         </div>
 
@@ -231,7 +231,7 @@ const seo = {
   <!-- SEO VALUE TEXT -->
   <section class="seo-value-section py-section bg-light border-top">
     <div class="container text-center" style="max-width: 900px;">
-      <h3 style="color: var(--dark); font-size: 1.8rem; margin-bottom: 20px;">الاستثمار الذكي في الحلول الهندسية</h3>
+      <h2 style="color: var(--dark); font-size: 1.8rem; margin-bottom: 20px;">الاستثمار الذكي في الحلول الهندسية</h2>
       <p style="color: var(--gray); font-size: 1.1rem; line-height: 1.9;">
         قد يبدو التكسير العشوائي حلاً سريعًا ورخيصًا، لكن تكاليفه الخفية باهظة، فهو يسبب شروخًا دقيقة ويضعف الهيكل الخرساني، مما يؤدي إلى أضرار إنشائية مستقبلية تتطلب تكاليف ترميم وإعادة تشطيب عالية. في المقابل، فإن اختيار الحل الهندسي عبر خدمات قص وتخريم الخرسانة من Drill Max هو استثمار ذكي. صحيح أن سعر فتحة الكور أو تكلفة قص الجدار قد تكون أعلى قليلاً في البداية، لكنها توفر عليك آلاف الجنيهات على المدى الطويل. نحن نقدم جودة عالية ودقة متناهية تضمن السلامة وتحافظ على قيمة الممتلكات، مما يمنحك أفضل قيمة مقابل سعر.
       </p>
@@ -289,8 +289,8 @@ const seo = {
   /* Hero Section */
   .hero {
     position: relative;
-    height: 50vh;
-    min-height: 400px;
+    min-height: 380px;
+    padding: 64px 0;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -312,7 +312,7 @@ const seo = {
     z-index: 2;
   }
   .hero-subtitle {
-    color: var(--primary);
+    color: #fdba74;
     font-size: 1.2rem;
     font-weight: 700;
     margin-bottom: 15px;
@@ -360,7 +360,7 @@ const seo = {
     font-size: 1.5rem;
     flex-shrink: 0;
   }
-  .info-card h4 {
+  .info-card h3 {
     color: var(--dark);
     font-size: 1.2rem;
     margin-bottom: 5px;

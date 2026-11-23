@@ -10,10 +10,35 @@ interface Props {
   image: string;
   toc: {id: string; label: string}[];
   related: {href: string; label: string; desc?: string}[];
+  phoneNumber?: string;
+  eyebrow?: string;
+  modifiedDate?: string;
+  modifiedLabel?: string;
+  ctaHeading?: string;
+  ctaBody?: string;
+  ctaHref?: string;
+  ctaLabel?: string;
 }
-const {title, heading, description, path, published, image, toc, related} = Astro.props;
+const {
+  title,
+  heading,
+  description,
+  path,
+  published,
+  image,
+  toc,
+  related,
+  phoneNumber,
+  eyebrow = 'دليل التجهيز والاختيار',
+  modifiedDate = '2026-10-22T12:00:00+03:00',
+  modifiedLabel = '22 أكتوبر 2026',
+  ctaHeading = 'تجهّز فتحة تهوية أو تحتاج فني تركيب؟',
+  ctaBody = 'جهّز رقم الموديل، وصورة المكان، ومقاس الفتحة الحالي لتوضيح متطلبات العمل قبل تحديد التكلفة.',
+  ctaHref = '/contact/',
+  ctaLabel = 'ناقش تفاصيل التركيب',
+} = Astro.props;
 const url = new URL(path, 'https://drilmax.com').href;
-const modified = '2026-10-22T12:00:00+03:00';
+const modified = modifiedDate;
 const schema = JSON.stringify({
   '@context': 'https://schema.org',
   '@graph': [
@@ -27,20 +52,20 @@ const schema = JSON.stringify({
   ],
 });
 ---
-<MainLayout title={title} description={description} canonical={url} ogImage={image} schema={schema} ogType="article" articlePublishedTime={published} articleModifiedTime={modified}>
+<MainLayout title={title} description={description} canonical={url} ogImage={image} schema={schema} ogType="article" articlePublishedTime={published} articleModifiedTime={modified} {...(phoneNumber ? { phoneNumber } : {})}>
   <div class="guide-shell">
     <nav class="guide-breadcrumb" aria-label="مسار الصفحة"><a href="/">الرئيسية</a><span aria-hidden="true"> / </span><a href="/blog/">المدونة</a></nav>
     <header class="guide-heading">
-      <p class="guide-eyebrow">دليل التجهيز والاختيار</p>
+      <p class="guide-eyebrow">{eyebrow}</p>
       <h1>{heading}</h1>
       <p class="guide-description">{description}</p>
-      <p class="guide-meta">إعداد فريق دريل ماكس · آخر تحديث <time datetime={modified}>22 أكتوبر 2026</time></p>
+      <p class="guide-meta">إعداد فريق دريل ماكس · آخر تحديث <time datetime={modified}>{modifiedLabel}</time></p>
     </header>
     <nav class="guide-toc" aria-label="محتويات الدليل"><strong>في هذا الدليل</strong><ul>{toc.map(item => <li><a href={`#${item.id}`}>{item.label}</a></li>)}</ul></nav>
     <article class="guide-content"><slot /></article>
-    <aside class="guide-request" aria-label="طلب معاينة التركيب">
-      <div><h2>تجهّز فتحة تهوية أو تحتاج فني تركيب؟</h2><p>جهّز رقم الموديل، وصورة المكان، ومقاس الفتحة الحالي لتوضيح متطلبات العمل قبل تحديد التكلفة.</p></div>
-      <a class="guide-button" href="/contact/">ناقش تفاصيل التركيب</a>
+    <aside class="guide-request" aria-label="طلب معاينة أو استشارة">
+      <div><h2>{ctaHeading}</h2><p>{ctaBody}</p></div>
+      <a class="guide-button" href={ctaHref}>{ctaLabel}</a>
     </aside>
     <RelatedLinks title="أدلة وخدمات مرتبطة" links={related} />
   </div>

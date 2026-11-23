@@ -2,8 +2,8 @@
 import MainLayout from '../layouts/MainLayout.astro';
 
 const seo = {
-  title: "مناطق خدمة قص وتخريم الخرسانة | دريل ماكس",
-  description: "تعرف على مناطق خدمة دريل ماكس لقص وتخريم الخرسانة، وروابط تفاصيل الخدمة بالقاهرة والمدن الجديدة والإسكندرية والصعيد، وما ترسله لتأكيد إمكانية التنفيذ بموقعك.",
+  title: "مناطق خدمة قص وتخريم الخرسانة في مصر | 01070046464",
+  description: "خريطة مناطق خدمة قص وتخريم الخرسانة من دريل ماكس في القاهرة والجيزة والتجمع وأكتوبر والإسكندرية والصعيد والبحر الأحمر. اتصل 01070046464.",
   canonical: "/service-areas/",
   ogImage: "/images/gas-hole.webp",
   schema: JSON.stringify({
@@ -12,7 +12,7 @@ const seo = {
       {
         "@type": "Organization",
         "@id": "https://drilmax.com/#organization",
-        "name": "Drill Max دريل ماكس",
+        "name": "Drill Max | دريل ماكس",
         "url": "https://drilmax.com",
         "sameAs": ["https://www.facebook.com/drillmaxeg"],
         "logo": {
@@ -39,25 +39,16 @@ const seo = {
         "@type": "BreadcrumbList",
         "@id": "https://drilmax.com/service-areas/#breadcrumb",
         "itemListElement": [
-          {
-            "@type": "ListItem",
-            "position": "1",
-            "item": { "@id": "https://drilmax.com", "name": "الرئيسية" }
-          },
-          {
-            "@type": "ListItem",
-            "position": "2",
-            "item": { "@id": "https://drilmax.com/service-areas/", "name": "مناطق خدمة Drill Max" }
-          }
-        ],
-        "name": "مسار التنقل"
+          { "@type": "ListItem", "position": 1, "item": { "@id": "https://drilmax.com", "name": "الرئيسية" } },
+          { "@type": "ListItem", "position": 2, "item": { "@id": "https://drilmax.com/service-areas/", "name": "مناطق الخدمة" } }
+        ]
       },
       {
         "@type": "WebPage",
         "@id": "https://drilmax.com/service-areas/#webpage",
         "url": "https://drilmax.com/service-areas/",
-        "name": "مناطق خدمة Drill Max - Drill Max | دريل ماكس لخدمات قص وتخريم الخرسانة - 01070046464",
-        "description": "نفخر خدمة Drill Max بتقديم خدماتنا لقطاع واسع من العملاء في جميع أنحاء مصر.",
+        "name": "مناطق خدمة قص وتخريم الخرسانة | دريل ماكس",
+        "description": "تفاصيل مناطق خدمة دريل ماكس لقص وتخريم الخرسانة في القاهرة الكبرى والمحافظات.",
         "inLanguage": "ar",
         "isPartOf": { "@id": "https://drilmax.com/#website" },
         "about": { "@id": "https://drilmax.com/#organization" },
@@ -66,92 +57,257 @@ const seo = {
     ]
   })
 };
+
+const cityPages = [
+  { href: "/new-cairo-tagamoa-concrete-cutting-core/", label: "التجمع الخامس والقاهرة الجديدة" },
+  { href: "/new-capital-shorouk-madinaty-core/", label: "العاصمة الإدارية والشروق ومدينتي" },
+  { href: "/تخريم-خرسانة-مدينة-نصر/", label: "مدينة نصر" },
+  { href: "/فتحات-كور-الحي-العاشر/", label: "الحي العاشر" },
+  { href: "/october-zayed-concrete-cutting-core/", label: "6 أكتوبر والشيخ زايد" },
+  { href: "/alexandria-concrete-cutting-core/", label: "الإسكندرية" },
+  { href: "/mansoura-concrete-cutting-core/", label: "المنصورة والدقهلية" },
+  { href: "/minya-concrete-cutting-core/", label: "المنيا" },
+  { href: "/assiut-concrete-cutting-core/", label: "أسيوط" },
+  { href: "/hurghada-concrete-cutting-core/", label: "الغردقة والبحر الأحمر" },
+];
+
+const regions = [
+  {
+    title: "القاهرة الكبرى والمدن الجديدة",
+    areas: [
+      "القاهرة الجديدة والتجمع الخامس",
+      "مدينتي، الرحاب، الشروق، وبدر",
+      "مدينة نصر، المعادي، ومصر الجديدة",
+      "العاصمة الإدارية الجديدة",
+      "القليوبية (العبور، شبرا الخيمة)"
+    ]
+  },
+  {
+    title: "محافظة الجيزة وأكتوبر وزايد",
+    areas: [
+      "6 أكتوبر، الشيخ زايد، وحدائق أكتوبر",
+      "المهندسين، الدقي، والعجوزة",
+      "الهرم، فيصل، وحدائق الأهرام",
+      "القرية الذكية والمناطق الصناعية"
+    ]
+  },
+  {
+    title: "محافظات وجه بحري والدلتا والقناة",
+    areas: [
+      "الإسكندرية والساحل الشمالي والعلمين",
+      "مدن الدلتا (المنصورة، طنطا، دمياط الجديدة)",
+      "مدن القناة (السويس، الإسماعيلية، بورسعيد)",
+      "العاشر من رمضان ومدينة السادات"
+    ]
+  },
+  {
+    title: "محافظة البحر الأحمر",
+    areas: [
+      "الغردقة والجونة",
+      "العين السخنة ورأس غارب",
+      "سفاجا، القصير، ومرسى علم",
+      "المشاريع السياحية والفندقية"
+    ]
+  },
+  {
+    title: "محافظات وجه قبلي (الصعيد)",
+    areas: [
+      "بني سويف والمنيا",
+      "أسيوط وسوهاج",
+      "قنا والأقصر",
+      "أسوان والمشاريع التنموية"
+    ]
+  },
+  {
+    title: "المشاريع الخاصة والصناعية",
+    areas: [
+      "المصانع والمناطق الصناعية",
+      "مشاريع الطرق والكباري",
+      "محطات الكهرباء والمياه",
+      "مناطق أخرى حسب حجم المشروع"
+    ]
+  }
+];
 ---
 
 <MainLayout {...seo}>
-  <section class="py-section">
-    <div class="container" style="max-width: 1000px; margin: 0 auto; background: #fff; padding: 40px; border-radius: 8px; box-shadow: 0 4px 6px rgba(0,0,0,0.05);">
-      <div class="page-content" style="line-height: 1.8; color: var(--gray);">
-        <section class="area-directory" aria-labelledby="area-details">
-          <h2 id="area-details">تفاصيل الخدمة حسب موقع المشروع</h2>
-          <p>تساعدنا معرفة المنطقة والعنوان وصور موضع الفتحات على مراجعة الوصول وتجهيز المعدات. يُؤكد نطاق العمل وموعد الانتقال بعد مراجعة بيانات الموقع، ولا يعني وجود المنطقة في الدليل توافر موعد فوري.</p>
-          <ul>
-            <li><a href="/تخريم-خرسانة-مدينة-نصر/">مدينة نصر</a></li>
-            <li><a href="/فتحات-كور-الحي-العاشر/">الحي العاشر</a></li>
-            <li><a href="/october-zayed-concrete-cutting-core/">أكتوبر والشيخ زايد</a></li>
-            <li><a href="/alexandria-concrete-cutting-core/">الإسكندرية</a></li>
-            <li><a href="/mansoura-concrete-cutting-core/">المنصورة والدقهلية</a></li>
-            <li><a href="/minya-concrete-cutting-core/">المنيا</a></li>
-            <li><a href="/assiut-concrete-cutting-core/">أسيوط</a></li>
-            <li><a href="/hurghada-concrete-cutting-core/">الغردقة والبحر الأحمر</a></li>
-          </ul>
-          <p>جهّز عدد الفتحات والمقاسات ونوع العنصر ورقم الدور وصور الموقع، ثم <a href="/contact/">تواصل لمناقشة المعاينة والتنفيذ</a>. ويمكنك مراجعة <a href="/services/">أنواع خدمات القص والتخريم</a> قبل إرسال الطلب.</p>
-        </section>
-        <div data-elementor-type="wp-page" data-elementor-id="1669" class="elementor elementor-1669" data-elementor-post-type="page"><div class="elementor-element elementor-element-acd8894 e-flex e-con-boxed e-con e-parent e-lazyloaded e-no-lazyload e-lazyloaded e-no-lazyload" data-id="acd8894" data-element_type="container" data-e-type="container"><div class="e-con-inner"><div class="elementor-element elementor-element-3632f58 elementor-widget elementor-widget-heading" data-id="3632f58" data-element_type="widget" data-e-type="widget" data-widget_type="heading.default"><div class="elementor-widget-container"><h1 class="elementor-heading-title elementor-size-default">مناطق خدمة قص وتخريم الخرسانة</h1></div></div></div></div><div class="elementor-element elementor-element-dbdb8a6 e-flex e-con-boxed e-con e-parent e-lazyloaded e-no-lazyload e-lazyloaded e-no-lazyload" data-id="dbdb8a6" data-element_type="container" data-e-type="container"><div class="e-con-inner"><div class="elementor-element elementor-element-55772c6 elementor-widget elementor-widget-text-editor" data-id="55772c6" data-element_type="widget" data-e-type="widget" data-widget_type="text-editor.default"><div class="elementor-widget-container"><h6>نفخر&nbsp; خدمة Drill Max بتقديم خدماتنا لقطاع واسع من العملاء. سواء كنت تبحث عن صنايعي كور في العاصمة الإدارية أو فني منشار في الغردقة فإن فريقنا جاهز لتقديم حلول دقيقة وسريعة.</h6></div></div></div></div><div class="elementor-element elementor-element-8c12ad4 e-flex e-con-boxed e-con e-parent e-lazyloaded e-no-lazyload e-lazyloaded e-no-lazyload" data-id="8c12ad4" data-element_type="container" data-e-type="container"><div class="e-con-inner"><div class="elementor-element elementor-element-665fef9 elementor-widget elementor-widget-heading" data-id="665fef9" data-element_type="widget" data-e-type="widget" data-widget_type="heading.default"><div class="elementor-widget-container"><div class="elementor-heading-title elementor-size-default">نفخر&nbsp;<div style="font-size: 18px;letter-spacing: normal">خدمة Drill Max&nbsp;بتقديم خدماتنا لقطاع واسع من العملاء في مختلف محافظات مصر. سواء كنت تبحث عن&nbsp;صنايعي كور في العاصمة الإدارية&nbsp;أو&nbsp;فني منشار في الغردقة، فإن فريقنا جاهز للوصول إليك وتقديم حلول دقيقة وسريعة لكل ما يخص قص وتخريم الخرسانة.</div><div style="padding: 25px;border-radius: 15px;opacity: 1;transform: translateY(0px) scale(1)"><h3 style="padding-bottom: 10px;margin-bottom: 15px;font-size: 20px"><span style="font-family: &quot;Font Awesome 6 Free&quot;"></span></h3></div></div></div></div></div></div><div class="elementor-element elementor-element-df7fdcc e-flex e-con-boxed e-con e-parent e-lazyloaded e-no-lazyload e-lazyloaded e-no-lazyload" data-id="df7fdcc" data-element_type="container" data-e-type="container"><div class="e-con-inner"><div class="elementor-element elementor-element-5d2d9b6 elementor-widget elementor-widget-google_maps" data-id="5d2d9b6" data-element_type="widget" data-e-type="widget" data-widget_type="google_maps.default"><div class="elementor-widget-container"><div class="elementor-custom-embed">
-<iframe data-lazyloaded="1" src="https://www.google.com/maps?q=Cairo%2C%20Egypt&amp;output=embed" loading="lazy" title="القاهرة" aria-label="القاهرة"></iframe></div></div></div></div></div><div class="elementor-element elementor-element-7104636 e-flex e-con-boxed e-con e-parent e-lazyloaded e-no-lazyload e-lazyloaded e-no-lazyload" data-id="7104636" data-element_type="container" data-e-type="container"><div class="e-con-inner"><div class="elementor-element elementor-element-ee3a558 elementor-widget elementor-widget-spacer" data-id="ee3a558" data-element_type="widget" data-e-type="widget" data-widget_type="spacer.default"><div class="elementor-widget-container"><div class="elementor-spacer"><div class="elementor-spacer-inner"></div></div></div></div><div class="elementor-element elementor-element-05fd80b elementor-widget elementor-widget-heading" data-id="05fd80b" data-element_type="widget" data-e-type="widget" data-widget_type="heading.default"><div class="elementor-widget-container"><h2 class="elementor-heading-title elementor-size-default">أهم المناطق التي نخدمها</h2></div></div></div></div><div class="elementor-element elementor-element-2eee7b3 e-flex e-con-boxed e-con e-parent e-lazyloaded e-no-lazyload e-lazyloaded e-no-lazyload" data-id="2eee7b3" data-element_type="container" data-e-type="container"><div class="e-con-inner"><div class="elementor-element elementor-element-393cec5 e-con-full e-flex e-con e-child" data-id="393cec5" data-element_type="container" data-e-type="container"><div class="elementor-element elementor-element-bd7983d elementor-view-stacked elementor-shape-circle elementor-position-block-start elementor-mobile-position-block-start elementor-widget elementor-widget-icon-box" data-id="bd7983d" data-element_type="widget" data-e-type="widget" data-widget_type="icon-box.default"><div class="elementor-widget-container"><div class="elementor-icon-box-wrapper"><div class="elementor-icon-box-icon">
-<a href="https://wa.me/201070046464" class="elementor-icon" tabindex="-1" aria-label="محافظات وجه قبلي (الصعيد) " target="_blank" rel="noopener">
-<svg aria-hidden="true" class="e-font-icon-svg e-fas-city" viewBox="0 0 640 512" xmlns="http://www.w3.org/2000/svg"><path d="M616 192H480V24c0-13.26-10.74-24-24-24H312c-13.26 0-24 10.74-24 24v72h-64V16c0-8.84-7.16-16-16-16h-16c-8.84 0-16 7.16-16 16v80h-64V16c0-8.84-7.16-16-16-16H80c-8.84 0-16 7.16-16 16v80H24c-13.26 0-24 10.74-24 24v360c0 17.67 14.33 32 32 32h576c17.67 0 32-14.33 32-32V216c0-13.26-10.75-24-24-24zM128 404c0 6.63-5.37 12-12 12H76c-6.63 0-12-5.37-12-12v-40c0-6.63 5.37-12 12-12h40c6.63 0 12 5.37 12 12v40zm0-96c0 6.63-5.37 12-12 12H76c-6.63 0-12-5.37-12-12v-40c0-6.63 5.37-12 12-12h40c6.63 0 12 5.37 12 12v40zm0-96c0 6.63-5.37 12-12 12H76c-6.63 0-12-5.37-12-12v-40c0-6.63 5.37-12 12-12h40c6.63 0 12 5.37 12 12v40zm128 192c0 6.63-5.37 12-12 12h-40c-6.63 0-12-5.37-12-12v-40c0-6.63 5.37-12 12-12h40c6.63 0 12 5.37 12 12v40zm0-96c0 6.63-5.37 12-12 12h-40c-6.63 0-12-5.37-12-12v-40c0-6.63 5.37-12 12-12h40c6.63 0 12 5.37 12 12v40zm0-96c0 6.63-5.37 12-12 12h-40c-6.63 0-12-5.37-12-12v-40c0-6.63 5.37-12 12-12h40c6.63 0 12 5.37 12 12v40zm160 96c0 6.63-5.37 12-12 12h-40c-6.63 0-12-5.37-12-12v-40c0-6.63 5.37-12 12-12h40c6.63 0 12 5.37 12 12v40zm0-96c0 6.63-5.37 12-12 12h-40c-6.63 0-12-5.37-12-12v-40c0-6.63 5.37-12 12-12h40c6.63 0 12 5.37 12 12v40zm0-96c0 6.63-5.37 12-12 12h-40c-6.63 0-12-5.37-12-12V76c0-6.63 5.37-12 12-12h40c6.63 0 12 5.37 12 12v40zm160 288c0 6.63-5.37 12-12 12h-40c-6.63 0-12-5.37-12-12v-40c0-6.63 5.37-12 12-12h40c6.63 0 12 5.37 12 12v40zm0-96c0 6.63-5.37 12-12 12h-40c-6.63 0-12-5.37-12-12v-40c0-6.63 5.37-12 12-12h40c6.63 0 12 5.37 12 12v40z"></path></svg>				</a></div><div class="elementor-icon-box-content"><h3 class="elementor-icon-box-title">
-<a href="https://wa.me/201070046464" target="_blank" rel="noopener">
-محافظات وجه قبلي (الصعيد) 						</a></h3><p class="elementor-icon-box-description">
-بني سويف والمنيا
-أسيوط وسوهاج
-قنا والأقصر
-أسوان والمشاريع التنموية، يمكنك طلب الخدمة الان</p></div></div></div></div><div class="elementor-element elementor-element-ed23db4 elementor-view-stacked elementor-shape-circle elementor-position-block-start elementor-mobile-position-block-start elementor-widget elementor-widget-icon-box" data-id="ed23db4" data-element_type="widget" data-e-type="widget" data-widget_type="icon-box.default"><div class="elementor-widget-container"><div class="elementor-icon-box-wrapper"><div class="elementor-icon-box-icon">
-<span class="elementor-icon">
-<svg aria-hidden="true" class="e-font-icon-svg e-fas-city" viewBox="0 0 640 512" xmlns="http://www.w3.org/2000/svg"><path d="M616 192H480V24c0-13.26-10.74-24-24-24H312c-13.26 0-24 10.74-24 24v72h-64V16c0-8.84-7.16-16-16-16h-16c-8.84 0-16 7.16-16 16v80h-64V16c0-8.84-7.16-16-16-16H80c-8.84 0-16 7.16-16 16v80H24c-13.26 0-24 10.74-24 24v360c0 17.67 14.33 32 32 32h576c17.67 0 32-14.33 32-32V216c0-13.26-10.75-24-24-24zM128 404c0 6.63-5.37 12-12 12H76c-6.63 0-12-5.37-12-12v-40c0-6.63 5.37-12 12-12h40c6.63 0 12 5.37 12 12v40zm0-96c0 6.63-5.37 12-12 12H76c-6.63 0-12-5.37-12-12v-40c0-6.63 5.37-12 12-12h40c6.63 0 12 5.37 12 12v40zm0-96c0 6.63-5.37 12-12 12H76c-6.63 0-12-5.37-12-12v-40c0-6.63 5.37-12 12-12h40c6.63 0 12 5.37 12 12v40zm128 192c0 6.63-5.37 12-12 12h-40c-6.63 0-12-5.37-12-12v-40c0-6.63 5.37-12 12-12h40c6.63 0 12 5.37 12 12v40zm0-96c0 6.63-5.37 12-12 12h-40c-6.63 0-12-5.37-12-12v-40c0-6.63 5.37-12 12-12h40c6.63 0 12 5.37 12 12v40zm0-96c0 6.63-5.37 12-12 12h-40c-6.63 0-12-5.37-12-12v-40c0-6.63 5.37-12 12-12h40c6.63 0 12 5.37 12 12v40zm160 96c0 6.63-5.37 12-12 12h-40c-6.63 0-12-5.37-12-12v-40c0-6.63 5.37-12 12-12h40c6.63 0 12 5.37 12 12v40zm0-96c0 6.63-5.37 12-12 12h-40c-6.63 0-12-5.37-12-12v-40c0-6.63 5.37-12 12-12h40c6.63 0 12 5.37 12 12v40zm0-96c0 6.63-5.37 12-12 12h-40c-6.63 0-12-5.37-12-12V76c0-6.63 5.37-12 12-12h40c6.63 0 12 5.37 12 12v40zm160 288c0 6.63-5.37 12-12 12h-40c-6.63 0-12-5.37-12-12v-40c0-6.63 5.37-12 12-12h40c6.63 0 12 5.37 12 12v40zm0-96c0 6.63-5.37 12-12 12h-40c-6.63 0-12-5.37-12-12v-40c0-6.63 5.37-12 12-12h40c6.63 0 12 5.37 12 12v40z"></path></svg>				</span></div><div class="elementor-icon-box-content"><h3 class="elementor-icon-box-title">
-<span>
-محافظة الجيزة						</span></h3><p class="elementor-icon-box-description">
-المهندسين، الدقي، والعجوزة
-الهرم، فيصل، وحدائق الأهرام
-القرية الذكية والمناطق الصناعية
-المناطق المحيطة والطرق الرئيسية</p></div></div></div></div></div><div class="elementor-element elementor-element-af79549 e-con-full e-flex e-con e-child" data-id="af79549" data-element_type="container" data-e-type="container"><div class="elementor-element elementor-element-5215b77 elementor-view-stacked elementor-shape-circle elementor-position-block-start elementor-mobile-position-block-start elementor-widget elementor-widget-icon-box" data-id="5215b77" data-element_type="widget" data-e-type="widget" data-widget_type="icon-box.default"><div class="elementor-widget-container"><div class="elementor-icon-box-wrapper"><div class="elementor-icon-box-icon">
-<span class="elementor-icon">
-<svg aria-hidden="true" class="e-font-icon-svg e-fas-city" viewBox="0 0 640 512" xmlns="http://www.w3.org/2000/svg"><path d="M616 192H480V24c0-13.26-10.74-24-24-24H312c-13.26 0-24 10.74-24 24v72h-64V16c0-8.84-7.16-16-16-16h-16c-8.84 0-16 7.16-16 16v80h-64V16c0-8.84-7.16-16-16-16H80c-8.84 0-16 7.16-16 16v80H24c-13.26 0-24 10.74-24 24v360c0 17.67 14.33 32 32 32h576c17.67 0 32-14.33 32-32V216c0-13.26-10.75-24-24-24zM128 404c0 6.63-5.37 12-12 12H76c-6.63 0-12-5.37-12-12v-40c0-6.63 5.37-12 12-12h40c6.63 0 12 5.37 12 12v40zm0-96c0 6.63-5.37 12-12 12H76c-6.63 0-12-5.37-12-12v-40c0-6.63 5.37-12 12-12h40c6.63 0 12 5.37 12 12v40zm0-96c0 6.63-5.37 12-12 12H76c-6.63 0-12-5.37-12-12v-40c0-6.63 5.37-12 12-12h40c6.63 0 12 5.37 12 12v40zm128 192c0 6.63-5.37 12-12 12h-40c-6.63 0-12-5.37-12-12v-40c0-6.63 5.37-12 12-12h40c6.63 0 12 5.37 12 12v40zm0-96c0 6.63-5.37 12-12 12h-40c-6.63 0-12-5.37-12-12v-40c0-6.63 5.37-12 12-12h40c6.63 0 12 5.37 12 12v40zm0-96c0 6.63-5.37 12-12 12h-40c-6.63 0-12-5.37-12-12v-40c0-6.63 5.37-12 12-12h40c6.63 0 12 5.37 12 12v40zm160 96c0 6.63-5.37 12-12 12h-40c-6.63 0-12-5.37-12-12v-40c0-6.63 5.37-12 12-12h40c6.63 0 12 5.37 12 12v40zm0-96c0 6.63-5.37 12-12 12h-40c-6.63 0-12-5.37-12-12v-40c0-6.63 5.37-12 12-12h40c6.63 0 12 5.37 12 12v40zm0-96c0 6.63-5.37 12-12 12h-40c-6.63 0-12-5.37-12-12V76c0-6.63 5.37-12 12-12h40c6.63 0 12 5.37 12 12v40zm160 288c0 6.63-5.37 12-12 12h-40c-6.63 0-12-5.37-12-12v-40c0-6.63 5.37-12 12-12h40c6.63 0 12 5.37 12 12v40zm0-96c0 6.63-5.37 12-12 12h-40c-6.63 0-12-5.37-12-12v-40c0-6.63 5.37-12 12-12h40c6.63 0 12 5.37 12 12v40z"></path></svg>				</span></div><div class="elementor-icon-box-content"><h3 class="elementor-icon-box-title">
-<span>
-محافظة البحر الأحمر						</span></h3><p class="elementor-icon-box-description">
-الغردقة والجونة
-سفاجا
-القصير ومرسى علم
-المشاريع السياحية والفندقية</p></div></div></div></div><div class="elementor-element elementor-element-efa3113 elementor-view-stacked elementor-shape-circle elementor-position-block-start elementor-mobile-position-block-start elementor-widget elementor-widget-icon-box" data-id="efa3113" data-element_type="widget" data-e-type="widget" data-widget_type="icon-box.default"><div class="elementor-widget-container"><div class="elementor-icon-box-wrapper"><div class="elementor-icon-box-icon">
-<span class="elementor-icon">
-<svg aria-hidden="true" class="e-font-icon-svg e-fas-city" viewBox="0 0 640 512" xmlns="http://www.w3.org/2000/svg"><path d="M616 192H480V24c0-13.26-10.74-24-24-24H312c-13.26 0-24 10.74-24 24v72h-64V16c0-8.84-7.16-16-16-16h-16c-8.84 0-16 7.16-16 16v80h-64V16c0-8.84-7.16-16-16-16H80c-8.84 0-16 7.16-16 16v80H24c-13.26 0-24 10.74-24 24v360c0 17.67 14.33 32 32 32h576c17.67 0 32-14.33 32-32V216c0-13.26-10.75-24-24-24zM128 404c0 6.63-5.37 12-12 12H76c-6.63 0-12-5.37-12-12v-40c0-6.63 5.37-12 12-12h40c6.63 0 12 5.37 12 12v40zm0-96c0 6.63-5.37 12-12 12H76c-6.63 0-12-5.37-12-12v-40c0-6.63 5.37-12 12-12h40c6.63 0 12 5.37 12 12v40zm0-96c0 6.63-5.37 12-12 12H76c-6.63 0-12-5.37-12-12v-40c0-6.63 5.37-12 12-12h40c6.63 0 12 5.37 12 12v40zm128 192c0 6.63-5.37 12-12 12h-40c-6.63 0-12-5.37-12-12v-40c0-6.63 5.37-12 12-12h40c6.63 0 12 5.37 12 12v40zm0-96c0 6.63-5.37 12-12 12h-40c-6.63 0-12-5.37-12-12v-40c0-6.63 5.37-12 12-12h40c6.63 0 12 5.37 12 12v40zm0-96c0 6.63-5.37 12-12 12h-40c-6.63 0-12-5.37-12-12v-40c0-6.63 5.37-12 12-12h40c6.63 0 12 5.37 12 12v40zm160 96c0 6.63-5.37 12-12 12h-40c-6.63 0-12-5.37-12-12v-40c0-6.63 5.37-12 12-12h40c6.63 0 12 5.37 12 12v40zm0-96c0 6.63-5.37 12-12 12h-40c-6.63 0-12-5.37-12-12v-40c0-6.63 5.37-12 12-12h40c6.63 0 12 5.37 12 12v40zm0-96c0 6.63-5.37 12-12 12h-40c-6.63 0-12-5.37-12-12V76c0-6.63 5.37-12 12-12h40c6.63 0 12 5.37 12 12v40zm160 288c0 6.63-5.37 12-12 12h-40c-6.63 0-12-5.37-12-12v-40c0-6.63 5.37-12 12-12h40c6.63 0 12 5.37 12 12v40zm0-96c0 6.63-5.37 12-12 12h-40c-6.63 0-12-5.37-12-12v-40c0-6.63 5.37-12 12-12h40c6.63 0 12 5.37 12 12v40z"></path></svg>				</span></div><div class="elementor-icon-box-content"><h3 class="elementor-icon-box-title">
-<span>
-مشاريع خاصة						</span></h3><p class="elementor-icon-box-description">
-المصانع والمناطق الصناعية
-مشاريع الطرق والكباري
-محطات الكهرباء والمياه
-مناطق أخرى (حسب حجم المشروع)</p></div></div></div></div></div><div class="elementor-element elementor-element-9e8b3c9 e-con-full e-flex e-con e-child" data-id="9e8b3c9" data-element_type="container" data-e-type="container"><div class="elementor-element elementor-element-b22a3e4 elementor-view-stacked elementor-shape-circle elementor-position-block-start elementor-mobile-position-block-start elementor-widget elementor-widget-icon-box" data-id="b22a3e4" data-element_type="widget" data-e-type="widget" data-widget_type="icon-box.default"><div class="elementor-widget-container"><div class="elementor-icon-box-wrapper"><div class="elementor-icon-box-icon">
-<span class="elementor-icon">
-<svg aria-hidden="true" class="e-font-icon-svg e-fas-city" viewBox="0 0 640 512" xmlns="http://www.w3.org/2000/svg"><path d="M616 192H480V24c0-13.26-10.74-24-24-24H312c-13.26 0-24 10.74-24 24v72h-64V16c0-8.84-7.16-16-16-16h-16c-8.84 0-16 7.16-16 16v80h-64V16c0-8.84-7.16-16-16-16H80c-8.84 0-16 7.16-16 16v80H24c-13.26 0-24 10.74-24 24v360c0 17.67 14.33 32 32 32h576c17.67 0 32-14.33 32-32V216c0-13.26-10.75-24-24-24zM128 404c0 6.63-5.37 12-12 12H76c-6.63 0-12-5.37-12-12v-40c0-6.63 5.37-12 12-12h40c6.63 0 12 5.37 12 12v40zm0-96c0 6.63-5.37 12-12 12H76c-6.63 0-12-5.37-12-12v-40c0-6.63 5.37-12 12-12h40c6.63 0 12 5.37 12 12v40zm0-96c0 6.63-5.37 12-12 12H76c-6.63 0-12-5.37-12-12v-40c0-6.63 5.37-12 12-12h40c6.63 0 12 5.37 12 12v40zm128 192c0 6.63-5.37 12-12 12h-40c-6.63 0-12-5.37-12-12v-40c0-6.63 5.37-12 12-12h40c6.63 0 12 5.37 12 12v40zm0-96c0 6.63-5.37 12-12 12h-40c-6.63 0-12-5.37-12-12v-40c0-6.63 5.37-12 12-12h40c6.63 0 12 5.37 12 12v40zm0-96c0 6.63-5.37 12-12 12h-40c-6.63 0-12-5.37-12-12v-40c0-6.63 5.37-12 12-12h40c6.63 0 12 5.37 12 12v40zm160 96c0 6.63-5.37 12-12 12h-40c-6.63 0-12-5.37-12-12v-40c0-6.63 5.37-12 12-12h40c6.63 0 12 5.37 12 12v40zm0-96c0 6.63-5.37 12-12 12h-40c-6.63 0-12-5.37-12-12v-40c0-6.63 5.37-12 12-12h40c6.63 0 12 5.37 12 12v40zm0-96c0 6.63-5.37 12-12 12h-40c-6.63 0-12-5.37-12-12V76c0-6.63 5.37-12 12-12h40c6.63 0 12 5.37 12 12v40zm160 288c0 6.63-5.37 12-12 12h-40c-6.63 0-12-5.37-12-12v-40c0-6.63 5.37-12 12-12h40c6.63 0 12 5.37 12 12v40zm0-96c0 6.63-5.37 12-12 12h-40c-6.63 0-12-5.37-12-12v-40c0-6.63 5.37-12 12-12h40c6.63 0 12 5.37 12 12v40z"></path></svg>				</span></div><div class="elementor-icon-box-content"><h3 class="elementor-icon-box-title">
-<span>
-محافظات وجه بحري						</span></h3><p class="elementor-icon-box-description">
-الإسكندرية والساحل الشمالي
-مدن الدلتا (طنطا، المنصورة)
-مدن القناة (السويس، الإسماعيلية)
-العاشر من رمضان والمناطق الصناعية</p></div></div></div></div></div><div class="elementor-element elementor-element-387323e e-con-full e-flex e-con e-child" data-id="387323e" data-element_type="container" data-e-type="container"><div class="elementor-element elementor-element-8861eb4 elementor-view-stacked elementor-shape-circle elementor-position-block-start elementor-mobile-position-block-start elementor-widget elementor-widget-icon-box" data-id="8861eb4" data-element_type="widget" data-e-type="widget" data-widget_type="icon-box.default"><div class="elementor-widget-container"><div class="elementor-icon-box-wrapper"><div class="elementor-icon-box-icon">
-<span class="elementor-icon">
-<svg aria-hidden="true" class="e-font-icon-svg e-fas-city" viewBox="0 0 640 512" xmlns="http://www.w3.org/2000/svg"><path d="M616 192H480V24c0-13.26-10.74-24-24-24H312c-13.26 0-24 10.74-24 24v72h-64V16c0-8.84-7.16-16-16-16h-16c-8.84 0-16 7.16-16 16v80h-64V16c0-8.84-7.16-16-16-16H80c-8.84 0-16 7.16-16 16v80H24c-13.26 0-24 10.74-24 24v360c0 17.67 14.33 32 32 32h576c17.67 0 32-14.33 32-32V216c0-13.26-10.75-24-24-24zM128 404c0 6.63-5.37 12-12 12H76c-6.63 0-12-5.37-12-12v-40c0-6.63 5.37-12 12-12h40c6.63 0 12 5.37 12 12v40zm0-96c0 6.63-5.37 12-12 12H76c-6.63 0-12-5.37-12-12v-40c0-6.63 5.37-12 12-12h40c6.63 0 12 5.37 12 12v40zm0-96c0 6.63-5.37 12-12 12H76c-6.63 0-12-5.37-12-12v-40c0-6.63 5.37-12 12-12h40c6.63 0 12 5.37 12 12v40zm128 192c0 6.63-5.37 12-12 12h-40c-6.63 0-12-5.37-12-12v-40c0-6.63 5.37-12 12-12h40c6.63 0 12 5.37 12 12v40zm0-96c0 6.63-5.37 12-12 12h-40c-6.63 0-12-5.37-12-12v-40c0-6.63 5.37-12 12-12h40c6.63 0 12 5.37 12 12v40zm0-96c0 6.63-5.37 12-12 12h-40c-6.63 0-12-5.37-12-12v-40c0-6.63 5.37-12 12-12h40c6.63 0 12 5.37 12 12v40zm160 96c0 6.63-5.37 12-12 12h-40c-6.63 0-12-5.37-12-12v-40c0-6.63 5.37-12 12-12h40c6.63 0 12 5.37 12 12v40zm0-96c0 6.63-5.37 12-12 12h-40c-6.63 0-12-5.37-12-12v-40c0-6.63 5.37-12 12-12h40c6.63 0 12 5.37 12 12v40zm0-96c0 6.63-5.37 12-12 12h-40c-6.63 0-12-5.37-12-12V76c0-6.63 5.37-12 12-12h40c6.63 0 12 5.37 12 12v40zm160 288c0 6.63-5.37 12-12 12h-40c-6.63 0-12-5.37-12-12v-40c0-6.63 5.37-12 12-12h40c6.63 0 12 5.37 12 12v40zm0-96c0 6.63-5.37 12-12 12h-40c-6.63 0-12-5.37-12-12v-40c0-6.63 5.37-12 12-12h40c6.63 0 12 5.37 12 12v40z"></path></svg>				</span></div><div class="elementor-icon-box-content"><h3 class="elementor-icon-box-title">
-<span>
-القاهرة الكبرى						</span></h3><p class="elementor-icon-box-description">
-القاهرة الجديدة والتجمعات
-مدينتي، الرحاب، الشروق، وبدر
-6 أكتوبر والشيخ زايد
-العاصمة الإدارية الجديدة
-القليوبية (العبور، شبرا الخيمة)</p></div></div></div></div></div></div></div><div class="elementor-element elementor-element-58550c9 e-flex e-con-boxed e-con e-parent e-lazyloaded e-no-lazyload e-lazyloaded e-no-lazyload" data-id="58550c9" data-element_type="container" data-e-type="container"><div class="e-con-inner"><div class="elementor-element elementor-element-75574f2 elementor-cta--skin-classic elementor-animated-content elementor-bg-transform elementor-bg-transform-zoom-in elementor-widget elementor-widget-call-to-action" data-id="75574f2" data-element_type="widget" data-e-type="widget" data-widget_type="call-to-action.default"><div class="elementor-widget-container"><div class="elementor-cta"><div class="elementor-cta__content"><h2 class="elementor-cta__title elementor-cta__content-item elementor-content-item">
-لم تجد منطقتك في القائمة؟</h2><div class="elementor-cta__description elementor-cta__content-item elementor-content-item">
-لا تتردد في التواصل معنا. للمشاريع الكبيرة والمتوسطة، يمكن لفريق <span style="font-size: 20px;letter-spacing: -1px">خدمة Drill Max&nbsp;&nbsp;</span>من الفنيين الوصول إلى جميع محافظات الجمهورية لتلبية احتياجاتكم بأعلى جودة واحترافية.</div><div class="elementor-cta__button-wrapper elementor-cta__content-item elementor-content-item ">
-<a class="elementor-cta__button elementor-button elementor-size-" href="/contact/">
-استفسر الآن عن إمكانية خدمتك					</a></div></div></div></div></div></div></div></div>
+  <section class="hero">
+    <div class="hero-bg"></div>
+    <div class="container hero-container text-center">
+      <div class="hero-content" style="max-width: 860px; margin: 0 auto;">
+        <span class="hero-subtitle">دريل ماكس | التغطية الجغرافية</span>
+        <h1>مناطق خدمة قص وتخريم الخرسانة في جميع محافظات مصر</h1>
+        <p class="hero-lead">
+          تغطي فرق دريل ماكس القاهرة الكبرى والمدن الجديدة والمحافظات لتنفيذ فتحات الكور وقص الخرسانة بالمنشار الماسي والواير. أرسل موقعك وتفاصيل العمل لتأكيد الموعد ونطاق التنفيذ.
+        </p>
+        <div class="hero-actions">
+          <a href="/contact/" class="btn btn-primary">تواصل لتأكيد الموعد</a>
+          <a href="https://wa.me/201070046464" class="btn btn-wa" target="_blank" rel="noopener noreferrer">أرسل الموقع عبر واتساب</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="areas-section bg-light">
+    <div class="container">
+      <div class="area-directory" aria-labelledby="area-details">
+        <h2 id="area-details">صفحات تفاصيل الخدمة حسب المنطقة</h2>
+        <p>تساعدنا معرفة المنطقة والعنوان وصور موضع الفتحات على مراجعة الوصول وتجهيز المعدات. يُؤكد نطاق العمل وموعد الانتقال بعد مراجعة بيانات الموقع.</p>
+        <ul class="city-links-grid">
+          {cityPages.map(city => (
+            <li><a href={city.href}>{city.label}</a></li>
+          ))}
+        </ul>
+        <p class="directory-note">
+          جهّز عدد الفتحات والمقاسات ونوع العنصر ورقم الدور وصور الموقع، ثم <a href="/contact/">تواصل لمناقشة المعاينة والتنفيذ</a>، أو راجع <a href="/services/">أنواع خدمات القص والتخريم</a> قبل إرسال الطلب.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <section class="areas-section">
+    <div class="container">
+      <div class="section-header text-center">
+        <h2>أهم المناطق والمحافظات التي نخدمها</h2>
+        <p>سواء كنت تحتاج صنايعي كور في القاهرة الجديدة أو فني منشار في الإسكندرية أو الغردقة أو الصعيد، ننسّق انتقال الفريق والمعدات وفق حجم المشروع.</p>
+      </div>
+
+      <div class="regions-grid">
+        {regions.map(region => (
+          <div class="region-card">
+            <div class="region-icon" aria-hidden="true">📍</div>
+            <h3>{region.title}</h3>
+            <ul>
+              {region.areas.map(area => <li>{area}</li>)}
+            </ul>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <section class="areas-section bg-light">
+    <div class="container">
+      <div class="map-card">
+        <h2>نطاق الانطلاق الرئيسي — القاهرة ومصر</h2>
+        <div class="map-embed">
+          <iframe
+            src="https://www.google.com/maps?q=Cairo%2C%20Egypt&output=embed"
+            loading="lazy"
+            title="خريطة تغطية دريل ماكس في القاهرة ومصر"
+            referrerpolicy="no-referrer-when-downgrade"
+          ></iframe>
+        </div>
+      </div>
+
+      <div class="areas-cta">
+        <h2>لم تجد منطقتك في القائمة؟</h2>
+        <p>تواصل معنا مباشرة — للمشاريع المتوسطة والكبيرة ينتقل فريق دريل ماكس بكامل معداته إلى جميع محافظات الجمهورية.</p>
+        <div class="cta-actions">
+          <a href="/contact/" class="btn btn-primary">استفسر الآن عن إمكانية خدمتك</a>
+          <a href="tel:+201070046464" class="btn btn-outline">اتصل: 01070046464</a>
+        </div>
       </div>
     </div>
   </section>
 </MainLayout>
 
-<style is:global>
-  .area-directory { margin: 20px 0 36px; padding: 24px; border: 1px solid var(--border-color); border-radius: 12px; background: #f8fafc; }
-  .area-directory ul { display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%,200px),1fr)); gap: 12px; margin: 20px 0; }
-  .area-directory a { color: var(--primary); text-decoration: underline; text-underline-offset: 4px; }
-  .area-directory li a { display: block; padding: 12px; background: #fff; border: 1px solid var(--border-color); border-radius: 8px; }
-  .page-content .elementor-widget-container, .page-content .elementor-element { min-width: 0; max-width: 100%; }
-  .page-content iframe { width: 100%; max-width: 100%; }
+<style>
+  .text-center { text-align: center; }
+  .bg-light { background-color: var(--section-bg); }
+  .areas-section { padding: 64px 0; }
+  .hero h1 { font-size: clamp(2rem, 4vw, 3.1rem); line-height: 1.35; margin-bottom: 16px; }
+  .hero-lead { color: #e2e8f0; font-size: 1.15rem; line-height: 1.85; margin-bottom: 24px; }
+  .hero-actions { display: flex; gap: 14px; justify-content: center; flex-wrap: wrap; }
+
+  .section-header { max-width: 760px; margin: 0 auto 40px; }
+  .section-header h2 { font-size: clamp(1.6rem, 3vw, 2.2rem); color: var(--dark); margin-bottom: 12px; }
+  .section-header p { color: var(--gray); line-height: 1.85; font-size: 1.05rem; }
+
+  .area-directory {
+    background: #fff;
+    padding: 36px;
+    border-radius: 14px;
+    border: 1px solid var(--border-color);
+    box-shadow: 0 6px 24px rgba(15, 23, 42, 0.04);
+  }
+  .area-directory h2 { color: var(--dark); font-size: 1.6rem; margin-bottom: 12px; }
+  .area-directory p { color: var(--gray); line-height: 1.85; }
+  .city-links-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(min(100%, 210px), 1fr));
+    gap: 14px;
+    margin: 24px 0;
+  }
+  .city-links-grid a {
+    display: block;
+    padding: 14px 16px;
+    background: #f8fafc;
+    border: 1px solid var(--border-color);
+    border-radius: 10px;
+    color: var(--dark);
+    font-weight: 700;
+    text-align: center;
+    transition: border-color 0.2s, color 0.2s, transform 0.2s;
+  }
+  .city-links-grid a:hover {
+    border-color: var(--primary);
+    color: var(--primary);
+    transform: translateY(-2px);
+  }
+  .directory-note a { color: var(--primary); font-weight: 700; text-decoration: underline; text-underline-offset: 4px; }
+
+  .regions-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(min(100%, 300px), 1fr));
+    gap: 24px;
+  }
+  .region-card {
+    background: #fff;
+    border: 1px solid var(--border-color);
+    border-radius: 14px;
+    padding: 28px;
+    box-shadow: 0 4px 18px rgba(15, 23, 42, 0.04);
+  }
+  .region-icon {
+    width: 48px;
+    height: 48px;
+    border-radius: 12px;
+    background: #fff7ed;
+    color: var(--primary);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.4rem;
+    margin-bottom: 14px;
+  }
+  .region-card h3 { color: var(--dark); font-size: 1.25rem; margin-bottom: 14px; }
+  .region-card ul { list-style: disc; padding-inline-start: 20px; color: var(--gray); line-height: 1.9; }
+  .region-card li { margin-bottom: 6px; }
+
+  .map-card {
+    background: #fff;
+    border: 1px solid var(--border-color);
+    border-radius: 14px;
+    padding: 32px;
+    margin-bottom: 32px;
+  }
+  .map-card h2 { color: var(--dark); font-size: 1.5rem; margin-bottom: 20px; text-align: center; }
+  .map-embed iframe { width: 100%; height: 380px; border: 0; border-radius: 10px; display: block; }
+
+  .areas-cta {
+    background: var(--header-bg);
+    color: #fff;
+    border-radius: 14px;
+    padding: 44px 32px;
+    text-align: center;
+  }
+  .areas-cta h2 { font-size: 1.8rem; margin-bottom: 12px; color: #fff; }
+  .areas-cta p { color: #cbd5e1; max-width: 680px; margin: 0 auto 24px; line-height: 1.85; font-size: 1.05rem; }
+  .cta-actions { display: flex; gap: 14px; justify-content: center; flex-wrap: wrap; }
+
+  @media (max-width: 640px) {
+    .areas-section { padding: 40px 0; }
+    .area-directory, .map-card, .areas-cta { padding: 24px 18px; }
+  }
 </style>
